@@ -13,6 +13,7 @@ NUM_PROMPTS="${NUM_PROMPTS:-1000}"
 REQUEST_RATE="${REQUEST_RATE:-inf}"
 MAX_CONCURRENCY="${MAX_CONCURRENCY:-}"
 OUTPUT_FILE="${OUTPUT_FILE:-$ROOT_DIR/artifacts/benchmarks/$(date +%Y%m%d_%H%M%S)_serving.jsonl}"
+BENCH_SEED="${BENCH_SEED:-1}"
 
 mkdir -p "$(dirname "$OUTPUT_FILE")"
 
@@ -25,6 +26,7 @@ CMD=(
   --model "$MODEL_PATH"
   --num-prompts "$NUM_PROMPTS"
   --request-rate "$REQUEST_RATE"
+  --seed "$BENCH_SEED"
   --output-file "$OUTPUT_FILE"
   --output-details
 )

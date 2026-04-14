@@ -82,15 +82,26 @@ def next_use(access_index: dict[int, list[int]], object_id: int, current_seq: in
 
 
 def analyze_frontiers(events: list[dict[str, Any]], node_accesses: dict[int, list[int]]) -> list[FrontierDecision]:
-    frontiers = [event for event in events if event.get("event") == "eviction_frontier"]
-    evictions_by_seq = {
-        int(event["seq"]): event for event in events if event.get("event") == "node_evicted"
-    }
+    frontiers = [
+        event
+        for event in events
+        if event.get("event") in {"eviction_frontier", "belady_frontier"}
+    ]
+    eviction_events = [
+        event for event in events if event.get("event") == "node_evicted"
+    ]
     decisions: list[FrontierDecision] = []
 
     for frontier in frontiers:
         frontier_seq = int(frontier["seq"])
-        actual = evictions_by_seq.get(frontier_seq + 1)
+        actual = next(
+            (
+                event
+                for event in eviction_events
+                if int(event["seq"]) > frontier_seq
+            ),
+            None,
+        )
         if actual is None:
             continue
 
@@ -130,6 +141,36 @@ def analyze_frontiers(events: list[dict[str, Any]], node_accesses: dict[int, lis
         )
 
     return decisions
+
+
+def summarize_match_results(events: list[dict[str, Any]]) -> dict[str, Any]:
+    match_events = [event for event in events if event.get("event") == "match_result"]
+    if not match_events:
+        return {}
+
+    request_count = len(match_events)
+    matched_tokens = sum(int(event.get("matched_tokens", 0)) for event in match_events)
+    missed_tokens = sum(int(event.get("missed_tokens", 0)) for event in match_events)
+    matched_blocks = sum(int(event.get("matched_blocks", 0)) for event in match_events)
+    missed_blocks = sum(int(event.get("missed_blocks", 0)) for event in match_events)
+    total_aligned_tokens = matched_tokens + missed_tokens
+    total_blocks = matched_blocks + missed_blocks
+
+    return {
+        "request_count": request_count,
+        "matched_tokens": matched_tokens,
+        "missed_tokens": missed_tokens,
+        "token_hit_rate": (
+            matched_tokens / total_aligned_tokens if total_aligned_tokens else 0.0
+        ),
+        "token_miss_rate": (
+            missed_tokens / total_aligned_tokens if total_aligned_tokens else 0.0
+        ),
+        "matched_blocks": matched_blocks,
+        "missed_blocks": missed_blocks,
+        "block_hit_rate": matched_blocks / total_blocks if total_blocks else 0.0,
+        "block_miss_rate": missed_blocks / total_blocks if total_blocks else 0.0,
+    }
 
 
 def simulate_page_cache(
@@ -274,6 +315,7 @@ def main() -> None:
             if event.get("event") == "node_access"
             for block_hash in event.get("block_hashes", [])
         ).most_common(20),
+        "match_summary": summarize_match_results(events),
     }
 
     if args.block_capacity is not None:
