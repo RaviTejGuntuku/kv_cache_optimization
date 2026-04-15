@@ -10,6 +10,13 @@ The current implementation is centered on three things:
 
 This repository now supports an oracle-replay Belady benchmark path for deterministic two-pass experiments. It is benchmark infrastructure, not a deployable online policy.
 
+Current recommended runnable setup:
+
+- primary workload: `ShareGPT`
+- excluded from the current runnable path: `LMSYS-Chat-1M`
+
+`LMSYS-Chat-1M` is not part of the current runnable setup because the dataset is gated and adds setup friction without being necessary to validate the benchmark pipeline.
+
 ## Quick Start
 
 If you already have:
@@ -96,6 +103,30 @@ python benchmarking/run_two_pass_benchmark.py \
   --gpu-kv-capacity-blocks 20000
 ```
 
+If you want a quick smoke test before renting more GPU time, start with a much smaller run:
+
+```bash
+python benchmarking/run_two_pass_benchmark.py \
+  --model-path meta-llama/Meta-Llama-3.1-8B-Instruct \
+  --dataset-path data/sharegpt_subset.jsonl \
+  --output-root runs/sharegpt_smoke \
+  --page-size 16 \
+  --num-prompts 64 \
+  --request-rate 2 \
+  --max-concurrency 32 \
+  --bench-seed 1 \
+  --gpu-kv-capacity-blocks 20000
+```
+
+This smoke test is mainly for pipeline validation:
+
+- does the traced `LRU` run finish,
+- does Belady-plan compilation succeed,
+- does the replay run start and complete,
+- do `comparison.json` and trace summaries appear at the end.
+
+It is not the run you should use for a final conclusion about `Belady` vs `LRU`.
+
 This single command runs:
 
 1. traced `LRU` baseline
@@ -156,6 +187,141 @@ The most important analysis outputs are:
 - which leaves or page-blocks account for the reuse gap,
 - an optional page-level cache simulation that compares `LRU` and `Belady` at a fixed block capacity.
 
+## How The Experiment Works
+
+This benchmark is a two-run offline-oracle experiment.
+
+The key idea is:
+
+- `LRU` is the real baseline policy we want to beat.
+- `Belady` needs future knowledge, so we cannot run it as a normal online policy.
+- because the request stream is deterministic, we can learn the future from one run and use it in a second run.
+
+### Run 1: Baseline `LRU`
+
+In Run 1, the server runs with:
+
+- the fixed `ShareGPT` subset,
+- fixed `FCFS` scheduling,
+- fixed request-rate / concurrency / seed,
+- real `LRU` eviction inside `SGLang`.
+
+During this run, the modified radix cache logs:
+
+- request lookups into the cache,
+- node accesses,
+- eviction frontiers,
+- actual evictions,
+- per-request match summaries.
+
+The most important event for the Belady construction is `request_lookup`.
+This tells us, for each logical lookup step in the workload, which block hashes are being requested.
+
+From those `request_lookup` events, we build an offline oracle:
+
+- block `A` is requested at lookup steps `3, 9, 20`
+- block `B` is requested at lookup steps `4, 5, 18`
+- block `C` is requested at lookup steps `7, 25`
+
+That oracle is exactly the future-access information that Belady needs.
+
+### Run 2: Dynamic Offline-Oracle `Belady`
+
+In Run 2, we rerun the exact same workload:
+
+- same dataset,
+- same request order,
+- same seed,
+- same request rate,
+- same max concurrency,
+- same scheduler,
+- same model,
+- same hardware.
+
+The only thing that changes is the eviction policy.
+
+At each actual eviction frontier in Run 2, the runtime:
+
+1. looks at the live eviction candidates that exist in the current cache state,
+2. asks the offline oracle when each candidate will next be used,
+3. evicts the candidate whose next use is farthest in the future.
+
+This is the important point:
+
+- Run 2 does **not** replay a fixed victim sequence from Run 1.
+- Run 2 makes Belady's choice dynamically over the live frontier in the second run.
+
+That is what makes this a meaningful `LRU` vs `Belady` comparison.
+
+### Why This Works
+
+Belady is defined in terms of future reuse.
+Normally, that future is unavailable online.
+In this benchmark, we intentionally fix the request stream, so the future access pattern can be learned from Run 1 and reused in Run 2.
+
+The cache state in Run 2 is allowed to differ from Run 1.
+That is expected.
+If Belady is better, it should produce a different cache state.
+
+What is held fixed between the two runs is:
+
+- workload,
+- scheduler,
+- arrival process,
+- model,
+- hardware.
+
+So the comparison isolates the effect of eviction quality.
+
+### Tiny Example
+
+Suppose the deterministic workload induces these logical cache lookups:
+
+- lookup `0`: blocks `A, B`
+- lookup `1`: blocks `B, C`
+- lookup `2`: blocks `D`
+- lookup `3`: blocks `A`
+- lookup `4`: blocks `E`
+- lookup `5`: blocks `B`
+
+From Run 1, the oracle becomes:
+
+- `A -> [0, 3]`
+- `B -> [0, 1, 5]`
+- `C -> [1]`
+- `D -> [2]`
+- `E -> [4]`
+
+Now imagine Run 2 reaches an eviction frontier after lookup step `2`, and the live candidates are:
+
+- candidate ending in `A`
+- candidate ending in `B`
+- candidate ending in `C`
+
+The oracle says:
+
+- next use of `A` after step `2` is `3`
+- next use of `B` after step `2` is `5`
+- next use of `C` after step `2` is never
+
+So Belady evicts `C`, because it is needed farthest in the future.
+`LRU` could make a different choice based only on recency.
+
+### What We Compare At The End
+
+For both runs we collect:
+
+- throughput,
+- median / p99 `TTFT`,
+- median / p99 `ITL`,
+- server-reported cache hit rate if available,
+- trace-derived token and block hit / miss rates.
+
+The final comparison is therefore:
+
+- `LRU` on the real workload
+- versus dynamic offline-oracle `Belady` on the exact same real workload
+
 ## Hardware Guidance
 
 ### What to use from the Lambda options you showed
@@ -212,25 +378,6 @@ The right goal is:
 
 This repository now includes `benchmarking/select_benchmark_subset.py` for that purpose.
 
-### LMSYS-Chat-1M policy
-
-What matters:
-
-- shared prefixes,
-- repeated system-prompt or prompt-template structure,
-- moderate-to-long contexts under concurrency.
-
-Sampling policy:
-
-- cluster requests by normalized leading prompt prefix,
-- prioritize groups with multiple requests sharing that prefix,
-- reserve most of the subset budget for shared-prefix groups,
-- fill the remainder with long singleton prompts so the workload still creates pressure.
-
-Recommended first-pass subset size:
-
-- `1000-2000` requests
-
 ### ShareGPT policy
 
 What matters:
@@ -249,38 +396,7 @@ Recommended first-pass subset size:
 
 - `1000-2000` requests
 
-### LongBench policy
-
-What matters:
-
-- very long contexts,
-- extreme memory pressure,
-- fewer but much more expensive requests.
-
-Sampling policy:
-
-- bucket by prompt length bands,
-- overweight the longest contexts,
-- keep some medium-long contexts for coverage,
-- do not waste much budget on the shortest examples.
-
-Recommended first-pass subset size:
-
-- `50-150` requests
-
 ### Example subset commands
-
-LMSYS:
-
-```bash
-source .venv-sglang/bin/activate
-python benchmarking/select_benchmark_subset.py \
-  --dataset-type lmsys \
-  --input data/lmsys_raw.jsonl \
-  --output data/lmsys_subset.jsonl \
-  --target-size 1500 \
-  --tokenizer meta-llama/Meta-Llama-3.1-8B-Instruct
-```
 
 ShareGPT:
 
@@ -291,18 +407,6 @@ python benchmarking/select_benchmark_subset.py \
   --input data/sharegpt_raw.json \
   --output data/sharegpt_subset.jsonl \
   --target-size 1500 \
-  --tokenizer meta-llama/Meta-Llama-3.1-8B-Instruct
-```
-
-LongBench:
-
-```bash
-source .venv-sglang/bin/activate
-python benchmarking/select_benchmark_subset.py \
-  --dataset-type longbench \
-  --input data/longbench_raw.jsonl \
-  --output data/longbench_subset.jsonl \
-  --target-size 120 \
   --tokenizer meta-llama/Meta-Llama-3.1-8B-Instruct
 ```
 
@@ -653,6 +757,29 @@ python benchmarking/run_benchmark_sweep.py \
 
 This writes one run directory per knob setting plus `sweep_manifest.json`.
 
+Then aggregate and plot the results:
+
+```bash
+pip install matplotlib
+python benchmarking/plot_benchmark_results.py \
+  --sweep-manifest sweep/sharegpt/sweep_manifest.json \
+  --output-dir sweep/sharegpt/plots \
+  --x-axis memory_pressure
+```
+
+This produces:
+
+- `aggregated_metrics.csv`
+- `aggregated_metrics.json`
+- `summary.json`
+- `throughput_vs_memory_pressure_full_request.png`
+- `median_ttft_ms_vs_memory_pressure_full_request.png`
+- `p99_ttft_ms_vs_memory_pressure_full_request.png`
+- `median_itl_ms_vs_memory_pressure_full_request.png`
+- `p99_itl_ms_vs_memory_pressure_full_request.png`
+- `block_miss_rate_vs_memory_pressure_full_request.png`
+- `transfer_proxy_bytes_vs_memory_pressure_full_request.png`
+
 ### 12. Estimate memory pressure directly
 
 ```bash
@@ -676,7 +803,7 @@ Specifically, it already supports:
 
 - running a local `SGLang` checkout,
 - traced radix-cache access and eviction logging,
-- benchmark subset construction for the three workload families,
+- benchmark subset construction for the ShareGPT workload,
 - Belady-plan compilation from a deterministic baseline trace,
 - oracle-replay victim selection inside SGLang,
 - serving benchmarks against selected subsets,
@@ -689,7 +816,7 @@ Specifically, it already supports:
 
 You can do this now:
 
-1. select an LMSYS / ShareGPT / LongBench subset,
+1. select a ShareGPT subset,
 2. launch the traced `LRU` server,
 3. drive requests through the server,
 4. compile a Belady replay plan from the baseline trace,
