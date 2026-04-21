@@ -1,0 +1,10 @@
+{
+  "num_rows": 3,
+  "workloads": {
+    "synthetic--natural-saturated--natural-bursty-return-hbm": {
+      "best_block_miss_reduction": 0.17077074299741613,
+      "best_throughput_gain_pct": 0.05008750047243302,
+      "num_runs": 3
+    }
+  }
+}

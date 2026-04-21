@@ -1,0 +1,17 @@
+run,workload,page_size,policy,request_lookups,total_block_accesses,compulsory_misses,compulsory_miss_rate,reuse_accesses,reuse_access_rate,unique_blocks,max_blocks_per_request
+natural-periodic-refinement-gap__ps-128,natural_periodic_refinement_gap,128,lru,1960,66288,22464,0.3388848660391021,43824,0.6611151339608979,22464,36
+natural-periodic-refinement-gap__ps-128,natural_periodic_refinement_gap,128,belady,1960,66263,22464,0.3390127220319032,43799,0.6609872779680969,22464,36
+natural-periodic-refinement-gap__ps-16,natural_periodic_refinement_gap,16,lru,1948,529329,180456,0.34091462965376923,348873,0.6590853703462308,180456,291
+natural-periodic-refinement-gap__ps-16,natural_periodic_refinement_gap,16,belady,1961,533978,180456,0.337946507159471,353522,0.6620534928405291,180456,291
+natural-periodic-refinement-gap__ps-32,natural_periodic_refinement_gap,32,lru,1955,266391,89869,0.3373574933087079,176522,0.6626425066912921,89869,146
+natural-periodic-refinement-gap__ps-32,natural_periodic_refinement_gap,32,belady,1945,261647,89870,0.34347804484668276,171777,0.6565219551533172,89870,146
+natural-periodic-refinement-gap__ps-64,natural_periodic_refinement_gap,64,lru,1950,131815,44928,0.34084133065280886,86887,0.6591586693471911,44928,72
+natural-periodic-refinement-gap__ps-64,natural_periodic_refinement_gap,64,belady,1952,131721,44928,0.34108456510351426,86793,0.6589154348964857,44928,72
+natural-tenant-rotation-gap__ps-128,natural_tenant_rotation_gap,128,lru,1617,56126,3584,0.06385632327263657,52542,0.9361436767273634,3584,36
+natural-tenant-rotation-gap__ps-128,natural_tenant_rotation_gap,128,belady,1613,56176,3584,0.06379948732554827,52592,0.9362005126744517,3584,36
+natural-tenant-rotation-gap__ps-16,natural_tenant_rotation_gap,16,lru,1622,455162,29841,0.06556127268972366,425321,0.9344387273102763,29841,292
+natural-tenant-rotation-gap__ps-16,natural_tenant_rotation_gap,16,belady,1600,446198,29841,0.06687838134639779,416357,0.9331216186536022,29841,292
+natural-tenant-rotation-gap__ps-32,natural_tenant_rotation_gap,32,lru,1618,225812,14833,0.06568738596708766,210979,0.9343126140329123,14833,146
+natural-tenant-rotation-gap__ps-32,natural_tenant_rotation_gap,32,belady,1612,226354,14833,0.06553009887167888,211521,0.9344699011283212,14833,146
+natural-tenant-rotation-gap__ps-64,natural_tenant_rotation_gap,64,lru,1613,112591,7633,0.0677940510342745,104958,0.9322059489657255,7633,73
+natural-tenant-rotation-gap__ps-64,natural_tenant_rotation_gap,64,belady,1613,113006,7633,0.06754508610162292,105373,0.9324549138983771,7633,73

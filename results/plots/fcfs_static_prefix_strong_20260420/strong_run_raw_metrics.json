@@ -1,0 +1,38 @@
+{
+  "serving": {
+    "lru": {
+      "request_throughput": 8.807387156432904,
+      "output_throughput": 183.8542068905369,
+      "median_ttft_ms": 12782.736930064857,
+      "p99_ttft_ms": 13481.028971401978,
+      "median_itl_ms": 20.646446384489536,
+      "p99_itl_ms": 550.1684472057968,
+      "median_e2e_latency_ms": 14529.735053656623,
+      "p99_e2e_latency_ms": 15337.802450219171
+    },
+    "belady": {
+      "request_throughput": 8.7909045814466,
+      "output_throughput": 183.51013313769778,
+      "median_ttft_ms": 12819.956865627319,
+      "p99_ttft_ms": 13589.19249237515,
+      "median_itl_ms": 19.955115392804146,
+      "p99_itl_ms": 551.7390371533111,
+      "median_e2e_latency_ms": 14573.075178079307,
+      "p99_e2e_latency_ms": 15378.072026837617
+    }
+  },
+  "cache": {
+    "lru_hits": 828584,
+    "lru_misses": 399524,
+    "lru_hit_rate": 0.6746833340390259,
+    "lru_miss_rate": 0.32531666596097414,
+    "belady_hits": 843843,
+    "belady_misses": 380432,
+    "belady_hit_rate": 0.6892593575789753,
+    "belady_miss_rate": 0.31074064242102467
+  },
+  "transfer_proxy_bytes": {
+    "lru": 837862555648,
+    "belady": 797823729664
+  }
+}

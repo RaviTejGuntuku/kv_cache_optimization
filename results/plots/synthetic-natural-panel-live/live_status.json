@@ -1,0 +1,15 @@
+{
+  "completed_run_count": 3,
+  "completed_run_roots": [
+    "runs/experiments/synthetic-natural-panel/workloads/natural-bursty-return-hbm/sched-fcfs/mc-128",
+    "runs/experiments/synthetic-natural-panel/workloads/natural-bursty-return-hbm/sched-fcfs/mc-96",
+    "runs/experiments/synthetic-natural-panel/workloads/natural-bursty-return-hbm/sched-prefix-coverage/mc-96"
+  ],
+  "experiment_root": "runs/experiments/synthetic-natural-panel",
+  "generated_at_utc": "2026-04-19T13:15:13.447048+00:00",
+  "partial_run_count": 1,
+  "partial_run_roots": [
+    "runs/experiments/synthetic-natural-panel/workloads/natural-bursty-return-hbm/sched-prefix-coverage/mc-128"
+  ],
+  "planned_run_count": 12
+}

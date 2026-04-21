@@ -1,0 +1,41 @@
+{
+  "description": "Recurring high-value tenants revisit large shared prompts after a wide rotation of other tenants. This mimics multi-tenant traffic where the next useful prefix is often not the most recently used one.",
+  "family": "tenant-rotation-gap",
+  "gpu_kv_capacity_blocks": 16000,
+  "name": "natural_tenant_rotation_gap",
+  "page_size": 16,
+  "per_request_full_blocks_estimate": 320,
+  "pressure_by_concurrency": [
+    {
+      "concurrency": 64,
+      "estimated_full_request_pressure": 1.28
+    },
+    {
+      "concurrency": 96,
+      "estimated_full_request_pressure": 1.92
+    },
+    {
+      "concurrency": 128,
+      "estimated_full_request_pressure": 2.56
+    },
+    {
+      "concurrency": 160,
+      "estimated_full_request_pressure": 3.2
+    }
+  ],
+  "recommended_concurrency": 96,
+  "recommended_concurrency_pressure": 1.92,
+  "selected_requests": 640,
+  "spec": {
+    "cold_families": 24,
+    "description": "Recurring high-value tenants revisit large shared prompts after a wide rotation of other tenants. This mimics multi-tenant traffic where the next useful prefix is often not the most recently used one.",
+    "family": "tenant-rotation-gap",
+    "hot_families": 8,
+    "interference_span": 4,
+    "name": "natural_tenant_rotation_gap",
+    "output_len": 512,
+    "prefix_tokens": 4096,
+    "rounds": 16,
+    "suffix_tokens": 512
+  }
+}

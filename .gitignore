@@ -1,1 +1,34 @@
 sglang/
+
+# Python caches and local virtualenvs
+__pycache__/
+*.py[cod]
+.venv*/
+
+# macOS finder metadata
+.DS_Store
+
+# Local tool state
+.claude/
+.codex_state/
+
+# Local/generated experiment artifacts. Keep source code, docs, plots, and compact
+# summaries in git; keep large raw traces and remote sync dumps out of git.
+runs/
+results/remote_sync/
+data/raw/
+data/processed/
+data/synthetic/natural_saturated/
+data/synthetic/natural_saturated_reordered/
+data/synthetic/natural_saturated_strong/
+data/synthetic/recency_trap/
+data/synthetic/shared_prefix/
+
+# Heavy generated benchmark internals wherever they appear.
+**/traces/
+**/benchmarks/*.jsonl
+**/plans/belady_plan.json
+
+# Local analysis environments.
+.venv-analysis/
+.venv-plots/

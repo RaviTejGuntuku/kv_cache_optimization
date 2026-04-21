@@ -1,0 +1,41 @@
+{
+  "description": "Iterative refinement workflows revisit large shared contexts across stages, but each revisit is separated by many side analyses and tool outputs. This mimics agent or analyst loops with delayed reuse.",
+  "family": "periodic-refinement-gap",
+  "gpu_kv_capacity_blocks": 16000,
+  "name": "natural_periodic_refinement_gap",
+  "page_size": 16,
+  "per_request_full_blocks_estimate": 320,
+  "pressure_by_concurrency": [
+    {
+      "concurrency": 64,
+      "estimated_full_request_pressure": 1.28
+    },
+    {
+      "concurrency": 96,
+      "estimated_full_request_pressure": 1.92
+    },
+    {
+      "concurrency": 128,
+      "estimated_full_request_pressure": 2.56
+    },
+    {
+      "concurrency": 160,
+      "estimated_full_request_pressure": 3.2
+    }
+  ],
+  "recommended_concurrency": 96,
+  "recommended_concurrency_pressure": 1.92,
+  "selected_requests": 720,
+  "spec": {
+    "cold_families": 0,
+    "description": "Iterative refinement workflows revisit large shared contexts across stages, but each revisit is separated by many side analyses and tool outputs. This mimics agent or analyst loops with delayed reuse.",
+    "family": "periodic-refinement-gap",
+    "hot_families": 12,
+    "interference_span": 5,
+    "name": "natural_periodic_refinement_gap",
+    "output_len": 512,
+    "prefix_tokens": 4096,
+    "rounds": 10,
+    "suffix_tokens": 512
+  }
+}

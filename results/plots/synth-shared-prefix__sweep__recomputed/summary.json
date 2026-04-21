@@ -1,0 +1,6 @@
+{
+  "best_block_miss_rate_reduction": 0.0154743642199075,
+  "best_throughput_gain_tokens_per_s": 4.373942372975392,
+  "best_ttft_reduction_ms": 1634.2777162790298,
+  "num_runs": 5
+}

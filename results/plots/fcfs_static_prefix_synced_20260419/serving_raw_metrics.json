@@ -1,0 +1,74 @@
+[
+  {
+    "label": "Bursty Return",
+    "policy": "lru",
+    "request_throughput": 56.14101000149562,
+    "output_throughput": 863.1680287729952,
+    "median_ttft_ms": 1321.5035530738533,
+    "p99_ttft_ms": 3048.404875774868,
+    "median_itl_ms": 9.996969252824783,
+    "p99_itl_ms": 366.4698394015432,
+    "median_e2e_latency_ms": 1855.616175569594,
+    "p99_e2e_latency_ms": 3474.323673527688
+  },
+  {
+    "label": "Bursty Return",
+    "policy": "belady",
+    "request_throughput": 58.588325459882,
+    "output_throughput": 900.7955039456858,
+    "median_ttft_ms": 1332.1591215208173,
+    "p99_ttft_ms": 2937.844910235144,
+    "median_itl_ms": 9.587563807144761,
+    "p99_itl_ms": 367.16135030146785,
+    "median_e2e_latency_ms": 1754.3882303871214,
+    "p99_e2e_latency_ms": 3194.561901963316
+  },
+  {
+    "label": "Hotset vs One-Shot",
+    "policy": "lru",
+    "request_throughput": 13.319714196714461,
+    "output_throughput": 267.16272898409966,
+    "median_ttft_ms": 7793.157275300473,
+    "p99_ttft_ms": 9403.160899225622,
+    "median_itl_ms": 9.895089082419872,
+    "p99_itl_ms": 685.2003177441657,
+    "median_e2e_latency_ms": 9296.15670000203,
+    "p99_e2e_latency_ms": 10973.082300787797
+  },
+  {
+    "label": "Hotset vs One-Shot",
+    "policy": "belady",
+    "request_throughput": 13.347110150272078,
+    "output_throughput": 267.71222859103415,
+    "median_ttft_ms": 7733.998521231115,
+    "p99_ttft_ms": 9420.052449335344,
+    "median_itl_ms": 12.459984049201012,
+    "p99_itl_ms": 724.0699614305046,
+    "median_e2e_latency_ms": 9243.888585828245,
+    "p99_e2e_latency_ms": 10770.828787377104
+  },
+  {
+    "label": "Zipf Bursty",
+    "policy": "lru",
+    "request_throughput": 58.15524724922595,
+    "output_throughput": 1076.5812844429877,
+    "median_ttft_ms": 1274.565928382799,
+    "p99_ttft_ms": 2360.303386859596,
+    "median_itl_ms": 11.786084622144699,
+    "p99_itl_ms": 565.7134523335844,
+    "median_e2e_latency_ms": 2597.6070982869714,
+    "p99_e2e_latency_ms": 2664.8827210534364
+  },
+  {
+    "label": "Zipf Bursty",
+    "policy": "belady",
+    "request_throughput": 58.33211442093998,
+    "output_throughput": 1079.8554840364254,
+    "median_ttft_ms": 1278.615829301998,
+    "p99_ttft_ms": 2351.251779659651,
+    "median_itl_ms": 10.756456758826971,
+    "p99_itl_ms": 563.7021941598498,
+    "median_e2e_latency_ms": 2584.903750801459,
+    "p99_e2e_latency_ms": 2690.836242143996
+  }
+]

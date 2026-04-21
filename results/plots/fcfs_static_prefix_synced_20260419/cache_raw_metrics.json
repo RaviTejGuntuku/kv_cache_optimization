@@ -1,0 +1,56 @@
+[
+  {
+    "label": "Bursty Return",
+    "policy": "lru",
+    "hbm_hits": 131679,
+    "hbm_misses": 9321,
+    "hbm_hit_rate": 0.9338936170212766,
+    "hbm_miss_rate": 0.0661063829787234,
+    "transfer_proxy_bytes": 19547553792
+  },
+  {
+    "label": "Bursty Return",
+    "policy": "belady",
+    "hbm_hits": 131899,
+    "hbm_misses": 9321,
+    "hbm_hit_rate": 0.9339966010480102,
+    "hbm_miss_rate": 0.0660033989519898,
+    "transfer_proxy_bytes": 19547553792
+  },
+  {
+    "label": "Hotset vs One-Shot",
+    "policy": "lru",
+    "hbm_hits": 142785,
+    "hbm_misses": 70258,
+    "hbm_hit_rate": 0.6702168106907995,
+    "hbm_miss_rate": 0.3297831893092005,
+    "transfer_proxy_bytes": 147341705216
+  },
+  {
+    "label": "Hotset vs One-Shot",
+    "policy": "belady",
+    "hbm_hits": 144160,
+    "hbm_misses": 69676,
+    "hbm_hit_rate": 0.6741615069492508,
+    "hbm_miss_rate": 0.3258384930507492,
+    "transfer_proxy_bytes": 146121162752
+  },
+  {
+    "label": "Zipf Bursty",
+    "policy": "lru",
+    "hbm_hits": 114734,
+    "hbm_misses": 6897,
+    "hbm_hit_rate": 0.9432957058644589,
+    "hbm_miss_rate": 0.0567042941355411,
+    "transfer_proxy_bytes": 14464057344
+  },
+  {
+    "label": "Zipf Bursty",
+    "policy": "belady",
+    "hbm_hits": 114496,
+    "hbm_misses": 6897,
+    "hbm_hit_rate": 0.9431845328808086,
+    "hbm_miss_rate": 0.05681546711919139,
+    "transfer_proxy_bytes": 14464057344
+  }
+]
