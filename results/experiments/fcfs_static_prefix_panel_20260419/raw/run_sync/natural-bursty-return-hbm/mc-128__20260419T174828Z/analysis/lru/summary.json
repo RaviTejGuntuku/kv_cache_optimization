@@ -1,0 +1,18 @@
+{
+  "trace_path": "results/remote_sync/fcfs_static_prefix/natural-bursty-return-hbm/mc-128__20260419T174828Z/traces/lru.jsonl",
+  "lookup_summary": {
+    "request_count": 674
+  },
+  "page_cache_simulation": {
+    "capacity_blocks": 16000,
+    "total_accesses": 141000,
+    "lru_hits": 131679,
+    "lru_misses": 9321,
+    "lru_hit_rate": 0.9338936170212766,
+    "lru_miss_rate": 0.0661063829787234,
+    "compulsory_misses": 9321,
+    "reuse_accesses": 131679,
+    "lru_reuse_hits": 131679,
+    "lru_reuse_misses": 0
+  }
+}

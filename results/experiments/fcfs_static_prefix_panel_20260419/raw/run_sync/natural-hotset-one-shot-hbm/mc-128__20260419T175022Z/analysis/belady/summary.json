@@ -1,0 +1,24 @@
+{
+  "trace_path": "results/remote_sync/fcfs_static_prefix/natural-hotset-one-shot-hbm/mc-128__20260419T175022Z/traces/belady.jsonl",
+  "lookup_summary": {
+    "request_count": 1067,
+    "requested_blocks": 213836,
+    "requested_tokens": 3421376,
+    "mean_blocks_per_request": 200.40862230552952,
+    "mean_tokens_per_request": 3206.5379568884723
+  },
+  "page_cache_simulation": {
+    "capacity_blocks": 16000,
+    "total_accesses": 213836,
+    "belady_hits": 144160,
+    "belady_misses": 69676,
+    "belady_hit_rate": 0.6741615069492508,
+    "belady_miss_rate": 0.3258384930507492,
+    "compulsory_misses": 69676,
+    "reuse_accesses": 144160,
+    "belady_reuse_hits": 144160,
+    "belady_reuse_misses": 0,
+    "belady_reuse_hit_rate": 1.0,
+    "belady_reuse_miss_rate": 0.0
+  }
+}

@@ -138,16 +138,16 @@ Remote run root on the GPU machine:
 
 Local synced run root:
 
-- [mc-128__20260420T034251Z](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/remote_sync/fcfs_static_prefix_strong/natural-hotset-one-shot-hbm-strong/mc-128__20260420T034251Z)
+- [mc-128__20260420T034251Z](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/fcfs_static_prefix_strong_20260420/raw/run_sync/natural-hotset-one-shot-hbm-strong/mc-128__20260420T034251Z)
 
 Files from that run:
 
-- [benchmarks/lru.jsonl](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/remote_sync/fcfs_static_prefix_strong/natural-hotset-one-shot-hbm-strong/mc-128__20260420T034251Z/benchmarks/lru.jsonl)
-- [benchmarks/belady.jsonl](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/remote_sync/fcfs_static_prefix_strong/natural-hotset-one-shot-hbm-strong/mc-128__20260420T034251Z/benchmarks/belady.jsonl)
-- [traces/lru.jsonl](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/remote_sync/fcfs_static_prefix_strong/natural-hotset-one-shot-hbm-strong/mc-128__20260420T034251Z/traces/lru.jsonl)
-- [traces/belady.jsonl](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/remote_sync/fcfs_static_prefix_strong/natural-hotset-one-shot-hbm-strong/mc-128__20260420T034251Z/traces/belady.jsonl)
-- [plans/belady_plan.json](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/remote_sync/fcfs_static_prefix_strong/natural-hotset-one-shot-hbm-strong/mc-128__20260420T034251Z/plans/belady_plan.json)
-- [run_metadata.json](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/remote_sync/fcfs_static_prefix_strong/natural-hotset-one-shot-hbm-strong/mc-128__20260420T034251Z/run_metadata.json)
+- [benchmarks/lru.jsonl](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/fcfs_static_prefix_strong_20260420/raw/run_sync/natural-hotset-one-shot-hbm-strong/mc-128__20260420T034251Z/benchmarks/lru.jsonl)
+- [benchmarks/belady.jsonl](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/fcfs_static_prefix_strong_20260420/raw/run_sync/natural-hotset-one-shot-hbm-strong/mc-128__20260420T034251Z/benchmarks/belady.jsonl)
+- [traces/lru.jsonl](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/fcfs_static_prefix_strong_20260420/raw/run_sync/natural-hotset-one-shot-hbm-strong/mc-128__20260420T034251Z/traces/lru.jsonl)
+- [traces/belady.jsonl](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/fcfs_static_prefix_strong_20260420/raw/run_sync/natural-hotset-one-shot-hbm-strong/mc-128__20260420T034251Z/traces/belady.jsonl)
+- [plans/belady_plan.json](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/fcfs_static_prefix_strong_20260420/raw/run_sync/natural-hotset-one-shot-hbm-strong/mc-128__20260420T034251Z/plans/belady_plan.json)
+- [run_metadata.json](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/fcfs_static_prefix_strong_20260420/raw/run_sync/natural-hotset-one-shot-hbm-strong/mc-128__20260420T034251Z/run_metadata.json)
 
 ## How Cache Hits And Misses Were Computed
 
@@ -199,8 +199,8 @@ Interpretation:
 
 Plots for the stronger run:
 
-- [fcfs_static_prefix_strong_20260420](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/plots/fcfs_static_prefix_strong_20260420)
+- [strong_run_bars](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/fcfs_static_prefix_strong_20260420/graphs/strong_run_bars)
 
 Plots for the earlier three-workload FCFS panel:
 
-- [fcfs_static_prefix_synced_20260419](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/plots/fcfs_static_prefix_synced_20260419)
+- [static_prefix_panel_bars](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/fcfs_static_prefix_panel_20260419/graphs/static_prefix_panel_bars)

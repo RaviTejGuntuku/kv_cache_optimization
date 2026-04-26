@@ -77,3 +77,7 @@ To keep total runtime reasonable on one H100:
 - skip remote analysis during serving runs and post-process later
 
 This should stay in a manageable single-GPU budget while being much stronger than the earlier FCFS panel.
+
+## Canonical Results Folder
+
+- [results/experiments/adversarial_fcfs_page_size_20260420](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/adversarial_fcfs_page_size_20260420)

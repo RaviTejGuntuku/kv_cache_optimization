@@ -1,0 +1,18 @@
+{
+  "trace_path": "results/remote_sync/fcfs_static_prefix/natural-bursty-return-hbm/mc-128__20260419T174828Z/traces/belady.jsonl",
+  "lookup_summary": {
+    "request_count": 674
+  },
+  "page_cache_simulation": {
+    "capacity_blocks": 16000,
+    "total_accesses": 141220,
+    "belady_hits": 131899,
+    "belady_misses": 9321,
+    "belady_hit_rate": 0.9339966010480102,
+    "belady_miss_rate": 0.0660033989519898,
+    "compulsory_misses": 9321,
+    "reuse_accesses": 131899,
+    "belady_reuse_hits": 131899,
+    "belady_reuse_misses": 0
+  }
+}

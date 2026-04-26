@@ -1,0 +1,102 @@
+{
+  "serving_metrics": {
+    "request_throughput": {
+      "lru": 58.15524724922595,
+      "belady": 58.33211442093998
+    },
+    "output_throughput": {
+      "lru": 1076.5812844429877,
+      "belady": 1079.8554840364254
+    },
+    "median_ttft_ms": {
+      "lru": 1274.565928382799,
+      "belady": 1278.615829301998
+    },
+    "p99_ttft_ms": {
+      "lru": 2360.303386859596,
+      "belady": 2351.251779659651
+    },
+    "median_itl_ms": {
+      "lru": 11.786084622144699,
+      "belady": 10.756456758826971
+    },
+    "p99_itl_ms": {
+      "lru": 565.7134523335844,
+      "belady": 563.7021941598498
+    },
+    "median_e2e_latency_ms": {
+      "lru": 2597.6070982869714,
+      "belady": 2584.903750801459
+    },
+    "p99_e2e_latency_ms": {
+      "lru": 2664.8827210534364,
+      "belady": 2690.836242143996
+    }
+  },
+  "cache_metrics": {
+    "lru_cache_hit_rate_server": null,
+    "belady_cache_hit_rate_server": null,
+    "hbm_hit_count_lru": 114734,
+    "hbm_miss_count_lru": 6897,
+    "hbm_hit_rate_lru": 0.9432957058644589,
+    "hbm_miss_rate_lru": 0.0567042941355411,
+    "hbm_hit_count_belady": 114496,
+    "hbm_miss_count_belady": 6897,
+    "hbm_hit_rate_belady": 0.9431845328808086,
+    "hbm_miss_rate_belady": 0.05681546711919139,
+    "lru_trace_summary": {
+      "trace_path": "/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/remote_sync/fcfs_static_prefix/natural-zipf-bursty-hbm/mc-128__20260419T175300Z/traces/lru.jsonl",
+      "lookup_summary": {
+        "request_count": 504,
+        "requested_blocks": 121631,
+        "requested_tokens": 1946096,
+        "mean_blocks_per_request": 241.33134920634922,
+        "mean_tokens_per_request": 3861.3015873015875
+      },
+      "page_cache_simulation": {
+        "capacity_blocks": 16000,
+        "total_accesses": 121631,
+        "lru_hits": 114734,
+        "lru_misses": 6897,
+        "lru_hit_rate": 0.9432957058644589,
+        "lru_miss_rate": 0.0567042941355411,
+        "compulsory_misses": 6897,
+        "reuse_accesses": 114734,
+        "lru_reuse_hits": 114734,
+        "lru_reuse_misses": 0,
+        "lru_reuse_hit_rate": 1.0,
+        "lru_reuse_miss_rate": 0.0
+      }
+    },
+    "belady_trace_summary": {
+      "trace_path": "/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/remote_sync/fcfs_static_prefix/natural-zipf-bursty-hbm/mc-128__20260419T175300Z/traces/belady.jsonl",
+      "lookup_summary": {
+        "request_count": 503,
+        "requested_blocks": 121393,
+        "requested_tokens": 1942288,
+        "mean_blocks_per_request": 241.33797216699801,
+        "mean_tokens_per_request": 3861.4075546719682
+      },
+      "page_cache_simulation": {
+        "capacity_blocks": 16000,
+        "total_accesses": 121393,
+        "belady_hits": 114496,
+        "belady_misses": 6897,
+        "belady_hit_rate": 0.9431845328808086,
+        "belady_miss_rate": 0.05681546711919139,
+        "compulsory_misses": 6897,
+        "reuse_accesses": 114496,
+        "belady_reuse_hits": 114496,
+        "belady_reuse_misses": 0,
+        "belady_reuse_hit_rate": 1.0,
+        "belady_reuse_miss_rate": 0.0
+      }
+    }
+  },
+  "transfer_proxy_bytes": {
+    "lru": 14464057344,
+    "belady": 14464057344,
+    "delta": 0,
+    "pct_delta": 0.0
+  }
+}

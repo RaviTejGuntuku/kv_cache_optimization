@@ -1,0 +1,24 @@
+{
+  "trace_path": "results/remote_sync/fcfs_static_prefix/natural-hotset-one-shot-hbm/mc-128__20260419T175022Z/traces/lru.jsonl",
+  "lookup_summary": {
+    "request_count": 1068,
+    "requested_blocks": 213043,
+    "requested_tokens": 3408688,
+    "mean_blocks_per_request": 199.47846441947564,
+    "mean_tokens_per_request": 3191.6554307116103
+  },
+  "page_cache_simulation": {
+    "capacity_blocks": 16000,
+    "total_accesses": 213043,
+    "lru_hits": 142785,
+    "lru_misses": 70258,
+    "lru_hit_rate": 0.6702168106907995,
+    "lru_miss_rate": 0.3297831893092005,
+    "compulsory_misses": 69676,
+    "reuse_accesses": 143367,
+    "lru_reuse_hits": 142785,
+    "lru_reuse_misses": 582,
+    "lru_reuse_hit_rate": 0.9959404883969114,
+    "lru_reuse_miss_rate": 0.0040595116030885765
+  }
+}
