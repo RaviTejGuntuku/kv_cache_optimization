@@ -16,14 +16,6 @@
         "variant": "optimistic"
       }
     ],
-    "opt_with_incoming_line": [
-      {
-        "manifest": "data/synthetic/headroom_studies/opt_with_incoming_line/incoming_suffix_pollution.manifest.json",
-        "name": "incoming_suffix_pollution",
-        "path": "data/synthetic/headroom_studies/opt_with_incoming_line/incoming_suffix_pollution.jsonl",
-        "variant": "optimistic"
-      }
-    ],
     "recomputation_microbenchmark": [
       {
         "manifest": "data/synthetic/headroom_studies/recomputation_microbenchmark/recompute_k_block_ladder.manifest.json",

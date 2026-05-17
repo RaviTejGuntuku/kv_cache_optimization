@@ -49,7 +49,6 @@ Even though this is a microbenchmark, still retain:
 - compulsory misses
 - `LRU`
 - `OPT`
-- incoming-line-aware `OPT`
 
 For the ladder workload, the key baseline is the fully reused case for the same prompt family.
 
@@ -143,12 +142,11 @@ Current implemented sweep:
 What the runner does:
 
 1. runs a small `LRU -> OPT` two-pass baseline on the sampled dataset
-2. runs a small `LRU -> OPT+bypass` two-pass baseline on the sampled dataset
-3. launches an LRU server
-4. for each sampled row, runs the same one-row dataset twice:
+2. launches an LRU server
+3. for each sampled row, runs the same one-row dataset twice:
    - first cold
    - then warm
-5. writes `microbench_summary.json` with cold-vs-warm deltas
+4. writes `microbench_summary.json` with cold-vs-warm deltas
 
 Expected runtime:
 

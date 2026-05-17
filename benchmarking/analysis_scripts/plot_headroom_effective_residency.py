@@ -8,7 +8,7 @@ from pathlib import Path
 from headroom_plot_common import ensure_dir, load_json, plot_lines, write_csv, write_json
 
 
-RUN_RE = re.compile(r"(?P<workload>.+)__ps(?P<page>\d+)__mem(?P<mem>\d+)__(?P<policy>belady|belady_bypass)$")
+RUN_RE = re.compile(r"(?P<workload>.+)__ps(?P<page>\d+)__mem(?P<mem>\d+)__(?P<policy>belady)$")
 
 
 def parse_args() -> argparse.Namespace:
@@ -34,7 +34,7 @@ def build_rows(experiment_root: Path) -> list[dict]:
         workload = match.group("workload")
         page_size = int(match.group("page"))
         mem_fraction = int(match.group("mem")) / 100.0
-        secondary_policy = "opt" if match.group("policy") == "belady" else "opt_bypass"
+        secondary_policy = "opt"
 
         trace_summary = report["cache_metrics"]["primary_trace_summary"]
         page_cache = trace_summary["page_cache_simulation"]
@@ -125,7 +125,7 @@ def main() -> None:
 
     lru_headroom_rows: list[dict] = []
 
-    policy_order = ["lru", "opt", "opt_bypass", "compulsory"]
+    policy_order = ["lru", "opt", "compulsory"]
     for workload in sorted({row["workload"] for row in rows}):
         workload_rows = [row for row in rows if row["workload"] == workload]
         serving_rows = [row for row in workload_rows if row["policy"] != "compulsory"]
@@ -177,7 +177,7 @@ def main() -> None:
                 xlabel="mem_fraction_static",
                 ylabel=ylabel,
                 output_path=graphs_dir / f"{workload}__{metric}_vs_mem_fraction.png",
-                series_order=["lru", "opt", "opt_bypass"],
+                series_order=["lru", "opt"],
             )
         plot_lines(
             rows=miss_rows,

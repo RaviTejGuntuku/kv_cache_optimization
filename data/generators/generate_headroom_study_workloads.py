@@ -337,112 +337,6 @@ def build_recompute_resume_mix(spec: WorkloadSpec) -> list[dict]:
     return rows
 
 
-def build_incoming_suffix_pollution(spec: WorkloadSpec) -> list[dict]:
-    rows: list[dict] = []
-    seq = 0
-    shared = [f"incoming_shared_{idx:02d}" for idx in range(spec.hot_families)]
-
-    for round_id in range(spec.rounds):
-        for family_idx, family in enumerate(shared):
-            rows.append(
-                make_row(
-                    make_family_prompt(
-                        family,
-                        round_id,
-                        prefix_tokens=spec.prefix_tokens,
-                        suffix_tokens=spec.suffix_tokens,
-                        offset=family_idx * 31,
-                        phase_label=f"shared-{round_id}",
-                    ),
-                    family=family,
-                    branch=round_id,
-                    sequence_id=seq,
-                    phase=f"shared_round_{round_id}",
-                    kind="shared",
-                    prefix_tokens=spec.prefix_tokens,
-                    suffix_tokens=spec.suffix_tokens,
-                    output_len=spec.output_len,
-                )
-            )
-            seq += 1
-
-            for branch_idx in range(spec.interference_span):
-                tag = f"polluting_suffix_{round_id:02d}_{family_idx:02d}_{branch_idx:02d}"
-                rows.append(
-                    make_row(
-                        make_unique_prompt(tag, spec.prefix_tokens + spec.suffix_tokens, 3200 + seq * 7),
-                        family=tag,
-                        branch=0,
-                        sequence_id=seq,
-                        phase=f"pollution_round_{round_id}",
-                        kind="unique",
-                        prefix_tokens=spec.prefix_tokens,
-                        suffix_tokens=spec.prefix_tokens + spec.suffix_tokens,
-                        output_len=spec.output_len,
-                    )
-                )
-                seq += 1
-
-    return rows
-
-
-def build_incoming_personalized_burst(spec: WorkloadSpec) -> list[dict]:
-    rows: list[dict] = []
-    seq = 0
-    accounts = [f"acct_{idx:02d}" for idx in range(spec.hot_families)]
-    long_tail = [f"tail_{idx:02d}" for idx in range(spec.cold_families)]
-
-    for wave in range(spec.rounds):
-        for acct_idx, family in enumerate(accounts):
-            rows.append(
-                make_row(
-                    make_family_prompt(
-                        family,
-                        wave,
-                        prefix_tokens=spec.prefix_tokens,
-                        suffix_tokens=spec.suffix_tokens,
-                        offset=acct_idx * 43,
-                        phase_label=f"acct-wave-{wave}",
-                    ),
-                    family=family,
-                    branch=wave,
-                    sequence_id=seq,
-                    phase=f"acct_wave_{wave}",
-                    kind="shared",
-                    prefix_tokens=spec.prefix_tokens,
-                    suffix_tokens=spec.suffix_tokens,
-                    output_len=spec.output_len,
-                )
-            )
-            seq += 1
-
-        for tail_idx in range(spec.interference_span):
-            family = long_tail[(wave * spec.interference_span + tail_idx) % len(long_tail)]
-            rows.append(
-                make_row(
-                    make_family_prompt(
-                        family,
-                        wave,
-                        prefix_tokens=spec.prefix_tokens,
-                        suffix_tokens=spec.suffix_tokens,
-                        offset=4000 + tail_idx * 47,
-                        phase_label=f"tail-wave-{wave}",
-                    ),
-                    family=family,
-                    branch=wave,
-                    sequence_id=seq,
-                    phase=f"tail_wave_{wave}",
-                    kind="shared",
-                    prefix_tokens=spec.prefix_tokens,
-                    suffix_tokens=spec.suffix_tokens,
-                    output_len=spec.output_len,
-                )
-            )
-            seq += 1
-
-    return rows
-
-
 BUILDERS = {
     "residency_hotset_ladder": build_residency_hotset_ladder,
     "residency_tenant_backlog": build_residency_tenant_backlog,
@@ -450,8 +344,6 @@ BUILDERS = {
     "critical_path_agent_resume": build_critical_path_agent_resume,
     "recompute_ladder": build_recompute_ladder,
     "recompute_resume_mix": build_recompute_resume_mix,
-    "incoming_suffix_pollution": build_incoming_suffix_pollution,
-    "incoming_personalized_burst": build_incoming_personalized_burst,
 }
 
 
@@ -516,26 +408,6 @@ SPECS: tuple[WorkloadSpec, ...] = (
         concurrency_hint=1,
         page_sizes=(16, 32, 64, 128),
         capacity_sweep_blocks=(4000, 6000, 8000),
-    ),
-    WorkloadSpec(
-        experiment="opt_with_incoming_line",
-        variant="optimistic",
-        name="incoming_suffix_pollution",
-        description=(
-            "Reusable shared stems compete with many one-shot personalized suffix blocks. This is "
-            "the optimistic workload for testing admission plus eviction relative to eviction alone."
-        ),
-        builder="incoming_suffix_pollution",
-        prefix_tokens=4096,
-        suffix_tokens=256,
-        output_len=256,
-        hot_families=8,
-        cold_families=0,
-        rounds=18,
-        interference_span=8,
-        concurrency_hint=96,
-        page_sizes=(16, 32, 64, 128),
-        capacity_sweep_blocks=(4000, 6000, 8000, 10000, 12000),
     ),
 )
 

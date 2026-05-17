@@ -40,7 +40,7 @@ def build_baseline_rows(experiment_root: Path) -> list[dict]:
             continue
         workload = match.group("workload")
         page_size = int(match.group("page"))
-        for policy_dir_name, policy_name in (("opt", "opt"), ("opt_bypass", "opt_bypass")):
+        for policy_dir_name, policy_name in (("opt", "opt"),):
             report_path = run_dir / policy_dir_name / "reports" / "comparison.json"
             if not report_path.exists():
                 continue
@@ -135,7 +135,7 @@ def main() -> None:
         {"baseline_rows": baseline_rows, "microbench_rows": microbench_rows},
     )
 
-    policy_order = ["lru", "opt", "opt_bypass"]
+    policy_order = ["lru", "opt"]
     for workload in sorted({row["workload"] for row in baseline_rows}):
         workload_baselines = [row for row in baseline_rows if row["workload"] == workload]
         workload_microbench = [row for row in microbench_rows if row["workload"] == workload]

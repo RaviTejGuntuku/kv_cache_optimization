@@ -54,14 +54,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--second-policy",
         default="belady",
-        choices=["belady", "belady_bypass"],
+        choices=["belady"],
         help="Policy used in the second run after compiling the baseline trace.",
-    )
-    parser.add_argument(
-        "--second-policy-cache-fraction",
-        type=float,
-        default=None,
-        help="Required when --second-policy=belady_bypass. Fraction of KV-HBM reserved for the reusable cache.",
     )
     return parser.parse_args()
 
@@ -234,26 +228,12 @@ def main() -> None:
         "TRACE_DIR": str(traces_dir),
         "BELADY_PLAN_PATH": str(plan_path),
     }
-    if args.second_policy == "belady":
-        second_policy_env = belady_env
-        second_server_cmd = [
-            "/bin/bash",
-            str(root / "benchmarking" / "launchers" / "launch_belady_server.sh"),
-            *extra_args,
-        ]
-    else:
-        if args.second_policy_cache_fraction is None:
-            raise ValueError(
-                "--second-policy-cache-fraction is required when --second-policy=belady_bypass"
-            )
-        second_policy_env = belady_env | {
-            "SGLANG_BELADY_CACHE_FRACTION": str(args.second_policy_cache_fraction)
-        }
-        second_server_cmd = [
-            "/bin/bash",
-            str(root / "benchmarking" / "launchers" / "launch_belady_bypass_server.sh"),
-            *extra_args,
-        ]
+    second_policy_env = belady_env
+    second_server_cmd = [
+        "/bin/bash",
+        str(root / "benchmarking" / "launchers" / "launch_belady_server.sh"),
+        *extra_args,
+    ]
     belady_proc = launch_server(second_server_cmd, env=second_policy_env, cwd=root)
     try:
         wait_until_ready(base_url)

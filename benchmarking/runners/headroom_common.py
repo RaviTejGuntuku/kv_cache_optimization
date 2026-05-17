@@ -69,7 +69,6 @@ def call_two_pass(
     schedule_policy: str,
     bench_seed: int,
     second_policy: str,
-    second_policy_cache_fraction: float | None,
     server_extra_args: str,
     skip_analysis: bool,
     dry_run: bool,
@@ -102,10 +101,6 @@ def call_two_pass(
         "--second-policy",
         second_policy,
     ]
-    if second_policy_cache_fraction is not None:
-        command.extend(
-            ["--second-policy-cache-fraction", str(second_policy_cache_fraction)]
-        )
     if server_extra_args:
         command.extend(["--server-extra-args", server_extra_args])
     if skip_analysis:

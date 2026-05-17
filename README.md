@@ -217,4 +217,4 @@ The main files to inspect are:
 - `prefix-coverage` can still be used by passing `--schedule-policy prefix-coverage` to the runners.
 - The canonical run tree is `runs/`. There is no longer a separate `runs_remote_sync/`.
 - Top-level summary artifacts and plots live under `results/`, with plots directly under `results/plots/` rather than `results/plots/local_plots/`.
-- Old predictive / three-policy outputs were removed so the repository only reflects the active Belady-vs-LRU study.
+- Old predictive / three-policy outputs were removed so the repository only reflects the active Belady-vs-LRU study and the three active headroom experiments.

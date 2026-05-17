@@ -8,7 +8,7 @@ from pathlib import Path
 from headroom_plot_common import ensure_dir, load_json, plot_lines, write_csv, write_json
 
 
-RUN_RE = re.compile(r"(?P<workload>.+)__ps(?P<page>\d+)__mem(?P<mem>\d+)__(?P<policy>belady|belady_bypass)$")
+RUN_RE = re.compile(r"(?P<workload>.+)__ps(?P<page>\d+)__mem(?P<mem>\d+)__(?P<policy>belady)$")
 
 
 def parse_args() -> argparse.Namespace:
@@ -38,8 +38,8 @@ def build_rows(experiment_root: Path) -> list[dict]:
         workload = match.group("workload")
         page_size = int(match.group("page"))
         mem_fraction = int(match.group("mem")) / 100.0
-        secondary_policy = "opt" if match.group("policy") == "belady" else "opt_bypass"
-        secondary_report_name = "belady_critical_path.json" if secondary_policy == "opt" else "belady_bypass_critical_path.json"
+        secondary_policy = "opt"
+        secondary_report_name = "belady_critical_path.json"
         lru_cp = critical_payload(run_dir, "lru_critical_path.json")
         secondary_cp = critical_payload(run_dir, secondary_report_name)
 
@@ -152,7 +152,7 @@ def main() -> None:
                 xlabel="mem_fraction_static",
                 ylabel=ylabel,
                 output_path=graphs_dir / f"{workload}__{metric}_vs_mem_fraction.png",
-                series_order=["lru", "opt", "opt_bypass"],
+                series_order=["lru", "opt"],
             )
 
         if lru_rows:

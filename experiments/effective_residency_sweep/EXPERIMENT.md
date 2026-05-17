@@ -63,14 +63,12 @@ These baselines should be computed for every capacity point:
 - compulsory misses
 - `LRU`
 - `OPT` with admission disabled
-- `OPT` with incoming-line competition enabled
 
 Interpretation:
 
 - compulsory misses are the lower floor on logical misses
 - `LRU` is the practical baseline
 - `OPT` tells us eviction-only headroom
-- incoming-line-aware `OPT` tells us admission plus eviction headroom
 
 ## Metrics
 
@@ -115,7 +113,6 @@ command can be rerun with that input path. The experiment design itself does not
 4. At each capacity, run:
    - `LRU`
    - `OPT`
-   - incoming-line-aware `OPT`
 5. Postprocess traces to compute:
    - compulsory misses
    - reuse misses
@@ -168,7 +165,6 @@ Current implemented sweep:
 - policies at each point:
   - `LRU` first pass
   - `OPT` second pass
-  - `OPT+bypass` second pass with default reusable-cache fraction `0.6`
 
 Expected runtime:
 

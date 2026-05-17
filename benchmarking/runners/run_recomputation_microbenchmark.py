@@ -63,7 +63,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--mode", choices=["pilot", "full"], default="pilot")
     parser.add_argument("--schedule-policy", default="fcfs")
     parser.add_argument("--bench-seed", type=int, default=1)
-    parser.add_argument("--bypass-cache-fraction", type=float, default=0.6)
     parser.add_argument("--server-extra-args", default="")
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
@@ -230,25 +229,6 @@ def main() -> None:
                 schedule_policy=args.schedule_policy,
                 bench_seed=args.bench_seed,
                 second_policy="belady",
-                second_policy_cache_fraction=None,
-                server_extra_args=server_extra_args,
-                skip_analysis=False,
-                dry_run=args.dry_run,
-            )
-            call_two_pass(
-                model_path=args.model_path,
-                dataset_path=str(sampled_dataset),
-                output_root=baseline_root / "opt_bypass",
-                page_size=page_size,
-                num_prompts=min(profile["sample_rows"], count_jsonl_rows(sampled_dataset)),
-                request_rate="inf",
-                max_concurrency=1,
-                mem_fraction_static=profile["mem_fraction_static"],
-                gpu_kv_capacity_blocks=16000,
-                schedule_policy=args.schedule_policy,
-                bench_seed=args.bench_seed,
-                second_policy="belady_bypass",
-                second_policy_cache_fraction=args.bypass_cache_fraction,
                 server_extra_args=server_extra_args,
                 skip_analysis=False,
                 dry_run=args.dry_run,

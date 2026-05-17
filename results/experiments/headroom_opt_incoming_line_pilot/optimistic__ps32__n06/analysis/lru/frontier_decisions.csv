@@ -1,9 +1,0 @@
-frontier_seq,candidate_count,actual_node_id,actual_next_use,belady_node_id,belady_next_use,actual_block_count,belady_block_count,same_choice
-200,3,2,,2,,137,137,True
-231,15,3,,3,,138,138,True
-233,14,27,,27,,1,1,True
-244,14,18,,18,,137,137,True
-246,13,4,,4,,137,137,True
-260,12,6,,6,,137,137,True
-262,11,8,,8,,19,19,True
-264,11,5,,5,,118,118,True

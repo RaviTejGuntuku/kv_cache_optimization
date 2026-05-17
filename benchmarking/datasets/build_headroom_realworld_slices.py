@@ -52,17 +52,6 @@ SPECS: tuple[SliceSpec, ...] = (
         min_prompt_len=2048,
         min_output_len=64,
     ),
-    SliceSpec(
-        experiment="opt_with_incoming_line",
-        output_name="opt_with_incoming_line__realworld_sequence",
-        description=(
-            "Natural request sequence slice for admission-control studies. Prefers medium-to-long prompts "
-            "while preserving observed request order."
-        ),
-        target_size=512,
-        min_prompt_len=1024,
-        min_output_len=128,
-    ),
 )
 
 

@@ -57,7 +57,6 @@ Compute and retain:
 - compulsory misses
 - `LRU`
 - `OPT`
-- incoming-line-aware `OPT`
 
 The core output of this experiment is not just miss counts; it is exposed miss cost under each baseline.
 
@@ -118,7 +117,6 @@ source without changing the rest of the procedure.
 3. Collect traces for:
    - `LRU`
    - `OPT`
-   - incoming-line-aware `OPT`
 4. Attribute every miss as:
    - compulsory or reuse
    - critical-path or overlapped
@@ -172,7 +170,6 @@ Current implemented sweep:
 - policies at each point:
   - `LRU` first pass
   - `OPT` second pass
-  - `OPT+bypass` second pass with default reusable-cache fraction `0.6`
 
 Expected runtime:
 
@@ -182,7 +179,7 @@ Expected runtime:
 Pilot success criteria:
 
 - `reports/lru_critical_path.json` exists
-- `reports/belady_critical_path.json` or `reports/belady_bypass_critical_path.json` exists
+- `reports/belady_critical_path.json` exists
 - the report includes:
   - `critical_path_miss_rate`
   - `mean_missed_blocks_per_request`
