@@ -1,0 +1,11 @@
+{
+  "experiment": "recomputation_microbenchmark",
+  "workloads": [
+    {
+      "manifest": "data/synthetic/headroom_studies/recomputation_microbenchmark/recompute_k_block_ladder.manifest.json",
+      "name": "recompute_k_block_ladder",
+      "path": "data/synthetic/headroom_studies/recomputation_microbenchmark/recompute_k_block_ladder.jsonl",
+      "variant": "optimistic"
+    }
+  ]
+}

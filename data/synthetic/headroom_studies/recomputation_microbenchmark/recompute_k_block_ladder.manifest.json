@@ -1,0 +1,51 @@
+{
+  "description": "Controlled ladder workload where requests are tagged to induce 1, 2, 4, 8, or 16 recomputed blocks. This is the optimistic microbenchmark for measuring recompute cost.",
+  "experiment": "recomputation_microbenchmark",
+  "name": "recompute_k_block_ladder",
+  "per_request_full_blocks_by_page_size": {
+    "128": 35,
+    "16": 280,
+    "32": 140,
+    "64": 70
+  },
+  "recommended_capacity_sweep_blocks": [
+    4000,
+    6000,
+    8000
+  ],
+  "recommended_max_concurrency": 1,
+  "recommended_page_sizes": [
+    16,
+    32,
+    64,
+    128
+  ],
+  "selected_requests": 120,
+  "spec": {
+    "builder": "recompute_ladder",
+    "capacity_sweep_blocks": [
+      4000,
+      6000,
+      8000
+    ],
+    "cold_families": 0,
+    "concurrency_hint": 1,
+    "description": "Controlled ladder workload where requests are tagged to induce 1, 2, 4, 8, or 16 recomputed blocks. This is the optimistic microbenchmark for measuring recompute cost.",
+    "experiment": "recomputation_microbenchmark",
+    "hot_families": 0,
+    "interference_span": 0,
+    "name": "recompute_k_block_ladder",
+    "output_len": 256,
+    "page_sizes": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "prefix_tokens": 4096,
+    "rounds": 24,
+    "suffix_tokens": 128,
+    "variant": "optimistic"
+  },
+  "variant": "optimistic"
+}

@@ -1,0 +1,19 @@
+{
+  "dataset": "results/experiments/headroom_recompute_pilot/near_real_sampled_dataset.jsonl",
+  "gpu_kv_capacity_blocks": 16000,
+  "max_full_blocks": 824,
+  "max_prompt_blocks": 822,
+  "mean_full_blocks": 742.5,
+  "mean_prompt_blocks": 730.5,
+  "num_requests": 2,
+  "page_size": 32,
+  "pressure_by_concurrency": [
+    {
+      "concurrency": 1,
+      "full_request_blocks": 824,
+      "full_request_pressure": 0.0515,
+      "prompt_only_blocks": 822,
+      "prompt_only_pressure": 0.051375
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "description": "Large reusable hot families recur under controlled interference so the working set straddles the HBM capacity boundary. This is the optimistic workload for measuring the value of increasing effective KV residency.",
+  "experiment": "effective_residency_sweep",
+  "name": "residency_hotset_capacity_ladder",
+  "per_request_full_blocks_by_page_size": {
+    "128": 56,
+    "16": 448,
+    "32": 224,
+    "64": 112
+  },
+  "recommended_capacity_sweep_blocks": [
+    4000,
+    6000,
+    8000,
+    10000,
+    12000,
+    16000
+  ],
+  "recommended_max_concurrency": 96,
+  "recommended_page_sizes": [
+    16,
+    32,
+    64,
+    128
+  ],
+  "selected_requests": 400,
+  "spec": {
+    "builder": "residency_hotset_ladder",
+    "capacity_sweep_blocks": [
+      4000,
+      6000,
+      8000,
+      10000,
+      12000,
+      16000
+    ],
+    "cold_families": 20,
+    "concurrency_hint": 96,
+    "description": "Large reusable hot families recur under controlled interference so the working set straddles the HBM capacity boundary. This is the optimistic workload for measuring the value of increasing effective KV residency.",
+    "experiment": "effective_residency_sweep",
+    "hot_families": 10,
+    "interference_span": 10,
+    "name": "residency_hotset_capacity_ladder",
+    "output_len": 512,
+    "page_sizes": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "prefix_tokens": 6144,
+    "rounds": 20,
+    "suffix_tokens": 512,
+    "variant": "optimistic"
+  },
+  "variant": "optimistic"
+}

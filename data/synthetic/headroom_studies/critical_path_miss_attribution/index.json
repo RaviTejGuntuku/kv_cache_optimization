@@ -1,0 +1,11 @@
+{
+  "experiment": "critical_path_miss_attribution",
+  "workloads": [
+    {
+      "manifest": "data/synthetic/headroom_studies/critical_path_miss_attribution/critical_path_serial_resume.manifest.json",
+      "name": "critical_path_serial_resume",
+      "path": "data/synthetic/headroom_studies/critical_path_miss_attribution/critical_path_serial_resume.jsonl",
+      "variant": "optimistic"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "event_counts": {
+    "belady_frontier": 522,
+    "match_result": 786,
+    "node_access": 527,
+    "node_created": 496,
+    "node_evicted": 522,
+    "node_lock": 1161,
+    "node_split": 31,
+    "request_lookup": 786
+  },
+  "frontier_belady_diff_rate": 0.3486590038314176,
+  "frontier_decisions": 522,
+  "frontier_same_choice_rate": 0.6513409961685823,
+  "lookup_summary": {
+    "mean_blocks_per_request": 196.58142493638678,
+    "mean_tokens_per_request": 6290.605597964377,
+    "request_count": 786,
+    "requested_blocks": 154513,
+    "requested_tokens": 4944416
+  },
+  "match_summary": {
+    "block_hit_rate": 0.426740792036916,
+    "block_miss_rate": 0.573259207963084,
+    "matched_blocks": 65937,
+    "matched_tokens": 2109984,
+    "missed_blocks": 88576,
+    "missed_tokens": 2834432,
+    "request_count": 786,
+    "token_hit_rate": 0.426740792036916,
+    "token_miss_rate": 0.573259207963084
+  },
+  "most_accessed_blocks": [
+    [
+      -7578617852256129585,
+      57
+    ],
+    [
+      7625558590105881722,
+      57
+    ],
+    [
+      -4651244935830146108,
+      57
+    ],
+    [
+      -3993429340380176667,
+      57
+    ],
+    [
+      -2227134433610991770,
+      57
+    ],
+    [
+      5364051862584822913,
+      57
+    ],
+    [
+      6754229875605797664,
+      57
+    ],
+    [
+      7986418573166631639,
+      57
+    ],
+    [
+      -1782118377212242102,
+      57
+    ],
+    [
+      1439522473589988236,
+      57
+    ],
+    [
+      -3221550396776432186,
+      57
+    ],
+    [
+      8486720412160880854,
+      57
+    ],
+    [
+      8234882679128404196,
+      57
+    ],
+    [
+      -3109958614000344591,
+      57
+    ],
+    [
+      2248239658488001668,
+      57
+    ],
+    [
+      2405221191506174228,
+      57
+    ],
+    [
+      -2056827777137643570,
+      57
+    ],
+    [
+      -1232654796612077304,
+      57
+    ],
+    [
+      2373101460066469185,
+      57
+    ],
+    [
+      6179706500093036861,
+      57
+    ]
+  ],
+  "most_accessed_nodes": [
+    [
+      169,
+      11
+    ],
+    [
+      53,
+      10
+    ],
+    [
+      56,
+      9
+    ],
+    [
+      303,
+      8
+    ],
+    [
+      144,
+      7
+    ],
+    [
+      410,
+      6
+    ],
+    [
+      28,
+      5
+    ],
+    [
+      42,
+      5
+    ],
+    [
+      177,
+      5
+    ],
+    [
+      185,
+      5
+    ],
+    [
+      198,
+      5
+    ],
+    [
+      306,
+      5
+    ],
+    [
+      371,
+      5
+    ],
+    [
+      472,
+      5
+    ],
+    [
+      75,
+      4
+    ],
+    [
+      147,
+      4
+    ],
+    [
+      346,
+      4
+    ],
+    [
+      457,
+      4
+    ],
+    [
+      512,
+      4
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "page_cache_simulation": {
+    "belady_hit_rate": 0.9354876288726515,
+    "belady_hits": 144545,
+    "belady_miss_rate": 0.0645123711273485,
+    "belady_misses": 9968,
+    "belady_reuse_hit_rate": 1.0,
+    "belady_reuse_hits": 144545,
+    "belady_reuse_miss_rate": 0.0,
+    "belady_reuse_misses": 0,
+    "capacity_blocks": 13333,
+    "compulsory_misses": 9968,
+    "lru_hit_rate": 0.9354876288726515,
+    "lru_hits": 144545,
+    "lru_miss_rate": 0.0645123711273485,
+    "lru_misses": 9968,
+    "lru_reuse_hit_rate": 1.0,
+    "lru_reuse_hits": 144545,
+    "lru_reuse_miss_rate": 0.0,
+    "lru_reuse_misses": 0,
+    "reuse_accesses": 144545,
+    "total_accesses": 154513
+  },
+  "trace_path": "results/experiments/headroom_effective_residency_full_20260427/optimistic__ps32__mem020__belady/traces/belady.jsonl",
+  "unique_blocks": 10141,
+  "unique_nodes": 527
+}

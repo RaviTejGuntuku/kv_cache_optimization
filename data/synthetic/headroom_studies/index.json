@@ -1,0 +1,37 @@
+{
+  "experiments": {
+    "critical_path_miss_attribution": [
+      {
+        "manifest": "data/synthetic/headroom_studies/critical_path_miss_attribution/critical_path_serial_resume.manifest.json",
+        "name": "critical_path_serial_resume",
+        "path": "data/synthetic/headroom_studies/critical_path_miss_attribution/critical_path_serial_resume.jsonl",
+        "variant": "optimistic"
+      }
+    ],
+    "effective_residency_sweep": [
+      {
+        "manifest": "data/synthetic/headroom_studies/effective_residency_sweep/residency_hotset_capacity_ladder.manifest.json",
+        "name": "residency_hotset_capacity_ladder",
+        "path": "data/synthetic/headroom_studies/effective_residency_sweep/residency_hotset_capacity_ladder.jsonl",
+        "variant": "optimistic"
+      }
+    ],
+    "opt_with_incoming_line": [
+      {
+        "manifest": "data/synthetic/headroom_studies/opt_with_incoming_line/incoming_suffix_pollution.manifest.json",
+        "name": "incoming_suffix_pollution",
+        "path": "data/synthetic/headroom_studies/opt_with_incoming_line/incoming_suffix_pollution.jsonl",
+        "variant": "optimistic"
+      }
+    ],
+    "recomputation_microbenchmark": [
+      {
+        "manifest": "data/synthetic/headroom_studies/recomputation_microbenchmark/recompute_k_block_ladder.manifest.json",
+        "name": "recompute_k_block_ladder",
+        "path": "data/synthetic/headroom_studies/recomputation_microbenchmark/recompute_k_block_ladder.jsonl",
+        "variant": "optimistic"
+      }
+    ]
+  },
+  "output_dir": "data/synthetic/headroom_studies"
+}

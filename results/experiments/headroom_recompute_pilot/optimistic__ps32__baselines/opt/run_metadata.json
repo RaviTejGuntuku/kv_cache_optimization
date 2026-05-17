@@ -1,0 +1,25 @@
+{
+  "args": {
+    "auto_version": false,
+    "bench_seed": 1,
+    "dataset_path": "results/experiments/headroom_recompute_pilot/optimistic_sampled_dataset.jsonl",
+    "gpu_kv_capacity_blocks": 16000,
+    "host": "127.0.0.1",
+    "max_concurrency": 1,
+    "mem_fraction_static": "0.24",
+    "model_path": "Qwen/Qwen2.5-7B-Instruct",
+    "num_prompts": 2,
+    "output_root": "results/experiments/headroom_recompute_pilot/optimistic__ps32__baselines/opt",
+    "page_size": 32,
+    "port": 30000,
+    "request_rate": "inf",
+    "run_tag": null,
+    "schedule_policy": "fcfs",
+    "second_policy": "belady",
+    "second_policy_cache_fraction": null,
+    "server_extra_args": "--disable-cuda-graph --disable-piecewise-cuda-graph",
+    "skip_analysis": false
+  },
+  "invoked_at_utc": "2026-04-27T06:36:10Z",
+  "resolved_output_root": "results/experiments/headroom_recompute_pilot/optimistic__ps32__baselines/opt"
+}

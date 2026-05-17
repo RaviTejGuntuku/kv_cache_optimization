@@ -1,0 +1,22 @@
+{
+  "bypass_cache_fraction": 0.6,
+  "estimated_runtime_hours": 1.75,
+  "experiment": "effective_residency_sweep",
+  "max_concurrency": 96,
+  "mem_fractions": [
+    0.2,
+    0.24,
+    0.28,
+    0.32
+  ],
+  "mode": "full",
+  "num_prompts": 256,
+  "page_sizes": [
+    32
+  ],
+  "request_rate": "16",
+  "workloads": [
+    "data/synthetic/headroom_studies/effective_residency_sweep/residency_hotset_capacity_ladder.jsonl",
+    "data/processed/headroom_studies/effective_residency_sweep/effective_residency_sweep__realworld_sequence.jsonl"
+  ]
+}

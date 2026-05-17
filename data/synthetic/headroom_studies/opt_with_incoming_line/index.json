@@ -1,0 +1,11 @@
+{
+  "experiment": "opt_with_incoming_line",
+  "workloads": [
+    {
+      "manifest": "data/synthetic/headroom_studies/opt_with_incoming_line/incoming_suffix_pollution.manifest.json",
+      "name": "incoming_suffix_pollution",
+      "path": "data/synthetic/headroom_studies/opt_with_incoming_line/incoming_suffix_pollution.jsonl",
+      "variant": "optimistic"
+    }
+  ]
+}

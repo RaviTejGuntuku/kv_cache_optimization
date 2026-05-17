@@ -1,0 +1,32 @@
+{
+  "corr_missed_blocks_vs_ttft": 0.22790791146890185,
+  "corr_missed_tokens_vs_ttft": 0.22790791146890185,
+  "critical_path_miss_rate": 0.5107913669064749,
+  "mean_missed_blocks_per_request": 71.0,
+  "mean_missed_tokens_per_request": 2272.0,
+  "mean_ttft_ms": 300.51098071271554,
+  "policy_label": "lru",
+  "request_count": 16,
+  "ttft_by_missed_block_bucket_ms": {
+    "0": {
+      "count": 7,
+      "mean_ttft_ms": 285.0287748234613,
+      "median_ttft_ms": 347.29298297315836
+    },
+    "12": {
+      "count": 1,
+      "mean_ttft_ms": 155.72502836585045,
+      "median_ttft_ms": 155.72502836585045
+    },
+    "140": {
+      "count": 4,
+      "mean_ttft_ms": 392.6010226132348,
+      "median_ttft_ms": 371.98684783652425
+    },
+    "141": {
+      "count": 4,
+      "mean_ttft_ms": 271.7112872051075,
+      "median_ttft_ms": 251.68389501050115
+    }
+  }
+}

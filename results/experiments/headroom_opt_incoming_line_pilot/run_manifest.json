@@ -1,0 +1,19 @@
+{
+  "cache_fractions": [
+    0.6
+  ],
+  "estimated_runtime_hours": 0.08,
+  "experiment": "opt_with_incoming_line",
+  "max_concurrency": 16,
+  "mem_fraction_static": 0.24,
+  "mode": "pilot",
+  "num_prompts": 24,
+  "page_sizes": [
+    32
+  ],
+  "request_rate": "8",
+  "workloads": [
+    "data/synthetic/headroom_studies/opt_with_incoming_line/incoming_suffix_pollution.jsonl",
+    "data/processed/headroom_studies/opt_with_incoming_line/opt_with_incoming_line__realworld_sequence.jsonl"
+  ]
+}

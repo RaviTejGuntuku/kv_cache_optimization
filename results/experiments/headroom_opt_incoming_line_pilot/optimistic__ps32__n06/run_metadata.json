@@ -1,0 +1,25 @@
+{
+  "args": {
+    "auto_version": false,
+    "bench_seed": 1,
+    "dataset_path": "/root/kv_cache_research/data/synthetic/headroom_studies/opt_with_incoming_line/incoming_suffix_pollution.jsonl",
+    "gpu_kv_capacity_blocks": 16000,
+    "host": "127.0.0.1",
+    "max_concurrency": 16,
+    "mem_fraction_static": "0.24",
+    "model_path": "Qwen/Qwen2.5-7B-Instruct",
+    "num_prompts": 24,
+    "output_root": "results/experiments/headroom_opt_incoming_line_pilot/optimistic__ps32__n06",
+    "page_size": 32,
+    "port": 30000,
+    "request_rate": "8",
+    "run_tag": null,
+    "schedule_policy": "fcfs",
+    "second_policy": "belady_bypass",
+    "second_policy_cache_fraction": 0.6,
+    "server_extra_args": "--disable-cuda-graph --disable-piecewise-cuda-graph",
+    "skip_analysis": false
+  },
+  "invoked_at_utc": "2026-04-27T10:51:07Z",
+  "resolved_output_root": "results/experiments/headroom_opt_incoming_line_pilot/optimistic__ps32__n06"
+}

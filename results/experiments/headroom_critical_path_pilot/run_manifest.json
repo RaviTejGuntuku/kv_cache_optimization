@@ -1,0 +1,19 @@
+{
+  "bypass_cache_fraction": 0.6,
+  "estimated_runtime_hours": 0.08,
+  "experiment": "critical_path_miss_attribution",
+  "max_concurrency": 8,
+  "mem_fractions": [
+    0.24
+  ],
+  "mode": "pilot",
+  "num_prompts": 16,
+  "page_sizes": [
+    32
+  ],
+  "request_rate": "4",
+  "workloads": [
+    "data/synthetic/headroom_studies/critical_path_miss_attribution/critical_path_serial_resume.jsonl",
+    "data/processed/headroom_studies/critical_path_miss_attribution/critical_path_miss_attribution__realworld_sequence.jsonl"
+  ]
+}

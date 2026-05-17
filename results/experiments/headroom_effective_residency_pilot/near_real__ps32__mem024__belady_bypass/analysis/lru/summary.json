@@ -1,0 +1,215 @@
+{
+  "event_counts": {
+    "match_result": 37,
+    "node_access": 24,
+    "node_created": 36,
+    "node_lock": 50,
+    "request_lookup": 37
+  },
+  "frontier_belady_diff_rate": 0.0,
+  "frontier_decisions": 0,
+  "frontier_same_choice_rate": 0.0,
+  "lookup_summary": {
+    "mean_blocks_per_request": 113.32432432432432,
+    "mean_tokens_per_request": 3626.3783783783783,
+    "request_count": 37,
+    "requested_blocks": 4193,
+    "requested_tokens": 134176
+  },
+  "match_summary": {
+    "block_hit_rate": 0.5442404006677797,
+    "block_miss_rate": 0.4557595993322204,
+    "matched_blocks": 2282,
+    "matched_tokens": 73024,
+    "missed_blocks": 1911,
+    "missed_tokens": 61152,
+    "request_count": 37,
+    "token_hit_rate": 0.5442404006677797,
+    "token_miss_rate": 0.4557595993322204
+  },
+  "most_accessed_blocks": [
+    [
+      8428342553558692913,
+      4
+    ],
+    [
+      1706748874491387691,
+      4
+    ],
+    [
+      -7500857648931943882,
+      4
+    ],
+    [
+      6019760669445550591,
+      4
+    ],
+    [
+      -1047598407984743342,
+      4
+    ],
+    [
+      -8370121499828416812,
+      4
+    ],
+    [
+      3448620756591254527,
+      4
+    ],
+    [
+      4737662367800924926,
+      4
+    ],
+    [
+      -4141044810837772077,
+      4
+    ],
+    [
+      -3915442009912074485,
+      4
+    ],
+    [
+      -8099849914750251605,
+      4
+    ],
+    [
+      1436808054728002744,
+      4
+    ],
+    [
+      5590083180012448059,
+      4
+    ],
+    [
+      4830258601609290417,
+      4
+    ],
+    [
+      15421431444446138,
+      4
+    ],
+    [
+      8040272570322877991,
+      4
+    ],
+    [
+      5931918582131013161,
+      4
+    ],
+    [
+      -4851790672374957605,
+      4
+    ],
+    [
+      -3968305924587157262,
+      4
+    ],
+    [
+      -1428887079629186050,
+      4
+    ]
+  ],
+  "most_accessed_nodes": [
+    [
+      2,
+      3
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      9,
+      2
+    ],
+    [
+      17,
+      2
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      10,
+      1
+    ],
+    [
+      11,
+      1
+    ],
+    [
+      12,
+      1
+    ],
+    [
+      13,
+      1
+    ],
+    [
+      14,
+      1
+    ],
+    [
+      15,
+      1
+    ],
+    [
+      16,
+      1
+    ],
+    [
+      18,
+      1
+    ],
+    [
+      19,
+      1
+    ],
+    [
+      20,
+      1
+    ],
+    [
+      21,
+      1
+    ]
+  ],
+  "page_cache_simulation": {
+    "belady_hit_rate": 0.5440019079418078,
+    "belady_hits": 2281,
+    "belady_miss_rate": 0.45599809205819225,
+    "belady_misses": 1912,
+    "belady_reuse_hit_rate": 1.0,
+    "belady_reuse_hits": 2281,
+    "belady_reuse_miss_rate": 0.0,
+    "belady_reuse_misses": 0,
+    "capacity_blocks": 16000,
+    "compulsory_misses": 1912,
+    "lru_hit_rate": 0.5440019079418078,
+    "lru_hits": 2281,
+    "lru_miss_rate": 0.45599809205819225,
+    "lru_misses": 1912,
+    "lru_reuse_hit_rate": 1.0,
+    "lru_reuse_hits": 2281,
+    "lru_reuse_miss_rate": 0.0,
+    "lru_reuse_misses": 0,
+    "reuse_accesses": 2281,
+    "total_accesses": 4193
+  },
+  "trace_path": "results/experiments/headroom_effective_residency_pilot/near_real__ps32__mem024__belady_bypass/traces/lru.jsonl",
+  "unique_blocks": 2060,
+  "unique_nodes": 36
+}

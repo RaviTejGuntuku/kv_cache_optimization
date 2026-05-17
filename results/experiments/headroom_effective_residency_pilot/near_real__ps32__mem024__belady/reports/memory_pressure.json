@@ -1,0 +1,19 @@
+{
+  "dataset": "/root/kv_cache_research/data/processed/headroom_studies/effective_residency_sweep/effective_residency_sweep__realworld_sequence.jsonl",
+  "gpu_kv_capacity_blocks": 16000,
+  "max_full_blocks": 824,
+  "max_prompt_blocks": 822,
+  "mean_full_blocks": 139.4453125,
+  "mean_prompt_blocks": 130.8359375,
+  "num_requests": 512,
+  "page_size": 32,
+  "pressure_by_concurrency": [
+    {
+      "concurrency": 16,
+      "full_request_blocks": 7329,
+      "full_request_pressure": 0.4580625,
+      "prompt_only_blocks": 7210,
+      "prompt_only_pressure": 0.450625
+    }
+  ]
+}

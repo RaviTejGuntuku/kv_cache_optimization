@@ -51,6 +51,18 @@ def parse_args() -> argparse.Namespace:
             "Use this when post-processing will happen on another machine."
         ),
     )
+    parser.add_argument(
+        "--second-policy",
+        default="belady",
+        choices=["belady", "belady_bypass"],
+        help="Policy used in the second run after compiling the baseline trace.",
+    )
+    parser.add_argument(
+        "--second-policy-cache-fraction",
+        type=float,
+        default=None,
+        help="Required when --second-policy=belady_bypass. Fraction of KV-HBM reserved for the reusable cache.",
+    )
     return parser.parse_args()
 
 
@@ -222,12 +234,27 @@ def main() -> None:
         "TRACE_DIR": str(traces_dir),
         "BELADY_PLAN_PATH": str(plan_path),
     }
-    belady_server_cmd = [
-        "/bin/bash",
-        str(root / "benchmarking" / "launchers" / "launch_belady_server.sh"),
-        *extra_args,
-    ]
-    belady_proc = launch_server(belady_server_cmd, env=belady_env, cwd=root)
+    if args.second_policy == "belady":
+        second_policy_env = belady_env
+        second_server_cmd = [
+            "/bin/bash",
+            str(root / "benchmarking" / "launchers" / "launch_belady_server.sh"),
+            *extra_args,
+        ]
+    else:
+        if args.second_policy_cache_fraction is None:
+            raise ValueError(
+                "--second-policy-cache-fraction is required when --second-policy=belady_bypass"
+            )
+        second_policy_env = belady_env | {
+            "SGLANG_BELADY_CACHE_FRACTION": str(args.second_policy_cache_fraction)
+        }
+        second_server_cmd = [
+            "/bin/bash",
+            str(root / "benchmarking" / "launchers" / "launch_belady_bypass_server.sh"),
+            *extra_args,
+        ]
+    belady_proc = launch_server(second_server_cmd, env=second_policy_env, cwd=root)
     try:
         wait_until_ready(base_url)
         run_command(
@@ -274,14 +301,18 @@ def main() -> None:
     run_command(
         [
             sys.executable,
-            str(root / "benchmarking" / "analysis_scripts" / "compare_benchmark_runs.py"),
-            "--lru-bench",
+            str(root / "benchmarking" / "analysis_scripts" / "compare_policy_runs.py"),
+            "--primary-label",
+            "lru",
+            "--secondary-label",
+            args.second_policy,
+            "--primary-bench",
             str(lru_bench),
-            "--belady-bench",
+            "--secondary-bench",
             str(belady_bench),
-            "--lru-trace-summary",
+            "--primary-trace-summary",
             str(lru_analysis / "summary.json"),
-            "--belady-trace-summary",
+            "--secondary-trace-summary",
             str(belady_analysis / "summary.json"),
             "--output",
             str(final_report),

@@ -1,0 +1,53 @@
+{
+  "description": "Serial resumptions are separated by unique interference so misses tend to occur on the request's critical path. This is the optimistic workload for exposed miss cost.",
+  "experiment": "critical_path_miss_attribution",
+  "name": "critical_path_serial_resume",
+  "per_request_full_blocks_by_page_size": {
+    "128": 38,
+    "16": 304,
+    "32": 152,
+    "64": 76
+  },
+  "recommended_capacity_sweep_blocks": [
+    4000,
+    6000,
+    8000,
+    10000
+  ],
+  "recommended_max_concurrency": 32,
+  "recommended_page_sizes": [
+    16,
+    32,
+    64,
+    128
+  ],
+  "selected_requests": 448,
+  "spec": {
+    "builder": "critical_path_serial_resume",
+    "capacity_sweep_blocks": [
+      4000,
+      6000,
+      8000,
+      10000
+    ],
+    "cold_families": 0,
+    "concurrency_hint": 32,
+    "description": "Serial resumptions are separated by unique interference so misses tend to occur on the request's critical path. This is the optimistic workload for exposed miss cost.",
+    "experiment": "critical_path_miss_attribution",
+    "hot_families": 12,
+    "interference_span": 16,
+    "name": "critical_path_serial_resume",
+    "output_len": 384,
+    "page_sizes": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "prefix_tokens": 4096,
+    "rounds": 16,
+    "suffix_tokens": 384,
+    "variant": "optimistic"
+  },
+  "variant": "optimistic"
+}

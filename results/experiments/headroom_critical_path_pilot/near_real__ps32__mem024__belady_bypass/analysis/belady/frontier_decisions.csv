@@ -1,0 +1,12 @@
+frontier_seq,candidate_count,actual_node_id,actual_next_use,belady_node_id,belady_next_use,actual_block_count,belady_block_count,same_choice
+169,12,13,,26,,5,11,False
+171,12,4,,26,,63,11,False
+176,12,11,,26,,3,11,False
+178,11,15,,26,,3,11,False
+180,11,14,,26,,1,11,False
+182,11,3,,26,,1,11,False
+184,11,2,,26,,63,11,False
+189,11,18,,26,,5,11,False
+191,11,10,,26,,120,11,False
+196,11,20,,26,,2,11,False
+198,11,16,,26,,245,11,False

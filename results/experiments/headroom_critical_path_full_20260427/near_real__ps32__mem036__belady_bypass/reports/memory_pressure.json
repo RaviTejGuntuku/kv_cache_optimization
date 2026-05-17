@@ -1,0 +1,19 @@
+{
+  "dataset": "/root/kv_cache_research/data/processed/headroom_studies/critical_path_miss_attribution/critical_path_miss_attribution__realworld_sequence.jsonl",
+  "gpu_kv_capacity_blocks": 24000,
+  "max_full_blocks": 366,
+  "max_prompt_blocks": 358,
+  "mean_full_blocks": 152.21875,
+  "mean_prompt_blocks": 143.43229166666666,
+  "num_requests": 384,
+  "page_size": 32,
+  "pressure_by_concurrency": [
+    {
+      "concurrency": 48,
+      "full_request_blocks": 13723,
+      "full_request_pressure": 0.5717916666666667,
+      "prompt_only_blocks": 13370,
+      "prompt_only_pressure": 0.5570833333333334
+    }
+  ]
+}

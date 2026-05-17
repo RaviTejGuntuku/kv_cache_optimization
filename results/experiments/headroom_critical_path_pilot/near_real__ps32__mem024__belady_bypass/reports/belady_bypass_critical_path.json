@@ -1,0 +1,42 @@
+{
+  "corr_missed_blocks_vs_ttft": 0.17609594196034645,
+  "corr_missed_tokens_vs_ttft": 0.17609594196034645,
+  "critical_path_miss_rate": 0.4610874200426439,
+  "mean_missed_blocks_per_request": 54.0625,
+  "mean_missed_tokens_per_request": 1730.0,
+  "mean_ttft_ms": 249.62877950747497,
+  "policy_label": "belady_bypass",
+  "request_count": 16,
+  "ttft_by_missed_block_bucket_ms": {
+    "0": {
+      "count": 9,
+      "mean_ttft_ms": 255.21826495726904,
+      "median_ttft_ms": 213.6514917947352
+    },
+    "120": {
+      "count": 1,
+      "mean_ttft_ms": 103.23305893689394,
+      "median_ttft_ms": 103.23305893689394
+    },
+    "133": {
+      "count": 1,
+      "mean_ttft_ms": 257.8390850685537,
+      "median_ttft_ms": 257.8390850685537
+    },
+    "167": {
+      "count": 1,
+      "mean_ttft_ms": 163.2652278058231,
+      "median_ttft_ms": 163.2652278058231
+    },
+    "256": {
+      "count": 1,
+      "mean_ttft_ms": 520.0987178832293,
+      "median_ttft_ms": 520.0987178832293
+    },
+    "63": {
+      "count": 3,
+      "mean_ttft_ms": 217.5533326032261,
+      "median_ttft_ms": 125.61221607029438
+    }
+  }
+}
