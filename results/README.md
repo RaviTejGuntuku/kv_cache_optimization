@@ -1,11 +1,8 @@
-# Results Alias
+# Results
 
-The canonical home for curated experiment outputs is now:
+The canonical home for curated experiment outputs is:
 
 - [studies/results](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results)
-
-`results/experiments` remains as a backwards-compatibility alias. The content below still
-describes the curated result bundles, but the source-of-truth path is `studies/results`.
 
 ## Experiment layout
 

@@ -5,7 +5,6 @@ This directory contains experiment definitions and procedures, not executed resu
 Canonical note:
 
 - `studies/specs/` is the source-of-truth location for experiment designs.
-- `experiments/` remains as a compatibility alias.
 
 Each experiment has its own folder with an `EXPERIMENT.md` that defines:
 

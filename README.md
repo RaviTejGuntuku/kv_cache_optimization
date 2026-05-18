@@ -31,8 +31,6 @@ studies/
   specs/
   results/
   runs/
-experiments/          # compatibility alias -> studies/specs
-results/experiments/  # compatibility alias -> studies/results
 runs/                 # compatibility alias -> studies/runs
 sglang/
 ```
@@ -50,7 +48,7 @@ What each area is for:
 - `studies/specs/`: experiment definitions and procedures.
 - `studies/results/`: curated, human-facing experiment bundles.
 - `studies/runs/`: heavyweight run trees, logs, sweeps, and scratch execution outputs.
-- `data/`, `experiments/`, `results/experiments`, and `runs/` remain only as compatibility aliases.
+- `data/` and `runs/` remain only as compatibility aliases.
 
 ## Supported Experiment
 
@@ -214,5 +212,5 @@ The main files to inspect are:
 - `prefix-coverage` can still be used by passing `--schedule-policy prefix-coverage` to the runners.
 - The canonical run tree is `studies/runs/`.
 - The canonical curated-results tree is `studies/results/`.
-- Old paths under `runs/` and `results/experiments/` are compatibility aliases.
+- Old paths under `runs/` are compatibility aliases.
 - Old predictive / three-policy outputs were removed so the repository only reflects the active Belady-vs-LRU study and the three active headroom experiments.

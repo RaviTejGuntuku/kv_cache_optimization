@@ -14,8 +14,6 @@ Intent:
 - `results/` answers what we kept from that experiment
 - `runs/` answers what was produced during execution
 
-Backwards-compatibility aliases still exist:
+Backwards-compatibility aliases still exist for non-experiment namespaces:
 
-- `experiments -> studies/specs`
-- `results/experiments -> studies/results`
 - `runs -> studies/runs`
