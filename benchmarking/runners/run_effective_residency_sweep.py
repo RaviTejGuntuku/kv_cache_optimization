@@ -18,11 +18,11 @@ from headroom_common import (
 WORKLOADS = [
     WorkloadRef(
         label="optimistic",
-        path="data/synthetic/headroom_studies/effective_residency_sweep/residency_hotset_capacity_ladder.jsonl",
+        path="datasets/synthetic/headroom_studies/effective_residency_sweep/residency_hotset_capacity_ladder.jsonl",
     ),
     WorkloadRef(
         label="near_real",
-        path="data/processed/headroom_studies/effective_residency_sweep/effective_residency_sweep__realworld_sequence.jsonl",
+        path="datasets/processed/headroom_studies/effective_residency_sweep/effective_residency_sweep__realworld_sequence.jsonl",
     ),
 ]
 

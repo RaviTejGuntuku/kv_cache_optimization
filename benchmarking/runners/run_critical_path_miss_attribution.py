@@ -20,11 +20,11 @@ from headroom_common import (
 WORKLOADS = [
     WorkloadRef(
         label="optimistic",
-        path="data/synthetic/headroom_studies/critical_path_miss_attribution/critical_path_serial_resume.jsonl",
+        path="datasets/synthetic/headroom_studies/critical_path_miss_attribution/critical_path_serial_resume.jsonl",
     ),
     WorkloadRef(
         label="near_real",
-        path="data/processed/headroom_studies/critical_path_miss_attribution/critical_path_miss_attribution__realworld_sequence.jsonl",
+        path="datasets/processed/headroom_studies/critical_path_miss_attribution/critical_path_miss_attribution__realworld_sequence.jsonl",
     ),
 ]
 

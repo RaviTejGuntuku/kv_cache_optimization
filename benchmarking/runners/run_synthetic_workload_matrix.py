@@ -37,7 +37,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--data-root",
-        default="data/synthetic",
+        default="datasets/synthetic",
         help="Synthetic workload root. All *.jsonl files under this tree are included.",
     )
     parser.add_argument(

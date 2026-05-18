@@ -15,27 +15,25 @@ The abandoned predictive / ML eviction path has been removed from the benchmark 
 ```text
 README.md
 docs/
-  benchmark_plan.pdf
-  proposal_rough.pdf
 benchmarking/
   analysis_scripts/
   datasets/
   launchers/
   runners/
   setup/
-data/
+  workload_generators/
+datasets/
   raw/
   processed/
   synthetic/
-    shared_prefix/
-    recency_trap/
-  generators/
-results/
-  plots/
-runs/
-  logs/
-  summaries/
-  <run directories>
+data/                 # compatibility alias
+studies/
+  specs/
+  results/
+  runs/
+experiments/          # compatibility alias -> studies/specs
+results/experiments/  # compatibility alias -> studies/results
+runs/                 # compatibility alias -> studies/runs
 sglang/
 ```
 
@@ -47,13 +45,12 @@ What each area is for:
 - `benchmarking/launchers/`: shell entrypoints that start servers and run the serving benchmark.
 - `benchmarking/runners/`: top-level experiment drivers.
 - `benchmarking/setup/`: environment setup.
-- `data/raw/`: raw source data, currently including the ShareGPT dump.
-- `data/processed/`: prepared runnable datasets such as the ShareGPT subset.
-- `data/synthetic/shared_prefix/`: synthetic shared-prefix workloads.
-- `data/synthetic/recency_trap/`: synthetic workloads designed to expose LRU-vs-OPT gaps.
-- `data/generators/`: scripts that generate synthetic datasets.
-- `results/plots/`: exported plot bundles and summary views that are meant to be inspected locally.
-- `runs/`: canonical experiment artifacts. `runs_remote_sync/` has been removed.
+- `benchmarking/workload_generators/`: generator code for synthetic workloads.
+- `datasets/`: canonical workload data root.
+- `studies/specs/`: experiment definitions and procedures.
+- `studies/results/`: curated, human-facing experiment bundles.
+- `studies/runs/`: heavyweight run trees, logs, sweeps, and scratch execution outputs.
+- `data/`, `experiments/`, `results/experiments`, and `runs/` remain only as compatibility aliases.
 
 ## Supported Experiment
 
@@ -87,7 +84,7 @@ source .venv-sglang/bin/activate
 Raw ShareGPT should live at:
 
 ```text
-data/raw/sharegpt_raw.json
+datasets/raw/sharegpt_raw.json
 ```
 
 Build the runnable subset:
@@ -95,8 +92,8 @@ Build the runnable subset:
 ```bash
 python benchmarking/datasets/select_benchmark_subset.py \
   --dataset-type sharegpt \
-  --input data/raw/sharegpt_raw.json \
-  --output data/processed/sharegpt_subset.jsonl \
+  --input datasets/raw/sharegpt_raw.json \
+  --output datasets/processed/sharegpt_subset.jsonl \
   --target-size 1500 \
   --tokenizer Qwen/Qwen2.5-7B-Instruct
 ```
@@ -105,7 +102,7 @@ python benchmarking/datasets/select_benchmark_subset.py \
 
 ```bash
 python benchmarking/analysis_scripts/estimate_memory_pressure.py \
-  --dataset data/processed/sharegpt_subset.jsonl \
+  --dataset datasets/processed/sharegpt_subset.jsonl \
   --page-size 16 \
   --gpu-kv-capacity-blocks 16000 \
   --concurrency 64 96 128 160 192 224 256
@@ -118,8 +115,8 @@ Use this to pick concurrency levels that actually push the KV working set over c
 ```bash
 python benchmarking/runners/run_two_pass_benchmark.py \
   --model-path Qwen/Qwen2.5-7B-Instruct \
-  --dataset-path data/processed/sharegpt_subset.jsonl \
-  --output-root runs/debug/sharegpt__smoke \
+  --dataset-path datasets/processed/sharegpt_subset.jsonl \
+  --output-root studies/runs/debug/sharegpt__smoke \
   --page-size 16 \
   --num-prompts 64 \
   --request-rate 16 \
@@ -143,8 +140,8 @@ This creates one run directory with:
 ```bash
 python benchmarking/runners/run_benchmark_sweep.py \
   --model-path Qwen/Qwen2.5-7B-Instruct \
-  --dataset-path data/processed/sharegpt_subset.jsonl \
-  --output-root runs/sweeps/sharegpt__fcfs-sweep \
+  --dataset-path datasets/processed/sharegpt_subset.jsonl \
+  --output-root studies/runs/sweeps/sharegpt__fcfs-sweep \
   --request-rates 16 \
   --max-concurrencies 64 96 128 192 256 \
   --page-size 16 \
@@ -159,29 +156,29 @@ python benchmarking/runners/run_benchmark_sweep.py \
 
 ```bash
 python benchmarking/analysis_scripts/plot_benchmark_results.py \
-  --sweep-manifest runs/sweeps/sharegpt__fcfs-sweep__<timestamp>/sweep_manifest.json \
-  --output-dir results/plots/sharegpt__fcfs-sweep \
+  --sweep-manifest studies/runs/sweeps/sharegpt__fcfs-sweep__<timestamp>/sweep_manifest.json \
+  --output-dir studies/results/sharegpt__fcfs-sweep__plots \
   --x-axis max_concurrency
 ```
 
 ## Synthetic Workloads
 
-Synthetic data now lives under `data/synthetic/`.
+Synthetic data now lives under `datasets/synthetic/`.
 
 Shared-prefix workloads:
 
-- `data/synthetic/shared_prefix/`
+- `datasets/synthetic/shared_prefix/`
 
 Recency-trap workloads:
 
-- `data/synthetic/recency_trap/`
+- `datasets/synthetic/recency_trap/`
 
 To generate a recency-trap workload:
 
 ```bash
-python data/generators/generate_recency_trap_workloads.py \
+python benchmarking/workload_generators/generate_recency_trap_workloads.py \
   --family hotset-one-shot \
-  --output data/synthetic/recency_trap/hotset_one_shot_demo.jsonl \
+  --output datasets/synthetic/recency_trap/hotset_one_shot_demo.jsonl \
   --hot-set-size 3 \
   --rounds 4 \
   --interference-per-round 10 \
@@ -200,7 +197,7 @@ The current recency-trap families are:
 
 ## Reading Run Artifacts
 
-Every completed run is self-contained under `runs/<category>/<run_name>/`.
+Every completed run is self-contained under `studies/runs/<category>/<run_name>/`.
 
 The main files to inspect are:
 
@@ -215,6 +212,7 @@ The main files to inspect are:
 
 - `FCFS` remains the default scheduling policy for the benchmark.
 - `prefix-coverage` can still be used by passing `--schedule-policy prefix-coverage` to the runners.
-- The canonical run tree is `runs/`. There is no longer a separate `runs_remote_sync/`.
-- Top-level summary artifacts and plots live under `results/`, with plots directly under `results/plots/` rather than `results/plots/local_plots/`.
+- The canonical run tree is `studies/runs/`.
+- The canonical curated-results tree is `studies/results/`.
+- Old paths under `runs/` and `results/experiments/` are compatibility aliases.
 - Old predictive / three-policy outputs were removed so the repository only reflects the active Belady-vs-LRU study and the three active headroom experiments.

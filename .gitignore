@@ -12,17 +12,17 @@ __pycache__/
 .claude/
 .codex_state/
 
-# Local/generated experiment artifacts. Keep source code, docs, plots, and compact
-# summaries in git; keep large raw traces and remote sync dumps out of git.
-runs/
+# Local/generated experiment artifacts. Keep source code, docs, specs, plots, and
+# compact summaries in git; keep large raw traces and heavyweight runtime dumps out.
+studies/runs/
 results/remote_sync/
-data/raw/
-data/processed/
-data/synthetic/natural_saturated/
-data/synthetic/natural_saturated_reordered/
-data/synthetic/natural_saturated_strong/
-data/synthetic/recency_trap/
-data/synthetic/shared_prefix/
+datasets/raw/
+datasets/processed/
+datasets/synthetic/natural_saturated/
+datasets/synthetic/natural_saturated_reordered/
+datasets/synthetic/natural_saturated_strong/
+datasets/synthetic/recency_trap/
+datasets/synthetic/shared_prefix/
 
 # Heavy generated benchmark internals wherever they appear.
 **/traces/

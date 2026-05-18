@@ -1,7 +1,11 @@
-# Results Catalog
+# Results Alias
 
-Each experiment now lives in a single self-contained directory under
-[results/experiments](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments).
+The canonical home for curated experiment outputs is now:
+
+- [studies/results](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results)
+
+`results/experiments` remains as a backwards-compatibility alias. The content below still
+describes the curated result bundles, but the source-of-truth path is `studies/results`.
 
 ## Experiment layout
 
@@ -18,7 +22,7 @@ Every experiment directory should contain the same top-level buckets:
 
 The most recent experiment is:
 
-- [adversarial_fcfs_page_size_20260420](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/adversarial_fcfs_page_size_20260420)
+- [adversarial_fcfs_page_size_20260420](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/adversarial_fcfs_page_size_20260420)
 
 That is the run with:
 
@@ -30,16 +34,16 @@ That is the run with:
 
 Start with:
 
-- [adversarial_fcfs_page_size_20260420/EXPERIMENT.md](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/adversarial_fcfs_page_size_20260420/EXPERIMENT.md)
-- [adversarial_fcfs_page_size_20260420/metrics/consolidated_metrics.csv](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/adversarial_fcfs_page_size_20260420/metrics/consolidated_metrics.csv)
-- [adversarial_fcfs_page_size_20260420/graphs](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/adversarial_fcfs_page_size_20260420/graphs)
+- [adversarial_fcfs_page_size_20260420/EXPERIMENT.md](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/adversarial_fcfs_page_size_20260420/EXPERIMENT.md)
+- [adversarial_fcfs_page_size_20260420/metrics/consolidated_metrics.csv](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/adversarial_fcfs_page_size_20260420/metrics/consolidated_metrics.csv)
+- [adversarial_fcfs_page_size_20260420/graphs](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/adversarial_fcfs_page_size_20260420/graphs)
 
 ## Canonical experiment folders
 
-- [adversarial_fcfs_page_size_20260420](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/adversarial_fcfs_page_size_20260420)
-- [fcfs_static_prefix_panel_20260419](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/fcfs_static_prefix_panel_20260419)
-- [fcfs_static_prefix_strong_20260420](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/fcfs_static_prefix_strong_20260420)
-- [sharegpt_sweep_rr16_mcgrid_v2](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/sharegpt_sweep_rr16_mcgrid_v2)
-- [synth_shared_prefix_sweep](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/synth_shared_prefix_sweep)
-- [synth_shared_prefix_sweep_recomputed](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/synth_shared_prefix_sweep_recomputed)
-- [synthetic_natural_panel_live](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/results/experiments/synthetic_natural_panel_live)
+- [adversarial_fcfs_page_size_20260420](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/adversarial_fcfs_page_size_20260420)
+- [fcfs_static_prefix_panel_20260419](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/fcfs_static_prefix_panel_20260419)
+- [fcfs_static_prefix_strong_20260420](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/fcfs_static_prefix_strong_20260420)
+- [sharegpt_sweep_rr16_mcgrid_v2](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/sharegpt_sweep_rr16_mcgrid_v2)
+- [synth_shared_prefix_sweep](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/synth_shared_prefix_sweep)
+- [synth_shared_prefix_sweep_recomputed](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/synth_shared_prefix_sweep_recomputed)
+- [synthetic_natural_panel_live](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/synthetic_natural_panel_live)

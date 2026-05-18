@@ -23,9 +23,9 @@ The main claim excludes dynamic prefix-aware scheduling. Under `prefix-coverage`
 
 We run only the statically reordered datasets:
 
-- `data/synthetic/natural_saturated_reordered/natural_bursty_return_hbm__static_prefix.jsonl`
-- `data/synthetic/natural_saturated_reordered/natural_hotset_one_shot_hbm__static_prefix.jsonl`
-- `data/synthetic/natural_saturated_reordered/natural_zipf_bursty_hbm__static_prefix.jsonl`
+- `datasets/synthetic/natural_saturated_reordered/natural_bursty_return_hbm__static_prefix.jsonl`
+- `datasets/synthetic/natural_saturated_reordered/natural_hotset_one_shot_hbm__static_prefix.jsonl`
+- `datasets/synthetic/natural_saturated_reordered/natural_zipf_bursty_hbm__static_prefix.jsonl`
 
 These come from the base synthetic natural-saturation panel, but the request order is rewritten offline so that requests with the same reusable family/prefix are clustered together. That gives us stronger temporal locality while keeping the runtime scheduler itself fixed at `fcfs`.
 
@@ -260,8 +260,8 @@ Run one high-pressure FCFS point per statically reordered workload:
 ```bash
 python benchmarking/runners/run_two_pass_benchmark.py \
   --model-path Qwen/Qwen2.5-7B-Instruct \
-  --dataset-path data/synthetic/natural_saturated_reordered/natural_bursty_return_hbm__static_prefix.jsonl \
-  --output-root runs/experiments/fcfs_static_prefix/natural-bursty-return-hbm/mc-128 \
+  --dataset-path datasets/synthetic/natural_saturated_reordered/natural_bursty_return_hbm__static_prefix.jsonl \
+  --output-root studies/runs/experiments/fcfs_static_prefix/natural-bursty-return-hbm/mc-128 \
   --page-size 16 \
   --num-prompts 320 \
   --request-rate inf \
@@ -274,8 +274,8 @@ python benchmarking/runners/run_two_pass_benchmark.py \
 
 Repeat analogously for:
 
-- `data/synthetic/natural_saturated_reordered/natural_hotset_one_shot_hbm__static_prefix.jsonl` with `--num-prompts 416`
-- `data/synthetic/natural_saturated_reordered/natural_zipf_bursty_hbm__static_prefix.jsonl` with `--num-prompts 246`
+- `datasets/synthetic/natural_saturated_reordered/natural_hotset_one_shot_hbm__static_prefix.jsonl` with `--num-prompts 416`
+- `datasets/synthetic/natural_saturated_reordered/natural_zipf_bursty_hbm__static_prefix.jsonl` with `--num-prompts 246`
 
 ### Static prefix-aware FCFS control
 
@@ -283,8 +283,8 @@ Generate reordered datasets:
 
 ```bash
 python benchmarking/datasets/reorder_prefix_aware_static.py \
-  --input data/synthetic/natural_saturated/natural_bursty_return_hbm.jsonl \
-  --output data/synthetic/natural_saturated_reordered/natural_bursty_return_hbm__static_prefix.jsonl
+  --input datasets/synthetic/natural_saturated/natural_bursty_return_hbm.jsonl \
+  --output datasets/synthetic/natural_saturated_reordered/natural_bursty_return_hbm__static_prefix.jsonl
 ```
 
 Then run the same FCFS setup on the reordered dataset:
@@ -292,8 +292,8 @@ Then run the same FCFS setup on the reordered dataset:
 ```bash
 python benchmarking/runners/run_two_pass_benchmark.py \
   --model-path Qwen/Qwen2.5-7B-Instruct \
-  --dataset-path data/synthetic/natural_saturated_reordered/natural_bursty_return_hbm__static_prefix.jsonl \
-  --output-root runs/experiments/fcfs_static_prefix/natural-bursty-return-hbm/mc-128 \
+  --dataset-path datasets/synthetic/natural_saturated_reordered/natural_bursty_return_hbm__static_prefix.jsonl \
+  --output-root studies/runs/experiments/fcfs_static_prefix/natural-bursty-return-hbm/mc-128 \
   --page-size 16 \
   --num-prompts 320 \
   --request-rate inf \

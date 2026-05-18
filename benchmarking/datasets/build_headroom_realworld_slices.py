@@ -74,7 +74,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--output-dir",
-        default="data/processed/headroom_studies",
+        default="datasets/processed/headroom_studies",
         help="Directory where the real-world slices are written.",
     )
     return parser.parse_args()
