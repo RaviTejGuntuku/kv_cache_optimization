@@ -33,7 +33,6 @@ Generated near-real slices live under:
 Experiments:
 
 - [effective_residency_sweep](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/effective_residency_sweep/EXPERIMENT.md)
-- [critical_path_miss_attribution](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/critical_path_miss_attribution/EXPERIMENT.md)
 - [recomputation_microbenchmark](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/recomputation_microbenchmark/EXPERIMENT.md)
 
 ## Runner Entry Points
@@ -41,7 +40,6 @@ Experiments:
 These experiment plans are now implemented by the following runners:
 
 - [run_effective_residency_sweep.py](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/benchmarking/runners/run_effective_residency_sweep.py)
-- [run_critical_path_miss_attribution.py](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/benchmarking/runners/run_critical_path_miss_attribution.py)
 - [run_recomputation_microbenchmark.py](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/benchmarking/runners/run_recomputation_microbenchmark.py)
 
 Each runner supports:
@@ -57,23 +55,22 @@ Recommended model for the current stack:
 
 Recommended execution order:
 
-1. Run all three pilots.
+1. Run both pilots.
 2. Inspect the generated `run_manifest.json`, `reports/`, and benchmark JSONLs.
-3. If the pilots look sane, run the three full experiments.
+3. If the pilots look sane, run the two full experiments.
 
 Current estimated wall-clock runtime on one H100-class GPU:
 
 - effective residency sweep full: about `1.75 h`
-- critical-path miss attribution full: about `1.25 h`
 - recomputation microbenchmark full: about `1.5 h`
 
 Total full-suite estimate:
 
-- about `4.5 h`
+- about `3.25 h`
 
 Total pilot-suite estimate:
 
-- about `0.32 h`
+- about `0.24 h`
 
 Pilot mode is a smoke test only:
 

@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import subprocess
 import sys
+from datetime import datetime, timezone
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
@@ -37,6 +38,17 @@ def load_json(path: Path) -> Any:
 def write_manifest(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True), encoding="utf-8")
+
+
+def utc_timestamp_tag() -> str:
+    return datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+
+
+def resolve_timestamped_output_root(output_root: str | Path, *, no_timestamp: bool = False) -> Path:
+    root = Path(output_root)
+    if no_timestamp:
+        return root
+    return root.parent / f"{root.name}__{utc_timestamp_tag()}"
 
 
 def scaled_block_capacity(

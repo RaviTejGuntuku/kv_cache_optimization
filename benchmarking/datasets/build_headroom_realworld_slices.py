@@ -31,17 +31,6 @@ SPECS: tuple[SliceSpec, ...] = (
         min_output_len=128,
     ),
     SliceSpec(
-        experiment="critical_path_miss_attribution",
-        output_name="critical_path_miss_attribution__realworld_sequence",
-        description=(
-            "Natural request sequence slice for critical-path miss attribution. Prefers long prompts "
-            "with non-trivial outputs while preserving observed request order."
-        ),
-        target_size=384,
-        min_prompt_len=1536,
-        min_output_len=192,
-    ),
-    SliceSpec(
         experiment="recomputation_microbenchmark",
         output_name="recomputation_microbenchmark__realworld_sequence",
         description=(

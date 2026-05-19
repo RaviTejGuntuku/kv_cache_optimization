@@ -340,8 +340,6 @@ def build_recompute_resume_mix(spec: WorkloadSpec) -> list[dict]:
 BUILDERS = {
     "residency_hotset_ladder": build_residency_hotset_ladder,
     "residency_tenant_backlog": build_residency_tenant_backlog,
-    "critical_path_serial_resume": build_critical_path_serial_resume,
-    "critical_path_agent_resume": build_critical_path_agent_resume,
     "recompute_ladder": build_recompute_ladder,
     "recompute_resume_mix": build_recompute_resume_mix,
 }
@@ -368,26 +366,6 @@ SPECS: tuple[WorkloadSpec, ...] = (
         concurrency_hint=96,
         page_sizes=(16, 32, 64, 128),
         capacity_sweep_blocks=(4000, 6000, 8000, 10000, 12000, 16000),
-    ),
-    WorkloadSpec(
-        experiment="critical_path_miss_attribution",
-        variant="optimistic",
-        name="critical_path_serial_resume",
-        description=(
-            "Serial resumptions are separated by unique interference so misses tend to occur on "
-            "the request's critical path. This is the optimistic workload for exposed miss cost."
-        ),
-        builder="critical_path_serial_resume",
-        prefix_tokens=4096,
-        suffix_tokens=384,
-        output_len=384,
-        hot_families=12,
-        cold_families=0,
-        rounds=16,
-        interference_span=16,
-        concurrency_hint=32,
-        page_sizes=(16, 32, 64, 128),
-        capacity_sweep_blocks=(4000, 6000, 8000, 10000),
     ),
     WorkloadSpec(
         experiment="recomputation_microbenchmark",

@@ -20,6 +20,7 @@ from headroom_common import (
     call_two_pass,
     count_jsonl_rows,
     profile_payload,
+    resolve_timestamped_output_root,
     run_subprocess,
     write_manifest,
 )
@@ -64,6 +65,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--schedule-policy", default="fcfs")
     parser.add_argument("--bench-seed", type=int, default=1)
     parser.add_argument("--server-extra-args", default="")
+    parser.add_argument("--no-timestamp", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
 
@@ -197,11 +199,20 @@ def main() -> None:
     server_extra_args = args.server_extra_args
     if args.mode == "pilot" and not server_extra_args:
         server_extra_args = "--disable-cuda-graph --disable-piecewise-cuda-graph"
-    output_root = Path(args.output_root)
+    output_root = resolve_timestamped_output_root(
+        args.output_root, no_timestamp=args.no_timestamp
+    )
     manifest = profile_payload(
         "recomputation_microbenchmark",
         args.mode,
-        {"workloads": [workload.path for workload in WORKLOADS], **profile},
+        {
+            "invoked_at_utc": output_root.name.rsplit("__", 1)[-1]
+            if "__" in output_root.name
+            else None,
+            "resolved_output_root": str(output_root),
+            "workloads": [workload.path for workload in WORKLOADS],
+            **profile,
+        },
     )
     write_manifest(output_root / "run_manifest.json", manifest)
 
