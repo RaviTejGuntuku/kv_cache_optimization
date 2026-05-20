@@ -1,15 +1,29 @@
-# Effective Residency Sweep
+# Effective Residency Headroom Study
 
-## Question
+## Actual Objective
 
-If better KV-cache management increased effective reusable residency, how much could user-facing serving metrics improve?
+This study is trying to answer one concrete question:
 
-This experiment is the main headroom study for:
+- if KV management were good enough to drive miss rate down toward the **compulsory-miss floor**, how much would user-facing serving metrics improve?
 
-- compression
-- larger effective HBM
+That is the real headroom question for:
+
+- better eviction
+- better prefetching
 - better cache-aware scheduling
-- better eviction / admission only insofar as they increase reusable residency
+- better compression, insofar as it increases effective reusable residency
+
+The point is **not** to compare policies for their own sake.
+
+The point is to estimate:
+
+- how much value is left if we asymptotically approach compulsory misses
+
+Important boundary:
+
+- this study is only about **effective reusable residency**
+- it is **not** the queue-information study
+- queue visibility should be treated as a separate experiment entirely
 
 ## Workloads
 
@@ -19,115 +33,118 @@ Optimistic workload:
 
 Near-real workload:
 
-- [effective_residency_sweep\_\_realworld_sequence.jsonl](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/datasets/processed/headroom_studies/effective_residency_sweep/effective_residency_sweep__realworld_sequence.jsonl)
+- [effective_residency_sweep__realworld_sequence.jsonl](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/datasets/processed/headroom_studies/effective_residency_sweep/effective_residency_sweep__realworld_sequence.jsonl)
 
 Current canonical natural corpus:
 
 - `ShareGPT` slice preserving original request order
 
-Optional future replacement:
+## Residency Headroom
 
-- `LMSYS-Chat-1M` slice preserving original request order
-
-Hypothesis:
-
-- `residency_hotset_capacity_ladder` should show the largest benefit because the reusable working set is deliberately tuned to straddle capacity.
-- `effective_residency_sweep__realworld_sequence` should still show gain, but less, because reuse is taken from a naturally occurring request stream rather than tuned synthetic interference.
-
-## Independent Variables
+### Independent Variables
 
 - effective KV capacity
-- page size `b in {16, 32, 64, 128}`
 - workload
 
-The x-axis should be reported both as:
+Keep fixed:
 
-- `kv_capacity_blocks`
-- `reuse working-set coverage`
-
-## Fixed Controls
-
+- page size
 - model
 - scheduler
 - request rate
 - max concurrency
-- tokenizer / prompt formatting
-- GPU type
 
-Start with `fcfs` so the residency curve is interpretable before adding scheduler interactions.
+Recommended first pass:
 
-## Baselines
+- scheduler: `fcfs`
+- page size: `32`
 
-These baselines should be computed for every capacity point:
+### Baselines
+
+At each capacity point compute:
 
 - compulsory misses
 - `LRU`
-- `OPT` with admission disabled
+- `OPT` / offline Belady
 
 Interpretation:
 
-- compulsory misses are the lower floor on logical misses
-- `LRU` is the practical baseline
-- `OPT` tells us eviction-only headroom
+- compulsory misses = lower bound
+- `LRU` = practical baseline
+- `OPT` = best possible eviction-only point
 
-## Metrics
+### Metrics
 
-- total miss count and miss rate
-- compulsory miss count and miss rate
-- reuse miss count and miss rate
-- output throughput (`tokens / sec`)
-- request throughput (`requests / sec`)
-- median / p99 `TTFT`
-- median / p99 `ITL`
-- transfer proxy bytes
-- resident reusable blocks over time
-- evictions over time
-
-## Impact Statistics
-
-The user-facing impact statistics for this experiment are:
-
-- output throughput (`tokens / sec`)
-- request throughput (`requests / sec`)
+- total miss count / miss rate
+- compulsory miss count / miss rate
+- reuse miss count / miss rate
+- output throughput
+- request throughput
 - median / p99 `TTFT`
 - median / p99 `ITL`
 
-These should be measured from the serving benchmark outputs, not inferred from offline traces.
+### Correct Capacity-Sweep Requirement
 
-## Procedure
+The sweep is **not complete** unless the highest-capacity points push the observed miss rate close to the compulsory floor.
 
-1. Generate workloads:
+If the top capacity point still leaves a large gap above compulsory misses, then the experiment has not actually measured full headroom.
 
-```bash
-python3 benchmarking/workload_generators/generate_headroom_study_workloads.py
-python3 benchmarking/datasets/build_headroom_realworld_slices.py \
-  --input datasets/processed/sharegpt_subset.jsonl \
-  --dataset-name sharegpt_subset
-```
+So the stopping condition should be:
 
-If `LMSYS-Chat-1M` later becomes available locally in the repo's custom JSONL format, the same
-command can be rerun with that input path. The experiment design itself does not depend on LMSYS.
+- continue increasing effective capacity until either:
+  - miss rate is within a small tolerance of compulsory miss rate
+  - or capacity is physically infeasible
 
-2. Choose one workload and one page size.
-3. Sweep effective KV capacity from clearly starved to near full reuse.
-4. At each capacity, run:
+Recommended tolerance:
+
+- `miss_rate - compulsory_miss_rate <= 0.02`
+
+### Procedure
+
+1. Choose one workload.
+2. Fix scheduler, page size, request rate, and concurrency.
+3. Sweep effective capacity upward.
+4. At each point run:
    - `LRU`
    - `OPT`
-5. Postprocess traces to compute:
-   - compulsory misses
-   - reuse misses
-   - reuse working-set coverage
+5. Stop only when `LRU` approaches the compulsory floor or hardware limits are reached.
 6. Plot:
    - throughput vs miss rate
-   - `TTFT` vs miss rate
-   - `ITL` vs miss rate
-   - throughput vs reuse working-set coverage
+   - median / p99 `TTFT` vs miss rate
+   - median / p99 `ITL` vs miss rate
+   - throughput vs distance-above-compulsory
+
+The key x-axis should be:
+
+- `distance_above_compulsory = miss_rate - compulsory_miss_rate`
+
+That is much more meaningful than raw memory fraction.
+
+## Recommended Interpretation
+
+### If the curve shows little gain near the compulsory floor
+
+Then better KV management probably has limited upside overall.
+
+### If the curve shows large gain as miss rate approaches the compulsory floor
+
+Then there is real upside left in better KV management mechanisms that increase effective reusable residency, such as:
+
+- better eviction
+- prefetching
+- compression
+- cache-aware scheduling
 
 ## Implemented Runner
 
 - [run_effective_residency_sweep.py](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/benchmarking/runners/run_effective_residency_sweep.py)
 
-Pilot command:
+Important note:
+
+- this runner is only for the residency headroom study
+- queue-information usefulness should be defined as a separate future study, not folded into this one
+
+## Pilot Command
 
 ```bash
 python3 benchmarking/runners/run_effective_residency_sweep.py \
@@ -136,7 +153,7 @@ python3 benchmarking/runners/run_effective_residency_sweep.py \
   --mode pilot
 ```
 
-Full command:
+## Full Command
 
 ```bash
 python3 benchmarking/runners/run_effective_residency_sweep.py \
@@ -144,55 +161,3 @@ python3 benchmarking/runners/run_effective_residency_sweep.py \
   --output-root studies/results/headroom_effective_residency_full \
   --mode full
 ```
-
-Current implemented sweep:
-
-- workloads:
-  - optimistic synthetic hotset ladder
-  - near-real ShareGPT sequence slice
-- page size:
-  - `32`
-- pilot memory fractions:
-  - `0.24`
-- full memory fractions:
-  - `0.20`, `0.24`, `0.28`, `0.32`
-- pilot prompt count:
-  - `16`
-- pilot max concurrency:
-  - `16`
-- pilot request rate:
-  - `8`
-- policies at each point:
-  - `LRU` first pass
-  - `OPT` second pass
-
-Expected runtime:
-
-- pilot: about `0.08 h`
-- full: about `1.75 h`
-
-Pilot success criteria:
-
-- every run root contains `run_metadata.json`
-- `benchmarks/lru.jsonl` and `benchmarks/belady.jsonl` exist
-- `traces/lru.jsonl` and `traces/belady.jsonl` exist
-- `reports/comparison.json` exists
-- the run completes end to end and emits valid traces, plans, and reports
-
-Pilot note:
-
-- this pilot is intentionally tiny and is only a pipeline smoke test
-- use `full` mode for any real residency conclusions
-
-## Why This Answers the Headroom Question
-
-This experiment estimates the value of making more reusable KV blocks resident, regardless of whether that is achieved by:
-
-- compression
-- better placement
-- better scheduling
-- better admission / eviction
-
-If the curve saturates early, then further KV management work has limited upside.
-
-If the curve remains steep down to the compulsory floor, then stronger residency mechanisms are worth pursuing.
