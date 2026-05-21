@@ -22,6 +22,17 @@ That makes it a clean headroom study for future directions such as:
 - queue-aware admission / retention
 - queue-aware scheduling
 
+## Current Canonical Result Bundle
+
+The current synced full run for this study is:
+
+- [queue_information_visibility_full_current](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/queue_information_visibility_full_current)
+
+Key result tables:
+
+- [visibility_metrics.csv](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/queue_information_visibility_full_current/metrics/visibility_metrics.csv)
+- [threshold_summary.csv](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/queue_information_visibility_full_current/metrics/threshold_summary.csv)
+
 ## Core Idea
 
 At request position `i`, define the visible queue as:
@@ -63,6 +74,17 @@ Why:
 - they already produce very different reuse structures
 - they are already familiar from the earlier residency / eviction studies
 - they let us see whether queue visibility is workload-dependent
+
+Workload interpretation:
+
+- `natural_tenant_rotation_gap` creates reuse that is clustered by tenant-style families, with sizable gaps before the same family reappears
+- `natural_periodic_refinement_gap` creates periodic revisits to a shared evolving prompt, so the queue may reveal different reuse structure than tenant rotation
+- both are fixed-order request streams, which makes the queue horizon `Q` well-defined and easy to interpret
+
+For the current full run:
+
+- `natural_tenant_rotation_gap` full future = `640` requests
+- `natural_periodic_refinement_gap` full future = `720` requests
 
 This experiment is offline and trace-like, so we do not need to involve a live serving loop in the first implementation.
 

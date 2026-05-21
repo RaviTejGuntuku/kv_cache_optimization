@@ -80,6 +80,8 @@ def plot_lines(
     plt.ylabel(ylabel)
     plt.grid(alpha=0.25)
     plt.legend()
+    plt.xlim(left=0)
+    plt.ylim(bottom=0)
     if note_text:
         plt.figtext(0.5, 0.01, note_text, ha="center", fontsize=9)
     plt.tight_layout()
@@ -129,6 +131,7 @@ def plot_grouped_bars(
     plt.ylabel(ylabel)
     plt.grid(axis="y", alpha=0.25)
     plt.legend()
+    plt.ylim(bottom=0)
     plt.tight_layout()
     plt.savefig(output_path, dpi=200)
     plt.close()

@@ -15,6 +15,17 @@ This is the clean headroom study for:
 
 The study is **not** about DRAM offload. DRAM recovery is a separate question handled by the recomputation study.
 
+## Current Canonical Result Bundle
+
+The current synced full run for this study is:
+
+- [headroom_effective_residency_full_current](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/headroom_effective_residency_full_current)
+
+Key result tables:
+
+- [aggregated_metrics.csv](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/headroom_effective_residency_full_current/metrics/aggregated_metrics.csv)
+- [lru_headroom.csv](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/headroom_effective_residency_full_current/metrics/lru_headroom.csv)
+
 ## Why This Workload
 
 Earlier runs on:
@@ -39,6 +50,17 @@ Why this workload is appropriate:
 - hot families recur many times
 - there is no second reusable working set that keeps growing over time
 - therefore, once the reusable HBM slice is large enough to hold that hotset, the run is guaranteed to approach the compulsory-miss floor
+
+Workload structure:
+
+- each request belongs to one of a small number of reusable hot families
+- requests within a family share a long common prefix that spans many KV blocks
+- families recur for many rounds, so the same reusable prefix blocks are demanded repeatedly
+- there are also non-reusable tails, which ensure the study still includes real miss pressure rather than trivial perfect reuse
+
+This means the workload is intentionally constructed to answer one narrow question:
+
+- if the reusable hotset fits in the KV cache region, how much user-facing gain do we get as `LRU` approaches the compulsory floor?
 
 The manifest for this workload is:
 

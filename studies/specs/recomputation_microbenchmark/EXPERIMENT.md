@@ -27,6 +27,17 @@ The main output is the crossover region:
 
 This tells us when a DRAM KV tier is worth using instead of rebuilding missing blocks on GPU.
 
+## Current Canonical Result Bundle
+
+The current synced full run for this study is:
+
+- [recomputation_microbenchmark_ssd_full__20260521](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/recomputation_microbenchmark_ssd_full__20260521)
+
+Key result tables:
+
+- [recovery_times.csv](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/recomputation_microbenchmark_ssd_full__20260521/metrics/recovery_times.csv)
+- [crossover_points.json](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/results/recomputation_microbenchmark_ssd_full__20260521/metrics/crossover_points.json)
+
 ## Why The Synthetic Proxy Was Not Enough
 
 The earlier synthetic tensor microbenchmark was useful as a pipeline smoke test, but not as the canonical experiment.
@@ -107,6 +118,15 @@ That is:
 
 - the content can be cooked up
 - but the recovery path must go through real LLM serving, not a fake tensor kernel
+
+Current workload interpretation:
+
+- the independent variable is the reusable-prefix length, expressed as `k` KV blocks
+- each prompt is a synthetic long-prefix request whose prefix length is exactly `k * 16` tokens
+- the suffix and output shape are held fixed so only the recovery mode changes
+- the model is real, the KV objects are real, and the restore/recompute path goes through the real model stack
+
+So this is a synthetic prompt family, but not a synthetic compute proxy.
 
 ## Independent Variable
 
