@@ -2,8 +2,11 @@
 from __future__ import annotations
 
 import json
+import os
+import signal
 import subprocess
 import sys
+import time
 from datetime import datetime, timezone
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -29,6 +32,19 @@ def run_subprocess(command: list[str], *, dry_run: bool, cwd: Path | None = None
 def count_jsonl_rows(path: Path) -> int:
     with path.open("r", encoding="utf-8") as fh:
         return sum(1 for line in fh if line.strip())
+
+
+def max_prompt_len_from_jsonl(path: Path) -> int:
+    max_prompt_len = 0
+    with path.open("r", encoding="utf-8") as fh:
+        for line in fh:
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            prompt_len = row.get("prompt_len")
+            if prompt_len is not None:
+                max_prompt_len = max(max_prompt_len, int(prompt_len))
+    return max_prompt_len
 
 
 def load_json(path: Path) -> Any:
@@ -65,6 +81,50 @@ def profile_payload(name: str, mode: str, extra: dict[str, Any]) -> dict[str, An
     payload = {"experiment": name, "mode": mode}
     payload.update(extra)
     return payload
+
+
+def wait_until_ready(base_url: str, timeout_s: int = 600) -> None:
+    import requests
+
+    deadline = time.time() + timeout_s
+    last_exc = None
+    while time.time() < deadline:
+        try:
+            response = requests.get(base_url + "/v1/models", timeout=5)
+            if response.status_code == 200:
+                return
+        except Exception as exc:
+            last_exc = exc
+        time.sleep(2)
+    raise RuntimeError(f"Server did not become ready at {base_url}. Last error: {last_exc}")
+
+
+def launch_server(command: list[str], *, env: dict[str, str], cwd: Path) -> subprocess.Popen:
+    return subprocess.Popen(
+        command,
+        cwd=str(cwd),
+        env=env,
+        stdout=sys.stdout,
+        stderr=sys.stderr,
+        start_new_session=True,
+    )
+
+
+def stop_server(process: subprocess.Popen) -> None:
+    if process.poll() is not None:
+        return
+    try:
+        os.killpg(process.pid, signal.SIGTERM)
+    except ProcessLookupError:
+        return
+    try:
+        process.wait(timeout=20)
+    except subprocess.TimeoutExpired:
+        try:
+            os.killpg(process.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            return
+        process.wait(timeout=10)
 
 
 def call_two_pass(

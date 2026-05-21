@@ -112,6 +112,38 @@ def build_residency_hotset_ladder(spec: WorkloadSpec) -> list[dict]:
     return rows
 
 
+def build_residency_compulsory_reachable_hotset(spec: WorkloadSpec) -> list[dict]:
+    rows: list[dict] = []
+    seq = 0
+    hot = [f"resident_reachable_{idx:02d}" for idx in range(spec.hot_families)]
+
+    for round_id in range(spec.rounds):
+        for hot_idx, family in enumerate(hot):
+            rows.append(
+                make_row(
+                    make_family_prompt(
+                        family,
+                        round_id,
+                        prefix_tokens=spec.prefix_tokens,
+                        suffix_tokens=spec.suffix_tokens,
+                        offset=hot_idx * 31,
+                        phase_label=f"reuse-round-{round_id}",
+                    ),
+                    family=family,
+                    branch=round_id,
+                    sequence_id=seq,
+                    phase=f"reuse_round_{round_id}",
+                    kind="shared",
+                    prefix_tokens=spec.prefix_tokens,
+                    suffix_tokens=spec.suffix_tokens,
+                    output_len=spec.output_len,
+                )
+            )
+            seq += 1
+
+    return rows
+
+
 def build_residency_tenant_backlog(spec: WorkloadSpec) -> list[dict]:
     rows: list[dict] = []
     seq = 0
@@ -339,6 +371,7 @@ def build_recompute_resume_mix(spec: WorkloadSpec) -> list[dict]:
 
 BUILDERS = {
     "residency_hotset_ladder": build_residency_hotset_ladder,
+    "residency_compulsory_reachable_hotset": build_residency_compulsory_reachable_hotset,
     "residency_tenant_backlog": build_residency_tenant_backlog,
     "recompute_ladder": build_recompute_ladder,
     "recompute_resume_mix": build_recompute_resume_mix,
@@ -349,23 +382,23 @@ SPECS: tuple[WorkloadSpec, ...] = (
     WorkloadSpec(
         experiment="effective_residency_sweep",
         variant="optimistic",
-        name="residency_hotset_capacity_ladder",
+        name="residency_compulsory_reachable_hotset",
         description=(
-            "Large reusable hot families recur under controlled interference so the working set "
-            "straddles the HBM capacity boundary. This is the optimistic workload for measuring "
-            "the value of increasing effective KV residency."
+            "Finite hot families recur without introducing a second reusable working set. "
+            "The reusable hotset is intentionally bounded so that, at sufficiently large reusable "
+            "HBM capacity, the workload is guaranteed to approach its compulsory-miss floor."
         ),
-        builder="residency_hotset_ladder",
-        prefix_tokens=6144,
-        suffix_tokens=512,
+        builder="residency_compulsory_reachable_hotset",
+        prefix_tokens=5120,
+        suffix_tokens=128,
         output_len=512,
-        hot_families=10,
-        cold_families=20,
-        rounds=20,
-        interference_span=10,
+        hot_families=12,
+        cold_families=0,
+        rounds=32,
+        interference_span=0,
         concurrency_hint=96,
-        page_sizes=(16, 32, 64, 128),
-        capacity_sweep_blocks=(4000, 6000, 8000, 10000, 12000, 16000),
+        page_sizes=(16,),
+        capacity_sweep_blocks=(500, 1000, 1500, 2000, 3000, 4000, 5000, 6000),
     ),
     WorkloadSpec(
         experiment="recomputation_microbenchmark",

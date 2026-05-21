@@ -1,0 +1,19 @@
+{
+  "dataset": "/root/kv_cache_research/datasets/synthetic/headroom_studies/effective_residency_sweep/residency_compulsory_reachable_hotset.jsonl",
+  "gpu_kv_capacity_blocks": 2000,
+  "max_full_blocks": 360,
+  "max_prompt_blocks": 328,
+  "mean_full_blocks": 360.0,
+  "mean_prompt_blocks": 328.0,
+  "num_requests": 384,
+  "page_size": 16,
+  "pressure_by_concurrency": [
+    {
+      "concurrency": 96,
+      "full_request_blocks": 34560,
+      "full_request_pressure": 17.28,
+      "prompt_only_blocks": 31488,
+      "prompt_only_pressure": 15.744
+    }
+  ]
+}

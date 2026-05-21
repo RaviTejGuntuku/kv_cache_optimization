@@ -34,6 +34,7 @@ Experiments:
 
 - [effective_residency_sweep](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/effective_residency_sweep/EXPERIMENT.md)
 - [recomputation_microbenchmark](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/recomputation_microbenchmark/EXPERIMENT.md)
+- [queue_information_visibility](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/queue_information_visibility/EXPERIMENT.md)
 
 ## Runner Entry Points
 
@@ -41,6 +42,7 @@ These experiment plans are now implemented by the following runners:
 
 - [run_effective_residency_sweep.py](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/benchmarking/runners/run_effective_residency_sweep.py)
 - [run_recomputation_microbenchmark.py](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/benchmarking/runners/run_recomputation_microbenchmark.py)
+- [run_queue_information_visibility.py](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/benchmarking/runners/run_queue_information_visibility.py)
 
 Each runner supports:
 
@@ -55,22 +57,26 @@ Recommended model for the current stack:
 
 Recommended execution order:
 
-1. Run both pilots.
+1. Run all three pilots.
 2. Inspect the generated `run_manifest.json`, `reports/`, and benchmark JSONLs.
-3. If the pilots look sane, run the two full experiments.
+3. If the pilots look sane, run the three full experiments.
 
 Current estimated wall-clock runtime on one H100-class GPU:
 
 - effective residency sweep full: about `1.75 h`
-- recomputation microbenchmark full: about `1.5 h`
+- recomputation microbenchmark full: about `0.4 h`
+
+Queue information visibility is offline and can run locally:
+
+- queue information visibility full: about `0.05 h`
 
 Total full-suite estimate:
 
-- about `3.25 h`
+- about `2.2 h` on GPU plus a few minutes locally
 
 Total pilot-suite estimate:
 
-- about `0.24 h`
+- about `0.15 h` on GPU plus a minute locally
 
 Pilot mode is a smoke test only:
 

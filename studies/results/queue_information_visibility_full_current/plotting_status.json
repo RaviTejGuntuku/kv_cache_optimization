@@ -1,0 +1,5 @@
+{
+  "note": "Metrics were generated successfully, but plotting failed. Install matplotlib in the active Python environment to materialize graphs.",
+  "reason": "Command '['/opt/homebrew/opt/python@3.14/bin/python3.14', '/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/benchmarking/analysis_scripts/plot_queue_information_visibility.py', '--experiment-root', 'studies/results/queue_information_visibility_full_current']' returned non-zero exit status 1.",
+  "status": "failed"
+}

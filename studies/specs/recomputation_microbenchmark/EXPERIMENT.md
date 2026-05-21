@@ -2,119 +2,84 @@
 
 ## Objective
 
-This study is about the recovery path **after a KV miss has already happened**.
+This study asks a simple systems question:
 
-For a request that needs `k` missing KV-cache blocks, we want to know:
-
-- how long does recovery take if those `k` blocks are already in lower-tier DRAM?
-- how long does recovery take if those `k` blocks must be recomputed on GPU?
+- if a request needs `k` missing KV-cache blocks, is it faster to:
+  - reuse those blocks if they are already in `HBM`
+  - fetch those blocks from host `DRAM`
+  - fetch those blocks from local `SSD`
+  - or recompute those blocks through the real model?
 
 The quantity of interest is:
 
-- `recovery_latency(method, k)`
+- `request_latency(method, k)`
 
 where:
 
-- `method ∈ {HBM_reuse, DRAM_fetch, recompute}`
+- `method ∈ {HBM_reuse, DRAM_fetch, SSD_fetch, recompute}`
 - `k` is the number of missing KV blocks
 - block size is fixed at **16 tokens**
 
-The main output is the crossover point:
+The main output is the crossover region:
 
 - for what `k` does `DRAM_fetch(k)` become faster than `recompute(k)`?
+- for what `k` does `SSD_fetch(k)` become faster than `recompute(k)`?
 
-That crossover tells us when a DRAM KV tier is worth using instead of recomputation.
+This tells us when a DRAM KV tier is worth using instead of rebuilding missing blocks on GPU.
 
-## Recommended Framing
+## Why The Synthetic Proxy Was Not Enough
 
-For bang-for-buck, this should be a **systems microbenchmark**, not an end-to-end LLM serving run.
-
-We do **not** need a full model server to answer the first-order question.
-
-The clean experiment is:
-
-1. treat one KV block as a tensor payload of realistic size
-2. generate tensor groups for `k` blocks
-3. measure:
-   - time to touch them when already resident in HBM
-   - time to fetch them from pinned host DRAM into HBM
-   - time to recompute them on the GPU
-4. compare the resulting curves and identify the crossover region
-
-This gives the raw recovery curves directly, without scheduler noise.
-
-## What Counts As A Block
-
-Fix:
-
-- block size = **16 tokens**
-
-Block payload size should be derived from:
-
-- model hidden size
-- number of KV heads
-- head dimension
-- dtype
-- number of layers
-
-For a given model and dtype, one KV block has a deterministic byte size:
-
-- `bytes_per_block = 2 * layers * block_tokens * kv_heads * head_dim * bytes_per_element`
-
-The `2` is for keys and values.
-
-The experiment should record the exact block byte size used.
-
-## Memory Hierarchy
-
-For this repo, use the following practical hierarchy:
-
-- `L0`: HBM-resident KV block
-  - not an actionable miss-recovery tier
-  - serves as the lower-bound baseline
-- `L1`: host DRAM / pinned CPU memory
-  - realistic first spill tier
-- `Recompute`: regenerate the block on GPU
-
-Important note:
-
-- `HBM` is included as a baseline reference curve, not as a decision point
-- if a block is already in HBM, that is simply a cache hit
-
-## Why SSD Is Omitted
-
-SSD is intentionally out of scope for the first pass.
+The earlier synthetic tensor microbenchmark was useful as a pipeline smoke test, but not as the canonical experiment.
 
 Reason:
 
-- the first real systems decision is almost certainly `recompute` vs `DRAM_fetch`
-- SSD is more relevant for background staging or very large spills than for online critical-path recovery
-- adding SSD now increases engineering complexity without improving the first-order answer
+- its recompute path stayed too close to fixed kernel-launch overhead
+- the recompute curve did not scale convincingly with `k`
+- therefore the measured crossover was not trustworthy
 
-## Independent Variables
+So the canonical experiment should use a **real model execution path**, not a toy compute proxy.
 
-- `k`: number of missing blocks
-- `method`:
-  - `HBM_reuse`
-  - `DRAM_fetch`
-  - `recompute`
-- optional follow-up `batch_regime`
-  - primary: `1`
-  - secondary sensitivity check: `8`
+## Canonical Design
+
+This is now a **real-model recovery experiment**.
+
+For one prompt family with a long reusable prefix, we evaluate three regimes:
+
+1. `HBM_reuse`
+   - the needed `k` KV blocks are already resident in HBM
+   - this is the hit baseline / lower bound
+
+2. `DRAM_fetch`
+   - the needed `k` KV blocks have already been computed earlier
+   - they are no longer in HBM
+   - they are present in host DRAM and must be restored before the request proceeds
+
+3. `SSD_fetch`
+   - the needed `k` KV blocks have already been computed earlier
+   - they are persisted to local SSD and must be restored through host memory before the request proceeds
+
+4. `recompute`
+   - the needed `k` KV blocks are absent from both HBM and DRAM
+   - the system must rebuild them from tokens through the model
+
+All three regimes must use:
+
+- the same model
+- the same prompt family
+- the same output length
+- the same server configuration
+
+Only the recovery mode changes.
 
 ## Fixed Controls
 
-- block size = `16` tokens
-- block byte size formula
-- dtype
-- device
-- tensor layout
-- copy method
-- pinned-memory configuration
-- recovery tensor shape
-- measurement harness
-
-## Batch Size Choice
+- model: `Qwen/Qwen2.5-7B-Instruct`
+- block size: `16` tokens
+- scheduler: `fcfs`
+- batch size: `1`
+- page size: `16`
+- output length: fixed across runs
+- request shape: identical except for the number of reusable prefix blocks `k`
 
 Primary batch size:
 
@@ -122,116 +87,146 @@ Primary batch size:
 
 Why:
 
-- the question is about **critical-path request recovery**
-- batch size `1` gives the cleanest marginal latency per request
-- larger batch sizes would let transfer and compute overlap in ways that obscure the decision boundary
+- this is a critical-path recovery study
+- batch size `1` gives the clearest per-request latency signal
+- larger batches can be used only as a later sensitivity panel
 
-Secondary sensitivity point:
+## Workload Construction
 
-- optional **`8`**
+Construct a family of prompts such that:
+
+- each prompt has a reusable prefix of exactly `k * 16` tokens
+- the suffix after that reusable prefix is held fixed
+- the output length is held fixed
+
+For each `k`, create a request whose serving cost depends on recovering exactly `k` reusable blocks.
+
+The prompt family should be synthetic but **served through the real model**.
+
+That is:
+
+- the content can be cooked up
+- but the recovery path must go through real LLM serving, not a fake tensor kernel
+
+## Independent Variable
+
+The independent variable is:
+
+- `k = number of missing KV blocks`
+
+Use a denser sweep than powers of two.
+
+### Recommended full sweep
+
+- `k = 1, 10, 20, 30, ..., 800`
+
+This gives a wide, uniform sweep across small and large recovery sizes while staying easy to interpret.
+
+### Recommended pilot sweep
+
+- `k ∈ {1, 10, 50, 100, 200, 400, 800}`
+
+If no crossover appears by `k = 800`, report:
+
+- `no crossover observed in [1, 800]`
+
+## Measurement
+
+### Primary metrics
+
+- wall-clock request latency `p50` in milliseconds
+- wall-clock request latency `p95` in milliseconds
+
+### Secondary metrics
+
+- wall-clock trimmed mean in milliseconds
+- CUDA-event recovery latency `p50` in milliseconds
+- CUDA-event recovery latency `p95` in milliseconds
 
 Why:
 
-- if we want one realism check, run a second small panel at batch size `8`
-- but the canonical experiment and the headline crossover should come from batch size `1`
+- wall-clock request latency is the actual systems objective
+- `p50` and `p95` are much more stable than raw means for this benchmark
+- trimmed mean helps detect whether a crossover is robust or just an outlier artifact
+- CUDA-event latency is useful only as a supporting diagnostic
 
-We should **not** sweep many batch sizes in the first version.
+We do **not** report:
 
-## Measurement Axes
+- bytes recovered
+- effective GB/s
 
-Primary metric:
-
-- wall-clock recovery latency in milliseconds
-
-Secondary metric:
-
-- CUDA-event recovery latency in milliseconds
-
-Why both wall-clock and CUDA-event time:
-
-- wall-clock time is the user-facing quantity
-- CUDA-event time isolates device-side copy/compute cost
-- if they disagree materially, that reveals host submission / synchronization overhead
-
-This is **not** a decode-step-indexed experiment. The main question is raw recovery cost by tier for one miss episode.
+Those can be derived later if needed, but they are not central to the question.
 
 ## Procedure
 
-### Phase 1: Parameterize realistic KV block size
-
-1. Choose a reference model config.
-2. Compute `bytes_per_block` for one 16-token KV block.
-3. Record this in the manifest.
-
-### Phase 2: Build synthetic block payloads
-
-1. Allocate synthetic KV tensors matching the per-block byte size.
-2. Materialize collections of:
-   - primary grid covering `k = 1` through `256`
-3. Store those payloads in:
-   - GPU HBM
-   - pinned host DRAM
-
-### Phase 3: Measure HBM baseline
+### Phase 1: HBM hit baseline
 
 For each `k`:
 
-1. Touch `k` blocks already resident in HBM.
-2. Synchronize.
-3. Measure:
-   - host wall-clock latency
-   - CUDA-event latency
+1. warm the reusable prefix so that its `k` blocks are present in HBM
+2. serve the request
+3. record:
+   - wall-clock latency
+   - `TTFT`
+   - CUDA-event latency if available
 
-This is the best-case lower bound.
+This is the lower-bound reference.
 
-### Phase 4: Measure DRAM fetch
-
-For each `k`:
-
-1. Copy `k` blocks from pinned host DRAM to GPU memory.
-2. Synchronize the device.
-3. Measure:
-   - host wall-clock latency
-   - CUDA-event latency
-
-### Phase 5: Measure recomputation
+### Phase 2: DRAM restore
 
 For each `k`:
 
-1. Run a synthetic compute kernel that regenerates `k` KV blocks of the same size.
-2. Synchronize the device.
-3. Measure:
-   - host wall-clock latency
-   - CUDA-event latency
+1. precompute the same reusable prefix
+2. ensure the corresponding `k` blocks are resident in host DRAM rather than HBM
+3. serve the request and force restoration from DRAM
+4. record:
+   - wall-clock latency
+   - CUDA-event latency if available
 
-The compute should approximate the amount of work needed to regenerate the payload, rather than simply writing random bytes.
+This measures the cost of a lower-tier host-memory fetch.
 
-### Phase 6: Adaptive refinement near the crossover
+### Phase 3: SSD restore
 
-Use a two-stage sweep.
+For each `k`:
 
-Stage A: broad-but-dense first pass
+1. precompute the same reusable prefix
+2. persist the corresponding `k` blocks to local SSD
+3. serve the request and force restoration from SSD through host memory
+4. record:
+   - wall-clock latency
+   - CUDA-event latency if available
 
-- `k = 1..32` at every integer
-- `k = 40, 48, 56, ..., 128` in steps of `8`
-- `k = 144, 160, 176, ..., 256` in steps of `16`
+This measures the cost of a lower-tier SSD-backed restore.
 
-Stage B: local refinement
+### Phase 4: Recompute
 
-If Stage A reveals a crossover interval, for example between `k = 72` and `k = 80`, then run a second pass only in that interval:
+For each `k`:
 
-- refinement grid: every integer `k` in the first interval where the ordering changes
+1. ensure the corresponding `k` blocks are absent
+2. serve the same request
+3. let the system rebuild the reusable prefix through the actual model path
+4. record:
+   - wall-clock latency
+   - `TTFT`
+   - CUDA-event latency if available
 
-If no crossover appears by `k = 256`, then the experiment should explicitly report:
+This measures the true rebuild cost through the model.
 
-- `no crossover observed in [1, 256]`
+## Interpretation
 
-and the next run can extend the upper limit rather than changing the lower region.
+The curves should be read as:
 
-This avoids:
+- `HBM_reuse(k)`: best-case hit baseline
+- `DRAM_fetch(k)`: host-memory restore path
+- `SSD_fetch(k)`: SSD-backed restore path
+- `recompute(k)`: rebuild path
 
-- missing the critical point because the sweep is too coarse
-- wasting time on dense measurement far from the crossover
+The key question is:
+
+- when does the `DRAM_fetch` curve drop below the `recompute` curve?
+- when does the `SSD_fetch` curve drop below the `recompute` curve?
+
+That is the decision boundary for whether a DRAM KV tier is worth using.
 
 ## Outputs
 
@@ -239,83 +234,39 @@ This avoids:
 
 - `recovery_times.csv`
   - columns:
+    - `phase`
     - `batch_size`
     - `k_blocks`
     - `method`
     - `wall_mean_ms`
+    - `wall_trimmed_mean_ms`
     - `wall_p50_ms`
     - `wall_p95_ms`
     - `wall_std_ms`
     - `cuda_mean_ms`
+    - `cuda_trimmed_mean_ms`
     - `cuda_p50_ms`
     - `cuda_p95_ms`
-    - `cuda_std_ms`
 
 - `crossover_points.json`
-  - `dram_vs_recompute`
-  - coarse interval
-  - refined estimate
+  - first observed crossover interval
+  - refined estimated crossover if refinement is run
 
 ### Required graphs
 
-1. recovery time vs `k`
-   - one line for `HBM_reuse`
-   - one for `DRAM_fetch`
-   - one for `recompute`
+1. wall-clock `p50` latency vs `k`
+2. wall-clock `p95` latency vs `k`
+3. CUDA-event `p50` latency vs `k`
+4. CUDA-event `p95` latency vs `k`
 
-2. crossover summary
-   - vertical markers or annotated intersection table
+## Success Criterion
 
-3. optional wall-clock vs CUDA-event comparison
-   - to show how much overhead is outside raw device work
+The experiment is successful if:
 
-## Pilot
+- the `recompute` curve scales meaningfully upward with `k`
+- the `DRAM_fetch` curve also scales with `k`
+- the relative ordering is stable enough to identify:
+  - a crossover interval
+  - or the explicit absence of a crossover up to `k = 256`
 
-Pilot goal:
-
-- validate tensor sizing
-- validate timing harness
-- validate device synchronization
-- validate output schema
-
-Pilot settings:
-
-- `k = {1, 4, 16}`
-- `methods = {HBM_reuse, DRAM_fetch, recompute}`
-- `batch_size = 1`
-- `20` repetitions each
-
-The pilot should finish in a few minutes.
-
-## Full Run
-
-Full settings:
-
-- primary pass:
-  - `k = 1..32`
-  - `k = 40..128` in steps of `8`
-  - `k = 144..256` in steps of `16`
-  - `methods = {HBM_reuse, DRAM_fetch, recompute}`
-  - `batch_size = 1`
-  - `100` repetitions per point
-- adaptive refinement:
-  - integer `k` only in the first crossover interval
-  - `100` repetitions per point
-- optional secondary realism check:
-  - rerun only the refined crossover interval at `batch_size = 8`
-
-## Interpretation
-
-This experiment answers:
-
-- whether recomputation is cheap enough to prefer over lower-tier fetch for small or moderate misses
-- whether a DRAM spill layer is likely worthwhile
-- at what miss size the system should switch from recompute to DRAM fetch
-
-If recompute beats DRAM until very large `k`, then:
-
-- elaborate KV spill systems may be lower-value than expected
-
-If DRAM beats recompute quickly, then:
-
-- DRAM-backed KV caching, prefetching, and lower-tier recovery become much more compelling
+If recompute remains nearly flat as `k` grows, the experiment is still not measuring the intended recovery path and must be fixed before interpretation.

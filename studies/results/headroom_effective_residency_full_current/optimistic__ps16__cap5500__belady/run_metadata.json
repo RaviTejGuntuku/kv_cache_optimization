@@ -1,0 +1,24 @@
+{
+  "args": {
+    "auto_version": false,
+    "bench_seed": 1,
+    "dataset_path": "/root/kv_cache_research/datasets/synthetic/headroom_studies/effective_residency_sweep/residency_compulsory_reachable_hotset.jsonl",
+    "gpu_kv_capacity_blocks": 5500,
+    "host": "127.0.0.1",
+    "max_concurrency": 96,
+    "mem_fraction_static": "0.7",
+    "model_path": "Qwen/Qwen2.5-7B-Instruct",
+    "num_prompts": 384,
+    "output_root": "studies/results/headroom_effective_residency_full_current/optimistic__ps16__cap5500__belady",
+    "page_size": 16,
+    "port": 30000,
+    "request_rate": "16",
+    "run_tag": null,
+    "schedule_policy": "fcfs",
+    "second_policy": "belady",
+    "server_extra_args": "--max-total-tokens 88000",
+    "skip_analysis": false
+  },
+  "invoked_at_utc": "2026-05-21T06:50:35Z",
+  "resolved_output_root": "studies/results/headroom_effective_residency_full_current/optimistic__ps16__cap5500__belady"
+}

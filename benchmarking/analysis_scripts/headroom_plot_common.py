@@ -58,6 +58,7 @@ def plot_lines(
     ylabel: str,
     output_path: Path,
     series_order: list[str] | None = None,
+    note_text: str | None = None,
 ) -> None:
     ensure_dir(output_path.parent)
     plt.figure(figsize=(7.5, 4.5))
@@ -79,6 +80,8 @@ def plot_lines(
     plt.ylabel(ylabel)
     plt.grid(alpha=0.25)
     plt.legend()
+    if note_text:
+        plt.figtext(0.5, 0.01, note_text, ha="center", fontsize=9)
     plt.tight_layout()
     plt.savefig(output_path, dpi=200)
     plt.close()

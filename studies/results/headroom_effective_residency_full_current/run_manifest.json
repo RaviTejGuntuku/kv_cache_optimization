@@ -1,0 +1,38 @@
+{
+  "capacity_blocks": [
+    500,
+    1000,
+    1500,
+    2000,
+    2500,
+    3000,
+    3500,
+    4000,
+    4500,
+    5000,
+    5500,
+    6000
+  ],
+  "estimated_runtime_hours": 2.5,
+  "experiment": "effective_residency_sweep",
+  "invoked_at_utc": null,
+  "max_concurrency": 96,
+  "max_prompt_len": 5248,
+  "mem_fraction_static": 0.7,
+  "mode": "full",
+  "num_prompts": 384,
+  "page_sizes": [
+    16
+  ],
+  "preflight": {
+    "max_prompt_len": 5248,
+    "max_req_input_len": 32762,
+    "profiled_token_capacity": 96000,
+    "requested_max_tokens": 96000
+  },
+  "request_rate": "16",
+  "resolved_output_root": "studies/results/headroom_effective_residency_full_current",
+  "workloads": [
+    "datasets/synthetic/headroom_studies/effective_residency_sweep/residency_compulsory_reachable_hotset.jsonl"
+  ]
+}

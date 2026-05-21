@@ -1,0 +1,52 @@
+{
+  "description": "Finite hot families recur without introducing a second reusable working set. The reusable hotset is intentionally bounded so that, at sufficiently large reusable HBM capacity, the workload is guaranteed to approach its compulsory-miss floor.",
+  "experiment": "effective_residency_sweep",
+  "name": "residency_compulsory_reachable_hotset",
+  "per_request_full_blocks_by_page_size": {
+    "16": 360
+  },
+  "recommended_capacity_sweep_blocks": [
+    500,
+    1000,
+    1500,
+    2000,
+    3000,
+    4000,
+    5000,
+    6000
+  ],
+  "recommended_max_concurrency": 96,
+  "recommended_page_sizes": [
+    16
+  ],
+  "selected_requests": 384,
+  "spec": {
+    "builder": "residency_compulsory_reachable_hotset",
+    "capacity_sweep_blocks": [
+      500,
+      1000,
+      1500,
+      2000,
+      3000,
+      4000,
+      5000,
+      6000
+    ],
+    "cold_families": 0,
+    "concurrency_hint": 96,
+    "description": "Finite hot families recur without introducing a second reusable working set. The reusable hotset is intentionally bounded so that, at sufficiently large reusable HBM capacity, the workload is guaranteed to approach its compulsory-miss floor.",
+    "experiment": "effective_residency_sweep",
+    "hot_families": 12,
+    "interference_span": 0,
+    "name": "residency_compulsory_reachable_hotset",
+    "output_len": 512,
+    "page_sizes": [
+      16
+    ],
+    "prefix_tokens": 5120,
+    "rounds": 32,
+    "suffix_tokens": 128,
+    "variant": "optimistic"
+  },
+  "variant": "optimistic"
+}

@@ -1,0 +1,172 @@
+{
+  "rows": [
+    {
+      "metric": "reuse_event_visibility_fraction",
+      "smallest_queue_size_numeric": 220,
+      "smallest_queue_size_q": "220",
+      "threshold": 0.5,
+      "workload": "natural_periodic_refinement_gap"
+    },
+    {
+      "metric": "reuse_event_visibility_fraction",
+      "smallest_queue_size_numeric": 360,
+      "smallest_queue_size_q": "360",
+      "threshold": 0.75,
+      "workload": "natural_periodic_refinement_gap"
+    },
+    {
+      "metric": "reuse_event_visibility_fraction",
+      "smallest_queue_size_numeric": 510,
+      "smallest_queue_size_q": "510",
+      "threshold": 0.9,
+      "workload": "natural_periodic_refinement_gap"
+    },
+    {
+      "metric": "reuse_event_visibility_fraction",
+      "smallest_queue_size_numeric": 580,
+      "smallest_queue_size_q": "580",
+      "threshold": 0.95,
+      "workload": "natural_periodic_refinement_gap"
+    },
+    {
+      "metric": "reuse_block_visibility_fraction",
+      "smallest_queue_size_numeric": 220,
+      "smallest_queue_size_q": "220",
+      "threshold": 0.5,
+      "workload": "natural_periodic_refinement_gap"
+    },
+    {
+      "metric": "reuse_block_visibility_fraction",
+      "smallest_queue_size_numeric": 360,
+      "smallest_queue_size_q": "360",
+      "threshold": 0.75,
+      "workload": "natural_periodic_refinement_gap"
+    },
+    {
+      "metric": "reuse_block_visibility_fraction",
+      "smallest_queue_size_numeric": 510,
+      "smallest_queue_size_q": "510",
+      "threshold": 0.9,
+      "workload": "natural_periodic_refinement_gap"
+    },
+    {
+      "metric": "reuse_block_visibility_fraction",
+      "smallest_queue_size_numeric": 580,
+      "smallest_queue_size_q": "580",
+      "threshold": 0.95,
+      "workload": "natural_periodic_refinement_gap"
+    },
+    {
+      "metric": "next_reuse_visibility_fraction",
+      "smallest_queue_size_numeric": 80,
+      "smallest_queue_size_q": "80",
+      "threshold": 0.5,
+      "workload": "natural_periodic_refinement_gap"
+    },
+    {
+      "metric": "next_reuse_visibility_fraction",
+      "smallest_queue_size_numeric": 80,
+      "smallest_queue_size_q": "80",
+      "threshold": 0.75,
+      "workload": "natural_periodic_refinement_gap"
+    },
+    {
+      "metric": "next_reuse_visibility_fraction",
+      "smallest_queue_size_numeric": 80,
+      "smallest_queue_size_q": "80",
+      "threshold": 0.9,
+      "workload": "natural_periodic_refinement_gap"
+    },
+    {
+      "metric": "next_reuse_visibility_fraction",
+      "smallest_queue_size_numeric": 80,
+      "smallest_queue_size_q": "80",
+      "threshold": 0.95,
+      "workload": "natural_periodic_refinement_gap"
+    },
+    {
+      "metric": "reuse_event_visibility_fraction",
+      "smallest_queue_size_numeric": 240,
+      "smallest_queue_size_q": "240",
+      "threshold": 0.5,
+      "workload": "natural_tenant_rotation_gap"
+    },
+    {
+      "metric": "reuse_event_visibility_fraction",
+      "smallest_queue_size_numeric": 270,
+      "smallest_queue_size_q": "270",
+      "threshold": 0.75,
+      "workload": "natural_tenant_rotation_gap"
+    },
+    {
+      "metric": "reuse_event_visibility_fraction",
+      "smallest_queue_size_numeric": 480,
+      "smallest_queue_size_q": "480",
+      "threshold": 0.9,
+      "workload": "natural_tenant_rotation_gap"
+    },
+    {
+      "metric": "reuse_event_visibility_fraction",
+      "smallest_queue_size_numeric": 490,
+      "smallest_queue_size_q": "490",
+      "threshold": 0.95,
+      "workload": "natural_tenant_rotation_gap"
+    },
+    {
+      "metric": "reuse_block_visibility_fraction",
+      "smallest_queue_size_numeric": 240,
+      "smallest_queue_size_q": "240",
+      "threshold": 0.5,
+      "workload": "natural_tenant_rotation_gap"
+    },
+    {
+      "metric": "reuse_block_visibility_fraction",
+      "smallest_queue_size_numeric": 270,
+      "smallest_queue_size_q": "270",
+      "threshold": 0.75,
+      "workload": "natural_tenant_rotation_gap"
+    },
+    {
+      "metric": "reuse_block_visibility_fraction",
+      "smallest_queue_size_numeric": 480,
+      "smallest_queue_size_q": "480",
+      "threshold": 0.9,
+      "workload": "natural_tenant_rotation_gap"
+    },
+    {
+      "metric": "reuse_block_visibility_fraction",
+      "smallest_queue_size_numeric": 490,
+      "smallest_queue_size_q": "490",
+      "threshold": 0.95,
+      "workload": "natural_tenant_rotation_gap"
+    },
+    {
+      "metric": "next_reuse_visibility_fraction",
+      "smallest_queue_size_numeric": 10,
+      "smallest_queue_size_q": "10",
+      "threshold": 0.5,
+      "workload": "natural_tenant_rotation_gap"
+    },
+    {
+      "metric": "next_reuse_visibility_fraction",
+      "smallest_queue_size_numeric": 40,
+      "smallest_queue_size_q": "40",
+      "threshold": 0.75,
+      "workload": "natural_tenant_rotation_gap"
+    },
+    {
+      "metric": "next_reuse_visibility_fraction",
+      "smallest_queue_size_numeric": 40,
+      "smallest_queue_size_q": "40",
+      "threshold": 0.9,
+      "workload": "natural_tenant_rotation_gap"
+    },
+    {
+      "metric": "next_reuse_visibility_fraction",
+      "smallest_queue_size_numeric": 190,
+      "smallest_queue_size_q": "190",
+      "threshold": 0.95,
+      "workload": "natural_tenant_rotation_gap"
+    }
+  ]
+}

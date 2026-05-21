@@ -1,0 +1,50 @@
+{
+  "dram_vs_recompute_cuda_mean_ms": {
+    "estimate_k": null,
+    "found": false,
+    "lower_k": null,
+    "upper_k": null
+  },
+  "dram_vs_recompute_cuda_p50_ms": {
+    "estimate_k": null,
+    "found": false,
+    "lower_k": null,
+    "upper_k": null
+  },
+  "dram_vs_recompute_cuda_trimmed_mean_ms": {
+    "estimate_k": null,
+    "found": false,
+    "lower_k": null,
+    "upper_k": null
+  },
+  "dram_vs_recompute_wall_mean_ms": {
+    "estimate_k": null,
+    "found": false,
+    "lower_k": null,
+    "upper_k": null
+  },
+  "dram_vs_recompute_wall_p50_ms": {
+    "estimate_k": null,
+    "found": false,
+    "lower_k": null,
+    "upper_k": null
+  },
+  "dram_vs_recompute_wall_trimmed_mean_ms": {
+    "estimate_k": null,
+    "found": false,
+    "lower_k": null,
+    "upper_k": null
+  },
+  "ssd_vs_recompute_cuda_p50_ms": {
+    "estimate_k": null,
+    "found": false,
+    "lower_k": null,
+    "upper_k": null
+  },
+  "ssd_vs_recompute_wall_p50_ms": {
+    "estimate_k": null,
+    "found": false,
+    "lower_k": null,
+    "upper_k": null
+  }
+}
