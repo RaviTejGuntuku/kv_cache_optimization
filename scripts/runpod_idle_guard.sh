@@ -9,6 +9,7 @@ Usage:
   scripts/runpod_idle_guard.sh --bootstrap [--env PATH]
   scripts/runpod_idle_guard.sh --sync-up [--env PATH]
   scripts/runpod_idle_guard.sh --resolve-ssh [--env PATH]
+  scripts/runpod_idle_guard.sh --terminate [--env PATH] [--dry-run]
 
 Mac-side RunPod lifecycle guard.
 
@@ -22,6 +23,11 @@ Create mode:
   - Prints the requested A100/H100 + 300GB pod spec.
   - Requires interactive confirmation.
   - Creates the pod, waits for SSH, runs apt setup, and syncs local code to GPU.
+
+Terminate mode:
+  - Resolves the pod from the API.
+  - Requires typing DELETE <pod_id>.
+  - Syncs remote data down when SSH is available, then stops and deletes the pod.
 EOF
 }
 
@@ -44,6 +50,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --resolve-ssh)
       MODE="resolve-ssh"
+      shift
+      ;;
+    --terminate|--destroy)
+      MODE="terminate"
       shift
       ;;
     --dry-run)
@@ -288,7 +298,6 @@ probe_remote() {
 }
 
 sync_remote_to_local() {
-  require_env RUNPOD_NOTIFY_EMAIL
   mkdir -p "$LOCAL_SYNC_ROOT"
   local dest="$LOCAL_SYNC_ROOT/$RUNPOD_POD_ID"
   mkdir -p "$dest"
@@ -338,6 +347,15 @@ stop_pod() {
     return
   fi
   api_request POST "pods/$RUNPOD_POD_ID/stop" >/dev/null
+}
+
+delete_pod() {
+  log "deleting RunPod pod $RUNPOD_POD_ID"
+  if [[ "$DRY_RUN" -eq 1 ]]; then
+    log "dry-run: skipped RunPod delete API"
+    return
+  fi
+  api_request DELETE "pods/$RUNPOD_POD_ID" >/dev/null
 }
 
 send_email() {
@@ -471,6 +489,63 @@ create_pod() {
   echo "SSH: ssh root@$RUNPOD_SSH_HOST -p $RUNPOD_SSH_PORT -i $RUNPOD_SSH_KEY"
 }
 
+terminate_pod() {
+  resolve_pod
+
+  echo "About to permanently delete this RunPod pod:"
+  printf '  pod_id: %s\n' "$RUNPOD_POD_ID"
+  printf '  status: %s\n' "${RUNPOD_POD_STATUS:-unknown}"
+  printf '  gpu: %s\n' "${RUNPOD_POD_GPU:-unknown}"
+  printf '  cost_per_hr: %s\n' "${RUNPOD_POD_COST_PER_HR:-unknown}"
+  if [[ -n "${RUNPOD_SSH_HOST:-}" && -n "${RUNPOD_SSH_PORT:-}" ]]; then
+    printf '  ssh: root@%s -p %s\n' "$RUNPOD_SSH_HOST" "$RUNPOD_SSH_PORT"
+  else
+    printf '  ssh: unavailable\n'
+  fi
+  echo
+  echo "This is destructive. RunPod deletion can remove pod-attached data that was not synced or stored on a network volume."
+  echo "Expected confirmation: DELETE $RUNPOD_POD_ID"
+
+  if [[ "$DRY_RUN" -eq 1 ]]; then
+    log "dry-run: skipped terminate confirmation, sync, stop, and delete"
+    return
+  fi
+  if [[ ! -t 0 ]]; then
+    echo "--terminate requires an interactive terminal for confirmation." >&2
+    exit 2
+  fi
+
+  local answer
+  read -r -p "Type DELETE $RUNPOD_POD_ID to terminate this pod: " answer
+  if [[ "$answer" != "DELETE $RUNPOD_POD_ID" ]]; then
+    echo "Termination cancelled."
+    exit 1
+  fi
+
+  local now
+  now="$(date +%s)"
+  if [[ "${RUNPOD_TERMINATE_SYNC_BEFORE_DELETE:-1}" != "0" ]]; then
+    if [[ -n "${RUNPOD_SSH_HOST:-}" && -n "${RUNPOD_SSH_PORT:-}" ]]; then
+      if sync_remote_to_local; then
+        LAST_SYNC_AT="$now"
+        save_state
+      else
+        echo "Sync failed; refusing to delete. Set RUNPOD_TERMINATE_SYNC_BEFORE_DELETE=0 only if you accept data loss risk." >&2
+        exit 1
+      fi
+    else
+      echo "No SSH endpoint is available, so sync-before-delete cannot run." >&2
+      echo "Set RUNPOD_TERMINATE_SYNC_BEFORE_DELETE=0 and rerun if you still want to delete this stopped/unreachable pod." >&2
+      exit 1
+    fi
+  fi
+
+  stop_pod || true
+  delete_pod
+  rm -f "$STATE_FILE"
+  echo "Deleted RunPod pod $RUNPOD_POD_ID"
+}
+
 guard_mode() {
   require_env RUNPOD_NOTIFY_EMAIL
   mkdir -p "$LOCAL_SYNC_ROOT"
@@ -574,6 +649,9 @@ case "$MODE" in
     require_ssh_endpoint
     printf 'RUNPOD_POD_ID=%s\nRUNPOD_SSH_HOST=%s\nRUNPOD_SSH_PORT=%s\nRUNPOD_POD_STATUS=%s\nRUNPOD_POD_GPU=%s\nRUNPOD_POD_COST_PER_HR=%s\n' \
       "$RUNPOD_POD_ID" "$RUNPOD_SSH_HOST" "$RUNPOD_SSH_PORT" "${RUNPOD_POD_STATUS:-}" "${RUNPOD_POD_GPU:-}" "${RUNPOD_POD_COST_PER_HR:-}"
+    ;;
+  terminate)
+    terminate_pod
     ;;
   guard)
     guard_mode

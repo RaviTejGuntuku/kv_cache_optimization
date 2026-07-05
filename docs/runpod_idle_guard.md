@@ -33,6 +33,14 @@ apt-get install -y rsync sudo
 
 The script stops pods but does not terminate pods. Termination is intentionally manual because it can delete pod-attached data.
 
+Manual terminate mode:
+
+- Resolves the pod from the RunPod API.
+- Prints the pod ID, status, GPU, cost, and SSH endpoint if available.
+- Requires typing `DELETE <pod_id>`.
+- Syncs remote data down first when SSH is available.
+- Stops the pod and then deletes it through the RunPod API.
+
 ## Exact Placeholders To Fill
 
 Create a local env file outside git:
@@ -199,6 +207,24 @@ Run remote apt bootstrap on an existing active pod:
 
 ```bash
 scripts/runpod_idle_guard.sh --env ~/.runpod_idle_guard/kv_cache.env --bootstrap
+```
+
+Manually sync down and terminate the active pod:
+
+```bash
+scripts/runpod_idle_guard.sh --env ~/.runpod_idle_guard/kv_cache.env --terminate
+```
+
+The script will print the exact confirmation string. It looks like:
+
+```text
+DELETE <pod_id>
+```
+
+If the pod is already stopped or unreachable and SSH sync is impossible, the script refuses to delete by default. If you have already synced results and accept the data-loss risk, explicitly bypass sync-before-delete:
+
+```bash
+RUNPOD_TERMINATE_SYNC_BEFORE_DELETE=0 scripts/runpod_idle_guard.sh --env ~/.runpod_idle_guard/kv_cache.env --terminate
 ```
 
 Dry-run the idle guard:
