@@ -32,3 +32,20 @@ datasets/synthetic/shared_prefix/
 # Local analysis environments.
 .venv-analysis/
 .venv-plots/
+
+# Vendored/runtime checkouts and generated local report artifacts.
+external/
+output/
+tmp/
+tacc_kv_cache_headroom_abstract.pdf
+tacc_kv_cache_headroom_abstract.tex
+
+# Remote GPU syncs and pilot outputs. These are reproducible/local artifacts,
+# not source-of-truth experiment specs or runner code.
+studies/results/full_suite_remote/
+studies/results/headroom_main/
+studies/results/lmcache_cacheblend_sanity_remote/
+studies/results/oracle0_headroom_remote_sync/
+studies/results/pilots/
+studies/results/pilots_remote/
+studies/results/adversarial_fcfs_page_size_20260420/graphs/serving_quick/

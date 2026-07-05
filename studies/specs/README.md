@@ -35,6 +35,11 @@ Experiments:
 - [effective_residency_sweep](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/effective_residency_sweep/EXPERIMENT.md)
 - [recomputation_microbenchmark](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/recomputation_microbenchmark/EXPERIMENT.md)
 - [queue_information_visibility](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/queue_information_visibility/EXPERIMENT.md)
+- [prefix_perfect_prefetch_oracle](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/prefix_perfect_prefetch_oracle/EXPERIMENT.md)
+- [marginal_counterfactuals](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/marginal_counterfactuals/EXPERIMENT.md)
+- [missed_opportunity_accounting](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/missed_opportunity_accounting/EXPERIMENT.md)
+- [constrained_replay](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/constrained_replay/EXPERIMENT.md)
+- [experiment_4_concurrency_tension](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/experiment_4_concurrency_tension/EXPERIMENT.md)
 
 ## Runner Entry Points
 
@@ -82,3 +87,14 @@ Pilot mode is a smoke test only:
 
 - it is meant to validate serving, trace capture, plan compilation, analysis, and output layout
 - it is not meant to produce publishable or decision-quality measurements
+
+Planned offline-only spec not yet wired to a runner:
+
+- [prefix_perfect_prefetch_oracle](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/prefix_perfect_prefetch_oracle/EXPERIMENT.md)
+- [marginal_counterfactuals](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/marginal_counterfactuals/EXPERIMENT.md)
+- [missed_opportunity_accounting](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/missed_opportunity_accounting/EXPERIMENT.md)
+- [constrained_replay](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/constrained_replay/EXPERIMENT.md)
+## Planning Docs
+
+- [PILOT_PLAN.md](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/PILOT_PLAN.md)
+- [MAIN_EXPERIMENT_PLAN.md](/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/studies/specs/MAIN_EXPERIMENT_PLAN.md)

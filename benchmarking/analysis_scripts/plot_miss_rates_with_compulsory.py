@@ -147,6 +147,7 @@ def plot_workload(rows: list[dict[str, float | int | str]], workload: str, outpu
         ax.set_xlabel("Page Size (tokens)")
         ax.set_ylabel(ylabel)
         ax.set_title(title)
+        ax.set_ylim(bottom=0)
         ax.legend()
         ax.grid(axis="y", alpha=0.25)
         fig.tight_layout()
