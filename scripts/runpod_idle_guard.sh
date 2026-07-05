@@ -95,7 +95,7 @@ require_env RUNPOD_SSH_KEY
 RUNPOD_POD_NAME="${RUNPOD_POD_NAME:-kv-cache-headroom}"
 export RUNPOD_POD_NAME
 REMOTE_WATCH_PATHS="${RUNPOD_REMOTE_WATCH_PATHS:-.}"
-ACTIVE_PROCESS_REGEX="${RUNPOD_ACTIVE_PROCESS_REGEX:-python|nsys|vllm|VLLM::EngineCore|run_.*headroom|run_oracle0|run_baseline|run_marginal}"
+ACTIVE_PROCESS_REGEX="${RUNPOD_ACTIVE_PROCESS_REGEX:-nsys|vllm|VLLM::EngineCore|run_.*headroom|run_oracle0|run_baseline|run_marginal|python.*(headroom|oracle0|baseline|marginal|vllm)}"
 IDLE_STOP_SECONDS="${RUNPOD_IDLE_STOP_SECONDS:-3600}"
 IDLE_EMAIL_SECONDS="${RUNPOD_IDLE_EMAIL_SECONDS:-7200}"
 STATE_DIR="${RUNPOD_STATE_DIR:-$HOME/.runpod_idle_guard}"
@@ -153,12 +153,16 @@ api_request() {
 }
 
 extract_pod_summary() {
-  python3 - "$RUNPOD_POD_NAME" <<'PY'
+  local json_file
+  json_file="$(mktemp)"
+  cat > "$json_file"
+  python3 - "$RUNPOD_POD_NAME" "$json_file" <<'PY'
 import json
 import sys
+from pathlib import Path
 
 preferred_name = sys.argv[1]
-data = json.load(sys.stdin)
+data = json.loads(Path(sys.argv[2]).read_text())
 
 if isinstance(data, list):
     pods = data
@@ -211,6 +215,7 @@ print(f"ssh_port={ssh_port}")
 print(f"cost_per_hr={pod.get('costPerHr') or pod.get('adjustedCostPerHr') or ''}")
 print(f"gpu={((pod.get('gpu') or {}).get('displayName')) or ((pod.get('gpu') or {}).get('id')) or ''}")
 PY
+  rm -f "$json_file"
 }
 
 resolve_pod() {
@@ -269,7 +274,8 @@ root="$1"
 regex="$2"
 shift 2
 now="$(date +%s)"
-active_count="$(ps -eo pid=,stat=,comm=,args= | grep -E "$regex" | grep -v grep | grep -v runpod_idle_guard | wc -l | tr -d " ")"
+self_pid="$$"
+active_count="$(ps -eo pid=,stat=,comm=,args= | awk -v regex="$regex" -v self_pid="$self_pid" "\$1 != self_pid && \$0 ~ regex && \$0 !~ /grep/ && \$0 !~ /runpod_idle_guard/ && \$0 !~ /bash -s --/ && \$0 !~ /awk -v regex/ { count++ } END { print count + 0 }")"
 latest=0
 for rel in "$@"; do
   if [[ "$rel" = /* ]]; then
@@ -292,9 +298,16 @@ printf "active_count=%s\nlatest_mtime=%s\nidle_age=%s\nnow=%s\n" "$active_count"
 '
 
 probe_remote() {
+  local remote_args=()
+  local path
+  remote_args+=("$(printf '%q' "$REMOTE_ROOT")")
+  remote_args+=("$(printf '%q' "$ACTIVE_PROCESS_REGEX")")
   # Word splitting is intended for REMOTE_WATCH_PATHS.
   # shellcheck disable=SC2086
-  ssh_base "bash -s" -- "$REMOTE_ROOT" "$ACTIVE_PROCESS_REGEX" $REMOTE_WATCH_PATHS <<< "$remote_probe_script"
+  for path in $REMOTE_WATCH_PATHS; do
+    remote_args+=("$(printf '%q' "$path")")
+  done
+  ssh_base "bash -s -- ${remote_args[*]}" <<< "$remote_probe_script"
 }
 
 sync_remote_to_local() {
@@ -416,15 +429,20 @@ PY
 }
 
 extract_created_pod_id() {
-  python3 - <<'PY'
+  local json_file
+  json_file="$(mktemp)"
+  cat > "$json_file"
+  python3 - "$json_file" <<'PY'
 import json
 import sys
-data = json.load(sys.stdin)
+from pathlib import Path
+data = json.loads(Path(sys.argv[1]).read_text())
 pod_id = data.get("id") if isinstance(data, dict) else None
 if not pod_id:
     raise SystemExit("RunPod create response did not include pod id")
 print(pod_id)
 PY
+  rm -f "$json_file"
 }
 
 wait_for_ssh() {
