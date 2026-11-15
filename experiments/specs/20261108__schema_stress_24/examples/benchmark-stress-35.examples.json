@@ -1,0 +1,112 @@
+{
+  "valid": [
+    {
+      "emitEvent": false,
+      "enabled": false,
+      "name": "",
+      "parameters": {
+        "pii": [],
+        "strategy": {
+          "pseudonymize": {
+            "hashFunction": "MD2",
+            "salt": ""
+          }
+        }
+      },
+      "vendor": ""
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('emitEvent',) with None",
+      "instance": {
+        "emitEvent": null,
+        "enabled": false,
+        "name": "",
+        "parameters": {
+          "pii": [],
+          "strategy": {
+            "pseudonymize": {
+              "hashFunction": "MD2",
+              "salt": ""
+            }
+          }
+        },
+        "vendor": ""
+      },
+      "validator": "type",
+      "path": [
+        "emitEvent"
+      ],
+      "schema_path": [
+        "properties",
+        "emitEvent",
+        "type"
+      ],
+      "message": "None is not of type 'boolean'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "delete ('emitEvent',)",
+      "instance": {
+        "enabled": false,
+        "name": "",
+        "parameters": {
+          "pii": [],
+          "strategy": {
+            "pseudonymize": {
+              "hashFunction": "MD2",
+              "salt": ""
+            }
+          }
+        },
+        "vendor": ""
+      },
+      "validator": "required",
+      "path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'emitEvent' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('parameters', 'strategy', 'pseudonymize', 'hashFunction') with None",
+      "instance": {
+        "emitEvent": false,
+        "enabled": false,
+        "name": "",
+        "parameters": {
+          "pii": [],
+          "strategy": {
+            "pseudonymize": {
+              "hashFunction": null,
+              "salt": ""
+            }
+          }
+        },
+        "vendor": ""
+      },
+      "validator": "enum",
+      "path": [
+        "parameters",
+        "strategy",
+        "pseudonymize",
+        "hashFunction"
+      ],
+      "schema_path": [
+        "properties",
+        "parameters",
+        "properties",
+        "strategy",
+        "properties",
+        "pseudonymize",
+        "properties",
+        "hashFunction",
+        "enum"
+      ],
+      "message": "None is not one of ['MD2', 'MD5', 'SHA-1', 'SHA-256', 'SHA-384', 'SHA-512']",
+      "classification": "schema_error"
+    }
+  ]
+}

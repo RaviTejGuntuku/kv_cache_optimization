@@ -1,0 +1,37 @@
+{
+  "valid": [
+    {
+      "_id": "",
+      "grand_alliance": "chaos",
+      "movement": 0,
+      "name": "",
+      "points": 0,
+      "runemarks": [],
+      "subfaction": "",
+      "toughness": 0,
+      "warband": "",
+      "weapons": [],
+      "wounds": 0
+    }
+  ],
+  "invalid": [
+    {
+      "instance": {
+        "grand_alliance": "chaos",
+        "movement": 0,
+        "name": "",
+        "points": 0,
+        "runemarks": [],
+        "subfaction": "",
+        "toughness": 0,
+        "warband": "",
+        "weapons": [],
+        "wounds": 0
+      },
+      "validator": "required",
+      "schema_path": [
+        "required"
+      ]
+    }
+  ]
+}

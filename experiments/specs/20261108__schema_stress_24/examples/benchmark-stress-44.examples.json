@@ -1,0 +1,83 @@
+{
+  "valid": [
+    {
+      "areas": [],
+      "buildings": [],
+      "configuration": {
+        "module-version": {
+          "major": 0,
+          "minor": 0,
+          "patch": 0,
+          "suffix": "x"
+        }
+      },
+      "decorations": [],
+      "events": [],
+      "nodes": [],
+      "series": [],
+      "streams": [],
+      "links": []
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('areas',) with None",
+      "instance": {
+        "areas": null,
+        "buildings": [],
+        "configuration": {
+          "module-version": {
+            "major": 0,
+            "minor": 0,
+            "patch": 0,
+            "suffix": "x"
+          }
+        },
+        "decorations": [],
+        "events": [],
+        "nodes": [],
+        "series": [],
+        "streams": [],
+        "links": []
+      },
+      "validator": "type",
+      "path": [
+        "areas"
+      ],
+      "schema_path": [
+        "properties",
+        "areas",
+        "type"
+      ],
+      "message": "None is not of type 'array'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "delete ('areas',)",
+      "instance": {
+        "buildings": [],
+        "configuration": {
+          "module-version": {
+            "major": 0,
+            "minor": 0,
+            "patch": 0,
+            "suffix": "x"
+          }
+        },
+        "decorations": [],
+        "events": [],
+        "nodes": [],
+        "series": [],
+        "streams": [],
+        "links": []
+      },
+      "validator": "required",
+      "path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'areas' is a required property",
+      "classification": "schema_error"
+    }
+  ]
+}

@@ -1,0 +1,3429 @@
+{
+  "task_id": "benchmark-stress-31",
+  "edit_ledger": [],
+  "original_schema_sha256": "739d2b0b4e9734c6cd8835675074f6e44ce1697fcde5a365adf6f25661c5464a",
+  "backend_schema_canonical_sha256": "5a60e278bdc86a7cd85652a2f4927f7fd5d7cf62112beb3816a6c3bfe8d18470",
+  "semantic_probes": [
+    {
+      "label": "valid-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": true,
+      "original_oracle": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "backend_input_oracle": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"axes\":{\"x\":{\"label\":\"\",\"scale\":\"\"},\"y\":{\"label\":\"\",\"scale\":\"\"}},\"canvas\":{\"height\":null,\"padding\":{\"bottom\":null,\"left\":null,\"right\":null,\"top\":null},\"width\":null},\"data\":[{\"colnames\":[],\"name\":\"\",\"rownames\":[],\"values\":[[]]}],\"legend\":{\"fill\":{\"label\":\"\"},\"fillOpacity\":{\"label\":\"\"}},\"marks\":[{\"data\":{\"name\":\"\"},\"properties\":{\"fill\":{\"field\":null,\"scale\":\"color\"},\"fillOpacity\":{\"field\":null,\"scale\":\"z\"}},\"type\":\"rect\"}],\"meta\":{},\"name\":\"\",\"scales\":{\"color\":{\"domain\":[],\"range\":[],\"type\":\"ordinal\"},\"x\":{\"domain\":[],\"range\":\"width\",\"type\":\"ordinal\"},\"y\":{\"domain\":[],\"range\":\"height\",\"type\":\"ordinal\"},\"z\":{\"domain\":{\"max\":null,\"min\":null},\"range\":{\"max\":0.0,\"min\":0.0},\"type\":\"linear\"}},\"type\":\"matrix-diagram\"}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 197,
+          "token_ids": [
+            4913,
+            19992,
+            22317,
+            87,
+            22317,
+            1502,
+            60767,
+            12445,
+            62366,
+            51193,
+            88,
+            22317,
+            1502,
+            60767,
+            12445,
+            62366,
+            3417,
+            1335,
+            19943,
+            22317,
+            2563,
+            788,
+            2921,
+            1335,
+            9571,
+            22317,
+            14860,
+            788,
+            2921,
+            1335,
+            2359,
+            788,
+            2921,
+            1335,
+            1291,
+            788,
+            2921,
+            1335,
+            3481,
+            788,
+            2921,
+            51193,
+            3098,
+            788,
+            2921,
+            51193,
+            691,
+            66582,
+            2074,
+            11400,
+            8899,
+            28503,
+            606,
+            60767,
+            4830,
+            971,
+            8899,
+            28503,
+            3661,
+            8899,
+            1294,
+            13989,
+            28503,
+            14505,
+            22317,
+            7559,
+            22317,
+            1502,
+            62366,
+            51193,
+            7559,
+            15595,
+            22317,
+            1502,
+            62366,
+            3417,
+            1335,
+            15544,
+            66582,
+            691,
+            22317,
+            606,
+            62366,
+            51193,
+            13193,
+            22317,
+            7559,
+            22317,
+            2566,
+            788,
+            2921,
+            1335,
+            12445,
+            3252,
+            3423,
+            58640,
+            7559,
+            15595,
+            22317,
+            2566,
+            788,
+            2921,
+            1335,
+            12445,
+            3252,
+            89,
+            30975,
+            1335,
+            1313,
+            3252,
+            2851,
+            9207,
+            28503,
+            5490,
+            788,
+            6257,
+            1335,
+            606,
+            60767,
+            82,
+            30196,
+            22317,
+            3423,
+            22317,
+            12204,
+            8899,
+            28503,
+            9669,
+            8899,
+            28503,
+            1313,
+            3252,
+            45151,
+            58640,
+            87,
+            22317,
+            12204,
+            8899,
+            28503,
+            9669,
+            3252,
+            3098,
+            2198,
+            1313,
+            3252,
+            45151,
+            58640,
+            88,
+            22317,
+            12204,
+            8899,
+            28503,
+            9669,
+            3252,
+            2563,
+            2198,
+            1313,
+            3252,
+            45151,
+            58640,
+            89,
+            22317,
+            12204,
+            22317,
+            2810,
+            788,
+            2921,
+            1335,
+            1065,
+            788,
+            2921,
+            51193,
+            9669,
+            22317,
+            2810,
+            788,
+            15,
+            13,
+            15,
+            1335,
+            1065,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            1313,
+            3252,
+            22763,
+            30975,
+            1335,
+            1313,
+            3252,
+            18110,
+            50289,
+            5745,
+            9207
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [
+              "axes"
+            ],
+            "schema_path": [
+              "properties",
+              "axes",
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [
+              "axes"
+            ],
+            "schema_path": [
+              "properties",
+              "axes",
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"axes\":null,\"canvas\":{\"height\":null,\"padding\":{\"bottom\":null,\"left\":null,\"right\":null,\"top\":null},\"width\":null},\"data\":[{\"colnames\":[],\"name\":\"\",\"rownames\":[],\"values\":[[]]}],\"legend\":{\"fill\":{\"label\":\"\"},\"fillOpacity\":{\"label\":\"\"}},\"marks\":[{\"data\":{\"name\":\"\"},\"properties\":{\"fill\":{\"field\":null,\"scale\":\"color\"},\"fillOpacity\":{\"field\":null,\"scale\":\"z\"}},\"type\":\"rect\"}],\"meta\":{},\"name\":\"\",\"scales\":{\"color\":{\"domain\":[],\"range\":[],\"type\":\"ordinal\"},\"x\":{\"domain\":[],\"range\":\"width\",\"type\":\"ordinal\"},\"y\":{\"domain\":[],\"range\":\"height\",\"type\":\"ordinal\"},\"z\":{\"domain\":{\"max\":null,\"min\":null},\"range\":{\"max\":0.0,\"min\":0.0},\"type\":\"linear\"}},\"type\":\"matrix-diagram\"}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 184,
+          "token_ids": [
+            4913,
+            19992,
+            788,
+            2921,
+            1335,
+            19943,
+            22317,
+            2563,
+            788,
+            2921,
+            1335,
+            9571,
+            22317,
+            14860,
+            788,
+            2921,
+            1335,
+            2359,
+            788,
+            2921,
+            1335,
+            1291,
+            788,
+            2921,
+            1335,
+            3481,
+            788,
+            2921,
+            51193,
+            3098,
+            788,
+            2921,
+            51193,
+            691,
+            66582,
+            2074,
+            11400,
+            8899,
+            28503,
+            606,
+            60767,
+            4830,
+            971,
+            8899,
+            28503,
+            3661,
+            8899,
+            1294,
+            13989,
+            28503,
+            14505,
+            22317,
+            7559,
+            22317,
+            1502,
+            62366,
+            51193,
+            7559,
+            15595,
+            22317,
+            1502,
+            62366,
+            3417,
+            1335,
+            15544,
+            66582,
+            691,
+            22317,
+            606,
+            62366,
+            51193,
+            13193,
+            22317,
+            7559,
+            22317,
+            2566,
+            788,
+            2921,
+            1335,
+            12445,
+            3252,
+            3423,
+            58640,
+            7559,
+            15595,
+            22317,
+            2566,
+            788,
+            2921,
+            1335,
+            12445,
+            3252,
+            89,
+            30975,
+            1335,
+            1313,
+            3252,
+            2851,
+            9207,
+            28503,
+            5490,
+            788,
+            6257,
+            1335,
+            606,
+            60767,
+            82,
+            30196,
+            22317,
+            3423,
+            22317,
+            12204,
+            8899,
+            28503,
+            9669,
+            8899,
+            28503,
+            1313,
+            3252,
+            45151,
+            58640,
+            87,
+            22317,
+            12204,
+            8899,
+            28503,
+            9669,
+            3252,
+            3098,
+            2198,
+            1313,
+            3252,
+            45151,
+            58640,
+            88,
+            22317,
+            12204,
+            8899,
+            28503,
+            9669,
+            3252,
+            2563,
+            2198,
+            1313,
+            3252,
+            45151,
+            58640,
+            89,
+            22317,
+            12204,
+            22317,
+            2810,
+            788,
+            2921,
+            1335,
+            1065,
+            788,
+            2921,
+            51193,
+            9669,
+            22317,
+            2810,
+            788,
+            15,
+            13,
+            15,
+            1335,
+            1065,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            1313,
+            3252,
+            22763,
+            30975,
+            1335,
+            1313,
+            3252,
+            18110,
+            50289,
+            5745,
+            9207
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-1",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 2,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [
+              "axes"
+            ],
+            "schema_path": [
+              "properties",
+              "axes",
+              "required"
+            ],
+            "message": "'x' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [
+              "axes"
+            ],
+            "schema_path": [
+              "properties",
+              "axes",
+              "required"
+            ],
+            "message": "'y' is a required property"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 2,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [
+              "axes"
+            ],
+            "schema_path": [
+              "properties",
+              "axes",
+              "required"
+            ],
+            "message": "'x' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [
+              "axes"
+            ],
+            "schema_path": [
+              "properties",
+              "axes",
+              "required"
+            ],
+            "message": "'y' is a required property"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"axes\":{},\"canvas\":{\"height\":null,\"padding\":{\"bottom\":null,\"left\":null,\"right\":null,\"top\":null},\"width\":null},\"data\":[{\"colnames\":[],\"name\":\"\",\"rownames\":[],\"values\":[[]]}],\"legend\":{\"fill\":{\"label\":\"\"},\"fillOpacity\":{\"label\":\"\"}},\"marks\":[{\"data\":{\"name\":\"\"},\"properties\":{\"fill\":{\"field\":null,\"scale\":\"color\"},\"fillOpacity\":{\"field\":null,\"scale\":\"z\"}},\"type\":\"rect\"}],\"meta\":{},\"name\":\"\",\"scales\":{\"color\":{\"domain\":[],\"range\":[],\"type\":\"ordinal\"},\"x\":{\"domain\":[],\"range\":\"width\",\"type\":\"ordinal\"},\"y\":{\"domain\":[],\"range\":\"height\",\"type\":\"ordinal\"},\"z\":{\"domain\":{\"max\":null,\"min\":null},\"range\":{\"max\":0.0,\"min\":0.0},\"type\":\"linear\"}},\"type\":\"matrix-diagram\"}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 184,
+          "token_ids": [
+            4913,
+            19992,
+            788,
+            6257,
+            1335,
+            19943,
+            22317,
+            2563,
+            788,
+            2921,
+            1335,
+            9571,
+            22317,
+            14860,
+            788,
+            2921,
+            1335,
+            2359,
+            788,
+            2921,
+            1335,
+            1291,
+            788,
+            2921,
+            1335,
+            3481,
+            788,
+            2921,
+            51193,
+            3098,
+            788,
+            2921,
+            51193,
+            691,
+            66582,
+            2074,
+            11400,
+            8899,
+            28503,
+            606,
+            60767,
+            4830,
+            971,
+            8899,
+            28503,
+            3661,
+            8899,
+            1294,
+            13989,
+            28503,
+            14505,
+            22317,
+            7559,
+            22317,
+            1502,
+            62366,
+            51193,
+            7559,
+            15595,
+            22317,
+            1502,
+            62366,
+            3417,
+            1335,
+            15544,
+            66582,
+            691,
+            22317,
+            606,
+            62366,
+            51193,
+            13193,
+            22317,
+            7559,
+            22317,
+            2566,
+            788,
+            2921,
+            1335,
+            12445,
+            3252,
+            3423,
+            58640,
+            7559,
+            15595,
+            22317,
+            2566,
+            788,
+            2921,
+            1335,
+            12445,
+            3252,
+            89,
+            30975,
+            1335,
+            1313,
+            3252,
+            2851,
+            9207,
+            28503,
+            5490,
+            788,
+            6257,
+            1335,
+            606,
+            60767,
+            82,
+            30196,
+            22317,
+            3423,
+            22317,
+            12204,
+            8899,
+            28503,
+            9669,
+            8899,
+            28503,
+            1313,
+            3252,
+            45151,
+            58640,
+            87,
+            22317,
+            12204,
+            8899,
+            28503,
+            9669,
+            3252,
+            3098,
+            2198,
+            1313,
+            3252,
+            45151,
+            58640,
+            88,
+            22317,
+            12204,
+            8899,
+            28503,
+            9669,
+            3252,
+            2563,
+            2198,
+            1313,
+            3252,
+            45151,
+            58640,
+            89,
+            22317,
+            12204,
+            22317,
+            2810,
+            788,
+            2921,
+            1335,
+            1065,
+            788,
+            2921,
+            51193,
+            9669,
+            22317,
+            2810,
+            788,
+            15,
+            13,
+            15,
+            1335,
+            1065,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            1313,
+            3252,
+            22763,
+            30975,
+            1335,
+            1313,
+            3252,
+            18110,
+            50289,
+            5745,
+            9207
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-2",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "oneOf",
+            "path": [
+              "canvas",
+              "height"
+            ],
+            "schema_path": [
+              "properties",
+              "canvas",
+              "properties",
+              "height",
+              "oneOf"
+            ],
+            "message": "{} is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "oneOf",
+            "path": [
+              "canvas",
+              "height"
+            ],
+            "schema_path": [
+              "properties",
+              "canvas",
+              "properties",
+              "height",
+              "oneOf"
+            ],
+            "message": "{} is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"axes\":{\"x\":{\"label\":\"\",\"scale\":\"\"},\"y\":{\"label\":\"\",\"scale\":\"\"}},\"canvas\":{\"height\":{},\"padding\":{\"bottom\":null,\"left\":null,\"right\":null,\"top\":null},\"width\":null},\"data\":[{\"colnames\":[],\"name\":\"\",\"rownames\":[],\"values\":[[]]}],\"legend\":{\"fill\":{\"label\":\"\"},\"fillOpacity\":{\"label\":\"\"}},\"marks\":[{\"data\":{\"name\":\"\"},\"properties\":{\"fill\":{\"field\":null,\"scale\":\"color\"},\"fillOpacity\":{\"field\":null,\"scale\":\"z\"}},\"type\":\"rect\"}],\"meta\":{},\"name\":\"\",\"scales\":{\"color\":{\"domain\":[],\"range\":[],\"type\":\"ordinal\"},\"x\":{\"domain\":[],\"range\":\"width\",\"type\":\"ordinal\"},\"y\":{\"domain\":[],\"range\":\"height\",\"type\":\"ordinal\"},\"z\":{\"domain\":{\"max\":null,\"min\":null},\"range\":{\"max\":0.0,\"min\":0.0},\"type\":\"linear\"}},\"type\":\"matrix-diagram\"}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 197,
+          "token_ids": [
+            4913,
+            19992,
+            22317,
+            87,
+            22317,
+            1502,
+            60767,
+            12445,
+            62366,
+            51193,
+            88,
+            22317,
+            1502,
+            60767,
+            12445,
+            62366,
+            3417,
+            1335,
+            19943,
+            22317,
+            2563,
+            788,
+            6257,
+            1335,
+            9571,
+            22317,
+            14860,
+            788,
+            2921,
+            1335,
+            2359,
+            788,
+            2921,
+            1335,
+            1291,
+            788,
+            2921,
+            1335,
+            3481,
+            788,
+            2921,
+            51193,
+            3098,
+            788,
+            2921,
+            51193,
+            691,
+            66582,
+            2074,
+            11400,
+            8899,
+            28503,
+            606,
+            60767,
+            4830,
+            971,
+            8899,
+            28503,
+            3661,
+            8899,
+            1294,
+            13989,
+            28503,
+            14505,
+            22317,
+            7559,
+            22317,
+            1502,
+            62366,
+            51193,
+            7559,
+            15595,
+            22317,
+            1502,
+            62366,
+            3417,
+            1335,
+            15544,
+            66582,
+            691,
+            22317,
+            606,
+            62366,
+            51193,
+            13193,
+            22317,
+            7559,
+            22317,
+            2566,
+            788,
+            2921,
+            1335,
+            12445,
+            3252,
+            3423,
+            58640,
+            7559,
+            15595,
+            22317,
+            2566,
+            788,
+            2921,
+            1335,
+            12445,
+            3252,
+            89,
+            30975,
+            1335,
+            1313,
+            3252,
+            2851,
+            9207,
+            28503,
+            5490,
+            788,
+            6257,
+            1335,
+            606,
+            60767,
+            82,
+            30196,
+            22317,
+            3423,
+            22317,
+            12204,
+            8899,
+            28503,
+            9669,
+            8899,
+            28503,
+            1313,
+            3252,
+            45151,
+            58640,
+            87,
+            22317,
+            12204,
+            8899,
+            28503,
+            9669,
+            3252,
+            3098,
+            2198,
+            1313,
+            3252,
+            45151,
+            58640,
+            88,
+            22317,
+            12204,
+            8899,
+            28503,
+            9669,
+            3252,
+            2563,
+            2198,
+            1313,
+            3252,
+            45151,
+            58640,
+            89,
+            22317,
+            12204,
+            22317,
+            2810,
+            788,
+            2921,
+            1335,
+            1065,
+            788,
+            2921,
+            51193,
+            9669,
+            22317,
+            2810,
+            788,
+            15,
+            13,
+            15,
+            1335,
+            1065,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            1313,
+            3252,
+            22763,
+            30975,
+            1335,
+            1313,
+            3252,
+            18110,
+            50289,
+            5745,
+            9207
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-3",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "minItems",
+            "path": [
+              "data"
+            ],
+            "schema_path": [
+              "properties",
+              "data",
+              "minItems"
+            ],
+            "message": "[] should be non-empty"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "minItems",
+            "path": [
+              "data"
+            ],
+            "schema_path": [
+              "properties",
+              "data",
+              "minItems"
+            ],
+            "message": "[] should be non-empty"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"axes\":{\"x\":{\"label\":\"\",\"scale\":\"\"},\"y\":{\"label\":\"\",\"scale\":\"\"}},\"canvas\":{\"height\":null,\"padding\":{\"bottom\":null,\"left\":null,\"right\":null,\"top\":null},\"width\":null},\"data\":[],\"legend\":{\"fill\":{\"label\":\"\"},\"fillOpacity\":{\"label\":\"\"}},\"marks\":[{\"data\":{\"name\":\"\"},\"properties\":{\"fill\":{\"field\":null,\"scale\":\"color\"},\"fillOpacity\":{\"field\":null,\"scale\":\"z\"}},\"type\":\"rect\"}],\"meta\":{},\"name\":\"\",\"scales\":{\"color\":{\"domain\":[],\"range\":[],\"type\":\"ordinal\"},\"x\":{\"domain\":[],\"range\":\"width\",\"type\":\"ordinal\"},\"y\":{\"domain\":[],\"range\":\"height\",\"type\":\"ordinal\"},\"z\":{\"domain\":{\"max\":null,\"min\":null},\"range\":{\"max\":0.0,\"min\":0.0},\"type\":\"linear\"}},\"type\":\"matrix-diagram\"}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 183,
+          "token_ids": [
+            4913,
+            19992,
+            22317,
+            87,
+            22317,
+            1502,
+            60767,
+            12445,
+            62366,
+            51193,
+            88,
+            22317,
+            1502,
+            60767,
+            12445,
+            62366,
+            3417,
+            1335,
+            19943,
+            22317,
+            2563,
+            788,
+            2921,
+            1335,
+            9571,
+            22317,
+            14860,
+            788,
+            2921,
+            1335,
+            2359,
+            788,
+            2921,
+            1335,
+            1291,
+            788,
+            2921,
+            1335,
+            3481,
+            788,
+            2921,
+            51193,
+            3098,
+            788,
+            2921,
+            51193,
+            691,
+            8899,
+            28503,
+            14505,
+            22317,
+            7559,
+            22317,
+            1502,
+            62366,
+            51193,
+            7559,
+            15595,
+            22317,
+            1502,
+            62366,
+            3417,
+            1335,
+            15544,
+            66582,
+            691,
+            22317,
+            606,
+            62366,
+            51193,
+            13193,
+            22317,
+            7559,
+            22317,
+            2566,
+            788,
+            2921,
+            1335,
+            12445,
+            3252,
+            3423,
+            58640,
+            7559,
+            15595,
+            22317,
+            2566,
+            788,
+            2921,
+            1335,
+            12445,
+            3252,
+            89,
+            30975,
+            1335,
+            1313,
+            3252,
+            2851,
+            9207,
+            28503,
+            5490,
+            788,
+            6257,
+            1335,
+            606,
+            60767,
+            82,
+            30196,
+            22317,
+            3423,
+            22317,
+            12204,
+            8899,
+            28503,
+            9669,
+            8899,
+            28503,
+            1313,
+            3252,
+            45151,
+            58640,
+            87,
+            22317,
+            12204,
+            8899,
+            28503,
+            9669,
+            3252,
+            3098,
+            2198,
+            1313,
+            3252,
+            45151,
+            58640,
+            88,
+            22317,
+            12204,
+            8899,
+            28503,
+            9669,
+            3252,
+            2563,
+            2198,
+            1313,
+            3252,
+            45151,
+            58640,
+            89,
+            22317,
+            12204,
+            22317,
+            2810,
+            788,
+            2921,
+            1335,
+            1065,
+            788,
+            2921,
+            51193,
+            9669,
+            22317,
+            2810,
+            788,
+            15,
+            13,
+            15,
+            1335,
+            1065,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            1313,
+            3252,
+            22763,
+            30975,
+            1335,
+            1313,
+            3252,
+            18110,
+            50289,
+            5745,
+            9207
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 9,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'name' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'type' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'meta' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'data' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'canvas' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'scales' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'axes' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'marks' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'legend' is a required property"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 9,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'name' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'type' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'meta' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'data' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'canvas' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'scales' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'axes' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'marks' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'legend' is a required property"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            6257
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-1",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "[] is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "[] is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "[]",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            1294
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-2",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "null",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            2921
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-3",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "'' is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "'' is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "\"\"",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            3014
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-4",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "0 is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "0 is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "0",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            15
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-5",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "False is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "False is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "false",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            3849
+          ]
+        }
+      ],
+      "validator_agreement": true
+    }
+  ],
+  "engines": {
+    "lmql": {
+      "status": "NATIVE_COMPILABLE",
+      "program_sha256": "c9aa2fe0df16f90919cd991f2a1bcea98544099a1d7e291b2fd2b73009321412",
+      "patterns_sha256": "d69cfdf20235ce9feb209bc91712f115840e4caa635404eb00315d622bcdf41b",
+      "pattern_constant_count": 4,
+      "compiler_warnings": [
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['OPEN_NEXT']'"
+      ],
+      "coverage_claim": "authored_and_compiled_only; no_generation_or_semantic_coverage_inferred",
+      "diagnostics": {
+        "python_warnings": [
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          }
+        ],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      }
+    },
+    "xgrammar": {
+      "status": "NATIVE_COMPILABLE",
+      "probes": [
+        {
+          "label": "valid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": true,
+          "original_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "backend_input_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"axes\":{\"x\":{\"label\":\"\",\"scale\":\"\"},\"y\":{\"label\":\"\",\"scale\":\"\"}},\"canvas\":{\"height\":null,\"padding\":{\"bottom\":null,\"left\":null,\"right\":null,\"top\":null},\"width\":null},\"data\":[{\"colnames\":[],\"name\":\"\",\"rownames\":[],\"values\":[[]]}],\"legend\":{\"fill\":{\"label\":\"\"},\"fillOpacity\":{\"label\":\"\"}},\"marks\":[{\"data\":{\"name\":\"\"},\"properties\":{\"fill\":{\"field\":null,\"scale\":\"color\"},\"fillOpacity\":{\"field\":null,\"scale\":\"z\"}},\"type\":\"rect\"}],\"meta\":{},\"name\":\"\",\"scales\":{\"color\":{\"domain\":[],\"range\":[],\"type\":\"ordinal\"},\"x\":{\"domain\":[],\"range\":\"width\",\"type\":\"ordinal\"},\"y\":{\"domain\":[],\"range\":\"height\",\"type\":\"ordinal\"},\"z\":{\"domain\":{\"max\":null,\"min\":null},\"range\":{\"max\":0.0,\"min\":0.0},\"type\":\"linear\"}},\"type\":\"matrix-diagram\"}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 197,
+              "token_ids": [
+                4913,
+                19992,
+                22317,
+                87,
+                22317,
+                1502,
+                60767,
+                12445,
+                62366,
+                51193,
+                88,
+                22317,
+                1502,
+                60767,
+                12445,
+                62366,
+                3417,
+                1335,
+                19943,
+                22317,
+                2563,
+                788,
+                2921,
+                1335,
+                9571,
+                22317,
+                14860,
+                788,
+                2921,
+                1335,
+                2359,
+                788,
+                2921,
+                1335,
+                1291,
+                788,
+                2921,
+                1335,
+                3481,
+                788,
+                2921,
+                51193,
+                3098,
+                788,
+                2921,
+                51193,
+                691,
+                66582,
+                2074,
+                11400,
+                8899,
+                28503,
+                606,
+                60767,
+                4830,
+                971,
+                8899,
+                28503,
+                3661,
+                8899,
+                1294,
+                13989,
+                28503,
+                14505,
+                22317,
+                7559,
+                22317,
+                1502,
+                62366,
+                51193,
+                7559,
+                15595,
+                22317,
+                1502,
+                62366,
+                3417,
+                1335,
+                15544,
+                66582,
+                691,
+                22317,
+                606,
+                62366,
+                51193,
+                13193,
+                22317,
+                7559,
+                22317,
+                2566,
+                788,
+                2921,
+                1335,
+                12445,
+                3252,
+                3423,
+                58640,
+                7559,
+                15595,
+                22317,
+                2566,
+                788,
+                2921,
+                1335,
+                12445,
+                3252,
+                89,
+                30975,
+                1335,
+                1313,
+                3252,
+                2851,
+                9207,
+                28503,
+                5490,
+                788,
+                6257,
+                1335,
+                606,
+                60767,
+                82,
+                30196,
+                22317,
+                3423,
+                22317,
+                12204,
+                8899,
+                28503,
+                9669,
+                8899,
+                28503,
+                1313,
+                3252,
+                45151,
+                58640,
+                87,
+                22317,
+                12204,
+                8899,
+                28503,
+                9669,
+                3252,
+                3098,
+                2198,
+                1313,
+                3252,
+                45151,
+                58640,
+                88,
+                22317,
+                12204,
+                8899,
+                28503,
+                9669,
+                3252,
+                2563,
+                2198,
+                1313,
+                3252,
+                45151,
+                58640,
+                89,
+                22317,
+                12204,
+                22317,
+                2810,
+                788,
+                2921,
+                1335,
+                1065,
+                788,
+                2921,
+                51193,
+                9669,
+                22317,
+                2810,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                1065,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                1313,
+                3252,
+                22763,
+                30975,
+                1335,
+                1313,
+                3252,
+                18110,
+                50289,
+                5745,
+                9207
+              ],
+              "recognition": {
+                "accepted": true,
+                "prefix_accepted": true,
+                "completed_before_eos": true,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": true,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "axes"
+                ],
+                "schema_path": [
+                  "properties",
+                  "axes",
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "axes"
+                ],
+                "schema_path": [
+                  "properties",
+                  "axes",
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"axes\":null,\"canvas\":{\"height\":null,\"padding\":{\"bottom\":null,\"left\":null,\"right\":null,\"top\":null},\"width\":null},\"data\":[{\"colnames\":[],\"name\":\"\",\"rownames\":[],\"values\":[[]]}],\"legend\":{\"fill\":{\"label\":\"\"},\"fillOpacity\":{\"label\":\"\"}},\"marks\":[{\"data\":{\"name\":\"\"},\"properties\":{\"fill\":{\"field\":null,\"scale\":\"color\"},\"fillOpacity\":{\"field\":null,\"scale\":\"z\"}},\"type\":\"rect\"}],\"meta\":{},\"name\":\"\",\"scales\":{\"color\":{\"domain\":[],\"range\":[],\"type\":\"ordinal\"},\"x\":{\"domain\":[],\"range\":\"width\",\"type\":\"ordinal\"},\"y\":{\"domain\":[],\"range\":\"height\",\"type\":\"ordinal\"},\"z\":{\"domain\":{\"max\":null,\"min\":null},\"range\":{\"max\":0.0,\"min\":0.0},\"type\":\"linear\"}},\"type\":\"matrix-diagram\"}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 184,
+              "token_ids": [
+                4913,
+                19992,
+                788,
+                2921,
+                1335,
+                19943,
+                22317,
+                2563,
+                788,
+                2921,
+                1335,
+                9571,
+                22317,
+                14860,
+                788,
+                2921,
+                1335,
+                2359,
+                788,
+                2921,
+                1335,
+                1291,
+                788,
+                2921,
+                1335,
+                3481,
+                788,
+                2921,
+                51193,
+                3098,
+                788,
+                2921,
+                51193,
+                691,
+                66582,
+                2074,
+                11400,
+                8899,
+                28503,
+                606,
+                60767,
+                4830,
+                971,
+                8899,
+                28503,
+                3661,
+                8899,
+                1294,
+                13989,
+                28503,
+                14505,
+                22317,
+                7559,
+                22317,
+                1502,
+                62366,
+                51193,
+                7559,
+                15595,
+                22317,
+                1502,
+                62366,
+                3417,
+                1335,
+                15544,
+                66582,
+                691,
+                22317,
+                606,
+                62366,
+                51193,
+                13193,
+                22317,
+                7559,
+                22317,
+                2566,
+                788,
+                2921,
+                1335,
+                12445,
+                3252,
+                3423,
+                58640,
+                7559,
+                15595,
+                22317,
+                2566,
+                788,
+                2921,
+                1335,
+                12445,
+                3252,
+                89,
+                30975,
+                1335,
+                1313,
+                3252,
+                2851,
+                9207,
+                28503,
+                5490,
+                788,
+                6257,
+                1335,
+                606,
+                60767,
+                82,
+                30196,
+                22317,
+                3423,
+                22317,
+                12204,
+                8899,
+                28503,
+                9669,
+                8899,
+                28503,
+                1313,
+                3252,
+                45151,
+                58640,
+                87,
+                22317,
+                12204,
+                8899,
+                28503,
+                9669,
+                3252,
+                3098,
+                2198,
+                1313,
+                3252,
+                45151,
+                58640,
+                88,
+                22317,
+                12204,
+                8899,
+                28503,
+                9669,
+                3252,
+                2563,
+                2198,
+                1313,
+                3252,
+                45151,
+                58640,
+                89,
+                22317,
+                12204,
+                22317,
+                2810,
+                788,
+                2921,
+                1335,
+                1065,
+                788,
+                2921,
+                51193,
+                9669,
+                22317,
+                2810,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                1065,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                1313,
+                3252,
+                22763,
+                30975,
+                1335,
+                1313,
+                3252,
+                18110,
+                50289,
+                5745,
+                9207
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 2,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [
+                  "axes"
+                ],
+                "schema_path": [
+                  "properties",
+                  "axes",
+                  "required"
+                ],
+                "message": "'x' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "axes"
+                ],
+                "schema_path": [
+                  "properties",
+                  "axes",
+                  "required"
+                ],
+                "message": "'y' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 2,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [
+                  "axes"
+                ],
+                "schema_path": [
+                  "properties",
+                  "axes",
+                  "required"
+                ],
+                "message": "'x' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "axes"
+                ],
+                "schema_path": [
+                  "properties",
+                  "axes",
+                  "required"
+                ],
+                "message": "'y' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"axes\":{},\"canvas\":{\"height\":null,\"padding\":{\"bottom\":null,\"left\":null,\"right\":null,\"top\":null},\"width\":null},\"data\":[{\"colnames\":[],\"name\":\"\",\"rownames\":[],\"values\":[[]]}],\"legend\":{\"fill\":{\"label\":\"\"},\"fillOpacity\":{\"label\":\"\"}},\"marks\":[{\"data\":{\"name\":\"\"},\"properties\":{\"fill\":{\"field\":null,\"scale\":\"color\"},\"fillOpacity\":{\"field\":null,\"scale\":\"z\"}},\"type\":\"rect\"}],\"meta\":{},\"name\":\"\",\"scales\":{\"color\":{\"domain\":[],\"range\":[],\"type\":\"ordinal\"},\"x\":{\"domain\":[],\"range\":\"width\",\"type\":\"ordinal\"},\"y\":{\"domain\":[],\"range\":\"height\",\"type\":\"ordinal\"},\"z\":{\"domain\":{\"max\":null,\"min\":null},\"range\":{\"max\":0.0,\"min\":0.0},\"type\":\"linear\"}},\"type\":\"matrix-diagram\"}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 184,
+              "token_ids": [
+                4913,
+                19992,
+                788,
+                6257,
+                1335,
+                19943,
+                22317,
+                2563,
+                788,
+                2921,
+                1335,
+                9571,
+                22317,
+                14860,
+                788,
+                2921,
+                1335,
+                2359,
+                788,
+                2921,
+                1335,
+                1291,
+                788,
+                2921,
+                1335,
+                3481,
+                788,
+                2921,
+                51193,
+                3098,
+                788,
+                2921,
+                51193,
+                691,
+                66582,
+                2074,
+                11400,
+                8899,
+                28503,
+                606,
+                60767,
+                4830,
+                971,
+                8899,
+                28503,
+                3661,
+                8899,
+                1294,
+                13989,
+                28503,
+                14505,
+                22317,
+                7559,
+                22317,
+                1502,
+                62366,
+                51193,
+                7559,
+                15595,
+                22317,
+                1502,
+                62366,
+                3417,
+                1335,
+                15544,
+                66582,
+                691,
+                22317,
+                606,
+                62366,
+                51193,
+                13193,
+                22317,
+                7559,
+                22317,
+                2566,
+                788,
+                2921,
+                1335,
+                12445,
+                3252,
+                3423,
+                58640,
+                7559,
+                15595,
+                22317,
+                2566,
+                788,
+                2921,
+                1335,
+                12445,
+                3252,
+                89,
+                30975,
+                1335,
+                1313,
+                3252,
+                2851,
+                9207,
+                28503,
+                5490,
+                788,
+                6257,
+                1335,
+                606,
+                60767,
+                82,
+                30196,
+                22317,
+                3423,
+                22317,
+                12204,
+                8899,
+                28503,
+                9669,
+                8899,
+                28503,
+                1313,
+                3252,
+                45151,
+                58640,
+                87,
+                22317,
+                12204,
+                8899,
+                28503,
+                9669,
+                3252,
+                3098,
+                2198,
+                1313,
+                3252,
+                45151,
+                58640,
+                88,
+                22317,
+                12204,
+                8899,
+                28503,
+                9669,
+                3252,
+                2563,
+                2198,
+                1313,
+                3252,
+                45151,
+                58640,
+                89,
+                22317,
+                12204,
+                22317,
+                2810,
+                788,
+                2921,
+                1335,
+                1065,
+                788,
+                2921,
+                51193,
+                9669,
+                22317,
+                2810,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                1065,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                1313,
+                3252,
+                22763,
+                30975,
+                1335,
+                1313,
+                3252,
+                18110,
+                50289,
+                5745,
+                9207
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "oneOf",
+                "path": [
+                  "canvas",
+                  "height"
+                ],
+                "schema_path": [
+                  "properties",
+                  "canvas",
+                  "properties",
+                  "height",
+                  "oneOf"
+                ],
+                "message": "{} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "oneOf",
+                "path": [
+                  "canvas",
+                  "height"
+                ],
+                "schema_path": [
+                  "properties",
+                  "canvas",
+                  "properties",
+                  "height",
+                  "oneOf"
+                ],
+                "message": "{} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"axes\":{\"x\":{\"label\":\"\",\"scale\":\"\"},\"y\":{\"label\":\"\",\"scale\":\"\"}},\"canvas\":{\"height\":{},\"padding\":{\"bottom\":null,\"left\":null,\"right\":null,\"top\":null},\"width\":null},\"data\":[{\"colnames\":[],\"name\":\"\",\"rownames\":[],\"values\":[[]]}],\"legend\":{\"fill\":{\"label\":\"\"},\"fillOpacity\":{\"label\":\"\"}},\"marks\":[{\"data\":{\"name\":\"\"},\"properties\":{\"fill\":{\"field\":null,\"scale\":\"color\"},\"fillOpacity\":{\"field\":null,\"scale\":\"z\"}},\"type\":\"rect\"}],\"meta\":{},\"name\":\"\",\"scales\":{\"color\":{\"domain\":[],\"range\":[],\"type\":\"ordinal\"},\"x\":{\"domain\":[],\"range\":\"width\",\"type\":\"ordinal\"},\"y\":{\"domain\":[],\"range\":\"height\",\"type\":\"ordinal\"},\"z\":{\"domain\":{\"max\":null,\"min\":null},\"range\":{\"max\":0.0,\"min\":0.0},\"type\":\"linear\"}},\"type\":\"matrix-diagram\"}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 197,
+              "token_ids": [
+                4913,
+                19992,
+                22317,
+                87,
+                22317,
+                1502,
+                60767,
+                12445,
+                62366,
+                51193,
+                88,
+                22317,
+                1502,
+                60767,
+                12445,
+                62366,
+                3417,
+                1335,
+                19943,
+                22317,
+                2563,
+                788,
+                6257,
+                1335,
+                9571,
+                22317,
+                14860,
+                788,
+                2921,
+                1335,
+                2359,
+                788,
+                2921,
+                1335,
+                1291,
+                788,
+                2921,
+                1335,
+                3481,
+                788,
+                2921,
+                51193,
+                3098,
+                788,
+                2921,
+                51193,
+                691,
+                66582,
+                2074,
+                11400,
+                8899,
+                28503,
+                606,
+                60767,
+                4830,
+                971,
+                8899,
+                28503,
+                3661,
+                8899,
+                1294,
+                13989,
+                28503,
+                14505,
+                22317,
+                7559,
+                22317,
+                1502,
+                62366,
+                51193,
+                7559,
+                15595,
+                22317,
+                1502,
+                62366,
+                3417,
+                1335,
+                15544,
+                66582,
+                691,
+                22317,
+                606,
+                62366,
+                51193,
+                13193,
+                22317,
+                7559,
+                22317,
+                2566,
+                788,
+                2921,
+                1335,
+                12445,
+                3252,
+                3423,
+                58640,
+                7559,
+                15595,
+                22317,
+                2566,
+                788,
+                2921,
+                1335,
+                12445,
+                3252,
+                89,
+                30975,
+                1335,
+                1313,
+                3252,
+                2851,
+                9207,
+                28503,
+                5490,
+                788,
+                6257,
+                1335,
+                606,
+                60767,
+                82,
+                30196,
+                22317,
+                3423,
+                22317,
+                12204,
+                8899,
+                28503,
+                9669,
+                8899,
+                28503,
+                1313,
+                3252,
+                45151,
+                58640,
+                87,
+                22317,
+                12204,
+                8899,
+                28503,
+                9669,
+                3252,
+                3098,
+                2198,
+                1313,
+                3252,
+                45151,
+                58640,
+                88,
+                22317,
+                12204,
+                8899,
+                28503,
+                9669,
+                3252,
+                2563,
+                2198,
+                1313,
+                3252,
+                45151,
+                58640,
+                89,
+                22317,
+                12204,
+                22317,
+                2810,
+                788,
+                2921,
+                1335,
+                1065,
+                788,
+                2921,
+                51193,
+                9669,
+                22317,
+                2810,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                1065,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                1313,
+                3252,
+                22763,
+                30975,
+                1335,
+                1313,
+                3252,
+                18110,
+                50289,
+                5745,
+                9207
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "minItems",
+                "path": [
+                  "data"
+                ],
+                "schema_path": [
+                  "properties",
+                  "data",
+                  "minItems"
+                ],
+                "message": "[] should be non-empty"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "minItems",
+                "path": [
+                  "data"
+                ],
+                "schema_path": [
+                  "properties",
+                  "data",
+                  "minItems"
+                ],
+                "message": "[] should be non-empty"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"axes\":{\"x\":{\"label\":\"\",\"scale\":\"\"},\"y\":{\"label\":\"\",\"scale\":\"\"}},\"canvas\":{\"height\":null,\"padding\":{\"bottom\":null,\"left\":null,\"right\":null,\"top\":null},\"width\":null},\"data\":[],\"legend\":{\"fill\":{\"label\":\"\"},\"fillOpacity\":{\"label\":\"\"}},\"marks\":[{\"data\":{\"name\":\"\"},\"properties\":{\"fill\":{\"field\":null,\"scale\":\"color\"},\"fillOpacity\":{\"field\":null,\"scale\":\"z\"}},\"type\":\"rect\"}],\"meta\":{},\"name\":\"\",\"scales\":{\"color\":{\"domain\":[],\"range\":[],\"type\":\"ordinal\"},\"x\":{\"domain\":[],\"range\":\"width\",\"type\":\"ordinal\"},\"y\":{\"domain\":[],\"range\":\"height\",\"type\":\"ordinal\"},\"z\":{\"domain\":{\"max\":null,\"min\":null},\"range\":{\"max\":0.0,\"min\":0.0},\"type\":\"linear\"}},\"type\":\"matrix-diagram\"}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 183,
+              "token_ids": [
+                4913,
+                19992,
+                22317,
+                87,
+                22317,
+                1502,
+                60767,
+                12445,
+                62366,
+                51193,
+                88,
+                22317,
+                1502,
+                60767,
+                12445,
+                62366,
+                3417,
+                1335,
+                19943,
+                22317,
+                2563,
+                788,
+                2921,
+                1335,
+                9571,
+                22317,
+                14860,
+                788,
+                2921,
+                1335,
+                2359,
+                788,
+                2921,
+                1335,
+                1291,
+                788,
+                2921,
+                1335,
+                3481,
+                788,
+                2921,
+                51193,
+                3098,
+                788,
+                2921,
+                51193,
+                691,
+                8899,
+                28503,
+                14505,
+                22317,
+                7559,
+                22317,
+                1502,
+                62366,
+                51193,
+                7559,
+                15595,
+                22317,
+                1502,
+                62366,
+                3417,
+                1335,
+                15544,
+                66582,
+                691,
+                22317,
+                606,
+                62366,
+                51193,
+                13193,
+                22317,
+                7559,
+                22317,
+                2566,
+                788,
+                2921,
+                1335,
+                12445,
+                3252,
+                3423,
+                58640,
+                7559,
+                15595,
+                22317,
+                2566,
+                788,
+                2921,
+                1335,
+                12445,
+                3252,
+                89,
+                30975,
+                1335,
+                1313,
+                3252,
+                2851,
+                9207,
+                28503,
+                5490,
+                788,
+                6257,
+                1335,
+                606,
+                60767,
+                82,
+                30196,
+                22317,
+                3423,
+                22317,
+                12204,
+                8899,
+                28503,
+                9669,
+                8899,
+                28503,
+                1313,
+                3252,
+                45151,
+                58640,
+                87,
+                22317,
+                12204,
+                8899,
+                28503,
+                9669,
+                3252,
+                3098,
+                2198,
+                1313,
+                3252,
+                45151,
+                58640,
+                88,
+                22317,
+                12204,
+                8899,
+                28503,
+                9669,
+                3252,
+                2563,
+                2198,
+                1313,
+                3252,
+                45151,
+                58640,
+                89,
+                22317,
+                12204,
+                22317,
+                2810,
+                788,
+                2921,
+                1335,
+                1065,
+                788,
+                2921,
+                51193,
+                9669,
+                22317,
+                2810,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                1065,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                1313,
+                3252,
+                22763,
+                30975,
+                1335,
+                1313,
+                3252,
+                18110,
+                50289,
+                5745,
+                9207
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 9,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'name' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'type' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'meta' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'data' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'canvas' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'scales' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'axes' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'marks' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'legend' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 9,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'name' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'type' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'meta' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'data' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'canvas' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'scales' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'axes' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'marks' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'legend' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                6257
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "[]",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                1294
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "null",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                2921
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "\"\"",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3014
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-4",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "0",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                15
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-5",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "false",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3849
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        }
+      ],
+      "compile_seconds": 11.341706916922703,
+      "diagnostics": {
+        "python_warnings": [],
+        "native_stdout_stderr": "[22:47:15] /Users/runner/work/xgrammar/xgrammar/cpp/json_schema_converter.cc:832: Warning: oneOf with overlapping or non-provably-disjoint branches cannot be represented exactly; falling back to anyOf semantics\n[22:47:15] /Users/runner/work/xgrammar/xgrammar/cpp/json_schema_converter.cc:832: Warning: oneOf with overlapping or non-provably-disjoint branches cannot be represented exactly; falling back to anyOf semantics\n[22:47:15] /Users/runner/work/xgrammar/xgrammar/cpp/json_schema_converter.cc:832: Warning: oneOf with overlapping or non-provably-disjoint branches cannot be represented exactly; falling back to anyOf semantics\n",
+        "python_stdout_stderr": ""
+      },
+      "library_warnings": null,
+      "ignored_assertion_warning_lines": [],
+      "grammar_file": "experiments/results/20261110T044100Z__structured_generation_manual_preflight_release/benchmark-stress-31__xgrammar.grammar.txt",
+      "grammar_sha256": "8f9254a12047eb61dddbcd86b17b181326b1ef19305ce676f937dedd64869c79",
+      "false_positives": [],
+      "false_negatives_on_tested_spellings": [],
+      "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+      "seconds": 11.356023791944608
+    },
+    "llguidance_strict": {
+      "status": "COMPILE_REJECTED",
+      "probes": [],
+      "error": "ValueError: oneOf constraints are not supported. Enable 'coerce_one_of' option to approximate oneOf with anyOf\n  while processing json-schema:///#/definitions/dataItem",
+      "diagnostics": {
+        "python_warnings": [],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      },
+      "seconds": 0.018771457951515913
+    }
+  },
+  "validator_agreement": {
+    "total": 11,
+    "frozen_core": 11,
+    "supplemental": 0,
+    "disagreements": 0
+  },
+  "seconds": 11.43858829094097
+}

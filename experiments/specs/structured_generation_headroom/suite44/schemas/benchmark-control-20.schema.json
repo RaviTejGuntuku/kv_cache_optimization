@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Test Card Schema",
+  "description": "The Schmea for the noise section of the test card generator",
+  "type": "object",
+  "properties": {
+    "grid": {
+      "$ref": "#/$defs/gridschema",
+      "description": "The coordiantes of the location to be added, a->p is the x axis, 0->9 are the allowed y axis parameters. Alternativley an alias can be used if already declared"
+    },
+    "widget identifier": {
+      "type": "string",
+      "enum": [
+        "noise"
+      ],
+      "description": "This to be labelled as \"noise\", so that the json is correclty configured"
+    },
+    "minimum": {
+      "description": "the minimum rgb value to be used as noise",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4095
+    },
+    "maximum": {
+      "description": "the minimum rgb value to be used as noise",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4095
+    },
+    "noisetype": {
+      "enum": [
+        "white noise"
+      ],
+      "description": "The type of noise to be generated"
+    }
+  },
+  "required": [
+    "noisetype",
+    "widget identifier"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "gridschema": {
+      "properties": {
+        "location": {
+          "anyOf": [
+            {
+              "grid": {
+                "type": "string",
+                "pattern": "^[a-pA-P]{1}[0-8]{1}$"
+              }
+            },
+            {
+              "alias": {
+                "type": "string",
+                "pattern": "^[\\w\\W]{1,30}$"
+              }
+            }
+          ],
+          "description": "The location of the module to be added to the test card"
+        },
+        "alias": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30,
+          "description": "The name to refer to the chosen grid location for the module, these are reset for each section in the array and are optional"
+        }
+      },
+      "required": [
+        "location"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "valid": [
+    {
+      "name": "",
+      "owner": "",
+      "resources": [],
+      "url": ""
+    }
+  ],
+  "invalid": [
+    {
+      "instance": {
+        "owner": "",
+        "resources": [],
+        "url": ""
+      },
+      "validator": "required",
+      "schema_path": [
+        "required"
+      ]
+    }
+  ]
+}

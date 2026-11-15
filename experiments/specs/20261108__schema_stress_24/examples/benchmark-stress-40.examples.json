@@ -1,0 +1,592 @@
+{
+  "valid": [
+    {
+      "engine": {
+        "agent": {
+          "model": {
+            "model_name": "\u00b0\u0096&^\n\ud825\udf19S\ud931\ude08",
+            "service": {
+              "f\u0090\u00be\u0083": "\u008c\ud91a\uddd5\u009e\ud9fa\udd51\u0010",
+              "retry_count": 1518,
+              "org_id": "\u00f5\u00f7M\ud990\udddb",
+              "_type": "nemo"
+            },
+            "beam_search_diversity_rate": 1.7976931348623157e+308,
+            "customization_id": null
+          },
+          "version_compare_tool": false
+        },
+        "checklist_model": {
+          "model_name": "v",
+          "service": {
+            "_type": "openai",
+            "base_url": null,
+            "\uc942P": {},
+            "\u00eb\u00fd\u0006p\u00b5\u0004\u00b2z\uda9a\udd4c\ud854\udee6\uda42\udf23": {
+              "U!\u00c7": []
+            },
+            "c^\u00f7\udb4d\uddd2\u00a5\u0017\r": {
+              "\u000e": {
+                "\u00b6": 86,
+                "b": true,
+                "\u00b8\u00b9\ud826\ude15\u00ec": 2.2250738585072014e-308
+              },
+              "\u00a9\u00e4": false,
+              "\u0004H\u00a6\u00b5\u00c0\u00b9\u00a4\u001a-": {
+                ")dR\ud8a0\udcd6M": -1.7976931348623155e+308,
+                "S": 10577,
+                "\ud91f\udd65w": 17223
+              }
+            },
+            "api_key": null
+          },
+          "prompt": null
+        },
+        "justification_model": {
+          "model_name": "\udbc6\udd18\u00978+",
+          "service": {
+            "": {
+              "\u008e\u00fai\udbea\udc9b\u00c2": {
+                "\u00ba\u00aa\u0019\u00b5": [],
+                "": {}
+              },
+              "\u00f0": [
+                {
+                  "\u0003\ud8f2\udc25": 2.220446049250313e-16
+                },
+                [
+                  37,
+                  70,
+                  2409
+                ]
+              ],
+              "\u001e\u00936\uda44\udfbe\ud88b\udeff\u0011": true
+            },
+            "\u00dd\u00a5\u00f7\u001f": null,
+            "_type": "openai",
+            "base_url": "`}",
+            "\udb14\udc82\u001e!": {},
+            "<": {
+              "\udad1\udd54\u00b3\u0007\u00d1y\uda24\uddab\u0000\u00e1\u00f4\n.\u00f2\uda70\udeee": {},
+              "\udb2f\udd77": [
+                [
+                  -10000000.0,
+                  1.1
+                ],
+                null,
+                {
+                  "\u00f2\ud927\udf1a_": [
+                    {
+                      "\ud95b\ude48\u00d1\u00f2`": [
+                        null
+                      ],
+                      "\u00ca\uda31\udd65\u00b9\uda36\udf3f\u00f7\u00b8": {
+                        "\u00d9\u00fe{\ud889\udd9a\udb62\udc4e\u00b1\u00c7": true,
+                        "8\u00f1\u0081": 101,
+                        "\u00f0\u009f\u00d8": 5e-324
+                      },
+                      "E\uda80\udc26-o\u0010\u00fc": [
+                        null
+                      ]
+                    },
+                    12477
+                  ],
+                  "": [
+                    -11213,
+                    true,
+                    false
+                  ],
+                  "\u00b5\u00c8\udb5d\udec7|\u0091": {}
+                }
+              ],
+              "": ""
+            }
+          },
+          "top_p": -0.3333333333333333,
+          "max_retries": -14680,
+          "owIi": {
+            "\u00d6": {
+              "\u008a\u00f9\u00ad\udb12\udc9d\u00c8\u0018\u001e": true
+            },
+            "\u0099\u00feZ\udabc\ude22T~": []
+          },
+          "seed": -24731,
+          "U\udab4\udc79\u0082\u009e\u00a9E=\u00d5\uea37A\ud8f5\udeea\ud990\udf44\u0015`\u00b8": {
+            "": [
+              "\u0094\u00fd'\u00cf\u0092\u00c3"
+            ],
+            "TF\u00fcV\u00c5\u0000\u00ech\udbf2\udc39\ud992\udd12\udb07\udd33\uda7a\ude07PV": {}
+          },
+          "k9\u009d\u00b1\ud95f\udfe0\f\u0094\t": []
+        },
+        "rag_embedding": {
+          "model": "S\uc296mA\u0002\u00c5",
+          "api_key": null,
+          "\u001e_\uda46\ude92\uda14\udd19o\u0000u\ud9fd\uddbe": [
+            [],
+            [],
+            {}
+          ],
+          "max_batch_size": -1208655855,
+          "\u00a1": {},
+          "-z\u001a\u009dj\ud8ad\udd42\udbf4\udfcc": [
+            {},
+            {
+              "+\u00d4": "",
+              "\u0094\u00afF": true,
+              "": "\u00c0\u00eb\udb38\udc609t"
+            }
+          ],
+          "_type": "nim",
+          "truncate": "NONE",
+          "j\ud834\udf8c\u00d2P/\u00d0\u00faT\u008e\uda3a\udf91\ud996\udd62\ud9cb\udc31\u00d9\u009e\u008c\u00da\ud9f5\udc04\u00d5": [
+            [
+              [
+                {
+                  "\u00c0\ud8bb\udede": [
+                    null
+                  ]
+                },
+                null,
+                [
+                  -6531389274398503107,
+                  null
+                ]
+              ]
+            ],
+            "Y",
+            {
+              ":\u00fb\u00aeU\u0019\u00e6\udb5e\udf62\nS\u00b3": {
+                "\u00b0\u0010\u00e5g": true,
+                "\uda33\udfdb\u00f9": [],
+                "\ud8ac\udcc5\u0082c": {
+                  "\u008es\u00d8I\udaba\udfdd\ud9d4\udfb6X\uda8c\udf6b\u0094\u009b\b\udb67\udd82\ud893\udf44\u0004\u0086bv": null,
+                  "8V8\u008bD\\": "\u00f1"
+                }
+              },
+              "\u00d1\u00ce\n": [
+                3247,
+                -29727
+              ]
+            }
+          ]
+        },
+        "summary_model": {
+          "model_name": "\u00e7\u009a\u00b5\u00e1\u00824Q",
+          "service": {
+            "base_url": null,
+            "\udac8\udfe9\ud925\udf110?9": [],
+            "api_key": null
+          },
+          "seed": null,
+          "\u00a33M": [
+            [
+              -8908118701711273524,
+              false
+            ],
+            [
+              {},
+              [
+                [
+                  2.2250738585e-313,
+                  -1.1125369292536007e-308
+                ],
+                5.960464477539063e-08,
+                [
+                  null,
+                  "'",
+                  -3574
+                ]
+              ]
+            ],
+            null
+          ],
+          "top_p": null,
+          "\u0006\u0012\u00ef\u00d7\u00b1\u007f\u00bbQ": null,
+          "\u0095$\ud9ec\udf15J\u008d\u00a0": {
+            "\ud9ee\udd8a\u00ea\u00f7": false
+          },
+          "v": -10000000.0,
+          "temperature": -1.7976931348623157e+308,
+          "": [
+            [],
+            -1.9,
+            {
+              "": {
+                "": 24159,
+                "\ud84b\uddea\u00d5\u00ca\ud840\udfdc\udb6f\udf34\ud89e\udee7\u008d\u00eb\u0082\u00f9\u00ae\u00f0\udbad\ude32\u00c3[": true,
+                "\u00c7": "6"
+              },
+              "\u0087-\u00ef\u00c9\ud9db\udcfb": {
+                "\n\u00e3hX\u001e&\u00ca": false
+              },
+              "\u00df\u00c0\ud843\udeea\u00afK": [
+                "\u0017",
+                null,
+                "\u0000\u008c\u0091\u0093\u00d3"
+              ]
+            }
+          ],
+          "\u11aa\u0017\u00b4\udad1\udf355\u009a\udb40\ude49Z": -2.220446049250313e-16,
+          "\u001c": [
+            null,
+            null,
+            "\ud8b6\ude51\u0014H."
+          ]
+        },
+        "\u00bb\u0096\u00d5.\ud839\udc62\udbb7\udf67~T\u00e2\u00d1\u0085": [
+          null,
+          -21586,
+          "\u00db\udb50\udff8e\u0012\u0098np\u00e4U\u00a2\ud981\udf70"
+        ]
+      },
+      "input": {},
+      "output": {
+        "": {
+          "": {
+            "M": 115,
+            "\u00a9\u0001\u00c3\ud8bd\udd31N\u00e1\u00a6-\u00b5": false,
+            "\u00ccV\u00d0\u00c5\u00a0\ud801\uded4\uecba\u0095": "6"
+          }
+        },
+        "_type": "file"
+      },
+      "general": {
+        "s\u00d0myh\u0001t\udb32\udf91\u00d7,": []
+      },
+      "\ud9cc\udc4e\uda2d\udf63c,)\u00dc\u00cf\u00fd:\u008a\u00f7\u2414\u001aeK": {}
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('engine',) with None",
+      "instance": {
+        "engine": null,
+        "input": {},
+        "output": {
+          "": {
+            "": {
+              "M": 115,
+              "\u00a9\u0001\u00c3\ud8bd\udd31N\u00e1\u00a6-\u00b5": false,
+              "\u00ccV\u00d0\u00c5\u00a0\ud801\uded4\uecba\u0095": "6"
+            }
+          },
+          "_type": "file"
+        },
+        "general": {
+          "s\u00d0myh\u0001t\udb32\udf91\u00d7,": []
+        },
+        "\ud9cc\udc4e\uda2d\udf63c,)\u00dc\u00cf\u00fd:\u008a\u00f7\u2414\u001aeK": {}
+      },
+      "validator": "type",
+      "path": [
+        "engine"
+      ],
+      "schema_path": [
+        "properties",
+        "engine",
+        "type"
+      ],
+      "message": "None is not of type 'object'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('engine',) with {}",
+      "instance": {
+        "engine": {},
+        "input": {},
+        "output": {
+          "": {
+            "": {
+              "M": 115,
+              "\u00a9\u0001\u00c3\ud8bd\udd31N\u00e1\u00a6-\u00b5": false,
+              "\u00ccV\u00d0\u00c5\u00a0\ud801\uded4\uecba\u0095": "6"
+            }
+          },
+          "_type": "file"
+        },
+        "general": {
+          "s\u00d0myh\u0001t\udb32\udf91\u00d7,": []
+        },
+        "\ud9cc\udc4e\uda2d\udf63c,)\u00dc\u00cf\u00fd:\u008a\u00f7\u2414\u001aeK": {}
+      },
+      "validator": "required",
+      "path": [
+        "engine"
+      ],
+      "schema_path": [
+        "properties",
+        "engine",
+        "required"
+      ],
+      "message": "'agent' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('engine', 'agent', 'model') with None",
+      "instance": {
+        "engine": {
+          "agent": {
+            "model": null,
+            "version_compare_tool": false
+          },
+          "checklist_model": {
+            "model_name": "v",
+            "service": {
+              "_type": "openai",
+              "base_url": null,
+              "\uc942P": {},
+              "\u00eb\u00fd\u0006p\u00b5\u0004\u00b2z\uda9a\udd4c\ud854\udee6\uda42\udf23": {
+                "U!\u00c7": []
+              },
+              "c^\u00f7\udb4d\uddd2\u00a5\u0017\r": {
+                "\u000e": {
+                  "\u00b6": 86,
+                  "b": true,
+                  "\u00b8\u00b9\ud826\ude15\u00ec": 2.2250738585072014e-308
+                },
+                "\u00a9\u00e4": false,
+                "\u0004H\u00a6\u00b5\u00c0\u00b9\u00a4\u001a-": {
+                  ")dR\ud8a0\udcd6M": -1.7976931348623155e+308,
+                  "S": 10577,
+                  "\ud91f\udd65w": 17223
+                }
+              },
+              "api_key": null
+            },
+            "prompt": null
+          },
+          "justification_model": {
+            "model_name": "\udbc6\udd18\u00978+",
+            "service": {
+              "": {
+                "\u008e\u00fai\udbea\udc9b\u00c2": {
+                  "\u00ba\u00aa\u0019\u00b5": [],
+                  "": {}
+                },
+                "\u00f0": [
+                  {
+                    "\u0003\ud8f2\udc25": 2.220446049250313e-16
+                  },
+                  [
+                    37,
+                    70,
+                    2409
+                  ]
+                ],
+                "\u001e\u00936\uda44\udfbe\ud88b\udeff\u0011": true
+              },
+              "\u00dd\u00a5\u00f7\u001f": null,
+              "_type": "openai",
+              "base_url": "`}",
+              "\udb14\udc82\u001e!": {},
+              "<": {
+                "\udad1\udd54\u00b3\u0007\u00d1y\uda24\uddab\u0000\u00e1\u00f4\n.\u00f2\uda70\udeee": {},
+                "\udb2f\udd77": [
+                  [
+                    -10000000.0,
+                    1.1
+                  ],
+                  null,
+                  {
+                    "\u00f2\ud927\udf1a_": [
+                      {
+                        "\ud95b\ude48\u00d1\u00f2`": [
+                          null
+                        ],
+                        "\u00ca\uda31\udd65\u00b9\uda36\udf3f\u00f7\u00b8": {
+                          "\u00d9\u00fe{\ud889\udd9a\udb62\udc4e\u00b1\u00c7": true,
+                          "8\u00f1\u0081": 101,
+                          "\u00f0\u009f\u00d8": 5e-324
+                        },
+                        "E\uda80\udc26-o\u0010\u00fc": [
+                          null
+                        ]
+                      },
+                      12477
+                    ],
+                    "": [
+                      -11213,
+                      true,
+                      false
+                    ],
+                    "\u00b5\u00c8\udb5d\udec7|\u0091": {}
+                  }
+                ],
+                "": ""
+              }
+            },
+            "top_p": -0.3333333333333333,
+            "max_retries": -14680,
+            "owIi": {
+              "\u00d6": {
+                "\u008a\u00f9\u00ad\udb12\udc9d\u00c8\u0018\u001e": true
+              },
+              "\u0099\u00feZ\udabc\ude22T~": []
+            },
+            "seed": -24731,
+            "U\udab4\udc79\u0082\u009e\u00a9E=\u00d5\uea37A\ud8f5\udeea\ud990\udf44\u0015`\u00b8": {
+              "": [
+                "\u0094\u00fd'\u00cf\u0092\u00c3"
+              ],
+              "TF\u00fcV\u00c5\u0000\u00ech\udbf2\udc39\ud992\udd12\udb07\udd33\uda7a\ude07PV": {}
+            },
+            "k9\u009d\u00b1\ud95f\udfe0\f\u0094\t": []
+          },
+          "rag_embedding": {
+            "model": "S\uc296mA\u0002\u00c5",
+            "api_key": null,
+            "\u001e_\uda46\ude92\uda14\udd19o\u0000u\ud9fd\uddbe": [
+              [],
+              [],
+              {}
+            ],
+            "max_batch_size": -1208655855,
+            "\u00a1": {},
+            "-z\u001a\u009dj\ud8ad\udd42\udbf4\udfcc": [
+              {},
+              {
+                "+\u00d4": "",
+                "\u0094\u00afF": true,
+                "": "\u00c0\u00eb\udb38\udc609t"
+              }
+            ],
+            "_type": "nim",
+            "truncate": "NONE",
+            "j\ud834\udf8c\u00d2P/\u00d0\u00faT\u008e\uda3a\udf91\ud996\udd62\ud9cb\udc31\u00d9\u009e\u008c\u00da\ud9f5\udc04\u00d5": [
+              [
+                [
+                  {
+                    "\u00c0\ud8bb\udede": [
+                      null
+                    ]
+                  },
+                  null,
+                  [
+                    -6531389274398503107,
+                    null
+                  ]
+                ]
+              ],
+              "Y",
+              {
+                ":\u00fb\u00aeU\u0019\u00e6\udb5e\udf62\nS\u00b3": {
+                  "\u00b0\u0010\u00e5g": true,
+                  "\uda33\udfdb\u00f9": [],
+                  "\ud8ac\udcc5\u0082c": {
+                    "\u008es\u00d8I\udaba\udfdd\ud9d4\udfb6X\uda8c\udf6b\u0094\u009b\b\udb67\udd82\ud893\udf44\u0004\u0086bv": null,
+                    "8V8\u008bD\\": "\u00f1"
+                  }
+                },
+                "\u00d1\u00ce\n": [
+                  3247,
+                  -29727
+                ]
+              }
+            ]
+          },
+          "summary_model": {
+            "model_name": "\u00e7\u009a\u00b5\u00e1\u00824Q",
+            "service": {
+              "base_url": null,
+              "\udac8\udfe9\ud925\udf110?9": [],
+              "api_key": null
+            },
+            "seed": null,
+            "\u00a33M": [
+              [
+                -8908118701711273524,
+                false
+              ],
+              [
+                {},
+                [
+                  [
+                    2.2250738585e-313,
+                    -1.1125369292536007e-308
+                  ],
+                  5.960464477539063e-08,
+                  [
+                    null,
+                    "'",
+                    -3574
+                  ]
+                ]
+              ],
+              null
+            ],
+            "top_p": null,
+            "\u0006\u0012\u00ef\u00d7\u00b1\u007f\u00bbQ": null,
+            "\u0095$\ud9ec\udf15J\u008d\u00a0": {
+              "\ud9ee\udd8a\u00ea\u00f7": false
+            },
+            "v": -10000000.0,
+            "temperature": -1.7976931348623157e+308,
+            "": [
+              [],
+              -1.9,
+              {
+                "": {
+                  "": 24159,
+                  "\ud84b\uddea\u00d5\u00ca\ud840\udfdc\udb6f\udf34\ud89e\udee7\u008d\u00eb\u0082\u00f9\u00ae\u00f0\udbad\ude32\u00c3[": true,
+                  "\u00c7": "6"
+                },
+                "\u0087-\u00ef\u00c9\ud9db\udcfb": {
+                  "\n\u00e3hX\u001e&\u00ca": false
+                },
+                "\u00df\u00c0\ud843\udeea\u00afK": [
+                  "\u0017",
+                  null,
+                  "\u0000\u008c\u0091\u0093\u00d3"
+                ]
+              }
+            ],
+            "\u11aa\u0017\u00b4\udad1\udf355\u009a\udb40\ude49Z": -2.220446049250313e-16,
+            "\u001c": [
+              null,
+              null,
+              "\ud8b6\ude51\u0014H."
+            ]
+          },
+          "\u00bb\u0096\u00d5.\ud839\udc62\udbb7\udf67~T\u00e2\u00d1\u0085": [
+            null,
+            -21586,
+            "\u00db\udb50\udff8e\u0012\u0098np\u00e4U\u00a2\ud981\udf70"
+          ]
+        },
+        "input": {},
+        "output": {
+          "": {
+            "": {
+              "M": 115,
+              "\u00a9\u0001\u00c3\ud8bd\udd31N\u00e1\u00a6-\u00b5": false,
+              "\u00ccV\u00d0\u00c5\u00a0\ud801\uded4\uecba\u0095": "6"
+            }
+          },
+          "_type": "file"
+        },
+        "general": {
+          "s\u00d0myh\u0001t\udb32\udf91\u00d7,": []
+        },
+        "\ud9cc\udc4e\uda2d\udf63c,)\u00dc\u00cf\u00fd:\u008a\u00f7\u2414\u001aeK": {}
+      },
+      "validator": "oneOf",
+      "path": [
+        "engine",
+        "agent",
+        "model"
+      ],
+      "schema_path": [
+        "properties",
+        "engine",
+        "properties",
+        "agent",
+        "properties",
+        "model",
+        "oneOf"
+      ],
+      "message": "None is not valid under any of the given schemas",
+      "classification": "schema_error"
+    }
+  ]
+}

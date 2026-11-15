@@ -1,0 +1,436 @@
+{
+  "valid": [
+    {
+      "forsendelse": {
+        "meldingsId": "00000000-0000-0000-0000-000000000000",
+        "avsender": {
+          "organisasjon": {
+            "organisasjonsnummer": "561912822"
+          }
+        },
+        "mottaker": {
+          "organisasjon": {
+            "organisasjonsnummer": "561912822"
+          }
+        },
+        "sendtTid": "x"
+      },
+      "aktoerer": {
+        "dommer": {
+          "etternavn": "x",
+          "fornavn": "x",
+          "tittel": "x"
+        },
+        "saksbehandler": {
+          "etternavn": "x",
+          "fornavn": "x",
+          "tittel": "x"
+        }
+      },
+      "saksInformasjon": {
+        "saksnummer": "x",
+        "straffesaksnummer": "a@b.com",
+        "rettsmoeter": []
+      },
+      "avgjoerelse": {
+        "avgjoerelseId": "00000000-0000-0000-0000-000000000000",
+        "avsagtDato": "x",
+        "opprinneligKravId": "00000000-0000-0000-0000-000000000000",
+        "avgjoerelsePrSiktetTiltalt": [
+          {
+            "personForetak": {
+              "person": {
+                "internId": "x",
+                "etternavn": "x",
+                "identitetsnummer": {
+                  "idType": "FOEDSELSNUMMER",
+                  "verdi": "29212262348"
+                },
+                "tilleggsId": [],
+                "statsborgerskap": []
+              }
+            },
+            "resultat": [
+              {
+                "lovbudKombinert": {
+                  "lovbud": [
+                    {
+                      "lovbudId": "x"
+                    }
+                  ]
+                },
+                "grunnlagstekst": "x",
+                "resultatType": "SKYLDIG"
+              }
+            ],
+            "forkynning": {
+              "forkynt": false
+            }
+          }
+        ]
+      },
+      "dokumenter": [
+        {
+          "internId": "a@b.com",
+          "forsendelse": {
+            "mimeType": "x",
+            "sjekksum": "x",
+            "uri": "x"
+          },
+          "overskrift": "a@b.com",
+          "kategori": {
+            "kode": "x"
+          }
+        }
+      ]
+    }
+  ],
+  "invalid": [
+    {
+      "instance": {
+        "aktoerer": {
+          "dommer": {
+            "etternavn": "x",
+            "fornavn": "x",
+            "tittel": "x"
+          },
+          "saksbehandler": {
+            "etternavn": "x",
+            "fornavn": "x",
+            "tittel": "x"
+          }
+        },
+        "saksInformasjon": {
+          "saksnummer": "x",
+          "straffesaksnummer": "a@b.com",
+          "rettsmoeter": []
+        },
+        "avgjoerelse": {
+          "avgjoerelseId": "00000000-0000-0000-0000-000000000000",
+          "avsagtDato": "x",
+          "opprinneligKravId": "00000000-0000-0000-0000-000000000000",
+          "avgjoerelsePrSiktetTiltalt": [
+            {
+              "personForetak": {
+                "person": {
+                  "internId": "x",
+                  "etternavn": "x",
+                  "identitetsnummer": {
+                    "idType": "FOEDSELSNUMMER",
+                    "verdi": "29212262348"
+                  },
+                  "tilleggsId": [],
+                  "statsborgerskap": []
+                }
+              },
+              "resultat": [
+                {
+                  "lovbudKombinert": {
+                    "lovbud": [
+                      {
+                        "lovbudId": "x"
+                      }
+                    ]
+                  },
+                  "grunnlagstekst": "x",
+                  "resultatType": "SKYLDIG"
+                }
+              ],
+              "forkynning": {
+                "forkynt": false
+              }
+            }
+          ]
+        },
+        "dokumenter": [
+          {
+            "internId": "a@b.com",
+            "forsendelse": {
+              "mimeType": "x",
+              "sjekksum": "x",
+              "uri": "x"
+            },
+            "overskrift": "a@b.com",
+            "kategori": {
+              "kode": "x"
+            }
+          }
+        ]
+      },
+      "mutation": "delete_property",
+      "edited_path": [
+        "forsendelse"
+      ],
+      "validator": "required",
+      "error_path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'forsendelse' is a required property"
+    },
+    {
+      "instance": {
+        "forsendelse": null,
+        "aktoerer": {
+          "dommer": {
+            "etternavn": "x",
+            "fornavn": "x",
+            "tittel": "x"
+          },
+          "saksbehandler": {
+            "etternavn": "x",
+            "fornavn": "x",
+            "tittel": "x"
+          }
+        },
+        "saksInformasjon": {
+          "saksnummer": "x",
+          "straffesaksnummer": "a@b.com",
+          "rettsmoeter": []
+        },
+        "avgjoerelse": {
+          "avgjoerelseId": "00000000-0000-0000-0000-000000000000",
+          "avsagtDato": "x",
+          "opprinneligKravId": "00000000-0000-0000-0000-000000000000",
+          "avgjoerelsePrSiktetTiltalt": [
+            {
+              "personForetak": {
+                "person": {
+                  "internId": "x",
+                  "etternavn": "x",
+                  "identitetsnummer": {
+                    "idType": "FOEDSELSNUMMER",
+                    "verdi": "29212262348"
+                  },
+                  "tilleggsId": [],
+                  "statsborgerskap": []
+                }
+              },
+              "resultat": [
+                {
+                  "lovbudKombinert": {
+                    "lovbud": [
+                      {
+                        "lovbudId": "x"
+                      }
+                    ]
+                  },
+                  "grunnlagstekst": "x",
+                  "resultatType": "SKYLDIG"
+                }
+              ],
+              "forkynning": {
+                "forkynt": false
+              }
+            }
+          ]
+        },
+        "dokumenter": [
+          {
+            "internId": "a@b.com",
+            "forsendelse": {
+              "mimeType": "x",
+              "sjekksum": "x",
+              "uri": "x"
+            },
+            "overskrift": "a@b.com",
+            "kategori": {
+              "kode": "x"
+            }
+          }
+        ]
+      },
+      "mutation": "replace_value",
+      "edited_path": [
+        "forsendelse"
+      ],
+      "validator": "type",
+      "error_path": [
+        "forsendelse"
+      ],
+      "schema_path": [
+        "properties",
+        "forsendelse",
+        "type"
+      ],
+      "message": "None is not of type 'object'"
+    },
+    {
+      "instance": {
+        "forsendelse": {
+          "meldingsId": "invalid",
+          "avsender": {
+            "organisasjon": {
+              "organisasjonsnummer": "561912822"
+            }
+          },
+          "mottaker": {
+            "organisasjon": {
+              "organisasjonsnummer": "561912822"
+            }
+          },
+          "sendtTid": "x"
+        },
+        "aktoerer": {
+          "dommer": {
+            "etternavn": "x",
+            "fornavn": "x",
+            "tittel": "x"
+          },
+          "saksbehandler": {
+            "etternavn": "x",
+            "fornavn": "x",
+            "tittel": "x"
+          }
+        },
+        "saksInformasjon": {
+          "saksnummer": "x",
+          "straffesaksnummer": "a@b.com",
+          "rettsmoeter": []
+        },
+        "avgjoerelse": {
+          "avgjoerelseId": "00000000-0000-0000-0000-000000000000",
+          "avsagtDato": "x",
+          "opprinneligKravId": "00000000-0000-0000-0000-000000000000",
+          "avgjoerelsePrSiktetTiltalt": [
+            {
+              "personForetak": {
+                "person": {
+                  "internId": "x",
+                  "etternavn": "x",
+                  "identitetsnummer": {
+                    "idType": "FOEDSELSNUMMER",
+                    "verdi": "29212262348"
+                  },
+                  "tilleggsId": [],
+                  "statsborgerskap": []
+                }
+              },
+              "resultat": [
+                {
+                  "lovbudKombinert": {
+                    "lovbud": [
+                      {
+                        "lovbudId": "x"
+                      }
+                    ]
+                  },
+                  "grunnlagstekst": "x",
+                  "resultatType": "SKYLDIG"
+                }
+              ],
+              "forkynning": {
+                "forkynt": false
+              }
+            }
+          ]
+        },
+        "dokumenter": [
+          {
+            "internId": "a@b.com",
+            "forsendelse": {
+              "mimeType": "x",
+              "sjekksum": "x",
+              "uri": "x"
+            },
+            "overskrift": "a@b.com",
+            "kategori": {
+              "kode": "x"
+            }
+          }
+        ]
+      },
+      "mutation": "replace_value",
+      "edited_path": [
+        "forsendelse",
+        "meldingsId"
+      ],
+      "validator": "pattern",
+      "error_path": [
+        "forsendelse",
+        "meldingsId"
+      ],
+      "schema_path": [
+        "properties",
+        "forsendelse",
+        "properties",
+        "meldingsId",
+        "pattern"
+      ],
+      "message": "'invalid' does not match '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'"
+    },
+    {
+      "instance": {
+        "forsendelse": {
+          "meldingsId": "00000000-0000-0000-0000-000000000000",
+          "avsender": {
+            "organisasjon": {
+              "organisasjonsnummer": "561912822"
+            }
+          },
+          "mottaker": {
+            "organisasjon": {
+              "organisasjonsnummer": "561912822"
+            }
+          },
+          "sendtTid": "x"
+        },
+        "aktoerer": {
+          "dommer": {
+            "etternavn": "x",
+            "fornavn": "x",
+            "tittel": "x"
+          },
+          "saksbehandler": {
+            "etternavn": "x",
+            "fornavn": "x",
+            "tittel": "x"
+          }
+        },
+        "saksInformasjon": {
+          "saksnummer": "x",
+          "straffesaksnummer": "a@b.com",
+          "rettsmoeter": []
+        },
+        "avgjoerelse": {
+          "avgjoerelseId": "00000000-0000-0000-0000-000000000000",
+          "avsagtDato": "x",
+          "opprinneligKravId": "00000000-0000-0000-0000-000000000000",
+          "avgjoerelsePrSiktetTiltalt": []
+        },
+        "dokumenter": [
+          {
+            "internId": "a@b.com",
+            "forsendelse": {
+              "mimeType": "x",
+              "sjekksum": "x",
+              "uri": "x"
+            },
+            "overskrift": "a@b.com",
+            "kategori": {
+              "kode": "x"
+            }
+          }
+        ]
+      },
+      "mutation": "empty_array",
+      "edited_path": [
+        "avgjoerelse",
+        "avgjoerelsePrSiktetTiltalt"
+      ],
+      "validator": "minItems",
+      "error_path": [
+        "avgjoerelse",
+        "avgjoerelsePrSiktetTiltalt"
+      ],
+      "schema_path": [
+        "properties",
+        "avgjoerelse",
+        "properties",
+        "avgjoerelsePrSiktetTiltalt",
+        "minItems"
+      ],
+      "message": "[] should be non-empty"
+    }
+  ]
+}

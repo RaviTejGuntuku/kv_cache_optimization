@@ -1,0 +1,2980 @@
+{
+  "task_id": "benchmark-stress-10",
+  "edit_ledger": [],
+  "original_schema_sha256": "803825703bb051f7766f46d3ceb78ada18f07ccbb3a60c404834b03c855d27f1",
+  "backend_schema_canonical_sha256": "9ed1ae67ab9952fb1d0b719cb7a1fb794b0794d1d5f51232b6ad52451ddd9af0",
+  "semantic_probes": [
+    {
+      "label": "valid-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": true,
+      "original_oracle": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "backend_input_oracle": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"modulesContent\":{\"$edgeAgent\":{\"properties.desired\":{\"modules\":{},\"runtime\":{\"settings\":{},\"type\":\"docker\"},\"schemaVersion\":\"\",\"systemModules\":{\"edgeAgent\":{\"settings\":{\"image\":\"\"},\"type\":\"docker\"},\"edgeHub\":{\"restartPolicy\":\"never\",\"settings\":{\"image\":\"\"},\"status\":\"running\",\"type\":\"docker\"}}}},\"$edgeHub\":{\"properties.desired\":{\"routes\":{},\"schemaVersion\":\"\"}}}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 84,
+          "token_ids": [
+            4913,
+            11525,
+            2762,
+            22317,
+            3,
+            7186,
+            16810,
+            22317,
+            13193,
+            17397,
+            2690,
+            22317,
+            11525,
+            788,
+            6257,
+            1335,
+            22255,
+            22317,
+            6511,
+            788,
+            6257,
+            1335,
+            1313,
+            3252,
+            28648,
+            58640,
+            17349,
+            5637,
+            60767,
+            8948,
+            28201,
+            22317,
+            7186,
+            16810,
+            22317,
+            6511,
+            22317,
+            1805,
+            62366,
+            51193,
+            1313,
+            3252,
+            28648,
+            58640,
+            7186,
+            19316,
+            22317,
+            50215,
+            13825,
+            3252,
+            36493,
+            2198,
+            6511,
+            22317,
+            1805,
+            62366,
+            51193,
+            2829,
+            3252,
+            27173,
+            2198,
+            1313,
+            3252,
+            28648,
+            30975,
+            3417,
+            1335,
+            3,
+            7186,
+            19316,
+            22317,
+            13193,
+            17397,
+            2690,
+            22317,
+            19794,
+            788,
+            6257,
+            1335,
+            17349,
+            5637,
+            62366,
+            3417,
+            3417
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"modulesContent\":{\"$edgeAgent\":{\"properties.desired\":{\"schemaVersion\":\"\",\"runtime\":{\"type\":\"docker\",\"settings\":{}},\"systemModules\":{\"edgeAgent\":{\"type\":\"docker\",\"settings\":{\"image\":\"\"}},\"edgeHub\":{\"type\":\"docker\",\"settings\":{\"image\":\"\"},\"status\":\"running\",\"restartPolicy\":\"never\"}},\"modules\":{}}},\"$edgeHub\":{\"properties.desired\":{\"schemaVersion\":\"\",\"routes\":{}}}}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 85,
+          "token_ids": [
+            4913,
+            11525,
+            2762,
+            22317,
+            3,
+            7186,
+            16810,
+            22317,
+            13193,
+            17397,
+            2690,
+            22317,
+            17349,
+            5637,
+            60767,
+            22255,
+            22317,
+            1313,
+            3252,
+            28648,
+            2198,
+            6511,
+            788,
+            90,
+            3417,
+            1335,
+            8948,
+            28201,
+            22317,
+            7186,
+            16810,
+            22317,
+            1313,
+            3252,
+            28648,
+            2198,
+            6511,
+            22317,
+            1805,
+            62366,
+            3417,
+            1335,
+            7186,
+            19316,
+            22317,
+            1313,
+            3252,
+            28648,
+            2198,
+            6511,
+            22317,
+            1805,
+            62366,
+            51193,
+            2829,
+            3252,
+            27173,
+            2198,
+            50215,
+            13825,
+            3252,
+            36493,
+            30975,
+            1335,
+            11525,
+            788,
+            90,
+            3417,
+            51193,
+            3,
+            7186,
+            19316,
+            22317,
+            13193,
+            17397,
+            2690,
+            22317,
+            17349,
+            5637,
+            60767,
+            19794,
+            788,
+            90,
+            3417,
+            75542
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'modulesContent' is a required property"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'modulesContent' is a required property"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            6257
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-1",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [
+              "modulesContent"
+            ],
+            "schema_path": [
+              "properties",
+              "modulesContent",
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [
+              "modulesContent"
+            ],
+            "schema_path": [
+              "properties",
+              "modulesContent",
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"modulesContent\":null}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 6,
+          "token_ids": [
+            4913,
+            11525,
+            2762,
+            788,
+            2921,
+            92
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-2",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "enum",
+            "path": [
+              "modulesContent",
+              "$edgeAgent",
+              "properties.desired",
+              "runtime",
+              "type"
+            ],
+            "schema_path": [
+              "properties",
+              "modulesContent",
+              "properties",
+              "$edgeAgent",
+              "properties",
+              "properties.desired",
+              "properties",
+              "runtime",
+              "properties",
+              "type",
+              "enum"
+            ],
+            "message": "None is not one of ['docker']"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "enum",
+            "path": [
+              "modulesContent",
+              "$edgeAgent",
+              "properties.desired",
+              "runtime",
+              "type"
+            ],
+            "schema_path": [
+              "properties",
+              "modulesContent",
+              "properties",
+              "$edgeAgent",
+              "properties",
+              "properties.desired",
+              "properties",
+              "runtime",
+              "properties",
+              "type",
+              "enum"
+            ],
+            "message": "None is not one of ['docker']"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"modulesContent\":{\"$edgeAgent\":{\"properties.desired\":{\"modules\":{},\"runtime\":{\"settings\":{},\"type\":null},\"schemaVersion\":\"\",\"systemModules\":{\"edgeAgent\":{\"settings\":{\"image\":\"\"},\"type\":\"docker\"},\"edgeHub\":{\"restartPolicy\":\"never\",\"settings\":{\"image\":\"\"},\"status\":\"running\",\"type\":\"docker\"}}}},\"$edgeHub\":{\"properties.desired\":{\"routes\":{},\"schemaVersion\":\"\"}}}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 84,
+          "token_ids": [
+            4913,
+            11525,
+            2762,
+            22317,
+            3,
+            7186,
+            16810,
+            22317,
+            13193,
+            17397,
+            2690,
+            22317,
+            11525,
+            788,
+            6257,
+            1335,
+            22255,
+            22317,
+            6511,
+            788,
+            6257,
+            1335,
+            1313,
+            788,
+            2921,
+            51193,
+            17349,
+            5637,
+            60767,
+            8948,
+            28201,
+            22317,
+            7186,
+            16810,
+            22317,
+            6511,
+            22317,
+            1805,
+            62366,
+            51193,
+            1313,
+            3252,
+            28648,
+            58640,
+            7186,
+            19316,
+            22317,
+            50215,
+            13825,
+            3252,
+            36493,
+            2198,
+            6511,
+            22317,
+            1805,
+            62366,
+            51193,
+            2829,
+            3252,
+            27173,
+            2198,
+            1313,
+            3252,
+            28648,
+            30975,
+            3417,
+            1335,
+            3,
+            7186,
+            19316,
+            22317,
+            13193,
+            17397,
+            2690,
+            22317,
+            19794,
+            788,
+            6257,
+            1335,
+            17349,
+            5637,
+            62366,
+            3417,
+            3417
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"modulesContent\":{\"$edgeAgent\":{\"properties.desired\":{\"schemaVersion\":\"\",\"runtime\":{\"type\":null,\"settings\":{}},\"systemModules\":{\"edgeAgent\":{\"type\":\"docker\",\"settings\":{\"image\":\"\"}},\"edgeHub\":{\"type\":\"docker\",\"settings\":{\"image\":\"\"},\"status\":\"running\",\"restartPolicy\":\"never\"}},\"modules\":{}}},\"$edgeHub\":{\"properties.desired\":{\"schemaVersion\":\"\",\"routes\":{}}}}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 85,
+          "token_ids": [
+            4913,
+            11525,
+            2762,
+            22317,
+            3,
+            7186,
+            16810,
+            22317,
+            13193,
+            17397,
+            2690,
+            22317,
+            17349,
+            5637,
+            60767,
+            22255,
+            22317,
+            1313,
+            788,
+            2921,
+            1335,
+            6511,
+            788,
+            90,
+            3417,
+            1335,
+            8948,
+            28201,
+            22317,
+            7186,
+            16810,
+            22317,
+            1313,
+            3252,
+            28648,
+            2198,
+            6511,
+            22317,
+            1805,
+            62366,
+            3417,
+            1335,
+            7186,
+            19316,
+            22317,
+            1313,
+            3252,
+            28648,
+            2198,
+            6511,
+            22317,
+            1805,
+            62366,
+            51193,
+            2829,
+            3252,
+            27173,
+            2198,
+            50215,
+            13825,
+            3252,
+            36493,
+            30975,
+            1335,
+            11525,
+            788,
+            90,
+            3417,
+            51193,
+            3,
+            7186,
+            19316,
+            22317,
+            13193,
+            17397,
+            2690,
+            22317,
+            17349,
+            5637,
+            60767,
+            19794,
+            788,
+            90,
+            3417,
+            75542
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'modulesContent' is a required property"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'modulesContent' is a required property"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            6257
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-1",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "[] is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "[] is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "[]",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            1294
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-2",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "null",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            2921
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-3",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "'' is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "'' is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "\"\"",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            3014
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-4",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "0 is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "0 is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "0",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            15
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-5",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "False is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "False is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "false",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            3849
+          ]
+        }
+      ],
+      "validator_agreement": true
+    }
+  ],
+  "engines": {
+    "lmql": {
+      "status": "NATIVE_COMPILABLE",
+      "program_sha256": "1de560e0c0849590110ca253e8d14c767d40fd684ca81a4f30fac0415d837cf3",
+      "patterns_sha256": "d584faf5a4029e611561d11c848ff7c7d1a01129b6794119ad72e95debeba44c",
+      "pattern_constant_count": 1,
+      "compiler_warnings": [
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['UNSIGNED']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['DIGITS']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['FRACTION']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['EXPONENT']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['STRING_BODY']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['ARRAY_FIRST']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['OBJECT_FIRST']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['ARRAY_NEXT']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['OBJECT_NEXT']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['MORE']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['OBJECT_NEXT']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['STATUS']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['RESTART']'"
+      ],
+      "coverage_claim": "authored_and_compiled_only; no_generation_or_semantic_coverage_inferred",
+      "diagnostics": {
+        "python_warnings": [
+          {
+            "category": "DeprecationWarning",
+            "message": "module 'sre_parse' is deprecated"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "module 'sre_constants' is deprecated"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          }
+        ],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      }
+    },
+    "xgrammar": {
+      "status": "NATIVE_COMPILABLE",
+      "probes": [
+        {
+          "label": "valid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": true,
+          "original_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "backend_input_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"modulesContent\":{\"$edgeAgent\":{\"properties.desired\":{\"modules\":{},\"runtime\":{\"settings\":{},\"type\":\"docker\"},\"schemaVersion\":\"\",\"systemModules\":{\"edgeAgent\":{\"settings\":{\"image\":\"\"},\"type\":\"docker\"},\"edgeHub\":{\"restartPolicy\":\"never\",\"settings\":{\"image\":\"\"},\"status\":\"running\",\"type\":\"docker\"}}}},\"$edgeHub\":{\"properties.desired\":{\"routes\":{},\"schemaVersion\":\"\"}}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 84,
+              "token_ids": [
+                4913,
+                11525,
+                2762,
+                22317,
+                3,
+                7186,
+                16810,
+                22317,
+                13193,
+                17397,
+                2690,
+                22317,
+                11525,
+                788,
+                6257,
+                1335,
+                22255,
+                22317,
+                6511,
+                788,
+                6257,
+                1335,
+                1313,
+                3252,
+                28648,
+                58640,
+                17349,
+                5637,
+                60767,
+                8948,
+                28201,
+                22317,
+                7186,
+                16810,
+                22317,
+                6511,
+                22317,
+                1805,
+                62366,
+                51193,
+                1313,
+                3252,
+                28648,
+                58640,
+                7186,
+                19316,
+                22317,
+                50215,
+                13825,
+                3252,
+                36493,
+                2198,
+                6511,
+                22317,
+                1805,
+                62366,
+                51193,
+                2829,
+                3252,
+                27173,
+                2198,
+                1313,
+                3252,
+                28648,
+                30975,
+                3417,
+                1335,
+                3,
+                7186,
+                19316,
+                22317,
+                13193,
+                17397,
+                2690,
+                22317,
+                19794,
+                788,
+                6257,
+                1335,
+                17349,
+                5637,
+                62366,
+                3417,
+                3417
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"modulesContent\":{\"$edgeAgent\":{\"properties.desired\":{\"schemaVersion\":\"\",\"runtime\":{\"type\":\"docker\",\"settings\":{}},\"systemModules\":{\"edgeAgent\":{\"type\":\"docker\",\"settings\":{\"image\":\"\"}},\"edgeHub\":{\"type\":\"docker\",\"settings\":{\"image\":\"\"},\"status\":\"running\",\"restartPolicy\":\"never\"}},\"modules\":{}}},\"$edgeHub\":{\"properties.desired\":{\"schemaVersion\":\"\",\"routes\":{}}}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 85,
+              "token_ids": [
+                4913,
+                11525,
+                2762,
+                22317,
+                3,
+                7186,
+                16810,
+                22317,
+                13193,
+                17397,
+                2690,
+                22317,
+                17349,
+                5637,
+                60767,
+                22255,
+                22317,
+                1313,
+                3252,
+                28648,
+                2198,
+                6511,
+                788,
+                90,
+                3417,
+                1335,
+                8948,
+                28201,
+                22317,
+                7186,
+                16810,
+                22317,
+                1313,
+                3252,
+                28648,
+                2198,
+                6511,
+                22317,
+                1805,
+                62366,
+                3417,
+                1335,
+                7186,
+                19316,
+                22317,
+                1313,
+                3252,
+                28648,
+                2198,
+                6511,
+                22317,
+                1805,
+                62366,
+                51193,
+                2829,
+                3252,
+                27173,
+                2198,
+                50215,
+                13825,
+                3252,
+                36493,
+                30975,
+                1335,
+                11525,
+                788,
+                90,
+                3417,
+                51193,
+                3,
+                7186,
+                19316,
+                22317,
+                13193,
+                17397,
+                2690,
+                22317,
+                17349,
+                5637,
+                60767,
+                19794,
+                788,
+                90,
+                3417,
+                75542
+              ],
+              "recognition": {
+                "accepted": true,
+                "prefix_accepted": true,
+                "completed_before_eos": true,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": true,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'modulesContent' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'modulesContent' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                6257
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "modulesContent"
+                ],
+                "schema_path": [
+                  "properties",
+                  "modulesContent",
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "modulesContent"
+                ],
+                "schema_path": [
+                  "properties",
+                  "modulesContent",
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"modulesContent\":null}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 6,
+              "token_ids": [
+                4913,
+                11525,
+                2762,
+                788,
+                2921,
+                92
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "modulesContent",
+                  "$edgeAgent",
+                  "properties.desired",
+                  "runtime",
+                  "type"
+                ],
+                "schema_path": [
+                  "properties",
+                  "modulesContent",
+                  "properties",
+                  "$edgeAgent",
+                  "properties",
+                  "properties.desired",
+                  "properties",
+                  "runtime",
+                  "properties",
+                  "type",
+                  "enum"
+                ],
+                "message": "None is not one of ['docker']"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "modulesContent",
+                  "$edgeAgent",
+                  "properties.desired",
+                  "runtime",
+                  "type"
+                ],
+                "schema_path": [
+                  "properties",
+                  "modulesContent",
+                  "properties",
+                  "$edgeAgent",
+                  "properties",
+                  "properties.desired",
+                  "properties",
+                  "runtime",
+                  "properties",
+                  "type",
+                  "enum"
+                ],
+                "message": "None is not one of ['docker']"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"modulesContent\":{\"$edgeAgent\":{\"properties.desired\":{\"modules\":{},\"runtime\":{\"settings\":{},\"type\":null},\"schemaVersion\":\"\",\"systemModules\":{\"edgeAgent\":{\"settings\":{\"image\":\"\"},\"type\":\"docker\"},\"edgeHub\":{\"restartPolicy\":\"never\",\"settings\":{\"image\":\"\"},\"status\":\"running\",\"type\":\"docker\"}}}},\"$edgeHub\":{\"properties.desired\":{\"routes\":{},\"schemaVersion\":\"\"}}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 84,
+              "token_ids": [
+                4913,
+                11525,
+                2762,
+                22317,
+                3,
+                7186,
+                16810,
+                22317,
+                13193,
+                17397,
+                2690,
+                22317,
+                11525,
+                788,
+                6257,
+                1335,
+                22255,
+                22317,
+                6511,
+                788,
+                6257,
+                1335,
+                1313,
+                788,
+                2921,
+                51193,
+                17349,
+                5637,
+                60767,
+                8948,
+                28201,
+                22317,
+                7186,
+                16810,
+                22317,
+                6511,
+                22317,
+                1805,
+                62366,
+                51193,
+                1313,
+                3252,
+                28648,
+                58640,
+                7186,
+                19316,
+                22317,
+                50215,
+                13825,
+                3252,
+                36493,
+                2198,
+                6511,
+                22317,
+                1805,
+                62366,
+                51193,
+                2829,
+                3252,
+                27173,
+                2198,
+                1313,
+                3252,
+                28648,
+                30975,
+                3417,
+                1335,
+                3,
+                7186,
+                19316,
+                22317,
+                13193,
+                17397,
+                2690,
+                22317,
+                19794,
+                788,
+                6257,
+                1335,
+                17349,
+                5637,
+                62366,
+                3417,
+                3417
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"modulesContent\":{\"$edgeAgent\":{\"properties.desired\":{\"schemaVersion\":\"\",\"runtime\":{\"type\":null,\"settings\":{}},\"systemModules\":{\"edgeAgent\":{\"type\":\"docker\",\"settings\":{\"image\":\"\"}},\"edgeHub\":{\"type\":\"docker\",\"settings\":{\"image\":\"\"},\"status\":\"running\",\"restartPolicy\":\"never\"}},\"modules\":{}}},\"$edgeHub\":{\"properties.desired\":{\"schemaVersion\":\"\",\"routes\":{}}}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 85,
+              "token_ids": [
+                4913,
+                11525,
+                2762,
+                22317,
+                3,
+                7186,
+                16810,
+                22317,
+                13193,
+                17397,
+                2690,
+                22317,
+                17349,
+                5637,
+                60767,
+                22255,
+                22317,
+                1313,
+                788,
+                2921,
+                1335,
+                6511,
+                788,
+                90,
+                3417,
+                1335,
+                8948,
+                28201,
+                22317,
+                7186,
+                16810,
+                22317,
+                1313,
+                3252,
+                28648,
+                2198,
+                6511,
+                22317,
+                1805,
+                62366,
+                3417,
+                1335,
+                7186,
+                19316,
+                22317,
+                1313,
+                3252,
+                28648,
+                2198,
+                6511,
+                22317,
+                1805,
+                62366,
+                51193,
+                2829,
+                3252,
+                27173,
+                2198,
+                50215,
+                13825,
+                3252,
+                36493,
+                30975,
+                1335,
+                11525,
+                788,
+                90,
+                3417,
+                51193,
+                3,
+                7186,
+                19316,
+                22317,
+                13193,
+                17397,
+                2690,
+                22317,
+                17349,
+                5637,
+                60767,
+                19794,
+                788,
+                90,
+                3417,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'modulesContent' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'modulesContent' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                6257
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "[]",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                1294
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "null",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                2921
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "\"\"",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3014
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-4",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "0",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                15
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-5",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "false",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3849
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        }
+      ],
+      "compile_seconds": 0.10563237499445677,
+      "diagnostics": {
+        "python_warnings": [],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      },
+      "library_warnings": null,
+      "ignored_assertion_warning_lines": [],
+      "grammar_file": "experiments/results/20261110T044100Z__structured_generation_manual_preflight_release/benchmark-stress-10__xgrammar.grammar.txt",
+      "grammar_sha256": "9f76de8cdb7d5034938001839749546fe68ca9b876b3dccae1d4b567da765cff",
+      "false_positives": [],
+      "false_negatives_on_tested_spellings": [],
+      "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+      "seconds": 0.10618295904714614
+    },
+    "llguidance_strict": {
+      "status": "NATIVE_COMPILABLE",
+      "probes": [
+        {
+          "label": "valid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": true,
+          "original_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "backend_input_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"modulesContent\":{\"$edgeAgent\":{\"properties.desired\":{\"modules\":{},\"runtime\":{\"settings\":{},\"type\":\"docker\"},\"schemaVersion\":\"\",\"systemModules\":{\"edgeAgent\":{\"settings\":{\"image\":\"\"},\"type\":\"docker\"},\"edgeHub\":{\"restartPolicy\":\"never\",\"settings\":{\"image\":\"\"},\"status\":\"running\",\"type\":\"docker\"}}}},\"$edgeHub\":{\"properties.desired\":{\"routes\":{},\"schemaVersion\":\"\"}}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 84,
+              "token_ids": [
+                4913,
+                11525,
+                2762,
+                22317,
+                3,
+                7186,
+                16810,
+                22317,
+                13193,
+                17397,
+                2690,
+                22317,
+                11525,
+                788,
+                6257,
+                1335,
+                22255,
+                22317,
+                6511,
+                788,
+                6257,
+                1335,
+                1313,
+                3252,
+                28648,
+                58640,
+                17349,
+                5637,
+                60767,
+                8948,
+                28201,
+                22317,
+                7186,
+                16810,
+                22317,
+                6511,
+                22317,
+                1805,
+                62366,
+                51193,
+                1313,
+                3252,
+                28648,
+                58640,
+                7186,
+                19316,
+                22317,
+                50215,
+                13825,
+                3252,
+                36493,
+                2198,
+                6511,
+                22317,
+                1805,
+                62366,
+                51193,
+                2829,
+                3252,
+                27173,
+                2198,
+                1313,
+                3252,
+                28648,
+                30975,
+                3417,
+                1335,
+                3,
+                7186,
+                19316,
+                22317,
+                13193,
+                17397,
+                2690,
+                22317,
+                19794,
+                788,
+                6257,
+                1335,
+                17349,
+                5637,
+                62366,
+                3417,
+                3417
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"modules\" doesn't satisfy the grammar; byte 'm' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"modulesContent\":{\"$edgeAgent\":{\"properties.desired\":{\"schemaVersion\":\"\",\"runtime\":{\"type\":\"docker\",\"settings\":{}},\"systemModules\":{\"edgeAgent\":{\"type\":\"docker\",\"settings\":{\"image\":\"\"}},\"edgeHub\":{\"type\":\"docker\",\"settings\":{\"image\":\"\"},\"status\":\"running\",\"restartPolicy\":\"never\"}},\"modules\":{}}},\"$edgeHub\":{\"properties.desired\":{\"schemaVersion\":\"\",\"routes\":{}}}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 85,
+              "token_ids": [
+                4913,
+                11525,
+                2762,
+                22317,
+                3,
+                7186,
+                16810,
+                22317,
+                13193,
+                17397,
+                2690,
+                22317,
+                17349,
+                5637,
+                60767,
+                22255,
+                22317,
+                1313,
+                3252,
+                28648,
+                2198,
+                6511,
+                788,
+                90,
+                3417,
+                1335,
+                8948,
+                28201,
+                22317,
+                7186,
+                16810,
+                22317,
+                1313,
+                3252,
+                28648,
+                2198,
+                6511,
+                22317,
+                1805,
+                62366,
+                3417,
+                1335,
+                7186,
+                19316,
+                22317,
+                1313,
+                3252,
+                28648,
+                2198,
+                6511,
+                22317,
+                1805,
+                62366,
+                51193,
+                2829,
+                3252,
+                27173,
+                2198,
+                50215,
+                13825,
+                3252,
+                36493,
+                30975,
+                1335,
+                11525,
+                788,
+                90,
+                3417,
+                51193,
+                3,
+                7186,
+                19316,
+                22317,
+                13193,
+                17397,
+                2690,
+                22317,
+                17349,
+                5637,
+                60767,
+                19794,
+                788,
+                90,
+                3417,
+                75542
+              ],
+              "recognition": {
+                "accepted": true,
+                "consumed_without_error": true,
+                "stopped": true,
+                "accepting": true,
+                "stop_reason": "EndOfSentence",
+                "rejection": null,
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": true,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'modulesContent' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'modulesContent' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                6257
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"{}\" doesn't satisfy the grammar; byte '}' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "modulesContent"
+                ],
+                "schema_path": [
+                  "properties",
+                  "modulesContent",
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "modulesContent"
+                ],
+                "schema_path": [
+                  "properties",
+                  "modulesContent",
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"modulesContent\":null}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 6,
+              "token_ids": [
+                4913,
+                11525,
+                2762,
+                788,
+                2921,
+                92
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"null\" doesn't satisfy the grammar; byte 'n' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "modulesContent",
+                  "$edgeAgent",
+                  "properties.desired",
+                  "runtime",
+                  "type"
+                ],
+                "schema_path": [
+                  "properties",
+                  "modulesContent",
+                  "properties",
+                  "$edgeAgent",
+                  "properties",
+                  "properties.desired",
+                  "properties",
+                  "runtime",
+                  "properties",
+                  "type",
+                  "enum"
+                ],
+                "message": "None is not one of ['docker']"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "modulesContent",
+                  "$edgeAgent",
+                  "properties.desired",
+                  "runtime",
+                  "type"
+                ],
+                "schema_path": [
+                  "properties",
+                  "modulesContent",
+                  "properties",
+                  "$edgeAgent",
+                  "properties",
+                  "properties.desired",
+                  "properties",
+                  "runtime",
+                  "properties",
+                  "type",
+                  "enum"
+                ],
+                "message": "None is not one of ['docker']"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"modulesContent\":{\"$edgeAgent\":{\"properties.desired\":{\"modules\":{},\"runtime\":{\"settings\":{},\"type\":null},\"schemaVersion\":\"\",\"systemModules\":{\"edgeAgent\":{\"settings\":{\"image\":\"\"},\"type\":\"docker\"},\"edgeHub\":{\"restartPolicy\":\"never\",\"settings\":{\"image\":\"\"},\"status\":\"running\",\"type\":\"docker\"}}}},\"$edgeHub\":{\"properties.desired\":{\"routes\":{},\"schemaVersion\":\"\"}}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 84,
+              "token_ids": [
+                4913,
+                11525,
+                2762,
+                22317,
+                3,
+                7186,
+                16810,
+                22317,
+                13193,
+                17397,
+                2690,
+                22317,
+                11525,
+                788,
+                6257,
+                1335,
+                22255,
+                22317,
+                6511,
+                788,
+                6257,
+                1335,
+                1313,
+                788,
+                2921,
+                51193,
+                17349,
+                5637,
+                60767,
+                8948,
+                28201,
+                22317,
+                7186,
+                16810,
+                22317,
+                6511,
+                22317,
+                1805,
+                62366,
+                51193,
+                1313,
+                3252,
+                28648,
+                58640,
+                7186,
+                19316,
+                22317,
+                50215,
+                13825,
+                3252,
+                36493,
+                2198,
+                6511,
+                22317,
+                1805,
+                62366,
+                51193,
+                2829,
+                3252,
+                27173,
+                2198,
+                1313,
+                3252,
+                28648,
+                30975,
+                3417,
+                1335,
+                3,
+                7186,
+                19316,
+                22317,
+                13193,
+                17397,
+                2690,
+                22317,
+                19794,
+                788,
+                6257,
+                1335,
+                17349,
+                5637,
+                62366,
+                3417,
+                3417
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"modules\" doesn't satisfy the grammar; byte 'm' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"modulesContent\":{\"$edgeAgent\":{\"properties.desired\":{\"schemaVersion\":\"\",\"runtime\":{\"type\":null,\"settings\":{}},\"systemModules\":{\"edgeAgent\":{\"type\":\"docker\",\"settings\":{\"image\":\"\"}},\"edgeHub\":{\"type\":\"docker\",\"settings\":{\"image\":\"\"},\"status\":\"running\",\"restartPolicy\":\"never\"}},\"modules\":{}}},\"$edgeHub\":{\"properties.desired\":{\"schemaVersion\":\"\",\"routes\":{}}}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 85,
+              "token_ids": [
+                4913,
+                11525,
+                2762,
+                22317,
+                3,
+                7186,
+                16810,
+                22317,
+                13193,
+                17397,
+                2690,
+                22317,
+                17349,
+                5637,
+                60767,
+                22255,
+                22317,
+                1313,
+                788,
+                2921,
+                1335,
+                6511,
+                788,
+                90,
+                3417,
+                1335,
+                8948,
+                28201,
+                22317,
+                7186,
+                16810,
+                22317,
+                1313,
+                3252,
+                28648,
+                2198,
+                6511,
+                22317,
+                1805,
+                62366,
+                3417,
+                1335,
+                7186,
+                19316,
+                22317,
+                1313,
+                3252,
+                28648,
+                2198,
+                6511,
+                22317,
+                1805,
+                62366,
+                51193,
+                2829,
+                3252,
+                27173,
+                2198,
+                50215,
+                13825,
+                3252,
+                36493,
+                30975,
+                1335,
+                11525,
+                788,
+                90,
+                3417,
+                51193,
+                3,
+                7186,
+                19316,
+                22317,
+                13193,
+                17397,
+                2690,
+                22317,
+                17349,
+                5637,
+                60767,
+                19794,
+                788,
+                90,
+                3417,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"null\" doesn't satisfy the grammar; byte 'n' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'modulesContent' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'modulesContent' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                6257
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"{}\" doesn't satisfy the grammar; byte '}' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "[]",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                1294
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"[]\" doesn't satisfy the grammar; byte '[' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "null",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                2921
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"null\" doesn't satisfy the grammar; byte 'n' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "\"\"",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3014
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"\\\"\\\"\" doesn't satisfy the grammar; byte '\"' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-4",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "0",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                15
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"0\" doesn't satisfy the grammar; byte '0' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-5",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "false",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3849
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"false\" doesn't satisfy the grammar; byte 'f' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        }
+      ],
+      "compile_seconds": 0.010304791969247162,
+      "diagnostics": {
+        "python_warnings": [],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      },
+      "library_warnings": [],
+      "ignored_assertion_warning_lines": [],
+      "grammar_file": "experiments/results/20261110T044100Z__structured_generation_manual_preflight_release/benchmark-stress-10__llguidance_strict.grammar.txt",
+      "grammar_sha256": "5a75d76a08acedf699c9ac48a9d0afe1111641d9d9faeda520a83facf617fa04",
+      "false_positives": [],
+      "false_negatives_on_tested_spellings": [],
+      "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+      "seconds": 0.044416583026759326
+    }
+  },
+  "validator_agreement": {
+    "total": 10,
+    "frozen_core": 10,
+    "supplemental": 0,
+    "disagreements": 0
+  },
+  "seconds": 0.711851125000976
+}

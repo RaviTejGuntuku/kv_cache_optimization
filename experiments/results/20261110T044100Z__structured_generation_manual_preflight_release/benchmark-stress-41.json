@@ -1,0 +1,4986 @@
+{
+  "task_id": "benchmark-stress-41",
+  "edit_ledger": [
+    {
+      "rule": "handwritten_case_rewrite",
+      "path": "/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/experiments/specs/structured_generation_headroom/manual/shared/benchmark-stress-41.schema.json",
+      "sha256": "e681a1084d7a09d9c4e3a9adaf21618461e7e9b9237c0991d8bf633142c86f96",
+      "reason": "Use anyOf for type, credentialSubject and issuer alternatives.",
+      "equivalence_argument": "The alternative pairs have disjoint JSON types: array/string, object/array, and object/string, respectively. All child assertions and open object behavior are copied.",
+      "nonasserting_format_paths": [
+        [
+          "definitions",
+          "issuer",
+          "properties",
+          "id",
+          "format"
+        ],
+        [
+          "properties",
+          "credentialStatus",
+          "properties",
+          "id",
+          "format"
+        ],
+        [
+          "properties",
+          "validUntil",
+          "format"
+        ],
+        [
+          "properties",
+          "validFrom",
+          "format"
+        ],
+        [
+          "properties",
+          "issued",
+          "format"
+        ],
+        [
+          "properties",
+          "expirationDate",
+          "format"
+        ],
+        [
+          "properties",
+          "issuanceDate",
+          "format"
+        ],
+        [
+          "properties",
+          "id",
+          "format"
+        ],
+        [
+          "properties",
+          "@context",
+          "items",
+          "format"
+        ]
+      ],
+      "format_policy": "Nonasserting in original oracle; backend inputs must not strengthen them."
+    }
+  ],
+  "original_schema_sha256": "c15238c1fd6c75df9efe4c2585d2541460a7283b960baa1024b7c188a561fc4a",
+  "backend_schema_canonical_sha256": "65d1aa7965adddf4b0d2bb58236c5f924a82e0d6ef3cf09a15e461ab56b31c6f",
+  "semantic_probes": [
+    {
+      "label": "valid-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": true,
+      "original_oracle": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "backend_input_oracle": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"@context\":[],\"credentialSubject\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"identityProof\":{\"identifier\":\"\",\"type\":\"DID\"},\"proof\":{\"method\":\"DID\",\"type\":\"OpenAttestationProofMethod\",\"value\":\"\"}},\"type\":[]}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 86,
+          "token_ids": [
+            4913,
+            31,
+            2147,
+            8899,
+            28503,
+            66799,
+            13019,
+            8899,
+            28503,
+            1038,
+            84,
+            681,
+            1916,
+            3252,
+            17,
+            15,
+            15,
+            15,
+            12,
+            15,
+            16,
+            12,
+            15,
+            16,
+            51,
+            15,
+            15,
+            25,
+            15,
+            15,
+            25,
+            15,
+            15,
+            57,
+            2198,
+            66817,
+            22317,
+            307,
+            3252,
+            2428,
+            1110,
+            32,
+            905,
+            2198,
+            606,
+            62366,
+            51193,
+            2508,
+            1655,
+            1944,
+            367,
+            14610,
+            22317,
+            16912,
+            31076,
+            22317,
+            15909,
+            60767,
+            1313,
+            3252,
+            35,
+            915,
+            58640,
+            15780,
+            22317,
+            4393,
+            3252,
+            35,
+            915,
+            2198,
+            1313,
+            3252,
+            5002,
+            1655,
+            1944,
+            367,
+            31076,
+            3523,
+            2198,
+            957,
+            62366,
+            3417,
+            1335,
+            1313,
+            788,
+            66277
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"@context\":[],\"type\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"credentialSubject\":[],\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"proof\":{\"type\":\"OpenAttestationProofMethod\",\"method\":\"DID\",\"value\":\"\"},\"identityProof\":{\"type\":\"DID\",\"identifier\":\"\"}}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 86,
+          "token_ids": [
+            4913,
+            31,
+            2147,
+            8899,
+            28503,
+            1313,
+            8899,
+            28503,
+            1038,
+            84,
+            681,
+            1916,
+            3252,
+            17,
+            15,
+            15,
+            15,
+            12,
+            15,
+            16,
+            12,
+            15,
+            16,
+            51,
+            15,
+            15,
+            25,
+            15,
+            15,
+            25,
+            15,
+            15,
+            57,
+            2198,
+            66799,
+            13019,
+            8899,
+            28503,
+            66817,
+            22317,
+            307,
+            3252,
+            2428,
+            1110,
+            32,
+            905,
+            2198,
+            606,
+            62366,
+            51193,
+            2508,
+            1655,
+            1944,
+            367,
+            14610,
+            22317,
+            15780,
+            22317,
+            1313,
+            3252,
+            5002,
+            1655,
+            1944,
+            367,
+            31076,
+            3523,
+            2198,
+            4393,
+            3252,
+            35,
+            915,
+            2198,
+            957,
+            62366,
+            51193,
+            16912,
+            31076,
+            22317,
+            1313,
+            3252,
+            35,
+            915,
+            2198,
+            15909,
+            62366,
+            75542
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [
+              "@context"
+            ],
+            "schema_path": [
+              "properties",
+              "@context",
+              "type"
+            ],
+            "message": "None is not of type 'array'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [
+              "@context"
+            ],
+            "schema_path": [
+              "properties",
+              "@context",
+              "type"
+            ],
+            "message": "None is not of type 'array'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"@context\":null,\"credentialSubject\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"identityProof\":{\"identifier\":\"\",\"type\":\"DID\"},\"proof\":{\"method\":\"DID\",\"type\":\"OpenAttestationProofMethod\",\"value\":\"\"}},\"type\":[]}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 87,
+          "token_ids": [
+            4913,
+            31,
+            2147,
+            788,
+            2921,
+            1335,
+            66799,
+            13019,
+            8899,
+            28503,
+            1038,
+            84,
+            681,
+            1916,
+            3252,
+            17,
+            15,
+            15,
+            15,
+            12,
+            15,
+            16,
+            12,
+            15,
+            16,
+            51,
+            15,
+            15,
+            25,
+            15,
+            15,
+            25,
+            15,
+            15,
+            57,
+            2198,
+            66817,
+            22317,
+            307,
+            3252,
+            2428,
+            1110,
+            32,
+            905,
+            2198,
+            606,
+            62366,
+            51193,
+            2508,
+            1655,
+            1944,
+            367,
+            14610,
+            22317,
+            16912,
+            31076,
+            22317,
+            15909,
+            60767,
+            1313,
+            3252,
+            35,
+            915,
+            58640,
+            15780,
+            22317,
+            4393,
+            3252,
+            35,
+            915,
+            2198,
+            1313,
+            3252,
+            5002,
+            1655,
+            1944,
+            367,
+            31076,
+            3523,
+            2198,
+            957,
+            62366,
+            3417,
+            1335,
+            1313,
+            788,
+            66277
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"@context\":null,\"type\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"credentialSubject\":[],\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"proof\":{\"type\":\"OpenAttestationProofMethod\",\"method\":\"DID\",\"value\":\"\"},\"identityProof\":{\"type\":\"DID\",\"identifier\":\"\"}}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 87,
+          "token_ids": [
+            4913,
+            31,
+            2147,
+            788,
+            2921,
+            1335,
+            1313,
+            8899,
+            28503,
+            1038,
+            84,
+            681,
+            1916,
+            3252,
+            17,
+            15,
+            15,
+            15,
+            12,
+            15,
+            16,
+            12,
+            15,
+            16,
+            51,
+            15,
+            15,
+            25,
+            15,
+            15,
+            25,
+            15,
+            15,
+            57,
+            2198,
+            66799,
+            13019,
+            8899,
+            28503,
+            66817,
+            22317,
+            307,
+            3252,
+            2428,
+            1110,
+            32,
+            905,
+            2198,
+            606,
+            62366,
+            51193,
+            2508,
+            1655,
+            1944,
+            367,
+            14610,
+            22317,
+            15780,
+            22317,
+            1313,
+            3252,
+            5002,
+            1655,
+            1944,
+            367,
+            31076,
+            3523,
+            2198,
+            4393,
+            3252,
+            35,
+            915,
+            2198,
+            957,
+            62366,
+            51193,
+            16912,
+            31076,
+            22317,
+            1313,
+            3252,
+            35,
+            915,
+            2198,
+            15909,
+            62366,
+            75542
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-1",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'@context' is a required property"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'@context' is a required property"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"credentialSubject\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"identityProof\":{\"identifier\":\"\",\"type\":\"DID\"},\"proof\":{\"method\":\"DID\",\"type\":\"OpenAttestationProofMethod\",\"value\":\"\"}},\"type\":[]}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 82,
+          "token_ids": [
+            4913,
+            66799,
+            13019,
+            8899,
+            28503,
+            1038,
+            84,
+            681,
+            1916,
+            3252,
+            17,
+            15,
+            15,
+            15,
+            12,
+            15,
+            16,
+            12,
+            15,
+            16,
+            51,
+            15,
+            15,
+            25,
+            15,
+            15,
+            25,
+            15,
+            15,
+            57,
+            2198,
+            66817,
+            22317,
+            307,
+            3252,
+            2428,
+            1110,
+            32,
+            905,
+            2198,
+            606,
+            62366,
+            51193,
+            2508,
+            1655,
+            1944,
+            367,
+            14610,
+            22317,
+            16912,
+            31076,
+            22317,
+            15909,
+            60767,
+            1313,
+            3252,
+            35,
+            915,
+            58640,
+            15780,
+            22317,
+            4393,
+            3252,
+            35,
+            915,
+            2198,
+            1313,
+            3252,
+            5002,
+            1655,
+            1944,
+            367,
+            31076,
+            3523,
+            2198,
+            957,
+            62366,
+            3417,
+            1335,
+            1313,
+            788,
+            66277
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"type\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"credentialSubject\":[],\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"proof\":{\"type\":\"OpenAttestationProofMethod\",\"method\":\"DID\",\"value\":\"\"},\"identityProof\":{\"type\":\"DID\",\"identifier\":\"\"}}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 82,
+          "token_ids": [
+            4913,
+            1313,
+            8899,
+            28503,
+            1038,
+            84,
+            681,
+            1916,
+            3252,
+            17,
+            15,
+            15,
+            15,
+            12,
+            15,
+            16,
+            12,
+            15,
+            16,
+            51,
+            15,
+            15,
+            25,
+            15,
+            15,
+            25,
+            15,
+            15,
+            57,
+            2198,
+            66799,
+            13019,
+            8899,
+            28503,
+            66817,
+            22317,
+            307,
+            3252,
+            2428,
+            1110,
+            32,
+            905,
+            2198,
+            606,
+            62366,
+            51193,
+            2508,
+            1655,
+            1944,
+            367,
+            14610,
+            22317,
+            15780,
+            22317,
+            1313,
+            3252,
+            5002,
+            1655,
+            1944,
+            367,
+            31076,
+            3523,
+            2198,
+            4393,
+            3252,
+            35,
+            915,
+            2198,
+            957,
+            62366,
+            51193,
+            16912,
+            31076,
+            22317,
+            1313,
+            3252,
+            35,
+            915,
+            2198,
+            15909,
+            62366,
+            75542
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-2",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "oneOf",
+            "path": [
+              "credentialSubject"
+            ],
+            "schema_path": [
+              "properties",
+              "credentialSubject",
+              "oneOf"
+            ],
+            "message": "None is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "anyOf",
+            "path": [
+              "credentialSubject"
+            ],
+            "schema_path": [
+              "properties",
+              "credentialSubject",
+              "anyOf"
+            ],
+            "message": "None is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"@context\":[],\"credentialSubject\":null,\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"identityProof\":{\"identifier\":\"\",\"type\":\"DID\"},\"proof\":{\"method\":\"DID\",\"type\":\"OpenAttestationProofMethod\",\"value\":\"\"}},\"type\":[]}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 87,
+          "token_ids": [
+            4913,
+            31,
+            2147,
+            8899,
+            28503,
+            66799,
+            13019,
+            788,
+            2921,
+            1335,
+            1038,
+            84,
+            681,
+            1916,
+            3252,
+            17,
+            15,
+            15,
+            15,
+            12,
+            15,
+            16,
+            12,
+            15,
+            16,
+            51,
+            15,
+            15,
+            25,
+            15,
+            15,
+            25,
+            15,
+            15,
+            57,
+            2198,
+            66817,
+            22317,
+            307,
+            3252,
+            2428,
+            1110,
+            32,
+            905,
+            2198,
+            606,
+            62366,
+            51193,
+            2508,
+            1655,
+            1944,
+            367,
+            14610,
+            22317,
+            16912,
+            31076,
+            22317,
+            15909,
+            60767,
+            1313,
+            3252,
+            35,
+            915,
+            58640,
+            15780,
+            22317,
+            4393,
+            3252,
+            35,
+            915,
+            2198,
+            1313,
+            3252,
+            5002,
+            1655,
+            1944,
+            367,
+            31076,
+            3523,
+            2198,
+            957,
+            62366,
+            3417,
+            1335,
+            1313,
+            788,
+            66277
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"@context\":[],\"type\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"credentialSubject\":null,\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"proof\":{\"type\":\"OpenAttestationProofMethod\",\"method\":\"DID\",\"value\":\"\"},\"identityProof\":{\"type\":\"DID\",\"identifier\":\"\"}}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 87,
+          "token_ids": [
+            4913,
+            31,
+            2147,
+            8899,
+            28503,
+            1313,
+            8899,
+            28503,
+            1038,
+            84,
+            681,
+            1916,
+            3252,
+            17,
+            15,
+            15,
+            15,
+            12,
+            15,
+            16,
+            12,
+            15,
+            16,
+            51,
+            15,
+            15,
+            25,
+            15,
+            15,
+            25,
+            15,
+            15,
+            57,
+            2198,
+            66799,
+            13019,
+            788,
+            2921,
+            1335,
+            66817,
+            22317,
+            307,
+            3252,
+            2428,
+            1110,
+            32,
+            905,
+            2198,
+            606,
+            62366,
+            51193,
+            2508,
+            1655,
+            1944,
+            367,
+            14610,
+            22317,
+            15780,
+            22317,
+            1313,
+            3252,
+            5002,
+            1655,
+            1944,
+            367,
+            31076,
+            3523,
+            2198,
+            4393,
+            3252,
+            35,
+            915,
+            2198,
+            957,
+            62366,
+            51193,
+            16912,
+            31076,
+            22317,
+            1313,
+            3252,
+            35,
+            915,
+            2198,
+            15909,
+            62366,
+            75542
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-3",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "enum",
+            "path": [
+              "openAttestationMetadata",
+              "identityProof",
+              "type"
+            ],
+            "schema_path": [
+              "properties",
+              "openAttestationMetadata",
+              "properties",
+              "identityProof",
+              "properties",
+              "type",
+              "enum"
+            ],
+            "message": "'' is not one of ['DNS-TXT', 'DNS-DID', 'DID']"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "enum",
+            "path": [
+              "openAttestationMetadata",
+              "identityProof",
+              "type"
+            ],
+            "schema_path": [
+              "properties",
+              "openAttestationMetadata",
+              "properties",
+              "identityProof",
+              "properties",
+              "type",
+              "enum"
+            ],
+            "message": "'' is not one of ['DNS-TXT', 'DNS-DID', 'DID']"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"@context\":[],\"credentialSubject\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"identityProof\":{\"identifier\":\"\",\"type\":\"\"},\"proof\":{\"method\":\"DID\",\"type\":\"OpenAttestationProofMethod\",\"value\":\"\"}},\"type\":[]}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 84,
+          "token_ids": [
+            4913,
+            31,
+            2147,
+            8899,
+            28503,
+            66799,
+            13019,
+            8899,
+            28503,
+            1038,
+            84,
+            681,
+            1916,
+            3252,
+            17,
+            15,
+            15,
+            15,
+            12,
+            15,
+            16,
+            12,
+            15,
+            16,
+            51,
+            15,
+            15,
+            25,
+            15,
+            15,
+            25,
+            15,
+            15,
+            57,
+            2198,
+            66817,
+            22317,
+            307,
+            3252,
+            2428,
+            1110,
+            32,
+            905,
+            2198,
+            606,
+            62366,
+            51193,
+            2508,
+            1655,
+            1944,
+            367,
+            14610,
+            22317,
+            16912,
+            31076,
+            22317,
+            15909,
+            60767,
+            1313,
+            62366,
+            51193,
+            15780,
+            22317,
+            4393,
+            3252,
+            35,
+            915,
+            2198,
+            1313,
+            3252,
+            5002,
+            1655,
+            1944,
+            367,
+            31076,
+            3523,
+            2198,
+            957,
+            62366,
+            3417,
+            1335,
+            1313,
+            788,
+            66277
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"@context\":[],\"type\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"credentialSubject\":[],\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"proof\":{\"type\":\"OpenAttestationProofMethod\",\"method\":\"DID\",\"value\":\"\"},\"identityProof\":{\"type\":\"\",\"identifier\":\"\"}}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 83,
+          "token_ids": [
+            4913,
+            31,
+            2147,
+            8899,
+            28503,
+            1313,
+            8899,
+            28503,
+            1038,
+            84,
+            681,
+            1916,
+            3252,
+            17,
+            15,
+            15,
+            15,
+            12,
+            15,
+            16,
+            12,
+            15,
+            16,
+            51,
+            15,
+            15,
+            25,
+            15,
+            15,
+            25,
+            15,
+            15,
+            57,
+            2198,
+            66799,
+            13019,
+            8899,
+            28503,
+            66817,
+            22317,
+            307,
+            3252,
+            2428,
+            1110,
+            32,
+            905,
+            2198,
+            606,
+            62366,
+            51193,
+            2508,
+            1655,
+            1944,
+            367,
+            14610,
+            22317,
+            15780,
+            22317,
+            1313,
+            3252,
+            5002,
+            1655,
+            1944,
+            367,
+            31076,
+            3523,
+            2198,
+            4393,
+            3252,
+            35,
+            915,
+            2198,
+            957,
+            62366,
+            51193,
+            16912,
+            31076,
+            22317,
+            1313,
+            60767,
+            15909,
+            62366,
+            75542
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 6,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'@context' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'type' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'credentialSubject' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'issuer' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'issuanceDate' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'openAttestationMetadata' is a required property"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 6,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'@context' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'type' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'credentialSubject' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'issuer' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'issuanceDate' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'openAttestationMetadata' is a required property"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            6257
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-1",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "[] is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "[] is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "[]",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            1294
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-2",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "null",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            2921
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-3",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "'' is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "'' is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "\"\"",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            3014
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-4",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "0 is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "0 is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "0",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            15
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-5",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "False is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "False is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "false",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            3849
+          ]
+        }
+      ],
+      "validator_agreement": true
+    }
+  ],
+  "engines": {
+    "lmql": {
+      "status": "NATIVE_COMPILABLE",
+      "program_sha256": "2143f90b14a75a08c6083ec5db386cbafe802b37be2f9c0ea488b3a118cc5031",
+      "patterns_sha256": "3f5076e4c8b159a2c4aece0c98ad46904f58896b0571ed20040e847b5644a4bd",
+      "pattern_constant_count": 25,
+      "compiler_warnings": [
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['OPTIONAL_KEY']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['OPTIONAL_KEY']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['STRING']'"
+      ],
+      "coverage_claim": "authored_and_compiled_only; no_generation_or_semantic_coverage_inferred",
+      "diagnostics": {
+        "python_warnings": [
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          }
+        ],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      }
+    },
+    "xgrammar": {
+      "status": "NATIVE_COMPILABLE",
+      "probes": [
+        {
+          "label": "valid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": true,
+          "original_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "backend_input_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"@context\":[],\"credentialSubject\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"identityProof\":{\"identifier\":\"\",\"type\":\"DID\"},\"proof\":{\"method\":\"DID\",\"type\":\"OpenAttestationProofMethod\",\"value\":\"\"}},\"type\":[]}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 86,
+              "token_ids": [
+                4913,
+                31,
+                2147,
+                8899,
+                28503,
+                66799,
+                13019,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                16912,
+                31076,
+                22317,
+                15909,
+                60767,
+                1313,
+                3252,
+                35,
+                915,
+                58640,
+                15780,
+                22317,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                957,
+                62366,
+                3417,
+                1335,
+                1313,
+                788,
+                66277
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"@context\":[],\"type\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"credentialSubject\":[],\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"proof\":{\"type\":\"OpenAttestationProofMethod\",\"method\":\"DID\",\"value\":\"\"},\"identityProof\":{\"type\":\"DID\",\"identifier\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 86,
+              "token_ids": [
+                4913,
+                31,
+                2147,
+                8899,
+                28503,
+                1313,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66799,
+                13019,
+                8899,
+                28503,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                15780,
+                22317,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                957,
+                62366,
+                51193,
+                16912,
+                31076,
+                22317,
+                1313,
+                3252,
+                35,
+                915,
+                2198,
+                15909,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": true,
+                "prefix_accepted": true,
+                "completed_before_eos": true,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": true,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "@context"
+                ],
+                "schema_path": [
+                  "properties",
+                  "@context",
+                  "type"
+                ],
+                "message": "None is not of type 'array'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "@context"
+                ],
+                "schema_path": [
+                  "properties",
+                  "@context",
+                  "type"
+                ],
+                "message": "None is not of type 'array'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"@context\":null,\"credentialSubject\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"identityProof\":{\"identifier\":\"\",\"type\":\"DID\"},\"proof\":{\"method\":\"DID\",\"type\":\"OpenAttestationProofMethod\",\"value\":\"\"}},\"type\":[]}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 87,
+              "token_ids": [
+                4913,
+                31,
+                2147,
+                788,
+                2921,
+                1335,
+                66799,
+                13019,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                16912,
+                31076,
+                22317,
+                15909,
+                60767,
+                1313,
+                3252,
+                35,
+                915,
+                58640,
+                15780,
+                22317,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                957,
+                62366,
+                3417,
+                1335,
+                1313,
+                788,
+                66277
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"@context\":null,\"type\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"credentialSubject\":[],\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"proof\":{\"type\":\"OpenAttestationProofMethod\",\"method\":\"DID\",\"value\":\"\"},\"identityProof\":{\"type\":\"DID\",\"identifier\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 87,
+              "token_ids": [
+                4913,
+                31,
+                2147,
+                788,
+                2921,
+                1335,
+                1313,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66799,
+                13019,
+                8899,
+                28503,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                15780,
+                22317,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                957,
+                62366,
+                51193,
+                16912,
+                31076,
+                22317,
+                1313,
+                3252,
+                35,
+                915,
+                2198,
+                15909,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'@context' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'@context' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"credentialSubject\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"identityProof\":{\"identifier\":\"\",\"type\":\"DID\"},\"proof\":{\"method\":\"DID\",\"type\":\"OpenAttestationProofMethod\",\"value\":\"\"}},\"type\":[]}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 82,
+              "token_ids": [
+                4913,
+                66799,
+                13019,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                16912,
+                31076,
+                22317,
+                15909,
+                60767,
+                1313,
+                3252,
+                35,
+                915,
+                58640,
+                15780,
+                22317,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                957,
+                62366,
+                3417,
+                1335,
+                1313,
+                788,
+                66277
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"type\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"credentialSubject\":[],\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"proof\":{\"type\":\"OpenAttestationProofMethod\",\"method\":\"DID\",\"value\":\"\"},\"identityProof\":{\"type\":\"DID\",\"identifier\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 82,
+              "token_ids": [
+                4913,
+                1313,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66799,
+                13019,
+                8899,
+                28503,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                15780,
+                22317,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                957,
+                62366,
+                51193,
+                16912,
+                31076,
+                22317,
+                1313,
+                3252,
+                35,
+                915,
+                2198,
+                15909,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "oneOf",
+                "path": [
+                  "credentialSubject"
+                ],
+                "schema_path": [
+                  "properties",
+                  "credentialSubject",
+                  "oneOf"
+                ],
+                "message": "None is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [
+                  "credentialSubject"
+                ],
+                "schema_path": [
+                  "properties",
+                  "credentialSubject",
+                  "anyOf"
+                ],
+                "message": "None is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"@context\":[],\"credentialSubject\":null,\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"identityProof\":{\"identifier\":\"\",\"type\":\"DID\"},\"proof\":{\"method\":\"DID\",\"type\":\"OpenAttestationProofMethod\",\"value\":\"\"}},\"type\":[]}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 87,
+              "token_ids": [
+                4913,
+                31,
+                2147,
+                8899,
+                28503,
+                66799,
+                13019,
+                788,
+                2921,
+                1335,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                16912,
+                31076,
+                22317,
+                15909,
+                60767,
+                1313,
+                3252,
+                35,
+                915,
+                58640,
+                15780,
+                22317,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                957,
+                62366,
+                3417,
+                1335,
+                1313,
+                788,
+                66277
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"@context\":[],\"type\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"credentialSubject\":null,\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"proof\":{\"type\":\"OpenAttestationProofMethod\",\"method\":\"DID\",\"value\":\"\"},\"identityProof\":{\"type\":\"DID\",\"identifier\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 87,
+              "token_ids": [
+                4913,
+                31,
+                2147,
+                8899,
+                28503,
+                1313,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66799,
+                13019,
+                788,
+                2921,
+                1335,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                15780,
+                22317,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                957,
+                62366,
+                51193,
+                16912,
+                31076,
+                22317,
+                1313,
+                3252,
+                35,
+                915,
+                2198,
+                15909,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "openAttestationMetadata",
+                  "identityProof",
+                  "type"
+                ],
+                "schema_path": [
+                  "properties",
+                  "openAttestationMetadata",
+                  "properties",
+                  "identityProof",
+                  "properties",
+                  "type",
+                  "enum"
+                ],
+                "message": "'' is not one of ['DNS-TXT', 'DNS-DID', 'DID']"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "openAttestationMetadata",
+                  "identityProof",
+                  "type"
+                ],
+                "schema_path": [
+                  "properties",
+                  "openAttestationMetadata",
+                  "properties",
+                  "identityProof",
+                  "properties",
+                  "type",
+                  "enum"
+                ],
+                "message": "'' is not one of ['DNS-TXT', 'DNS-DID', 'DID']"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"@context\":[],\"credentialSubject\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"identityProof\":{\"identifier\":\"\",\"type\":\"\"},\"proof\":{\"method\":\"DID\",\"type\":\"OpenAttestationProofMethod\",\"value\":\"\"}},\"type\":[]}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 84,
+              "token_ids": [
+                4913,
+                31,
+                2147,
+                8899,
+                28503,
+                66799,
+                13019,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                16912,
+                31076,
+                22317,
+                15909,
+                60767,
+                1313,
+                62366,
+                51193,
+                15780,
+                22317,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                957,
+                62366,
+                3417,
+                1335,
+                1313,
+                788,
+                66277
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"@context\":[],\"type\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"credentialSubject\":[],\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"proof\":{\"type\":\"OpenAttestationProofMethod\",\"method\":\"DID\",\"value\":\"\"},\"identityProof\":{\"type\":\"\",\"identifier\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 83,
+              "token_ids": [
+                4913,
+                31,
+                2147,
+                8899,
+                28503,
+                1313,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66799,
+                13019,
+                8899,
+                28503,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                15780,
+                22317,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                957,
+                62366,
+                51193,
+                16912,
+                31076,
+                22317,
+                1313,
+                60767,
+                15909,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 6,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'@context' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'type' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'credentialSubject' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'issuer' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'issuanceDate' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'openAttestationMetadata' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 6,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'@context' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'type' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'credentialSubject' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'issuer' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'issuanceDate' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'openAttestationMetadata' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                6257
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "[]",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                1294
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "null",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                2921
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "\"\"",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3014
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-4",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "0",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                15
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-5",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "false",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3849
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        }
+      ],
+      "compile_seconds": 3.6321534999879077,
+      "diagnostics": {
+        "python_warnings": [],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      },
+      "library_warnings": null,
+      "ignored_assertion_warning_lines": [],
+      "grammar_file": "experiments/results/20261110T044100Z__structured_generation_manual_preflight_release/benchmark-stress-41__xgrammar.grammar.txt",
+      "grammar_sha256": "d702e53acdd1501c60982446c115fca4d1acb808dd89d3753c58e5647cbd6c96",
+      "false_positives": [],
+      "false_negatives_on_tested_spellings": [],
+      "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+      "seconds": 3.633331708027981
+    },
+    "llguidance_strict": {
+      "status": "NATIVE_COMPILABLE",
+      "probes": [
+        {
+          "label": "valid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": true,
+          "original_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "backend_input_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"@context\":[],\"credentialSubject\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"identityProof\":{\"identifier\":\"\",\"type\":\"DID\"},\"proof\":{\"method\":\"DID\",\"type\":\"OpenAttestationProofMethod\",\"value\":\"\"}},\"type\":[]}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 86,
+              "token_ids": [
+                4913,
+                31,
+                2147,
+                8899,
+                28503,
+                66799,
+                13019,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                16912,
+                31076,
+                22317,
+                15909,
+                60767,
+                1313,
+                3252,
+                35,
+                915,
+                58640,
+                15780,
+                22317,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                957,
+                62366,
+                3417,
+                1335,
+                1313,
+                788,
+                66277
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"credential\" doesn't satisfy the grammar; byte 'c' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"@context\":[],\"type\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"credentialSubject\":[],\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"proof\":{\"type\":\"OpenAttestationProofMethod\",\"method\":\"DID\",\"value\":\"\"},\"identityProof\":{\"type\":\"DID\",\"identifier\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 86,
+              "token_ids": [
+                4913,
+                31,
+                2147,
+                8899,
+                28503,
+                1313,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66799,
+                13019,
+                8899,
+                28503,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                15780,
+                22317,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                957,
+                62366,
+                51193,
+                16912,
+                31076,
+                22317,
+                1313,
+                3252,
+                35,
+                915,
+                2198,
+                15909,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": true,
+                "consumed_without_error": true,
+                "stopped": true,
+                "accepting": true,
+                "stop_reason": "EndOfSentence",
+                "rejection": null,
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": true,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "@context"
+                ],
+                "schema_path": [
+                  "properties",
+                  "@context",
+                  "type"
+                ],
+                "message": "None is not of type 'array'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "@context"
+                ],
+                "schema_path": [
+                  "properties",
+                  "@context",
+                  "type"
+                ],
+                "message": "None is not of type 'array'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"@context\":null,\"credentialSubject\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"identityProof\":{\"identifier\":\"\",\"type\":\"DID\"},\"proof\":{\"method\":\"DID\",\"type\":\"OpenAttestationProofMethod\",\"value\":\"\"}},\"type\":[]}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 87,
+              "token_ids": [
+                4913,
+                31,
+                2147,
+                788,
+                2921,
+                1335,
+                66799,
+                13019,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                16912,
+                31076,
+                22317,
+                15909,
+                60767,
+                1313,
+                3252,
+                35,
+                915,
+                58640,
+                15780,
+                22317,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                957,
+                62366,
+                3417,
+                1335,
+                1313,
+                788,
+                66277
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"null\" doesn't satisfy the grammar; byte 'n' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"@context\":null,\"type\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"credentialSubject\":[],\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"proof\":{\"type\":\"OpenAttestationProofMethod\",\"method\":\"DID\",\"value\":\"\"},\"identityProof\":{\"type\":\"DID\",\"identifier\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 87,
+              "token_ids": [
+                4913,
+                31,
+                2147,
+                788,
+                2921,
+                1335,
+                1313,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66799,
+                13019,
+                8899,
+                28503,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                15780,
+                22317,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                957,
+                62366,
+                51193,
+                16912,
+                31076,
+                22317,
+                1313,
+                3252,
+                35,
+                915,
+                2198,
+                15909,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"null\" doesn't satisfy the grammar; byte 'n' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'@context' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'@context' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"credentialSubject\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"identityProof\":{\"identifier\":\"\",\"type\":\"DID\"},\"proof\":{\"method\":\"DID\",\"type\":\"OpenAttestationProofMethod\",\"value\":\"\"}},\"type\":[]}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 82,
+              "token_ids": [
+                4913,
+                66799,
+                13019,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                16912,
+                31076,
+                22317,
+                15909,
+                60767,
+                1313,
+                3252,
+                35,
+                915,
+                58640,
+                15780,
+                22317,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                957,
+                62366,
+                3417,
+                1335,
+                1313,
+                788,
+                66277
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"credential\" doesn't satisfy the grammar; byte 'c' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"type\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"credentialSubject\":[],\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"proof\":{\"type\":\"OpenAttestationProofMethod\",\"method\":\"DID\",\"value\":\"\"},\"identityProof\":{\"type\":\"DID\",\"identifier\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 82,
+              "token_ids": [
+                4913,
+                1313,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66799,
+                13019,
+                8899,
+                28503,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                15780,
+                22317,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                957,
+                62366,
+                51193,
+                16912,
+                31076,
+                22317,
+                1313,
+                3252,
+                35,
+                915,
+                2198,
+                15909,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"type\" doesn't satisfy the grammar; byte 't' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "oneOf",
+                "path": [
+                  "credentialSubject"
+                ],
+                "schema_path": [
+                  "properties",
+                  "credentialSubject",
+                  "oneOf"
+                ],
+                "message": "None is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [
+                  "credentialSubject"
+                ],
+                "schema_path": [
+                  "properties",
+                  "credentialSubject",
+                  "anyOf"
+                ],
+                "message": "None is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"@context\":[],\"credentialSubject\":null,\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"identityProof\":{\"identifier\":\"\",\"type\":\"DID\"},\"proof\":{\"method\":\"DID\",\"type\":\"OpenAttestationProofMethod\",\"value\":\"\"}},\"type\":[]}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 87,
+              "token_ids": [
+                4913,
+                31,
+                2147,
+                8899,
+                28503,
+                66799,
+                13019,
+                788,
+                2921,
+                1335,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                16912,
+                31076,
+                22317,
+                15909,
+                60767,
+                1313,
+                3252,
+                35,
+                915,
+                58640,
+                15780,
+                22317,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                957,
+                62366,
+                3417,
+                1335,
+                1313,
+                788,
+                66277
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"credential\" doesn't satisfy the grammar; byte 'c' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"@context\":[],\"type\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"credentialSubject\":null,\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"proof\":{\"type\":\"OpenAttestationProofMethod\",\"method\":\"DID\",\"value\":\"\"},\"identityProof\":{\"type\":\"DID\",\"identifier\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 87,
+              "token_ids": [
+                4913,
+                31,
+                2147,
+                8899,
+                28503,
+                1313,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66799,
+                13019,
+                788,
+                2921,
+                1335,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                15780,
+                22317,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                957,
+                62366,
+                51193,
+                16912,
+                31076,
+                22317,
+                1313,
+                3252,
+                35,
+                915,
+                2198,
+                15909,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"null\" doesn't satisfy the grammar; byte 'n' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "openAttestationMetadata",
+                  "identityProof",
+                  "type"
+                ],
+                "schema_path": [
+                  "properties",
+                  "openAttestationMetadata",
+                  "properties",
+                  "identityProof",
+                  "properties",
+                  "type",
+                  "enum"
+                ],
+                "message": "'' is not one of ['DNS-TXT', 'DNS-DID', 'DID']"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "openAttestationMetadata",
+                  "identityProof",
+                  "type"
+                ],
+                "schema_path": [
+                  "properties",
+                  "openAttestationMetadata",
+                  "properties",
+                  "identityProof",
+                  "properties",
+                  "type",
+                  "enum"
+                ],
+                "message": "'' is not one of ['DNS-TXT', 'DNS-DID', 'DID']"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"@context\":[],\"credentialSubject\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"identityProof\":{\"identifier\":\"\",\"type\":\"\"},\"proof\":{\"method\":\"DID\",\"type\":\"OpenAttestationProofMethod\",\"value\":\"\"}},\"type\":[]}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 84,
+              "token_ids": [
+                4913,
+                31,
+                2147,
+                8899,
+                28503,
+                66799,
+                13019,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                16912,
+                31076,
+                22317,
+                15909,
+                60767,
+                1313,
+                62366,
+                51193,
+                15780,
+                22317,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                957,
+                62366,
+                3417,
+                1335,
+                1313,
+                788,
+                66277
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"credential\" doesn't satisfy the grammar; byte 'c' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"@context\":[],\"type\":[],\"issuanceDate\":\"2000-01-01T00:00:00Z\",\"credentialSubject\":[],\"issuer\":{\"id\":\"https://A.com\",\"name\":\"\"},\"openAttestationMetadata\":{\"proof\":{\"type\":\"OpenAttestationProofMethod\",\"method\":\"DID\",\"value\":\"\"},\"identityProof\":{\"type\":\"\",\"identifier\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 83,
+              "token_ids": [
+                4913,
+                31,
+                2147,
+                8899,
+                28503,
+                1313,
+                8899,
+                28503,
+                1038,
+                84,
+                681,
+                1916,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                66799,
+                13019,
+                8899,
+                28503,
+                66817,
+                22317,
+                307,
+                3252,
+                2428,
+                1110,
+                32,
+                905,
+                2198,
+                606,
+                62366,
+                51193,
+                2508,
+                1655,
+                1944,
+                367,
+                14610,
+                22317,
+                15780,
+                22317,
+                1313,
+                3252,
+                5002,
+                1655,
+                1944,
+                367,
+                31076,
+                3523,
+                2198,
+                4393,
+                3252,
+                35,
+                915,
+                2198,
+                957,
+                62366,
+                51193,
+                16912,
+                31076,
+                22317,
+                1313,
+                60767,
+                15909,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"\\\":\\\"\\\",\\\"\" doesn't satisfy the grammar; byte '\"' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 6,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'@context' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'type' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'credentialSubject' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'issuer' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'issuanceDate' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'openAttestationMetadata' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 6,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'@context' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'type' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'credentialSubject' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'issuer' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'issuanceDate' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'openAttestationMetadata' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                6257
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"{}\" doesn't satisfy the grammar; byte '}' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "[]",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                1294
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"[]\" doesn't satisfy the grammar; byte '[' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "null",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                2921
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"null\" doesn't satisfy the grammar; byte 'n' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "\"\"",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3014
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"\\\"\\\"\" doesn't satisfy the grammar; byte '\"' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-4",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "0",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                15
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"0\" doesn't satisfy the grammar; byte '0' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-5",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "false",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3849
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"false\" doesn't satisfy the grammar; byte 'f' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        }
+      ],
+      "compile_seconds": 0.006019999971613288,
+      "diagnostics": {
+        "python_warnings": [],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      },
+      "library_warnings": [],
+      "ignored_assertion_warning_lines": [],
+      "grammar_file": "experiments/results/20261110T044100Z__structured_generation_manual_preflight_release/benchmark-stress-41__llguidance_strict.grammar.txt",
+      "grammar_sha256": "4a251afa516c0dabdee4bb441b49b7cf619df7727091efd215a82665e506484b",
+      "false_positives": [],
+      "false_negatives_on_tested_spellings": [],
+      "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+      "seconds": 0.029781582998111844
+    }
+  },
+  "validator_agreement": {
+    "total": 11,
+    "frozen_core": 11,
+    "supplemental": 0,
+    "disagreements": 0
+  },
+  "seconds": 3.7296578329987824
+}

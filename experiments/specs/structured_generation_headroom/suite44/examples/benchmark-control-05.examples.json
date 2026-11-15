@@ -1,0 +1,35 @@
+{
+  "valid": [
+    {
+      "data": {
+        "acknowledgement": ""
+      },
+      "links": [],
+      "meta": {
+        "id": "00000000-0000-1000-8000-000000000000",
+        "source": {},
+        "time": 0,
+        "type": "EiffelAlertAcknowledgedEvent",
+        "version": "1.0.0"
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "instance": {
+        "links": [],
+        "meta": {
+          "id": "00000000-0000-1000-8000-000000000000",
+          "source": {},
+          "time": 0,
+          "type": "EiffelAlertAcknowledgedEvent",
+          "version": "1.0.0"
+        }
+      },
+      "validator": "required",
+      "schema_path": [
+        "required"
+      ]
+    }
+  ]
+}

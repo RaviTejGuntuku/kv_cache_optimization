@@ -1,0 +1,155 @@
+{
+  "valid": [
+    {
+      "basePath": "x",
+      "scaleMode": "None",
+      "startupView": "x",
+      "tcHmiServer": {},
+      "userControls": [],
+      "content": [],
+      "views": [],
+      "userFunctions": [],
+      "symbols": {
+        "internal": {}
+      },
+      "trigger": [],
+      "actionTemplates": [],
+      "languages": {},
+      "creatorSettings": {
+        "viewport": {
+          "defaultHeight": 0,
+          "defaultWidth": 0
+        }
+      },
+      "binding": {
+        "symbolError": "Ignore"
+      },
+      "systemPopups": {
+        "providerName": "x"
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('basePath',) with None",
+      "instance": {
+        "basePath": null,
+        "scaleMode": "None",
+        "startupView": "x",
+        "tcHmiServer": {},
+        "userControls": [],
+        "content": [],
+        "views": [],
+        "userFunctions": [],
+        "symbols": {
+          "internal": {}
+        },
+        "trigger": [],
+        "actionTemplates": [],
+        "languages": {},
+        "creatorSettings": {
+          "viewport": {
+            "defaultHeight": 0,
+            "defaultWidth": 0
+          }
+        },
+        "binding": {
+          "symbolError": "Ignore"
+        },
+        "systemPopups": {
+          "providerName": "x"
+        }
+      },
+      "validator": "type",
+      "path": [
+        "basePath"
+      ],
+      "schema_path": [
+        "properties",
+        "basePath",
+        "type"
+      ],
+      "message": "None is not of type 'string'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "delete ('basePath',)",
+      "instance": {
+        "scaleMode": "None",
+        "startupView": "x",
+        "tcHmiServer": {},
+        "userControls": [],
+        "content": [],
+        "views": [],
+        "userFunctions": [],
+        "symbols": {
+          "internal": {}
+        },
+        "trigger": [],
+        "actionTemplates": [],
+        "languages": {},
+        "creatorSettings": {
+          "viewport": {
+            "defaultHeight": 0,
+            "defaultWidth": 0
+          }
+        },
+        "binding": {
+          "symbolError": "Ignore"
+        },
+        "systemPopups": {
+          "providerName": "x"
+        }
+      },
+      "validator": "required",
+      "path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'basePath' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('scaleMode',) with ''",
+      "instance": {
+        "basePath": "x",
+        "scaleMode": "",
+        "startupView": "x",
+        "tcHmiServer": {},
+        "userControls": [],
+        "content": [],
+        "views": [],
+        "userFunctions": [],
+        "symbols": {
+          "internal": {}
+        },
+        "trigger": [],
+        "actionTemplates": [],
+        "languages": {},
+        "creatorSettings": {
+          "viewport": {
+            "defaultHeight": 0,
+            "defaultWidth": 0
+          }
+        },
+        "binding": {
+          "symbolError": "Ignore"
+        },
+        "systemPopups": {
+          "providerName": "x"
+        }
+      },
+      "validator": "enum",
+      "path": [
+        "scaleMode"
+      ],
+      "schema_path": [
+        "properties",
+        "scaleMode",
+        "enum"
+      ],
+      "message": "'' is not one of ['None', 'ScaleToFill', 'ScaleToFit', 'ScaleToFitWidth', 'ScaleToFitHeight']",
+      "classification": "schema_error"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "valid": [
+    {
+      "virtualServer": {
+        "backend": {
+          "serviceName": "0",
+          "servicePort": 1
+        },
+        "frontend": {
+          "partition": "0",
+          "virtualAddress": {
+            "bindAddr": null,
+            "port": 1
+          }
+        }
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('virtualServer',) with None",
+      "instance": {
+        "virtualServer": null
+      },
+      "validator": "type",
+      "path": [
+        "virtualServer"
+      ],
+      "schema_path": [
+        "properties",
+        "virtualServer",
+        "type"
+      ],
+      "message": "None is not of type 'object'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('virtualServer',) with {}",
+      "instance": {
+        "virtualServer": {}
+      },
+      "validator": "required",
+      "path": [
+        "virtualServer"
+      ],
+      "schema_path": [
+        "properties",
+        "virtualServer",
+        "required"
+      ],
+      "message": "'backend' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('virtualServer', 'backend', 'serviceName') with ''",
+      "instance": {
+        "virtualServer": {
+          "backend": {
+            "serviceName": "",
+            "servicePort": 1
+          },
+          "frontend": {
+            "partition": "0",
+            "virtualAddress": {
+              "bindAddr": null,
+              "port": 1
+            }
+          }
+        }
+      },
+      "validator": "minLength",
+      "path": [
+        "virtualServer",
+        "backend",
+        "serviceName"
+      ],
+      "schema_path": [
+        "properties",
+        "virtualServer",
+        "properties",
+        "backend",
+        "properties",
+        "serviceName",
+        "minLength"
+      ],
+      "message": "'' should be non-empty",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('virtualServer', 'backend', 'servicePort') with 0",
+      "instance": {
+        "virtualServer": {
+          "backend": {
+            "serviceName": "0",
+            "servicePort": 0
+          },
+          "frontend": {
+            "partition": "0",
+            "virtualAddress": {
+              "bindAddr": null,
+              "port": 1
+            }
+          }
+        }
+      },
+      "validator": "minimum",
+      "path": [
+        "virtualServer",
+        "backend",
+        "servicePort"
+      ],
+      "schema_path": [
+        "properties",
+        "virtualServer",
+        "properties",
+        "backend",
+        "properties",
+        "servicePort",
+        "minimum"
+      ],
+      "message": "0 is less than the minimum of 1",
+      "classification": "schema_error"
+    }
+  ]
+}

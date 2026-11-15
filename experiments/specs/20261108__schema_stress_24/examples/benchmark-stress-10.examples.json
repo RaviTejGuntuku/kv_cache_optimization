@@ -1,0 +1,142 @@
+{
+  "valid": [
+    {
+      "modulesContent": {
+        "$edgeAgent": {
+          "properties.desired": {
+            "modules": {},
+            "runtime": {
+              "settings": {},
+              "type": "docker"
+            },
+            "schemaVersion": "",
+            "systemModules": {
+              "edgeAgent": {
+                "settings": {
+                  "image": ""
+                },
+                "type": "docker"
+              },
+              "edgeHub": {
+                "restartPolicy": "never",
+                "settings": {
+                  "image": ""
+                },
+                "status": "running",
+                "type": "docker"
+              }
+            }
+          }
+        },
+        "$edgeHub": {
+          "properties.desired": {
+            "routes": {},
+            "schemaVersion": ""
+          }
+        }
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "instance": {},
+      "mutation": "delete_property",
+      "edited_path": [
+        "modulesContent"
+      ],
+      "validator": "required",
+      "error_path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'modulesContent' is a required property"
+    },
+    {
+      "instance": {
+        "modulesContent": null
+      },
+      "mutation": "replace_value",
+      "edited_path": [
+        "modulesContent"
+      ],
+      "validator": "type",
+      "error_path": [
+        "modulesContent"
+      ],
+      "schema_path": [
+        "properties",
+        "modulesContent",
+        "type"
+      ],
+      "message": "None is not of type 'object'"
+    },
+    {
+      "instance": {
+        "modulesContent": {
+          "$edgeAgent": {
+            "properties.desired": {
+              "modules": {},
+              "runtime": {
+                "settings": {},
+                "type": null
+              },
+              "schemaVersion": "",
+              "systemModules": {
+                "edgeAgent": {
+                  "settings": {
+                    "image": ""
+                  },
+                  "type": "docker"
+                },
+                "edgeHub": {
+                  "restartPolicy": "never",
+                  "settings": {
+                    "image": ""
+                  },
+                  "status": "running",
+                  "type": "docker"
+                }
+              }
+            }
+          },
+          "$edgeHub": {
+            "properties.desired": {
+              "routes": {},
+              "schemaVersion": ""
+            }
+          }
+        }
+      },
+      "mutation": "replace_value",
+      "edited_path": [
+        "modulesContent",
+        "$edgeAgent",
+        "properties.desired",
+        "runtime",
+        "type"
+      ],
+      "validator": "enum",
+      "error_path": [
+        "modulesContent",
+        "$edgeAgent",
+        "properties.desired",
+        "runtime",
+        "type"
+      ],
+      "schema_path": [
+        "properties",
+        "modulesContent",
+        "properties",
+        "$edgeAgent",
+        "properties",
+        "properties.desired",
+        "properties",
+        "runtime",
+        "properties",
+        "type",
+        "enum"
+      ],
+      "message": "None is not one of ['docker']"
+    }
+  ]
+}

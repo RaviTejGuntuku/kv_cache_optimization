@@ -1,0 +1,136 @@
+{
+  "valid": [
+    {
+      "data": {
+        "outcome": {
+          "conclusion": "FAILED",
+          "verdict": "FAILED"
+        }
+      },
+      "links": [],
+      "meta": {
+        "id": "00000000-0000-1000-8000-000000000000",
+        "time": 0,
+        "type": "EiffelTestCaseFinishedEvent",
+        "version": "1.1.0"
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('data',) with None",
+      "instance": {
+        "data": null,
+        "links": [],
+        "meta": {
+          "id": "00000000-0000-1000-8000-000000000000",
+          "time": 0,
+          "type": "EiffelTestCaseFinishedEvent",
+          "version": "1.1.0"
+        }
+      },
+      "validator": "type",
+      "path": [
+        "data"
+      ],
+      "schema_path": [
+        "properties",
+        "data",
+        "type"
+      ],
+      "message": "None is not of type 'object'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('data',) with {}",
+      "instance": {
+        "data": {},
+        "links": [],
+        "meta": {
+          "id": "00000000-0000-1000-8000-000000000000",
+          "time": 0,
+          "type": "EiffelTestCaseFinishedEvent",
+          "version": "1.1.0"
+        }
+      },
+      "validator": "required",
+      "path": [
+        "data"
+      ],
+      "schema_path": [
+        "properties",
+        "data",
+        "required"
+      ],
+      "message": "'outcome' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('data', 'outcome', 'conclusion') with ''",
+      "instance": {
+        "data": {
+          "outcome": {
+            "conclusion": "",
+            "verdict": "FAILED"
+          }
+        },
+        "links": [],
+        "meta": {
+          "id": "00000000-0000-1000-8000-000000000000",
+          "time": 0,
+          "type": "EiffelTestCaseFinishedEvent",
+          "version": "1.1.0"
+        }
+      },
+      "validator": "enum",
+      "path": [
+        "data",
+        "outcome",
+        "conclusion"
+      ],
+      "schema_path": [
+        "properties",
+        "data",
+        "properties",
+        "outcome",
+        "properties",
+        "conclusion",
+        "enum"
+      ],
+      "message": "'' is not one of ['SUCCESSFUL', 'FAILED', 'ABORTED', 'TIMED_OUT', 'INCONCLUSIVE']",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('meta', 'id') with ''",
+      "instance": {
+        "data": {
+          "outcome": {
+            "conclusion": "FAILED",
+            "verdict": "FAILED"
+          }
+        },
+        "links": [],
+        "meta": {
+          "id": "",
+          "time": 0,
+          "type": "EiffelTestCaseFinishedEvent",
+          "version": "1.1.0"
+        }
+      },
+      "validator": "pattern",
+      "path": [
+        "meta",
+        "id"
+      ],
+      "schema_path": [
+        "properties",
+        "meta",
+        "properties",
+        "id",
+        "pattern"
+      ],
+      "message": "'' does not match '^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'",
+      "classification": "schema_error"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "valid": [
+    {
+      "context": {
+        "definitions": {
+          "schemas": {},
+          "scopes": {}
+        }
+      },
+      "id": "",
+      "terms": {
+        "guarantees": [],
+        "metrics": {},
+        "pricing": {
+          "billing": {}
+        }
+      },
+      "type": "",
+      "version": ""
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('context',) with None",
+      "instance": {
+        "context": null,
+        "id": "",
+        "terms": {
+          "guarantees": [],
+          "metrics": {},
+          "pricing": {
+            "billing": {}
+          }
+        },
+        "type": "",
+        "version": ""
+      },
+      "validator": "type",
+      "path": [
+        "context"
+      ],
+      "schema_path": [
+        "properties",
+        "context",
+        "type"
+      ],
+      "message": "None is not of type 'object'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('context',) with {}",
+      "instance": {
+        "context": {},
+        "id": "",
+        "terms": {
+          "guarantees": [],
+          "metrics": {},
+          "pricing": {
+            "billing": {}
+          }
+        },
+        "type": "",
+        "version": ""
+      },
+      "validator": "required",
+      "path": [
+        "context"
+      ],
+      "schema_path": [
+        "properties",
+        "context",
+        "required"
+      ],
+      "message": "'definitions' is a required property",
+      "classification": "schema_error"
+    }
+  ]
+}

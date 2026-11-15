@@ -1,0 +1,16 @@
+{
+  "valid": [
+    {
+      "kinds": []
+    }
+  ],
+  "invalid": [
+    {
+      "instance": {},
+      "validator": "required",
+      "schema_path": [
+        "required"
+      ]
+    }
+  ]
+}

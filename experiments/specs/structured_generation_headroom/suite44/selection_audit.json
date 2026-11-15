@@ -1,0 +1,148 @@
+{
+  "salt": "headroom-controls-20261110-v1",
+  "quotas": {
+    "flat": 4,
+    "nested": 4,
+    "variant": 2
+  },
+  "candidate_counts": {
+    "JSONSchemaBench/flat": 371,
+    "JSONSchemaBench/nested": 721,
+    "JSONSchemaBench/variant": 51,
+    "SchemaBench/flat": 58,
+    "SchemaBench/nested": 94,
+    "SchemaBench/variant": 16
+  },
+  "exclusions": {
+    "structure": 2290,
+    "constant_only_or_no_scalar_choices": 60,
+    "duplicate": 74,
+    "integrity_SchemaError": 1,
+    "trivial_witness": 7
+  },
+  "witness_construction_exclusions": [],
+  "source_index_sha256": "e72d8fc41934d9c0e763fafbc54941a4d72b22da7917f13147e4d2ed2a804d93",
+  "schema_manifest_sha256": "79edd1c0912433d32be1666d19b9a20c9bc57a6f10684c75aa6f20314b12ede2",
+  "selected": [
+    {
+      "task_id": "benchmark-control-01",
+      "source": "JSONSchemaBench",
+      "source_id": "o5195",
+      "stratum": "flat"
+    },
+    {
+      "task_id": "benchmark-control-02",
+      "source": "JSONSchemaBench",
+      "source_id": "o79592",
+      "stratum": "flat"
+    },
+    {
+      "task_id": "benchmark-control-03",
+      "source": "JSONSchemaBench",
+      "source_id": "o90442",
+      "stratum": "flat"
+    },
+    {
+      "task_id": "benchmark-control-04",
+      "source": "JSONSchemaBench",
+      "source_id": "calculate_area_7a7eb9fa",
+      "stratum": "flat"
+    },
+    {
+      "task_id": "benchmark-control-05",
+      "source": "JSONSchemaBench",
+      "source_id": "o89888",
+      "stratum": "nested"
+    },
+    {
+      "task_id": "benchmark-control-06",
+      "source": "JSONSchemaBench",
+      "source_id": "calculate_area_fc59ddf9",
+      "stratum": "nested"
+    },
+    {
+      "task_id": "benchmark-control-07",
+      "source": "JSONSchemaBench",
+      "source_id": "calculate_area_fbf02501",
+      "stratum": "nested"
+    },
+    {
+      "task_id": "benchmark-control-08",
+      "source": "JSONSchemaBench",
+      "source_id": "search_news_eceea94e",
+      "stratum": "nested"
+    },
+    {
+      "task_id": "benchmark-control-09",
+      "source": "JSONSchemaBench",
+      "source_id": "o69744",
+      "stratum": "variant"
+    },
+    {
+      "task_id": "benchmark-control-10",
+      "source": "JSONSchemaBench",
+      "source_id": "vsix-publish",
+      "stratum": "variant"
+    },
+    {
+      "task_id": "benchmark-control-11",
+      "source": "SchemaBench",
+      "source_id": "aldair-meneses_wp-playground_schema.json",
+      "stratum": "flat"
+    },
+    {
+      "task_id": "benchmark-control-12",
+      "source": "SchemaBench",
+      "source_id": "ycabon_presentations_thumbnail_schema.json",
+      "stratum": "flat"
+    },
+    {
+      "task_id": "benchmark-control-13",
+      "source": "SchemaBench",
+      "source_id": "vrukshaliii_monokle-templates-plugins_form-schema.json",
+      "stratum": "flat"
+    },
+    {
+      "task_id": "benchmark-control-14",
+      "source": "SchemaBench",
+      "source_id": "giacomovolpi_SecurePOS_MessageSchema.json",
+      "stratum": "flat"
+    },
+    {
+      "task_id": "benchmark-control-15",
+      "source": "SchemaBench",
+      "source_id": "HansOersted_Autonomous_PID_controller_detection_by_tracker.schema.json",
+      "stratum": "nested"
+    },
+    {
+      "task_id": "benchmark-control-16",
+      "source": "SchemaBench",
+      "source_id": "openMetadataInitiative_openMINDS_JSON-Schema_disease.schema.json",
+      "stratum": "nested"
+    },
+    {
+      "task_id": "benchmark-control-17",
+      "source": "SchemaBench",
+      "source_id": "krisling049_warcry_data_fighter_schema.json",
+      "stratum": "nested"
+    },
+    {
+      "task_id": "benchmark-control-18",
+      "source": "SchemaBench",
+      "source_id": "lintnet-modules_k8s_main_config_schema.json",
+      "stratum": "nested"
+    },
+    {
+      "task_id": "benchmark-control-19",
+      "source": "SchemaBench",
+      "source_id": "unb-mds_2024-1-Squad02-CulturaTransparente_gazette_schema.json",
+      "stratum": "variant"
+    },
+    {
+      "task_id": "benchmark-control-20",
+      "source": "SchemaBench",
+      "source_id": "mrmxf_opentsg-node_noiseschema.json",
+      "stratum": "variant"
+    }
+  ]
+}

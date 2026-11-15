@@ -1,0 +1,106 @@
+{
+  "valid": [
+    {
+      "menu": {
+        "entries": [
+          {
+            "action": {
+              "calendarAction": {
+                "createCalendarEvent": {
+                  "endTime": "2000-01-01T00:00:00Z",
+                  "startTime": "2000-01-01T00:00:00Z",
+                  "title": "0"
+                }
+              },
+              "displayText": "0"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('menu',) with None",
+      "instance": {
+        "menu": null
+      },
+      "validator": "type",
+      "path": [
+        "menu"
+      ],
+      "schema_path": [
+        "properties",
+        "menu",
+        "type"
+      ],
+      "message": "None is not of type 'object'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('menu',) with {}",
+      "instance": {
+        "menu": {}
+      },
+      "validator": "required",
+      "path": [
+        "menu"
+      ],
+      "schema_path": [
+        "properties",
+        "menu",
+        "required"
+      ],
+      "message": "'entries' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('menu', 'entries') with []",
+      "instance": {
+        "menu": {
+          "entries": []
+        }
+      },
+      "validator": "minItems",
+      "path": [
+        "menu",
+        "entries"
+      ],
+      "schema_path": [
+        "properties",
+        "menu",
+        "properties",
+        "entries",
+        "minItems"
+      ],
+      "message": "[] should be non-empty",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('menu', 'entries', 0) with None",
+      "instance": {
+        "menu": {
+          "entries": [
+            null
+          ]
+        }
+      },
+      "validator": "oneOf",
+      "path": [
+        "menu",
+        "entries",
+        0
+      ],
+      "schema_path": [
+        "properties",
+        "menu",
+        "properties",
+        "entries",
+        "items",
+        "oneOf"
+      ],
+      "message": "None is not valid under any of the given schemas",
+      "classification": "schema_error"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "valid": [
+    {
+      "accounts": {},
+      "boards": [
+        {
+          "githubAccount": "",
+          "projectName": "0",
+          "repo": "0/0"
+        }
+      ]
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('accounts',) with None",
+      "instance": {
+        "accounts": null,
+        "boards": [
+          {
+            "githubAccount": "",
+            "projectName": "0",
+            "repo": "0/0"
+          }
+        ]
+      },
+      "validator": "type",
+      "path": [
+        "accounts"
+      ],
+      "schema_path": [
+        "properties",
+        "accounts",
+        "type"
+      ],
+      "message": "None is not of type 'object'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "delete ('accounts',)",
+      "instance": {
+        "boards": [
+          {
+            "githubAccount": "",
+            "projectName": "0",
+            "repo": "0/0"
+          }
+        ]
+      },
+      "validator": "required",
+      "path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'accounts' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('boards',) with []",
+      "instance": {
+        "accounts": {},
+        "boards": []
+      },
+      "validator": "minItems",
+      "path": [
+        "boards"
+      ],
+      "schema_path": [
+        "properties",
+        "boards",
+        "minItems"
+      ],
+      "message": "[] should be non-empty",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('boards', 0, 'projectName') with ''",
+      "instance": {
+        "accounts": {},
+        "boards": [
+          {
+            "githubAccount": "",
+            "projectName": "",
+            "repo": "0/0"
+          }
+        ]
+      },
+      "validator": "minLength",
+      "path": [
+        "boards",
+        0,
+        "projectName"
+      ],
+      "schema_path": [
+        "properties",
+        "boards",
+        "items",
+        "properties",
+        "projectName",
+        "minLength"
+      ],
+      "message": "'' should be non-empty",
+      "classification": "schema_error"
+    }
+  ]
+}

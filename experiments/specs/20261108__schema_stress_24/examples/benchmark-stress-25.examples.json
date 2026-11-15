@@ -1,0 +1,139 @@
+{
+  "valid": [
+    {
+      "name": "0",
+      "timestamp": "2000-01-01T00:00:00Z",
+      "tokens": [
+        {
+          "address": "0x0000000000000000000000000000000000000000",
+          "chainId": 1,
+          "decimals": 0,
+          "name": "",
+          "symbol": ""
+        }
+      ],
+      "version": {
+        "major": 0,
+        "minor": 0,
+        "patch": 0
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('name',) with None",
+      "instance": {
+        "name": null,
+        "timestamp": "2000-01-01T00:00:00Z",
+        "tokens": [
+          {
+            "address": "0x0000000000000000000000000000000000000000",
+            "chainId": 1,
+            "decimals": 0,
+            "name": "",
+            "symbol": ""
+          }
+        ],
+        "version": {
+          "major": 0,
+          "minor": 0,
+          "patch": 0
+        }
+      },
+      "validator": "type",
+      "path": [
+        "name"
+      ],
+      "schema_path": [
+        "properties",
+        "name",
+        "type"
+      ],
+      "message": "None is not of type 'string'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('name',) with ''",
+      "instance": {
+        "name": "",
+        "timestamp": "2000-01-01T00:00:00Z",
+        "tokens": [
+          {
+            "address": "0x0000000000000000000000000000000000000000",
+            "chainId": 1,
+            "decimals": 0,
+            "name": "",
+            "symbol": ""
+          }
+        ],
+        "version": {
+          "major": 0,
+          "minor": 0,
+          "patch": 0
+        }
+      },
+      "validator": "minLength",
+      "path": [
+        "name"
+      ],
+      "schema_path": [
+        "properties",
+        "name",
+        "minLength"
+      ],
+      "message": "'' should be non-empty",
+      "classification": "schema_error"
+    },
+    {
+      "name": "delete ('name',)",
+      "instance": {
+        "timestamp": "2000-01-01T00:00:00Z",
+        "tokens": [
+          {
+            "address": "0x0000000000000000000000000000000000000000",
+            "chainId": 1,
+            "decimals": 0,
+            "name": "",
+            "symbol": ""
+          }
+        ],
+        "version": {
+          "major": 0,
+          "minor": 0,
+          "patch": 0
+        }
+      },
+      "validator": "required",
+      "path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'name' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('tokens',) with []",
+      "instance": {
+        "name": "0",
+        "timestamp": "2000-01-01T00:00:00Z",
+        "tokens": [],
+        "version": {
+          "major": 0,
+          "minor": 0,
+          "patch": 0
+        }
+      },
+      "validator": "minItems",
+      "path": [
+        "tokens"
+      ],
+      "schema_path": [
+        "properties",
+        "tokens",
+        "minItems"
+      ],
+      "message": "[] should be non-empty",
+      "classification": "schema_error"
+    }
+  ]
+}

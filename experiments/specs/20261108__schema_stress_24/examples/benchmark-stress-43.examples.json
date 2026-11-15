@@ -1,0 +1,297 @@
+{
+  "valid": [
+    {
+      "acquisition": {
+        "binning_camera": 0.0,
+        "date_time": "2000-01-01",
+        "detector": "",
+        "dose_per_movie": {
+          "unit": "",
+          "value": 0.0
+        },
+        "pixel_size": {
+          "unit": "",
+          "value": 0.0
+        }
+      },
+      "instrument": {
+        "acceleration_voltage": {
+          "unit": "",
+          "value": 0.0
+        },
+        "cs": {
+          "unit": "",
+          "value": 0.0
+        },
+        "electron_source": "",
+        "illumination": "",
+        "imaging": "",
+        "microscope": ""
+      },
+      "organizational": {
+        "authors": [],
+        "funder": []
+      },
+      "sample": {
+        "molecule": [],
+        "overall_molecule": {
+          "assembly": "FILAMENT",
+          "molecular_type": "",
+          "name_sample": "",
+          "source": ""
+        },
+        "specimen": {
+          "embedding": false,
+          "ph": 0.0,
+          "shadowing": false,
+          "staining": false,
+          "vitrification": false,
+          "vitrification_cryogen": ""
+        }
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('acquisition',) with None",
+      "instance": {
+        "acquisition": null,
+        "instrument": {
+          "acceleration_voltage": {
+            "unit": "",
+            "value": 0.0
+          },
+          "cs": {
+            "unit": "",
+            "value": 0.0
+          },
+          "electron_source": "",
+          "illumination": "",
+          "imaging": "",
+          "microscope": ""
+        },
+        "organizational": {
+          "authors": [],
+          "funder": []
+        },
+        "sample": {
+          "molecule": [],
+          "overall_molecule": {
+            "assembly": "FILAMENT",
+            "molecular_type": "",
+            "name_sample": "",
+            "source": ""
+          },
+          "specimen": {
+            "embedding": false,
+            "ph": 0.0,
+            "shadowing": false,
+            "staining": false,
+            "vitrification": false,
+            "vitrification_cryogen": ""
+          }
+        }
+      },
+      "validator": "type",
+      "path": [
+        "acquisition"
+      ],
+      "schema_path": [
+        "properties",
+        "acquisition",
+        "type"
+      ],
+      "message": "None is not of type 'object'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('acquisition',) with {}",
+      "instance": {
+        "acquisition": {},
+        "instrument": {
+          "acceleration_voltage": {
+            "unit": "",
+            "value": 0.0
+          },
+          "cs": {
+            "unit": "",
+            "value": 0.0
+          },
+          "electron_source": "",
+          "illumination": "",
+          "imaging": "",
+          "microscope": ""
+        },
+        "organizational": {
+          "authors": [],
+          "funder": []
+        },
+        "sample": {
+          "molecule": [],
+          "overall_molecule": {
+            "assembly": "FILAMENT",
+            "molecular_type": "",
+            "name_sample": "",
+            "source": ""
+          },
+          "specimen": {
+            "embedding": false,
+            "ph": 0.0,
+            "shadowing": false,
+            "staining": false,
+            "vitrification": false,
+            "vitrification_cryogen": ""
+          }
+        }
+      },
+      "validator": "required",
+      "path": [
+        "acquisition"
+      ],
+      "schema_path": [
+        "properties",
+        "acquisition",
+        "required"
+      ],
+      "message": "'detector' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('acquisition', 'date_time') with None",
+      "instance": {
+        "acquisition": {
+          "binning_camera": 0.0,
+          "date_time": null,
+          "detector": "",
+          "dose_per_movie": {
+            "unit": "",
+            "value": 0.0
+          },
+          "pixel_size": {
+            "unit": "",
+            "value": 0.0
+          }
+        },
+        "instrument": {
+          "acceleration_voltage": {
+            "unit": "",
+            "value": 0.0
+          },
+          "cs": {
+            "unit": "",
+            "value": 0.0
+          },
+          "electron_source": "",
+          "illumination": "",
+          "imaging": "",
+          "microscope": ""
+        },
+        "organizational": {
+          "authors": [],
+          "funder": []
+        },
+        "sample": {
+          "molecule": [],
+          "overall_molecule": {
+            "assembly": "FILAMENT",
+            "molecular_type": "",
+            "name_sample": "",
+            "source": ""
+          },
+          "specimen": {
+            "embedding": false,
+            "ph": 0.0,
+            "shadowing": false,
+            "staining": false,
+            "vitrification": false,
+            "vitrification_cryogen": ""
+          }
+        }
+      },
+      "validator": "anyOf",
+      "path": [
+        "acquisition",
+        "date_time"
+      ],
+      "schema_path": [
+        "properties",
+        "acquisition",
+        "properties",
+        "date_time",
+        "anyOf"
+      ],
+      "message": "None is not valid under any of the given schemas",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('sample', 'overall_molecule', 'assembly') with None",
+      "instance": {
+        "acquisition": {
+          "binning_camera": 0.0,
+          "date_time": "2000-01-01",
+          "detector": "",
+          "dose_per_movie": {
+            "unit": "",
+            "value": 0.0
+          },
+          "pixel_size": {
+            "unit": "",
+            "value": 0.0
+          }
+        },
+        "instrument": {
+          "acceleration_voltage": {
+            "unit": "",
+            "value": 0.0
+          },
+          "cs": {
+            "unit": "",
+            "value": 0.0
+          },
+          "electron_source": "",
+          "illumination": "",
+          "imaging": "",
+          "microscope": ""
+        },
+        "organizational": {
+          "authors": [],
+          "funder": []
+        },
+        "sample": {
+          "molecule": [],
+          "overall_molecule": {
+            "assembly": null,
+            "molecular_type": "",
+            "name_sample": "",
+            "source": ""
+          },
+          "specimen": {
+            "embedding": false,
+            "ph": 0.0,
+            "shadowing": false,
+            "staining": false,
+            "vitrification": false,
+            "vitrification_cryogen": ""
+          }
+        }
+      },
+      "validator": "enum",
+      "path": [
+        "sample",
+        "overall_molecule",
+        "assembly"
+      ],
+      "schema_path": [
+        "properties",
+        "sample",
+        "properties",
+        "overall_molecule",
+        "properties",
+        "assembly",
+        "enum"
+      ],
+      "message": "None is not one of ['FILAMENT', 'HELICAL ARRAY', 'PARTICLE']",
+      "classification": "schema_error"
+    }
+  ]
+}

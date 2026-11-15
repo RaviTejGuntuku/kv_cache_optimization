@@ -1,0 +1,93 @@
+{
+  "valid": [
+    {
+      "cacheManagers": [
+        {
+          "handles": [
+            {
+              "key": "0",
+              "knownType": "Redis"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('cacheManagers',) with None",
+      "instance": {
+        "cacheManagers": null
+      },
+      "validator": "type",
+      "path": [
+        "cacheManagers"
+      ],
+      "schema_path": [
+        "properties",
+        "cacheManagers",
+        "type"
+      ],
+      "message": "None is not of type 'array'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('cacheManagers',) with []",
+      "instance": {
+        "cacheManagers": []
+      },
+      "validator": "minItems",
+      "path": [
+        "cacheManagers"
+      ],
+      "schema_path": [
+        "properties",
+        "cacheManagers",
+        "minItems"
+      ],
+      "message": "[] should be non-empty",
+      "classification": "schema_error"
+    },
+    {
+      "name": "delete ('cacheManagers',)",
+      "instance": {},
+      "validator": "required",
+      "path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'cacheManagers' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('cacheManagers', 0, 'handles', 0) with {}",
+      "instance": {
+        "cacheManagers": [
+          {
+            "handles": [
+              {}
+            ]
+          }
+        ]
+      },
+      "validator": "oneOf",
+      "path": [
+        "cacheManagers",
+        0,
+        "handles",
+        0
+      ],
+      "schema_path": [
+        "properties",
+        "cacheManagers",
+        "items",
+        "properties",
+        "handles",
+        "items",
+        "oneOf"
+      ],
+      "message": "{} is not valid under any of the given schemas",
+      "classification": "schema_error"
+    }
+  ]
+}

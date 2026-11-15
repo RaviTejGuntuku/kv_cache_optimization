@@ -1,0 +1,4683 @@
+{
+  "task_id": "benchmark-stress-43",
+  "edit_ledger": [
+    {
+      "rule": "handwritten_case_rewrite",
+      "path": "/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/experiments/specs/structured_generation_headroom/manual/shared/benchmark-stress-43.schema.json",
+      "sha256": "0b87c61c508a3f6f910825bda6ee7c416e5ab75dd9f4a03b424679b54b52da42",
+      "reason": "Replace date_time $ref-with-sibling intersection by its exact narrowed string type; erase nonasserting formats.",
+      "equivalence_argument": "Draft2019 applies $ref siblings. Any admits null/boolean/object/number/string, while both anyOf alternatives require string. Formats are nonasserting. Their intersection is exactly all strings, including empty and arbitrary non-date strings; null and arrays are rejected.",
+      "nonasserting_format_paths": [
+        [
+          "$defs",
+          "Grant",
+          "properties",
+          "start_date",
+          "format"
+        ],
+        [
+          "$defs",
+          "Grant",
+          "properties",
+          "end_date",
+          "format"
+        ],
+        [
+          "$defs",
+          "Acquisition",
+          "properties",
+          "date_time",
+          "anyOf",
+          1,
+          "format"
+        ],
+        [
+          "$defs",
+          "Acquisition",
+          "properties",
+          "date_time",
+          "anyOf",
+          0,
+          "format"
+        ]
+      ],
+      "format_policy": "Nonasserting in original oracle; backend inputs must not strengthen them."
+    }
+  ],
+  "original_schema_sha256": "14cd0cda91a8342cffc1d495946e35c39d20d2a3c705201de1a065c5880d26e4",
+  "backend_schema_canonical_sha256": "4b7fc21768fc25dd304a310437e287b5811853eda07455bb2cae5dac2355b950",
+  "semantic_probes": [
+    {
+      "label": "valid-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": true,
+      "original_oracle": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "backend_input_oracle": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"acquisition\":{\"binning_camera\":0.0,\"date_time\":\"2000-01-01\",\"detector\":\"\",\"dose_per_movie\":{\"unit\":\"\",\"value\":0.0},\"pixel_size\":{\"unit\":\"\",\"value\":0.0}},\"instrument\":{\"acceleration_voltage\":{\"unit\":\"\",\"value\":0.0},\"cs\":{\"unit\":\"\",\"value\":0.0},\"electron_source\":\"\",\"illumination\":\"\",\"imaging\":\"\",\"microscope\":\"\"},\"organizational\":{\"authors\":[],\"funder\":[]},\"sample\":{\"molecule\":[],\"overall_molecule\":{\"assembly\":\"FILAMENT\",\"molecular_type\":\"\",\"name_sample\":\"\",\"source\":\"\"},\"specimen\":{\"embedding\":false,\"ph\":0.0,\"shadowing\":false,\"staining\":false,\"vitrification\":false,\"vitrification_cryogen\":\"\"}}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 164,
+          "token_ids": [
+            4913,
+            580,
+            17204,
+            22317,
+            6863,
+            1229,
+            29843,
+            788,
+            15,
+            13,
+            15,
+            1335,
+            1028,
+            3009,
+            3252,
+            17,
+            15,
+            15,
+            15,
+            12,
+            15,
+            16,
+            12,
+            15,
+            16,
+            2198,
+            91544,
+            60767,
+            67,
+            960,
+            5678,
+            50729,
+            22317,
+            3843,
+            60767,
+            957,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            29684,
+            2368,
+            22317,
+            3843,
+            60767,
+            957,
+            788,
+            15,
+            13,
+            15,
+            3417,
+            1335,
+            66368,
+            22317,
+            43888,
+            20927,
+            62756,
+            22317,
+            3843,
+            60767,
+            957,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            4837,
+            22317,
+            3843,
+            60767,
+            957,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            74503,
+            10347,
+            60767,
+            76565,
+            2554,
+            60767,
+            318,
+            4118,
+            60767,
+            40443,
+            4186,
+            62366,
+            51193,
+            8462,
+            76391,
+            22317,
+            47005,
+            8899,
+            28503,
+            69,
+            7995,
+            788,
+            1294,
+            51193,
+            13611,
+            22317,
+            76,
+            54169,
+            8899,
+            28503,
+            74455,
+            717,
+            54169,
+            22317,
+            14993,
+            3252,
+            37,
+            1715,
+            64268,
+            2198,
+            76,
+            42843,
+            1819,
+            60767,
+            606,
+            17491,
+            60767,
+            2427,
+            62366,
+            51193,
+            9535,
+            26144,
+            22317,
+            94611,
+            788,
+            3849,
+            1335,
+            759,
+            788,
+            15,
+            13,
+            15,
+            1335,
+            32952,
+            287,
+            788,
+            3849,
+            1335,
+            267,
+            2056,
+            788,
+            3849,
+            1335,
+            85,
+            21561,
+            2404,
+            788,
+            3849,
+            1335,
+            85,
+            21561,
+            2404,
+            666,
+            884,
+            11706,
+            62366,
+            75542
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [
+              "acquisition"
+            ],
+            "schema_path": [
+              "properties",
+              "acquisition",
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [
+              "acquisition"
+            ],
+            "schema_path": [
+              "properties",
+              "acquisition",
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"acquisition\":null,\"instrument\":{\"acceleration_voltage\":{\"unit\":\"\",\"value\":0.0},\"cs\":{\"unit\":\"\",\"value\":0.0},\"electron_source\":\"\",\"illumination\":\"\",\"imaging\":\"\",\"microscope\":\"\"},\"organizational\":{\"authors\":[],\"funder\":[]},\"sample\":{\"molecule\":[],\"overall_molecule\":{\"assembly\":\"FILAMENT\",\"molecular_type\":\"\",\"name_sample\":\"\",\"source\":\"\"},\"specimen\":{\"embedding\":false,\"ph\":0.0,\"shadowing\":false,\"staining\":false,\"vitrification\":false,\"vitrification_cryogen\":\"\"}}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 117,
+          "token_ids": [
+            4913,
+            580,
+            17204,
+            788,
+            2921,
+            1335,
+            66368,
+            22317,
+            43888,
+            20927,
+            62756,
+            22317,
+            3843,
+            60767,
+            957,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            4837,
+            22317,
+            3843,
+            60767,
+            957,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            74503,
+            10347,
+            60767,
+            76565,
+            2554,
+            60767,
+            318,
+            4118,
+            60767,
+            40443,
+            4186,
+            62366,
+            51193,
+            8462,
+            76391,
+            22317,
+            47005,
+            8899,
+            28503,
+            69,
+            7995,
+            788,
+            1294,
+            51193,
+            13611,
+            22317,
+            76,
+            54169,
+            8899,
+            28503,
+            74455,
+            717,
+            54169,
+            22317,
+            14993,
+            3252,
+            37,
+            1715,
+            64268,
+            2198,
+            76,
+            42843,
+            1819,
+            60767,
+            606,
+            17491,
+            60767,
+            2427,
+            62366,
+            51193,
+            9535,
+            26144,
+            22317,
+            94611,
+            788,
+            3849,
+            1335,
+            759,
+            788,
+            15,
+            13,
+            15,
+            1335,
+            32952,
+            287,
+            788,
+            3849,
+            1335,
+            267,
+            2056,
+            788,
+            3849,
+            1335,
+            85,
+            21561,
+            2404,
+            788,
+            3849,
+            1335,
+            85,
+            21561,
+            2404,
+            666,
+            884,
+            11706,
+            62366,
+            75542
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-1",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 5,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [
+              "acquisition"
+            ],
+            "schema_path": [
+              "properties",
+              "acquisition",
+              "required"
+            ],
+            "message": "'detector' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [
+              "acquisition"
+            ],
+            "schema_path": [
+              "properties",
+              "acquisition",
+              "required"
+            ],
+            "message": "'dose_per_movie' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [
+              "acquisition"
+            ],
+            "schema_path": [
+              "properties",
+              "acquisition",
+              "required"
+            ],
+            "message": "'date_time' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [
+              "acquisition"
+            ],
+            "schema_path": [
+              "properties",
+              "acquisition",
+              "required"
+            ],
+            "message": "'binning_camera' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [
+              "acquisition"
+            ],
+            "schema_path": [
+              "properties",
+              "acquisition",
+              "required"
+            ],
+            "message": "'pixel_size' is a required property"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 5,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [
+              "acquisition"
+            ],
+            "schema_path": [
+              "properties",
+              "acquisition",
+              "required"
+            ],
+            "message": "'detector' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [
+              "acquisition"
+            ],
+            "schema_path": [
+              "properties",
+              "acquisition",
+              "required"
+            ],
+            "message": "'dose_per_movie' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [
+              "acquisition"
+            ],
+            "schema_path": [
+              "properties",
+              "acquisition",
+              "required"
+            ],
+            "message": "'date_time' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [
+              "acquisition"
+            ],
+            "schema_path": [
+              "properties",
+              "acquisition",
+              "required"
+            ],
+            "message": "'binning_camera' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [
+              "acquisition"
+            ],
+            "schema_path": [
+              "properties",
+              "acquisition",
+              "required"
+            ],
+            "message": "'pixel_size' is a required property"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"acquisition\":{},\"instrument\":{\"acceleration_voltage\":{\"unit\":\"\",\"value\":0.0},\"cs\":{\"unit\":\"\",\"value\":0.0},\"electron_source\":\"\",\"illumination\":\"\",\"imaging\":\"\",\"microscope\":\"\"},\"organizational\":{\"authors\":[],\"funder\":[]},\"sample\":{\"molecule\":[],\"overall_molecule\":{\"assembly\":\"FILAMENT\",\"molecular_type\":\"\",\"name_sample\":\"\",\"source\":\"\"},\"specimen\":{\"embedding\":false,\"ph\":0.0,\"shadowing\":false,\"staining\":false,\"vitrification\":false,\"vitrification_cryogen\":\"\"}}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 117,
+          "token_ids": [
+            4913,
+            580,
+            17204,
+            788,
+            6257,
+            1335,
+            66368,
+            22317,
+            43888,
+            20927,
+            62756,
+            22317,
+            3843,
+            60767,
+            957,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            4837,
+            22317,
+            3843,
+            60767,
+            957,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            74503,
+            10347,
+            60767,
+            76565,
+            2554,
+            60767,
+            318,
+            4118,
+            60767,
+            40443,
+            4186,
+            62366,
+            51193,
+            8462,
+            76391,
+            22317,
+            47005,
+            8899,
+            28503,
+            69,
+            7995,
+            788,
+            1294,
+            51193,
+            13611,
+            22317,
+            76,
+            54169,
+            8899,
+            28503,
+            74455,
+            717,
+            54169,
+            22317,
+            14993,
+            3252,
+            37,
+            1715,
+            64268,
+            2198,
+            76,
+            42843,
+            1819,
+            60767,
+            606,
+            17491,
+            60767,
+            2427,
+            62366,
+            51193,
+            9535,
+            26144,
+            22317,
+            94611,
+            788,
+            3849,
+            1335,
+            759,
+            788,
+            15,
+            13,
+            15,
+            1335,
+            32952,
+            287,
+            788,
+            3849,
+            1335,
+            267,
+            2056,
+            788,
+            3849,
+            1335,
+            85,
+            21561,
+            2404,
+            788,
+            3849,
+            1335,
+            85,
+            21561,
+            2404,
+            666,
+            884,
+            11706,
+            62366,
+            75542
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-2",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "anyOf",
+            "path": [
+              "acquisition",
+              "date_time"
+            ],
+            "schema_path": [
+              "properties",
+              "acquisition",
+              "properties",
+              "date_time",
+              "anyOf"
+            ],
+            "message": "None is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [
+              "acquisition",
+              "date_time"
+            ],
+            "schema_path": [
+              "properties",
+              "acquisition",
+              "properties",
+              "date_time",
+              "type"
+            ],
+            "message": "None is not of type 'string'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"acquisition\":{\"binning_camera\":0.0,\"date_time\":null,\"detector\":\"\",\"dose_per_movie\":{\"unit\":\"\",\"value\":0.0},\"pixel_size\":{\"unit\":\"\",\"value\":0.0}},\"instrument\":{\"acceleration_voltage\":{\"unit\":\"\",\"value\":0.0},\"cs\":{\"unit\":\"\",\"value\":0.0},\"electron_source\":\"\",\"illumination\":\"\",\"imaging\":\"\",\"microscope\":\"\"},\"organizational\":{\"authors\":[],\"funder\":[]},\"sample\":{\"molecule\":[],\"overall_molecule\":{\"assembly\":\"FILAMENT\",\"molecular_type\":\"\",\"name_sample\":\"\",\"source\":\"\"},\"specimen\":{\"embedding\":false,\"ph\":0.0,\"shadowing\":false,\"staining\":false,\"vitrification\":false,\"vitrification_cryogen\":\"\"}}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 155,
+          "token_ids": [
+            4913,
+            580,
+            17204,
+            22317,
+            6863,
+            1229,
+            29843,
+            788,
+            15,
+            13,
+            15,
+            1335,
+            1028,
+            3009,
+            788,
+            2921,
+            1335,
+            91544,
+            60767,
+            67,
+            960,
+            5678,
+            50729,
+            22317,
+            3843,
+            60767,
+            957,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            29684,
+            2368,
+            22317,
+            3843,
+            60767,
+            957,
+            788,
+            15,
+            13,
+            15,
+            3417,
+            1335,
+            66368,
+            22317,
+            43888,
+            20927,
+            62756,
+            22317,
+            3843,
+            60767,
+            957,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            4837,
+            22317,
+            3843,
+            60767,
+            957,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            74503,
+            10347,
+            60767,
+            76565,
+            2554,
+            60767,
+            318,
+            4118,
+            60767,
+            40443,
+            4186,
+            62366,
+            51193,
+            8462,
+            76391,
+            22317,
+            47005,
+            8899,
+            28503,
+            69,
+            7995,
+            788,
+            1294,
+            51193,
+            13611,
+            22317,
+            76,
+            54169,
+            8899,
+            28503,
+            74455,
+            717,
+            54169,
+            22317,
+            14993,
+            3252,
+            37,
+            1715,
+            64268,
+            2198,
+            76,
+            42843,
+            1819,
+            60767,
+            606,
+            17491,
+            60767,
+            2427,
+            62366,
+            51193,
+            9535,
+            26144,
+            22317,
+            94611,
+            788,
+            3849,
+            1335,
+            759,
+            788,
+            15,
+            13,
+            15,
+            1335,
+            32952,
+            287,
+            788,
+            3849,
+            1335,
+            267,
+            2056,
+            788,
+            3849,
+            1335,
+            85,
+            21561,
+            2404,
+            788,
+            3849,
+            1335,
+            85,
+            21561,
+            2404,
+            666,
+            884,
+            11706,
+            62366,
+            75542
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-3",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 2,
+        "errors": [
+          {
+            "keyword": "enum",
+            "path": [
+              "sample",
+              "overall_molecule",
+              "assembly"
+            ],
+            "schema_path": [
+              "properties",
+              "sample",
+              "properties",
+              "overall_molecule",
+              "properties",
+              "assembly",
+              "enum"
+            ],
+            "message": "None is not one of ['FILAMENT', 'HELICAL ARRAY', 'PARTICLE']"
+          },
+          {
+            "keyword": "type",
+            "path": [
+              "sample",
+              "overall_molecule",
+              "assembly"
+            ],
+            "schema_path": [
+              "properties",
+              "sample",
+              "properties",
+              "overall_molecule",
+              "properties",
+              "assembly",
+              "type"
+            ],
+            "message": "None is not of type 'string'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 2,
+        "errors": [
+          {
+            "keyword": "enum",
+            "path": [
+              "sample",
+              "overall_molecule",
+              "assembly"
+            ],
+            "schema_path": [
+              "properties",
+              "sample",
+              "properties",
+              "overall_molecule",
+              "properties",
+              "assembly",
+              "enum"
+            ],
+            "message": "None is not one of ['FILAMENT', 'HELICAL ARRAY', 'PARTICLE']"
+          },
+          {
+            "keyword": "type",
+            "path": [
+              "sample",
+              "overall_molecule",
+              "assembly"
+            ],
+            "schema_path": [
+              "properties",
+              "sample",
+              "properties",
+              "overall_molecule",
+              "properties",
+              "assembly",
+              "type"
+            ],
+            "message": "None is not of type 'string'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"acquisition\":{\"binning_camera\":0.0,\"date_time\":\"2000-01-01\",\"detector\":\"\",\"dose_per_movie\":{\"unit\":\"\",\"value\":0.0},\"pixel_size\":{\"unit\":\"\",\"value\":0.0}},\"instrument\":{\"acceleration_voltage\":{\"unit\":\"\",\"value\":0.0},\"cs\":{\"unit\":\"\",\"value\":0.0},\"electron_source\":\"\",\"illumination\":\"\",\"imaging\":\"\",\"microscope\":\"\"},\"organizational\":{\"authors\":[],\"funder\":[]},\"sample\":{\"molecule\":[],\"overall_molecule\":{\"assembly\":null,\"molecular_type\":\"\",\"name_sample\":\"\",\"source\":\"\"},\"specimen\":{\"embedding\":false,\"ph\":0.0,\"shadowing\":false,\"staining\":false,\"vitrification\":false,\"vitrification_cryogen\":\"\"}}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 162,
+          "token_ids": [
+            4913,
+            580,
+            17204,
+            22317,
+            6863,
+            1229,
+            29843,
+            788,
+            15,
+            13,
+            15,
+            1335,
+            1028,
+            3009,
+            3252,
+            17,
+            15,
+            15,
+            15,
+            12,
+            15,
+            16,
+            12,
+            15,
+            16,
+            2198,
+            91544,
+            60767,
+            67,
+            960,
+            5678,
+            50729,
+            22317,
+            3843,
+            60767,
+            957,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            29684,
+            2368,
+            22317,
+            3843,
+            60767,
+            957,
+            788,
+            15,
+            13,
+            15,
+            3417,
+            1335,
+            66368,
+            22317,
+            43888,
+            20927,
+            62756,
+            22317,
+            3843,
+            60767,
+            957,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            4837,
+            22317,
+            3843,
+            60767,
+            957,
+            788,
+            15,
+            13,
+            15,
+            51193,
+            74503,
+            10347,
+            60767,
+            76565,
+            2554,
+            60767,
+            318,
+            4118,
+            60767,
+            40443,
+            4186,
+            62366,
+            51193,
+            8462,
+            76391,
+            22317,
+            47005,
+            8899,
+            28503,
+            69,
+            7995,
+            788,
+            1294,
+            51193,
+            13611,
+            22317,
+            76,
+            54169,
+            8899,
+            28503,
+            74455,
+            717,
+            54169,
+            22317,
+            14993,
+            788,
+            2921,
+            1335,
+            76,
+            42843,
+            1819,
+            60767,
+            606,
+            17491,
+            60767,
+            2427,
+            62366,
+            51193,
+            9535,
+            26144,
+            22317,
+            94611,
+            788,
+            3849,
+            1335,
+            759,
+            788,
+            15,
+            13,
+            15,
+            1335,
+            32952,
+            287,
+            788,
+            3849,
+            1335,
+            267,
+            2056,
+            788,
+            3849,
+            1335,
+            85,
+            21561,
+            2404,
+            788,
+            3849,
+            1335,
+            85,
+            21561,
+            2404,
+            666,
+            884,
+            11706,
+            62366,
+            75542
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 4,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'acquisition' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'instrument' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'sample' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'organizational' is a required property"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 4,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'acquisition' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'instrument' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'sample' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'organizational' is a required property"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            6257
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-1",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "[] is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "[] is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "[]",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            1294
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-2",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "null",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            2921
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-3",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "'' is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "'' is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "\"\"",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            3014
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-4",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "0 is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "0 is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "0",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            15
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-5",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "False is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "False is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "false",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            3849
+          ]
+        }
+      ],
+      "validator_agreement": true
+    }
+  ],
+  "engines": {
+    "lmql": {
+      "status": "NATIVE_COMPILABLE",
+      "program_sha256": "89873e3e8b318e1b60c12f3b57f3cc2031a2d1ecb83589fd505fbc71b768b384",
+      "patterns_sha256": "2bf8c170cec72c07922dc1d18bf16ae9805f4b8d02bae89ef61a08953e3c8a39",
+      "pattern_constant_count": 8,
+      "compiler_warnings": [
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P[data]'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['NULLABLE']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['ARRAY_FIRST']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['ARRAY_NEXT']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['OBJECT_NEXT']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['OBJECT_FIRST']'"
+      ],
+      "coverage_claim": "authored_and_compiled_only; no_generation_or_semantic_coverage_inferred",
+      "diagnostics": {
+        "python_warnings": [
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          }
+        ],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      }
+    },
+    "xgrammar": {
+      "status": "NATIVE_COMPILABLE",
+      "probes": [
+        {
+          "label": "valid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": true,
+          "original_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "backend_input_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"acquisition\":{\"binning_camera\":0.0,\"date_time\":\"2000-01-01\",\"detector\":\"\",\"dose_per_movie\":{\"unit\":\"\",\"value\":0.0},\"pixel_size\":{\"unit\":\"\",\"value\":0.0}},\"instrument\":{\"acceleration_voltage\":{\"unit\":\"\",\"value\":0.0},\"cs\":{\"unit\":\"\",\"value\":0.0},\"electron_source\":\"\",\"illumination\":\"\",\"imaging\":\"\",\"microscope\":\"\"},\"organizational\":{\"authors\":[],\"funder\":[]},\"sample\":{\"molecule\":[],\"overall_molecule\":{\"assembly\":\"FILAMENT\",\"molecular_type\":\"\",\"name_sample\":\"\",\"source\":\"\"},\"specimen\":{\"embedding\":false,\"ph\":0.0,\"shadowing\":false,\"staining\":false,\"vitrification\":false,\"vitrification_cryogen\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 164,
+              "token_ids": [
+                4913,
+                580,
+                17204,
+                22317,
+                6863,
+                1229,
+                29843,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                1028,
+                3009,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                2198,
+                91544,
+                60767,
+                67,
+                960,
+                5678,
+                50729,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                29684,
+                2368,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                3417,
+                1335,
+                66368,
+                22317,
+                43888,
+                20927,
+                62756,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                4837,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                74503,
+                10347,
+                60767,
+                76565,
+                2554,
+                60767,
+                318,
+                4118,
+                60767,
+                40443,
+                4186,
+                62366,
+                51193,
+                8462,
+                76391,
+                22317,
+                47005,
+                8899,
+                28503,
+                69,
+                7995,
+                788,
+                1294,
+                51193,
+                13611,
+                22317,
+                76,
+                54169,
+                8899,
+                28503,
+                74455,
+                717,
+                54169,
+                22317,
+                14993,
+                3252,
+                37,
+                1715,
+                64268,
+                2198,
+                76,
+                42843,
+                1819,
+                60767,
+                606,
+                17491,
+                60767,
+                2427,
+                62366,
+                51193,
+                9535,
+                26144,
+                22317,
+                94611,
+                788,
+                3849,
+                1335,
+                759,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                32952,
+                287,
+                788,
+                3849,
+                1335,
+                267,
+                2056,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                666,
+                884,
+                11706,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": true,
+                "prefix_accepted": true,
+                "completed_before_eos": true,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": true,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"acquisition\":null,\"instrument\":{\"acceleration_voltage\":{\"unit\":\"\",\"value\":0.0},\"cs\":{\"unit\":\"\",\"value\":0.0},\"electron_source\":\"\",\"illumination\":\"\",\"imaging\":\"\",\"microscope\":\"\"},\"organizational\":{\"authors\":[],\"funder\":[]},\"sample\":{\"molecule\":[],\"overall_molecule\":{\"assembly\":\"FILAMENT\",\"molecular_type\":\"\",\"name_sample\":\"\",\"source\":\"\"},\"specimen\":{\"embedding\":false,\"ph\":0.0,\"shadowing\":false,\"staining\":false,\"vitrification\":false,\"vitrification_cryogen\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 117,
+              "token_ids": [
+                4913,
+                580,
+                17204,
+                788,
+                2921,
+                1335,
+                66368,
+                22317,
+                43888,
+                20927,
+                62756,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                4837,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                74503,
+                10347,
+                60767,
+                76565,
+                2554,
+                60767,
+                318,
+                4118,
+                60767,
+                40443,
+                4186,
+                62366,
+                51193,
+                8462,
+                76391,
+                22317,
+                47005,
+                8899,
+                28503,
+                69,
+                7995,
+                788,
+                1294,
+                51193,
+                13611,
+                22317,
+                76,
+                54169,
+                8899,
+                28503,
+                74455,
+                717,
+                54169,
+                22317,
+                14993,
+                3252,
+                37,
+                1715,
+                64268,
+                2198,
+                76,
+                42843,
+                1819,
+                60767,
+                606,
+                17491,
+                60767,
+                2427,
+                62366,
+                51193,
+                9535,
+                26144,
+                22317,
+                94611,
+                788,
+                3849,
+                1335,
+                759,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                32952,
+                287,
+                788,
+                3849,
+                1335,
+                267,
+                2056,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                666,
+                884,
+                11706,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 5,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'detector' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'dose_per_movie' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'date_time' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'binning_camera' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'pixel_size' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 5,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'detector' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'dose_per_movie' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'date_time' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'binning_camera' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'pixel_size' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"acquisition\":{},\"instrument\":{\"acceleration_voltage\":{\"unit\":\"\",\"value\":0.0},\"cs\":{\"unit\":\"\",\"value\":0.0},\"electron_source\":\"\",\"illumination\":\"\",\"imaging\":\"\",\"microscope\":\"\"},\"organizational\":{\"authors\":[],\"funder\":[]},\"sample\":{\"molecule\":[],\"overall_molecule\":{\"assembly\":\"FILAMENT\",\"molecular_type\":\"\",\"name_sample\":\"\",\"source\":\"\"},\"specimen\":{\"embedding\":false,\"ph\":0.0,\"shadowing\":false,\"staining\":false,\"vitrification\":false,\"vitrification_cryogen\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 117,
+              "token_ids": [
+                4913,
+                580,
+                17204,
+                788,
+                6257,
+                1335,
+                66368,
+                22317,
+                43888,
+                20927,
+                62756,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                4837,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                74503,
+                10347,
+                60767,
+                76565,
+                2554,
+                60767,
+                318,
+                4118,
+                60767,
+                40443,
+                4186,
+                62366,
+                51193,
+                8462,
+                76391,
+                22317,
+                47005,
+                8899,
+                28503,
+                69,
+                7995,
+                788,
+                1294,
+                51193,
+                13611,
+                22317,
+                76,
+                54169,
+                8899,
+                28503,
+                74455,
+                717,
+                54169,
+                22317,
+                14993,
+                3252,
+                37,
+                1715,
+                64268,
+                2198,
+                76,
+                42843,
+                1819,
+                60767,
+                606,
+                17491,
+                60767,
+                2427,
+                62366,
+                51193,
+                9535,
+                26144,
+                22317,
+                94611,
+                788,
+                3849,
+                1335,
+                759,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                32952,
+                287,
+                788,
+                3849,
+                1335,
+                267,
+                2056,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                666,
+                884,
+                11706,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [
+                  "acquisition",
+                  "date_time"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "properties",
+                  "date_time",
+                  "anyOf"
+                ],
+                "message": "None is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "acquisition",
+                  "date_time"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "properties",
+                  "date_time",
+                  "type"
+                ],
+                "message": "None is not of type 'string'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"acquisition\":{\"binning_camera\":0.0,\"date_time\":null,\"detector\":\"\",\"dose_per_movie\":{\"unit\":\"\",\"value\":0.0},\"pixel_size\":{\"unit\":\"\",\"value\":0.0}},\"instrument\":{\"acceleration_voltage\":{\"unit\":\"\",\"value\":0.0},\"cs\":{\"unit\":\"\",\"value\":0.0},\"electron_source\":\"\",\"illumination\":\"\",\"imaging\":\"\",\"microscope\":\"\"},\"organizational\":{\"authors\":[],\"funder\":[]},\"sample\":{\"molecule\":[],\"overall_molecule\":{\"assembly\":\"FILAMENT\",\"molecular_type\":\"\",\"name_sample\":\"\",\"source\":\"\"},\"specimen\":{\"embedding\":false,\"ph\":0.0,\"shadowing\":false,\"staining\":false,\"vitrification\":false,\"vitrification_cryogen\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 155,
+              "token_ids": [
+                4913,
+                580,
+                17204,
+                22317,
+                6863,
+                1229,
+                29843,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                1028,
+                3009,
+                788,
+                2921,
+                1335,
+                91544,
+                60767,
+                67,
+                960,
+                5678,
+                50729,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                29684,
+                2368,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                3417,
+                1335,
+                66368,
+                22317,
+                43888,
+                20927,
+                62756,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                4837,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                74503,
+                10347,
+                60767,
+                76565,
+                2554,
+                60767,
+                318,
+                4118,
+                60767,
+                40443,
+                4186,
+                62366,
+                51193,
+                8462,
+                76391,
+                22317,
+                47005,
+                8899,
+                28503,
+                69,
+                7995,
+                788,
+                1294,
+                51193,
+                13611,
+                22317,
+                76,
+                54169,
+                8899,
+                28503,
+                74455,
+                717,
+                54169,
+                22317,
+                14993,
+                3252,
+                37,
+                1715,
+                64268,
+                2198,
+                76,
+                42843,
+                1819,
+                60767,
+                606,
+                17491,
+                60767,
+                2427,
+                62366,
+                51193,
+                9535,
+                26144,
+                22317,
+                94611,
+                788,
+                3849,
+                1335,
+                759,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                32952,
+                287,
+                788,
+                3849,
+                1335,
+                267,
+                2056,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                666,
+                884,
+                11706,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 2,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "sample",
+                  "overall_molecule",
+                  "assembly"
+                ],
+                "schema_path": [
+                  "properties",
+                  "sample",
+                  "properties",
+                  "overall_molecule",
+                  "properties",
+                  "assembly",
+                  "enum"
+                ],
+                "message": "None is not one of ['FILAMENT', 'HELICAL ARRAY', 'PARTICLE']"
+              },
+              {
+                "keyword": "type",
+                "path": [
+                  "sample",
+                  "overall_molecule",
+                  "assembly"
+                ],
+                "schema_path": [
+                  "properties",
+                  "sample",
+                  "properties",
+                  "overall_molecule",
+                  "properties",
+                  "assembly",
+                  "type"
+                ],
+                "message": "None is not of type 'string'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 2,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "sample",
+                  "overall_molecule",
+                  "assembly"
+                ],
+                "schema_path": [
+                  "properties",
+                  "sample",
+                  "properties",
+                  "overall_molecule",
+                  "properties",
+                  "assembly",
+                  "enum"
+                ],
+                "message": "None is not one of ['FILAMENT', 'HELICAL ARRAY', 'PARTICLE']"
+              },
+              {
+                "keyword": "type",
+                "path": [
+                  "sample",
+                  "overall_molecule",
+                  "assembly"
+                ],
+                "schema_path": [
+                  "properties",
+                  "sample",
+                  "properties",
+                  "overall_molecule",
+                  "properties",
+                  "assembly",
+                  "type"
+                ],
+                "message": "None is not of type 'string'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"acquisition\":{\"binning_camera\":0.0,\"date_time\":\"2000-01-01\",\"detector\":\"\",\"dose_per_movie\":{\"unit\":\"\",\"value\":0.0},\"pixel_size\":{\"unit\":\"\",\"value\":0.0}},\"instrument\":{\"acceleration_voltage\":{\"unit\":\"\",\"value\":0.0},\"cs\":{\"unit\":\"\",\"value\":0.0},\"electron_source\":\"\",\"illumination\":\"\",\"imaging\":\"\",\"microscope\":\"\"},\"organizational\":{\"authors\":[],\"funder\":[]},\"sample\":{\"molecule\":[],\"overall_molecule\":{\"assembly\":null,\"molecular_type\":\"\",\"name_sample\":\"\",\"source\":\"\"},\"specimen\":{\"embedding\":false,\"ph\":0.0,\"shadowing\":false,\"staining\":false,\"vitrification\":false,\"vitrification_cryogen\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 162,
+              "token_ids": [
+                4913,
+                580,
+                17204,
+                22317,
+                6863,
+                1229,
+                29843,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                1028,
+                3009,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                2198,
+                91544,
+                60767,
+                67,
+                960,
+                5678,
+                50729,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                29684,
+                2368,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                3417,
+                1335,
+                66368,
+                22317,
+                43888,
+                20927,
+                62756,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                4837,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                74503,
+                10347,
+                60767,
+                76565,
+                2554,
+                60767,
+                318,
+                4118,
+                60767,
+                40443,
+                4186,
+                62366,
+                51193,
+                8462,
+                76391,
+                22317,
+                47005,
+                8899,
+                28503,
+                69,
+                7995,
+                788,
+                1294,
+                51193,
+                13611,
+                22317,
+                76,
+                54169,
+                8899,
+                28503,
+                74455,
+                717,
+                54169,
+                22317,
+                14993,
+                788,
+                2921,
+                1335,
+                76,
+                42843,
+                1819,
+                60767,
+                606,
+                17491,
+                60767,
+                2427,
+                62366,
+                51193,
+                9535,
+                26144,
+                22317,
+                94611,
+                788,
+                3849,
+                1335,
+                759,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                32952,
+                287,
+                788,
+                3849,
+                1335,
+                267,
+                2056,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                666,
+                884,
+                11706,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 4,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'acquisition' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'instrument' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'sample' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'organizational' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 4,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'acquisition' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'instrument' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'sample' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'organizational' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                6257
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "[]",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                1294
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "null",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                2921
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "\"\"",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3014
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-4",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "0",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                15
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-5",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "false",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3849
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        }
+      ],
+      "compile_seconds": 0.762788875028491,
+      "diagnostics": {
+        "python_warnings": [],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      },
+      "library_warnings": null,
+      "ignored_assertion_warning_lines": [],
+      "grammar_file": "experiments/results/20261110T044100Z__structured_generation_manual_preflight_release/benchmark-stress-43__xgrammar.grammar.txt",
+      "grammar_sha256": "cc658194829a241fd7c6f2e51087e38dd2b4f42827b03913bee1831398e8c3e2",
+      "false_positives": [],
+      "false_negatives_on_tested_spellings": [],
+      "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+      "seconds": 0.7640098340343684
+    },
+    "llguidance_strict": {
+      "status": "NATIVE_COMPILABLE",
+      "probes": [
+        {
+          "label": "valid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": true,
+          "original_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "backend_input_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"acquisition\":{\"binning_camera\":0.0,\"date_time\":\"2000-01-01\",\"detector\":\"\",\"dose_per_movie\":{\"unit\":\"\",\"value\":0.0},\"pixel_size\":{\"unit\":\"\",\"value\":0.0}},\"instrument\":{\"acceleration_voltage\":{\"unit\":\"\",\"value\":0.0},\"cs\":{\"unit\":\"\",\"value\":0.0},\"electron_source\":\"\",\"illumination\":\"\",\"imaging\":\"\",\"microscope\":\"\"},\"organizational\":{\"authors\":[],\"funder\":[]},\"sample\":{\"molecule\":[],\"overall_molecule\":{\"assembly\":\"FILAMENT\",\"molecular_type\":\"\",\"name_sample\":\"\",\"source\":\"\"},\"specimen\":{\"embedding\":false,\"ph\":0.0,\"shadowing\":false,\"staining\":false,\"vitrification\":false,\"vitrification_cryogen\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 164,
+              "token_ids": [
+                4913,
+                580,
+                17204,
+                22317,
+                6863,
+                1229,
+                29843,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                1028,
+                3009,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                2198,
+                91544,
+                60767,
+                67,
+                960,
+                5678,
+                50729,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                29684,
+                2368,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                3417,
+                1335,
+                66368,
+                22317,
+                43888,
+                20927,
+                62756,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                4837,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                74503,
+                10347,
+                60767,
+                76565,
+                2554,
+                60767,
+                318,
+                4118,
+                60767,
+                40443,
+                4186,
+                62366,
+                51193,
+                8462,
+                76391,
+                22317,
+                47005,
+                8899,
+                28503,
+                69,
+                7995,
+                788,
+                1294,
+                51193,
+                13611,
+                22317,
+                76,
+                54169,
+                8899,
+                28503,
+                74455,
+                717,
+                54169,
+                22317,
+                14993,
+                3252,
+                37,
+                1715,
+                64268,
+                2198,
+                76,
+                42843,
+                1819,
+                60767,
+                606,
+                17491,
+                60767,
+                2427,
+                62366,
+                51193,
+                9535,
+                26144,
+                22317,
+                94611,
+                788,
+                3849,
+                1335,
+                759,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                32952,
+                287,
+                788,
+                3849,
+                1335,
+                267,
+                2056,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                666,
+                884,
+                11706,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": true,
+                "consumed_without_error": true,
+                "stopped": true,
+                "accepting": true,
+                "stop_reason": "EndOfSentence",
+                "rejection": null,
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": true,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"acquisition\":null,\"instrument\":{\"acceleration_voltage\":{\"unit\":\"\",\"value\":0.0},\"cs\":{\"unit\":\"\",\"value\":0.0},\"electron_source\":\"\",\"illumination\":\"\",\"imaging\":\"\",\"microscope\":\"\"},\"organizational\":{\"authors\":[],\"funder\":[]},\"sample\":{\"molecule\":[],\"overall_molecule\":{\"assembly\":\"FILAMENT\",\"molecular_type\":\"\",\"name_sample\":\"\",\"source\":\"\"},\"specimen\":{\"embedding\":false,\"ph\":0.0,\"shadowing\":false,\"staining\":false,\"vitrification\":false,\"vitrification_cryogen\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 117,
+              "token_ids": [
+                4913,
+                580,
+                17204,
+                788,
+                2921,
+                1335,
+                66368,
+                22317,
+                43888,
+                20927,
+                62756,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                4837,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                74503,
+                10347,
+                60767,
+                76565,
+                2554,
+                60767,
+                318,
+                4118,
+                60767,
+                40443,
+                4186,
+                62366,
+                51193,
+                8462,
+                76391,
+                22317,
+                47005,
+                8899,
+                28503,
+                69,
+                7995,
+                788,
+                1294,
+                51193,
+                13611,
+                22317,
+                76,
+                54169,
+                8899,
+                28503,
+                74455,
+                717,
+                54169,
+                22317,
+                14993,
+                3252,
+                37,
+                1715,
+                64268,
+                2198,
+                76,
+                42843,
+                1819,
+                60767,
+                606,
+                17491,
+                60767,
+                2427,
+                62366,
+                51193,
+                9535,
+                26144,
+                22317,
+                94611,
+                788,
+                3849,
+                1335,
+                759,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                32952,
+                287,
+                788,
+                3849,
+                1335,
+                267,
+                2056,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                666,
+                884,
+                11706,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"null\" doesn't satisfy the grammar; byte 'n' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 5,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'detector' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'dose_per_movie' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'date_time' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'binning_camera' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'pixel_size' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 5,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'detector' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'dose_per_movie' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'date_time' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'binning_camera' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [
+                  "acquisition"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "required"
+                ],
+                "message": "'pixel_size' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"acquisition\":{},\"instrument\":{\"acceleration_voltage\":{\"unit\":\"\",\"value\":0.0},\"cs\":{\"unit\":\"\",\"value\":0.0},\"electron_source\":\"\",\"illumination\":\"\",\"imaging\":\"\",\"microscope\":\"\"},\"organizational\":{\"authors\":[],\"funder\":[]},\"sample\":{\"molecule\":[],\"overall_molecule\":{\"assembly\":\"FILAMENT\",\"molecular_type\":\"\",\"name_sample\":\"\",\"source\":\"\"},\"specimen\":{\"embedding\":false,\"ph\":0.0,\"shadowing\":false,\"staining\":false,\"vitrification\":false,\"vitrification_cryogen\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 117,
+              "token_ids": [
+                4913,
+                580,
+                17204,
+                788,
+                6257,
+                1335,
+                66368,
+                22317,
+                43888,
+                20927,
+                62756,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                4837,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                74503,
+                10347,
+                60767,
+                76565,
+                2554,
+                60767,
+                318,
+                4118,
+                60767,
+                40443,
+                4186,
+                62366,
+                51193,
+                8462,
+                76391,
+                22317,
+                47005,
+                8899,
+                28503,
+                69,
+                7995,
+                788,
+                1294,
+                51193,
+                13611,
+                22317,
+                76,
+                54169,
+                8899,
+                28503,
+                74455,
+                717,
+                54169,
+                22317,
+                14993,
+                3252,
+                37,
+                1715,
+                64268,
+                2198,
+                76,
+                42843,
+                1819,
+                60767,
+                606,
+                17491,
+                60767,
+                2427,
+                62366,
+                51193,
+                9535,
+                26144,
+                22317,
+                94611,
+                788,
+                3849,
+                1335,
+                759,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                32952,
+                287,
+                788,
+                3849,
+                1335,
+                267,
+                2056,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                666,
+                884,
+                11706,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"{}\" doesn't satisfy the grammar; byte '}' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [
+                  "acquisition",
+                  "date_time"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "properties",
+                  "date_time",
+                  "anyOf"
+                ],
+                "message": "None is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "acquisition",
+                  "date_time"
+                ],
+                "schema_path": [
+                  "properties",
+                  "acquisition",
+                  "properties",
+                  "date_time",
+                  "type"
+                ],
+                "message": "None is not of type 'string'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"acquisition\":{\"binning_camera\":0.0,\"date_time\":null,\"detector\":\"\",\"dose_per_movie\":{\"unit\":\"\",\"value\":0.0},\"pixel_size\":{\"unit\":\"\",\"value\":0.0}},\"instrument\":{\"acceleration_voltage\":{\"unit\":\"\",\"value\":0.0},\"cs\":{\"unit\":\"\",\"value\":0.0},\"electron_source\":\"\",\"illumination\":\"\",\"imaging\":\"\",\"microscope\":\"\"},\"organizational\":{\"authors\":[],\"funder\":[]},\"sample\":{\"molecule\":[],\"overall_molecule\":{\"assembly\":\"FILAMENT\",\"molecular_type\":\"\",\"name_sample\":\"\",\"source\":\"\"},\"specimen\":{\"embedding\":false,\"ph\":0.0,\"shadowing\":false,\"staining\":false,\"vitrification\":false,\"vitrification_cryogen\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 155,
+              "token_ids": [
+                4913,
+                580,
+                17204,
+                22317,
+                6863,
+                1229,
+                29843,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                1028,
+                3009,
+                788,
+                2921,
+                1335,
+                91544,
+                60767,
+                67,
+                960,
+                5678,
+                50729,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                29684,
+                2368,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                3417,
+                1335,
+                66368,
+                22317,
+                43888,
+                20927,
+                62756,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                4837,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                74503,
+                10347,
+                60767,
+                76565,
+                2554,
+                60767,
+                318,
+                4118,
+                60767,
+                40443,
+                4186,
+                62366,
+                51193,
+                8462,
+                76391,
+                22317,
+                47005,
+                8899,
+                28503,
+                69,
+                7995,
+                788,
+                1294,
+                51193,
+                13611,
+                22317,
+                76,
+                54169,
+                8899,
+                28503,
+                74455,
+                717,
+                54169,
+                22317,
+                14993,
+                3252,
+                37,
+                1715,
+                64268,
+                2198,
+                76,
+                42843,
+                1819,
+                60767,
+                606,
+                17491,
+                60767,
+                2427,
+                62366,
+                51193,
+                9535,
+                26144,
+                22317,
+                94611,
+                788,
+                3849,
+                1335,
+                759,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                32952,
+                287,
+                788,
+                3849,
+                1335,
+                267,
+                2056,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                666,
+                884,
+                11706,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"null\" doesn't satisfy the grammar; byte 'n' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 2,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "sample",
+                  "overall_molecule",
+                  "assembly"
+                ],
+                "schema_path": [
+                  "properties",
+                  "sample",
+                  "properties",
+                  "overall_molecule",
+                  "properties",
+                  "assembly",
+                  "enum"
+                ],
+                "message": "None is not one of ['FILAMENT', 'HELICAL ARRAY', 'PARTICLE']"
+              },
+              {
+                "keyword": "type",
+                "path": [
+                  "sample",
+                  "overall_molecule",
+                  "assembly"
+                ],
+                "schema_path": [
+                  "properties",
+                  "sample",
+                  "properties",
+                  "overall_molecule",
+                  "properties",
+                  "assembly",
+                  "type"
+                ],
+                "message": "None is not of type 'string'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 2,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "sample",
+                  "overall_molecule",
+                  "assembly"
+                ],
+                "schema_path": [
+                  "properties",
+                  "sample",
+                  "properties",
+                  "overall_molecule",
+                  "properties",
+                  "assembly",
+                  "enum"
+                ],
+                "message": "None is not one of ['FILAMENT', 'HELICAL ARRAY', 'PARTICLE']"
+              },
+              {
+                "keyword": "type",
+                "path": [
+                  "sample",
+                  "overall_molecule",
+                  "assembly"
+                ],
+                "schema_path": [
+                  "properties",
+                  "sample",
+                  "properties",
+                  "overall_molecule",
+                  "properties",
+                  "assembly",
+                  "type"
+                ],
+                "message": "None is not of type 'string'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"acquisition\":{\"binning_camera\":0.0,\"date_time\":\"2000-01-01\",\"detector\":\"\",\"dose_per_movie\":{\"unit\":\"\",\"value\":0.0},\"pixel_size\":{\"unit\":\"\",\"value\":0.0}},\"instrument\":{\"acceleration_voltage\":{\"unit\":\"\",\"value\":0.0},\"cs\":{\"unit\":\"\",\"value\":0.0},\"electron_source\":\"\",\"illumination\":\"\",\"imaging\":\"\",\"microscope\":\"\"},\"organizational\":{\"authors\":[],\"funder\":[]},\"sample\":{\"molecule\":[],\"overall_molecule\":{\"assembly\":null,\"molecular_type\":\"\",\"name_sample\":\"\",\"source\":\"\"},\"specimen\":{\"embedding\":false,\"ph\":0.0,\"shadowing\":false,\"staining\":false,\"vitrification\":false,\"vitrification_cryogen\":\"\"}}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 162,
+              "token_ids": [
+                4913,
+                580,
+                17204,
+                22317,
+                6863,
+                1229,
+                29843,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                1028,
+                3009,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                2198,
+                91544,
+                60767,
+                67,
+                960,
+                5678,
+                50729,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                29684,
+                2368,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                3417,
+                1335,
+                66368,
+                22317,
+                43888,
+                20927,
+                62756,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                4837,
+                22317,
+                3843,
+                60767,
+                957,
+                788,
+                15,
+                13,
+                15,
+                51193,
+                74503,
+                10347,
+                60767,
+                76565,
+                2554,
+                60767,
+                318,
+                4118,
+                60767,
+                40443,
+                4186,
+                62366,
+                51193,
+                8462,
+                76391,
+                22317,
+                47005,
+                8899,
+                28503,
+                69,
+                7995,
+                788,
+                1294,
+                51193,
+                13611,
+                22317,
+                76,
+                54169,
+                8899,
+                28503,
+                74455,
+                717,
+                54169,
+                22317,
+                14993,
+                788,
+                2921,
+                1335,
+                76,
+                42843,
+                1819,
+                60767,
+                606,
+                17491,
+                60767,
+                2427,
+                62366,
+                51193,
+                9535,
+                26144,
+                22317,
+                94611,
+                788,
+                3849,
+                1335,
+                759,
+                788,
+                15,
+                13,
+                15,
+                1335,
+                32952,
+                287,
+                788,
+                3849,
+                1335,
+                267,
+                2056,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                788,
+                3849,
+                1335,
+                85,
+                21561,
+                2404,
+                666,
+                884,
+                11706,
+                62366,
+                75542
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"null\" doesn't satisfy the grammar; byte 'n' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 4,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'acquisition' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'instrument' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'sample' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'organizational' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 4,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'acquisition' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'instrument' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'sample' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'organizational' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                6257
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"{}\" doesn't satisfy the grammar; byte '}' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "[]",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                1294
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"[]\" doesn't satisfy the grammar; byte '[' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "null",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                2921
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"null\" doesn't satisfy the grammar; byte 'n' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "\"\"",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3014
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"\\\"\\\"\" doesn't satisfy the grammar; byte '\"' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-4",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "0",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                15
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"0\" doesn't satisfy the grammar; byte '0' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-5",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "false",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3849
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"false\" doesn't satisfy the grammar; byte 'f' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        }
+      ],
+      "compile_seconds": 0.004146625055000186,
+      "diagnostics": {
+        "python_warnings": [],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      },
+      "library_warnings": [],
+      "ignored_assertion_warning_lines": [],
+      "grammar_file": "experiments/results/20261110T044100Z__structured_generation_manual_preflight_release/benchmark-stress-43__llguidance_strict.grammar.txt",
+      "grammar_sha256": "978ad7583021732f9b3a223d98da6eaa2dac228a5550c45870a88a3f96b24134",
+      "false_positives": [],
+      "false_negatives_on_tested_spellings": [],
+      "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+      "seconds": 0.036726583959534764
+    }
+  },
+  "validator_agreement": {
+    "total": 11,
+    "frozen_core": 11,
+    "supplemental": 0,
+    "disagreements": 0
+  },
+  "seconds": 0.8785110419848934
+}

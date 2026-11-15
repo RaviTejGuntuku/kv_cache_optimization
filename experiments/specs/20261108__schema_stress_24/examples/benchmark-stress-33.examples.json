@@ -1,0 +1,145 @@
+{
+  "valid": [
+    {
+      "base_path": "/",
+      "details": {
+        "subscription_list_title_prefix": {}
+      },
+      "document_type": "finder_email_signup",
+      "publishing_app": "maslow",
+      "rendering_app": "static",
+      "routes": [
+        {
+          "path": "",
+          "type": "exact"
+        }
+      ],
+      "schema_name": "finder_email_signup",
+      "title": ""
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('base_path',) with None",
+      "instance": {
+        "base_path": null,
+        "details": {
+          "subscription_list_title_prefix": {}
+        },
+        "document_type": "finder_email_signup",
+        "publishing_app": "maslow",
+        "rendering_app": "static",
+        "routes": [
+          {
+            "path": "",
+            "type": "exact"
+          }
+        ],
+        "schema_name": "finder_email_signup",
+        "title": ""
+      },
+      "validator": "type",
+      "path": [
+        "base_path"
+      ],
+      "schema_path": [
+        "properties",
+        "base_path",
+        "type"
+      ],
+      "message": "None is not of type 'string'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('base_path',) with ''",
+      "instance": {
+        "base_path": "",
+        "details": {
+          "subscription_list_title_prefix": {}
+        },
+        "document_type": "finder_email_signup",
+        "publishing_app": "maslow",
+        "rendering_app": "static",
+        "routes": [
+          {
+            "path": "",
+            "type": "exact"
+          }
+        ],
+        "schema_name": "finder_email_signup",
+        "title": ""
+      },
+      "validator": "pattern",
+      "path": [
+        "base_path"
+      ],
+      "schema_path": [
+        "properties",
+        "base_path",
+        "pattern"
+      ],
+      "message": "'' does not match \"^/(([a-zA-Z0-9._~!$&'()*+,;=:@-]|%[0-9a-fA-F]{2})+(/([a-zA-Z0-9._~!$&'()*+,;=:@-]|%[0-9a-fA-F]{2})*)*)?$\"",
+      "classification": "schema_error"
+    },
+    {
+      "name": "delete ('base_path',)",
+      "instance": {
+        "details": {
+          "subscription_list_title_prefix": {}
+        },
+        "document_type": "finder_email_signup",
+        "publishing_app": "maslow",
+        "rendering_app": "static",
+        "routes": [
+          {
+            "path": "",
+            "type": "exact"
+          }
+        ],
+        "schema_name": "finder_email_signup",
+        "title": ""
+      },
+      "validator": "required",
+      "path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'base_path' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('details', 'subscription_list_title_prefix') with None",
+      "instance": {
+        "base_path": "/",
+        "details": {
+          "subscription_list_title_prefix": null
+        },
+        "document_type": "finder_email_signup",
+        "publishing_app": "maslow",
+        "rendering_app": "static",
+        "routes": [
+          {
+            "path": "",
+            "type": "exact"
+          }
+        ],
+        "schema_name": "finder_email_signup",
+        "title": ""
+      },
+      "validator": "oneOf",
+      "path": [
+        "details",
+        "subscription_list_title_prefix"
+      ],
+      "schema_path": [
+        "properties",
+        "details",
+        "properties",
+        "subscription_list_title_prefix",
+        "oneOf"
+      ],
+      "message": "None is not valid under any of the given schemas",
+      "classification": "schema_error"
+    }
+  ]
+}

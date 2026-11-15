@@ -1,0 +1,19 @@
+{
+  "valid": [
+    {
+      "name": "",
+      "version": ""
+    }
+  ],
+  "invalid": [
+    {
+      "instance": {
+        "version": ""
+      },
+      "validator": "required",
+      "schema_path": [
+        "required"
+      ]
+    }
+  ]
+}

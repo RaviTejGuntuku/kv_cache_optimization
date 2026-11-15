@@ -1,0 +1,215 @@
+Completion failure analysis: November 12 MI355X full study
+
+Scope and verified counts
+
+The 528-attempt run contains 53 incomplete attempts across 20 distinct schemas
+and 29 model/schema pairs. These are not 53 distinct schemas. There are 39 final
+output exhaustions and 14 reasoning exhaustions. Every exhaustion consumed its
+4,096-token stage budget. There are no runtime_failure records in this run.
+Compiler rejections and completed schema-invalid outputs are separate outcomes.
+
+                      Final incomplete    Reasoning incomplete
+XGrammar                     23                     5
+llguidance                   15                     4
+Unconstrained                 1                     5
+
+All 53 examined raw records match the sealed SHA256SUMS inventory. Analysis used
+the original schemas, saved normalized backend schemas, original token IDs,
+pinned tokenizer revisions and exact decoder versions: XGrammar 0.2.8 and
+llguidance 1.9.1. All work was CPU-only on the Mac; no model was regenerated.
+
+Observed mechanisms (mutually exclusive classification; total 53)
+
+24 final whitespace loops
+14 other constrained final loops/growth
+14 reasoning-stage exhaustions
+ 1 unconstrained final output copying the schema instead of an instance
+
+1. Whitespace loops: 24 attempts (15 XGrammar, nine llguidance)
+
+The median whitespace suffix occupies 94.1% of the output's characters. A large
+fraction of the 4,096 tokens therefore contributes no JSON structural progress.
+Replaying the saved outputs using a byte vocabulary shows the exact endpoint:
+
+13 are awaiting a colon after a property name;
+ 6 have comma as the only permitted non-whitespace next byte;
+ 4 permit comma and a closing bracket/brace;
+ 1 requires an opening object brace for a value.
+
+Every endpoint allows at least one non-whitespace next byte. These are not
+empty-mask failures. None permits EOS, because the document is unfinished.
+
+A particularly important trigger is a mismatch between the model's preferred
+property order and the backend's fixed property order. Among the 13 colon-wait
+cases, the saved key resembles an intended key plus corrupt punctuation or
+prose, e.g. radius**: 5.0**}**, displayName followed by a curly quote, or a long
+servicePort key containing apparent comments. Those apparent comments are
+actually inside a JSON property-name string; the parser has not escaped JSON.
+
+For each case, replacing that corrupted key with its inferred intended key
+makes the prefix fail in its original backend. In an XGrammar-only controlled
+comparison, any_order=False rejects 12 of these 13 intended-key prefixes and
+any_order=True accepts all 13. This isolates property ordering as a contributing
+mechanism in 12 cases at the grammar level. It does not show that changing the
+option would make the model complete successfully. The remaining description
+case differs between backends and is not attributed to XGrammar ordering.
+
+Minimal reproduction using the actual shape-control schema, control-04:
+
+  {"shape":"circle","radius":5}
+
+is valid under the original JSON Schema but rejected by both pinned decoders
+with their tested property-order behavior. The equivalent object
+
+  {"radius":5,"shape":"circle"}
+
+is accepted. The schema lists radius before shape. Once shape is emitted,
+closing the later radius key is blocked in this representation. Extra property
+names remain possible because additionalProperties is allowed. The model emits
+radius**: 5.0**}** as a single key, then thousands of newlines while the parser
+waits for the real colon. Appending :null} completes the saved output, is accepted
+through EOS by its backend, and passes the original-schema validator and the
+study's duplicate-key-rejecting JSON parser.
+
+Other whitespace cases reflect unfinished required structure. For example,
+stress-20 has a Curve requiring at least four points; the Mistral-7B records
+stall after three. A comma is allowed and closure is blocked. Whitespace lets
+the model defer the required continuation indefinitely.
+
+The tested XGrammar configuration left max_whitespace_cnt unset. Existing
+whitespace limits are a relevant baseline, not a new research invention. A cap
+can exclude the observed whitespace path; model reruns are needed to establish
+whether it produces success or a different failure.
+
+2. Other constrained final loops/growth: 14 attempts
+
+Six repeatedly emit property names. Two stress-26 XGrammar attempts repeat
+Twitter credential fields (315 and 336 duplicate occurrences in the scanned
+prefix). Two stress-10 attempts repeat createOptions (76 duplicates each).
+Two control-03 attempts repeat corrupted comment keys (570 duplicates each).
+The grammar permits these streams, but the study parser rejects duplicate keys.
+Those six saved prefixes cannot be made acceptable to this study merely by
+appending a suffix; already-emitted duplicate names would need revision.
+That is a serialization-contract mismatch, separate from the completion loop.
+
+Three grow regex-constrained values because their expected closing quote is
+not currently legal:
+
+  stress-35, Qwen3-8B, both backends: the schemaCriterion resembles
+  iglu:com.acme/user/1-0-0-1-0-0-...
+  The regex requires vendor/name/format/version. The apparent version is still
+  in the format segment: a slash and a version remain missing. CPU replay
+  rejects an immediate closing quote, but accepts /1-0-0 followed by a quote.
+  Thus the repeating hyphens are not required by the schema; they extend a
+  segment that the model has failed to exit.
+
+  stress-38, Mistral-Small-24B, llguidance: symbolExpression repeatedly uses
+  %/s% instead of the required closing %s%. Replay rejects an immediate closing
+  quote but accepts appending %s% followed by a quote.
+
+The other five are two comment-inside-key loops (control-04), one escaped-key
+loop (stress-30), one growing array after key corruption (stress-20 XGrammar),
+and one increasingly nested structure after key corruption (stress-20
+llguidance). The apparently free-form self-correction in the latter remains
+embedded in JSON string/extra-property structures.
+
+3. Reasoning exhaustions: 14 attempts, before final constrained decoding
+
+Six are the thumbnail schema control-12 with Qwen3-8B and Qwen3-14B across all
+three modes. The models generate long base64 image data while reasoning. A
+saved, independently valid witness is only {"url":""}: the base64 expansion is
+not required by an asserting schema constraint.
+
+Three are Qwen3-8B stress-32 across all modes, constructing a long multi-year
+course example inside reasoning. Two are Mistral-7B stress-39, enumerating the
+large biosynthetic-cluster schema. Three are Mistral-7B stress-43, repeatedly
+enumerating schema properties. The reasoning phase never reaches its required
+boundary, so final decoding does not begin.
+
+These 14 records reduce end-to-end success, but are not evidence of a failure
+of the final-output constraint engine. Repeated runs of the same model/schema
+across modes reproduce the same saved reasoning token stream when available.
+
+4. Remaining unconstrained final exhaustion: one attempt
+
+Mistral-7B stress-40 outputs the schema's $defs and property definitions in a
+Markdown JSON block instead of producing an instance. It is still copying the
+large schema when the final budget is exhausted.
+
+What the replays establish
+
+For all 38 constrained final exhaustions, replaying every original model token
+with its pinned tokenizer succeeds; decoded text matches the saved output.
+At the saved endpoint, the next-token mask is nonempty, the matcher is not in
+an accepting state, and EOS is disallowed. The byte-vocabulary replay agrees
+that each prefix is accepted. No parser/accept failure is observed.
+
+For 15 saved prefixes, a simple append-only suffix was constructed, validated
+against the original schema using the study's strict JSON parser, and accepted
+through EOS by the corresponding grammar. These are constructive examples of
+available success that the model did not choose. No model regeneration was
+performed; these suffixes do not change original outcomes.
+
+All 20 affected schemas have an independently rechecked successful output
+elsewhere in this same run, with the shortest observed successful final output
+between 16 and 869 tokens. The schema tasks themselves therefore do not
+intrinsically require more than 4,096 final tokens. This does not establish
+that every failed prefix remains short-completable or that a particular model
+will find that output without a changed decoding policy.
+
+Research interpretation and next discriminating experiment
+
+The evidence supports a completion/progress problem caused by model/grammar
+interaction, not a claim that these tasks are inherently too long. It does not
+demonstrate an empty-mask dead end. It also does not prove every accepted
+prefix is extendable to an original-schema-valid result: six prefixes already
+violate the study's duplicate-key policy, and constructive completions were
+only established for 15 of 38 saved prefixes.
+
+The most informative next experiment holds schemas, model revisions, seeds,
+hardware, reasoning prompts and budgets fixed and varies one factor at a time:
+first the existing whitespace bound; then XGrammar's existing any_order option;
+then an explicit progress/completion policy. Reasoning failures require their
+own comparison, since final-output masks cannot affect a stage they never reach.
+Do not claim these existing configuration options as novel gap resolutions.
+
+No rerun or billed compute was launched in this analysis. No per-step logits
+were saved, so alternative model probabilities and the counterfactual effect
+of different masks cannot be reconstructed. CPU acceptance changes establish
+which paths are allowed; they do not measure model success after interventions.
+
+Artifacts
+
+summary.json: aggregate counts and successful comparison outputs.
+cases.csv: all 53 failures with cause, counts, excerpts and raw attempt IDs.
+cases.json: per-case parser state, byte and original-token replays, order
+ablations, regex probes and constructed-completion evidence.
+reproduction_scripts.json: the CPU analysis source snippets and candidate data.
+
+Follow-up: predicted termination behavior from the saved histories
+
+46 attempts show strong evidence of persistent repetition: the 24 whitespace
+loops; 13 of the other 14 constrained loops/growth cases (excluding the growing
+numeric array); six base64 reasoning loops; and three repetitive schema-advice
+reasoning cases. This is a qualitative "unlikely to finish soon without a
+change" assessment, not a proof of infinite generation or a measured probability.
+
+Seven remain indeterminate: three course-plan reasoning drafts, two exhaustive
+finite schema walks, one finite schema-copying output, and one growing numeric
+array. The three course-plan drafts are the best candidates for ordinary budget
+truncation because they are drafting the third planned year. None can honestly
+be classified as proven to succeed after just a few additional tokens. In
+particular, finishing reasoning or finishing copying a schema is not the same
+as returning a schema-valid instance.
+
+The analysis examines the full saved generation history, not just the final
+characters. Long repeated tails and lack of structural progress support the
+loop classification. Replay establishes which next steps are legal. A manually
+constructed short completion proves that success is available, not that the
+model would choose it. Even for greedy decoding, repeating visible output does
+not prove that the full model state repeats: its context continues to grow.
+Actual future behavior requires model continuation experiments from the saved
+prefixes under the original decoding settings. Those experiments were not run.
+
+termination_assessment.csv contains all 53 qualitative assignments and rationales;
+termination_assessment.json records the counts and limits of the inference.

@@ -1,51 +1,6 @@
-sglang/
-
-# Python caches and local virtualenvs
+.DS_Store
 __pycache__/
 *.py[cod]
 .venv*/
-
-# macOS finder metadata
-.DS_Store
-
-# Local tool state
-.claude/
-.codex_state/
-
-# Local/generated experiment artifacts. Keep source code, docs, specs, plots, and
-# compact summaries in git; keep large raw traces and heavyweight runtime dumps out.
-studies/runs/
-results/remote_sync/
-datasets/raw/
-datasets/processed/
-datasets/synthetic/natural_saturated/
-datasets/synthetic/natural_saturated_reordered/
-datasets/synthetic/natural_saturated_strong/
-datasets/synthetic/recency_trap/
-datasets/synthetic/shared_prefix/
-
-# Heavy generated benchmark internals wherever they appear.
-**/traces/
-**/benchmarks/*.jsonl
-**/plans/belady_plan.json
-
-# Local analysis environments.
-.venv-analysis/
-.venv-plots/
-
-# Vendored/runtime checkouts and generated local report artifacts.
-external/
-output/
-tmp/
-tacc_kv_cache_headroom_abstract.pdf
-tacc_kv_cache_headroom_abstract.tex
-
-# Remote GPU syncs and pilot outputs. These are reproducible/local artifacts,
-# not source-of-truth experiment specs or runner code.
-studies/results/full_suite_remote/
-studies/results/headroom_main/
-studies/results/lmcache_cacheblend_sanity_remote/
-studies/results/oracle0_headroom_remote_sync/
-studies/results/pilots/
-studies/results/pilots_remote/
-studies/results/adversarial_fcfs_page_size_20260420/graphs/serving_quick/
+.playwright-mcp/
+~$*

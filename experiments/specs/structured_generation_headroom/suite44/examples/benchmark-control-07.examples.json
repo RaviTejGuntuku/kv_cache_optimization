@@ -1,0 +1,19 @@
+{
+  "valid": [
+    {
+      "dimensions": {},
+      "shape": ""
+    }
+  ],
+  "invalid": [
+    {
+      "instance": {
+        "shape": ""
+      },
+      "validator": "required",
+      "schema_path": [
+        "required"
+      ]
+    }
+  ]
+}

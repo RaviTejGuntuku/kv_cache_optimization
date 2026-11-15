@@ -1,0 +1,23 @@
+{
+  "valid": [
+    {
+      "ca": "",
+      "created": "",
+      "ct": "",
+      "id": 0
+    }
+  ],
+  "invalid": [
+    {
+      "instance": {
+        "created": "",
+        "ct": "",
+        "id": 0
+      },
+      "validator": "required",
+      "schema_path": [
+        "required"
+      ]
+    }
+  ]
+}

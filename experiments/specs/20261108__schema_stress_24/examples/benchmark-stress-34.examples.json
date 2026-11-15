@@ -1,0 +1,147 @@
+{
+  "valid": [
+    {
+      "base_path": "/",
+      "details": {
+        "body": "",
+        "political": false
+      },
+      "document_type": "world_location_news_article",
+      "publishing_app": "maslow",
+      "rendering_app": "static",
+      "routes": [
+        {
+          "path": "",
+          "type": "exact"
+        }
+      ],
+      "schema_name": "world_location_news_article",
+      "title": ""
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('base_path',) with None",
+      "instance": {
+        "base_path": null,
+        "details": {
+          "body": "",
+          "political": false
+        },
+        "document_type": "world_location_news_article",
+        "publishing_app": "maslow",
+        "rendering_app": "static",
+        "routes": [
+          {
+            "path": "",
+            "type": "exact"
+          }
+        ],
+        "schema_name": "world_location_news_article",
+        "title": ""
+      },
+      "validator": "type",
+      "path": [
+        "base_path"
+      ],
+      "schema_path": [
+        "properties",
+        "base_path",
+        "type"
+      ],
+      "message": "None is not of type 'string'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('base_path',) with ''",
+      "instance": {
+        "base_path": "",
+        "details": {
+          "body": "",
+          "political": false
+        },
+        "document_type": "world_location_news_article",
+        "publishing_app": "maslow",
+        "rendering_app": "static",
+        "routes": [
+          {
+            "path": "",
+            "type": "exact"
+          }
+        ],
+        "schema_name": "world_location_news_article",
+        "title": ""
+      },
+      "validator": "pattern",
+      "path": [
+        "base_path"
+      ],
+      "schema_path": [
+        "properties",
+        "base_path",
+        "pattern"
+      ],
+      "message": "'' does not match \"^/(([a-zA-Z0-9._~!$&'()*+,;=:@-]|%[0-9a-fA-F]{2})+(/([a-zA-Z0-9._~!$&'()*+,;=:@-]|%[0-9a-fA-F]{2})*)*)?$\"",
+      "classification": "schema_error"
+    },
+    {
+      "name": "delete ('base_path',)",
+      "instance": {
+        "details": {
+          "body": "",
+          "political": false
+        },
+        "document_type": "world_location_news_article",
+        "publishing_app": "maslow",
+        "rendering_app": "static",
+        "routes": [
+          {
+            "path": "",
+            "type": "exact"
+          }
+        ],
+        "schema_name": "world_location_news_article",
+        "title": ""
+      },
+      "validator": "required",
+      "path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'base_path' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('document_type',) with ''",
+      "instance": {
+        "base_path": "/",
+        "details": {
+          "body": "",
+          "political": false
+        },
+        "document_type": "",
+        "publishing_app": "maslow",
+        "rendering_app": "static",
+        "routes": [
+          {
+            "path": "",
+            "type": "exact"
+          }
+        ],
+        "schema_name": "world_location_news_article",
+        "title": ""
+      },
+      "validator": "enum",
+      "path": [
+        "document_type"
+      ],
+      "schema_path": [
+        "properties",
+        "document_type",
+        "enum"
+      ],
+      "message": "'' is not one of ['world_location_news_article']",
+      "classification": "schema_error"
+    }
+  ]
+}

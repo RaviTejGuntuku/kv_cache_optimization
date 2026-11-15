@@ -1,0 +1,2453 @@
+{
+  "task_id": "benchmark-stress-39",
+  "edit_ledger": [
+    {
+      "rule": "handwritten_case_rewrite",
+      "path": "/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/experiments/specs/structured_generation_headroom/manual/shared/benchmark-stress-39.schema.json",
+      "sha256": "9c1359659484a72a1e0971610259a9f435f4307e213a9313b1e33c2fc1c71129",
+      "reason": "Erase nonasserting format annotations for backend inputs.",
+      "equivalence_argument": "The original independent validator uses no FormatChecker. Format annotations impose no assertion at any schema position, including inside oneOf; removing them preserves every accepted JSON value.",
+      "nonasserting_format_paths": [
+        [
+          "properties",
+          "changelog",
+          "items",
+          "properties",
+          "updated_at",
+          "items",
+          "format"
+        ]
+      ],
+      "format_policy": "Nonasserting in original oracle; backend inputs must not strengthen them."
+    }
+  ],
+  "original_schema_sha256": "faedd754759e0cc6ae014ad9dcc058f9cca34efdfb8d79688c9d91b9511cbdcd",
+  "backend_schema_canonical_sha256": "0f7627fa40b1e7109c8514faee5bbf32f466fdf3d7e26e905c8c3fc39592766f",
+  "semantic_probes": [
+    {
+      "label": "valid-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": true,
+      "original_oracle": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "backend_input_oracle": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"changelog\":[{\"comments\":[],\"contributors\":[],\"version\":\"0\"}],\"cluster\":{\"mibig_accession\":\"x\",\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"organism_name\":\"x\",\"ncbi_tax_id\":\"x\",\"minimal\":false,\"status\":\"pending\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 59,
+          "token_ids": [
+            4913,
+            331,
+            61873,
+            66582,
+            14727,
+            8899,
+            28503,
+            84355,
+            8899,
+            28503,
+            4366,
+            3252,
+            15,
+            9207,
+            28503,
+            18855,
+            22317,
+            76,
+            579,
+            343,
+            12759,
+            290,
+            3252,
+            87,
+            2198,
+            69628,
+            1872,
+            4790,
+            36799,
+            2101,
+            35541,
+            588,
+            68882,
+            5689,
+            3095,
+            8899,
+            6257,
+            28503,
+            8462,
+            2142,
+            1269,
+            3252,
+            87,
+            2198,
+            1016,
+            8221,
+            24579,
+            842,
+            3252,
+            87,
+            2198,
+            92607,
+            788,
+            3849,
+            1335,
+            2829,
+            3252,
+            28210,
+            30975
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"changelog\":[{\"comments\":[],\"contributors\":[],\"version\":\"0\"}],\"cluster\":{\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"mibig_accession\":\"x\",\"minimal\":false,\"ncbi_tax_id\":\"x\",\"organism_name\":\"x\",\"status\":\"pending\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 59,
+          "token_ids": [
+            4913,
+            331,
+            61873,
+            66582,
+            14727,
+            8899,
+            28503,
+            84355,
+            8899,
+            28503,
+            4366,
+            3252,
+            15,
+            9207,
+            28503,
+            18855,
+            22317,
+            69628,
+            1872,
+            4790,
+            36799,
+            2101,
+            35541,
+            588,
+            68882,
+            5689,
+            3095,
+            8899,
+            6257,
+            28503,
+            76,
+            579,
+            343,
+            12759,
+            290,
+            3252,
+            87,
+            2198,
+            92607,
+            788,
+            3849,
+            1335,
+            1016,
+            8221,
+            24579,
+            842,
+            3252,
+            87,
+            2198,
+            8462,
+            2142,
+            1269,
+            3252,
+            87,
+            2198,
+            2829,
+            3252,
+            28210,
+            30975
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [
+              "changelog"
+            ],
+            "schema_path": [
+              "properties",
+              "changelog",
+              "type"
+            ],
+            "message": "None is not of type 'array'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [
+              "changelog"
+            ],
+            "schema_path": [
+              "properties",
+              "changelog",
+              "type"
+            ],
+            "message": "None is not of type 'array'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"changelog\":null,\"cluster\":{\"mibig_accession\":\"x\",\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"organism_name\":\"x\",\"ncbi_tax_id\":\"x\",\"minimal\":false,\"status\":\"pending\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 50,
+          "token_ids": [
+            4913,
+            331,
+            61873,
+            788,
+            2921,
+            1335,
+            18855,
+            22317,
+            76,
+            579,
+            343,
+            12759,
+            290,
+            3252,
+            87,
+            2198,
+            69628,
+            1872,
+            4790,
+            36799,
+            2101,
+            35541,
+            588,
+            68882,
+            5689,
+            3095,
+            8899,
+            6257,
+            28503,
+            8462,
+            2142,
+            1269,
+            3252,
+            87,
+            2198,
+            1016,
+            8221,
+            24579,
+            842,
+            3252,
+            87,
+            2198,
+            92607,
+            788,
+            3849,
+            1335,
+            2829,
+            3252,
+            28210,
+            30975
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"changelog\":null,\"cluster\":{\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"mibig_accession\":\"x\",\"minimal\":false,\"ncbi_tax_id\":\"x\",\"organism_name\":\"x\",\"status\":\"pending\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 50,
+          "token_ids": [
+            4913,
+            331,
+            61873,
+            788,
+            2921,
+            1335,
+            18855,
+            22317,
+            69628,
+            1872,
+            4790,
+            36799,
+            2101,
+            35541,
+            588,
+            68882,
+            5689,
+            3095,
+            8899,
+            6257,
+            28503,
+            76,
+            579,
+            343,
+            12759,
+            290,
+            3252,
+            87,
+            2198,
+            92607,
+            788,
+            3849,
+            1335,
+            1016,
+            8221,
+            24579,
+            842,
+            3252,
+            87,
+            2198,
+            8462,
+            2142,
+            1269,
+            3252,
+            87,
+            2198,
+            2829,
+            3252,
+            28210,
+            30975
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-1",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "minItems",
+            "path": [
+              "changelog"
+            ],
+            "schema_path": [
+              "properties",
+              "changelog",
+              "minItems"
+            ],
+            "message": "[] should be non-empty"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "minItems",
+            "path": [
+              "changelog"
+            ],
+            "schema_path": [
+              "properties",
+              "changelog",
+              "minItems"
+            ],
+            "message": "[] should be non-empty"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"changelog\":[],\"cluster\":{\"mibig_accession\":\"x\",\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"organism_name\":\"x\",\"ncbi_tax_id\":\"x\",\"minimal\":false,\"status\":\"pending\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 49,
+          "token_ids": [
+            4913,
+            331,
+            61873,
+            8899,
+            28503,
+            18855,
+            22317,
+            76,
+            579,
+            343,
+            12759,
+            290,
+            3252,
+            87,
+            2198,
+            69628,
+            1872,
+            4790,
+            36799,
+            2101,
+            35541,
+            588,
+            68882,
+            5689,
+            3095,
+            8899,
+            6257,
+            28503,
+            8462,
+            2142,
+            1269,
+            3252,
+            87,
+            2198,
+            1016,
+            8221,
+            24579,
+            842,
+            3252,
+            87,
+            2198,
+            92607,
+            788,
+            3849,
+            1335,
+            2829,
+            3252,
+            28210,
+            30975
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"changelog\":[],\"cluster\":{\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"mibig_accession\":\"x\",\"minimal\":false,\"ncbi_tax_id\":\"x\",\"organism_name\":\"x\",\"status\":\"pending\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 49,
+          "token_ids": [
+            4913,
+            331,
+            61873,
+            8899,
+            28503,
+            18855,
+            22317,
+            69628,
+            1872,
+            4790,
+            36799,
+            2101,
+            35541,
+            588,
+            68882,
+            5689,
+            3095,
+            8899,
+            6257,
+            28503,
+            76,
+            579,
+            343,
+            12759,
+            290,
+            3252,
+            87,
+            2198,
+            92607,
+            788,
+            3849,
+            1335,
+            1016,
+            8221,
+            24579,
+            842,
+            3252,
+            87,
+            2198,
+            8462,
+            2142,
+            1269,
+            3252,
+            87,
+            2198,
+            2829,
+            3252,
+            28210,
+            30975
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-2",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'changelog' is a required property"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'changelog' is a required property"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"cluster\":{\"mibig_accession\":\"x\",\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"organism_name\":\"x\",\"ncbi_tax_id\":\"x\",\"minimal\":false,\"status\":\"pending\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 45,
+          "token_ids": [
+            4913,
+            18855,
+            22317,
+            76,
+            579,
+            343,
+            12759,
+            290,
+            3252,
+            87,
+            2198,
+            69628,
+            1872,
+            4790,
+            36799,
+            2101,
+            35541,
+            588,
+            68882,
+            5689,
+            3095,
+            8899,
+            6257,
+            28503,
+            8462,
+            2142,
+            1269,
+            3252,
+            87,
+            2198,
+            1016,
+            8221,
+            24579,
+            842,
+            3252,
+            87,
+            2198,
+            92607,
+            788,
+            3849,
+            1335,
+            2829,
+            3252,
+            28210,
+            30975
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"cluster\":{\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"mibig_accession\":\"x\",\"minimal\":false,\"ncbi_tax_id\":\"x\",\"organism_name\":\"x\",\"status\":\"pending\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 45,
+          "token_ids": [
+            4913,
+            18855,
+            22317,
+            69628,
+            1872,
+            4790,
+            36799,
+            2101,
+            35541,
+            588,
+            68882,
+            5689,
+            3095,
+            8899,
+            6257,
+            28503,
+            76,
+            579,
+            343,
+            12759,
+            290,
+            3252,
+            87,
+            2198,
+            92607,
+            788,
+            3849,
+            1335,
+            1016,
+            8221,
+            24579,
+            842,
+            3252,
+            87,
+            2198,
+            8462,
+            2142,
+            1269,
+            3252,
+            87,
+            2198,
+            2829,
+            3252,
+            28210,
+            30975
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-3",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "pattern",
+            "path": [
+              "changelog",
+              0,
+              "version"
+            ],
+            "schema_path": [
+              "properties",
+              "changelog",
+              "items",
+              "properties",
+              "version",
+              "pattern"
+            ],
+            "message": "'' does not match '^(\\\\d+(\\\\.\\\\d+)*|next)$'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "pattern",
+            "path": [
+              "changelog",
+              0,
+              "version"
+            ],
+            "schema_path": [
+              "properties",
+              "changelog",
+              "items",
+              "properties",
+              "version",
+              "pattern"
+            ],
+            "message": "'' does not match '^(\\\\d+(\\\\.\\\\d+)*|next)$'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"changelog\":[{\"comments\":[],\"contributors\":[],\"version\":\"\"}],\"cluster\":{\"mibig_accession\":\"x\",\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"organism_name\":\"x\",\"ncbi_tax_id\":\"x\",\"minimal\":false,\"status\":\"pending\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 58,
+          "token_ids": [
+            4913,
+            331,
+            61873,
+            66582,
+            14727,
+            8899,
+            28503,
+            84355,
+            8899,
+            28503,
+            4366,
+            62366,
+            92,
+            28503,
+            18855,
+            22317,
+            76,
+            579,
+            343,
+            12759,
+            290,
+            3252,
+            87,
+            2198,
+            69628,
+            1872,
+            4790,
+            36799,
+            2101,
+            35541,
+            588,
+            68882,
+            5689,
+            3095,
+            8899,
+            6257,
+            28503,
+            8462,
+            2142,
+            1269,
+            3252,
+            87,
+            2198,
+            1016,
+            8221,
+            24579,
+            842,
+            3252,
+            87,
+            2198,
+            92607,
+            788,
+            3849,
+            1335,
+            2829,
+            3252,
+            28210,
+            30975
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"changelog\":[{\"comments\":[],\"contributors\":[],\"version\":\"\"}],\"cluster\":{\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"mibig_accession\":\"x\",\"minimal\":false,\"ncbi_tax_id\":\"x\",\"organism_name\":\"x\",\"status\":\"pending\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 58,
+          "token_ids": [
+            4913,
+            331,
+            61873,
+            66582,
+            14727,
+            8899,
+            28503,
+            84355,
+            8899,
+            28503,
+            4366,
+            62366,
+            92,
+            28503,
+            18855,
+            22317,
+            69628,
+            1872,
+            4790,
+            36799,
+            2101,
+            35541,
+            588,
+            68882,
+            5689,
+            3095,
+            8899,
+            6257,
+            28503,
+            76,
+            579,
+            343,
+            12759,
+            290,
+            3252,
+            87,
+            2198,
+            92607,
+            788,
+            3849,
+            1335,
+            1016,
+            8221,
+            24579,
+            842,
+            3252,
+            87,
+            2198,
+            8462,
+            2142,
+            1269,
+            3252,
+            87,
+            2198,
+            2829,
+            3252,
+            28210,
+            30975
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 2,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'changelog' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'cluster' is a required property"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 2,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'changelog' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'cluster' is a required property"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            6257
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-1",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "[] is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "[] is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "[]",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            1294
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-2",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "null",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            2921
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-3",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "'' is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "'' is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "\"\"",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            3014
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-4",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "0 is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "0 is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "0",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            15
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-5",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "False is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "False is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "false",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            3849
+          ]
+        }
+      ],
+      "validator_agreement": true
+    }
+  ],
+  "engines": {
+    "lmql": {
+      "status": "NATIVE_COMPILABLE",
+      "program_sha256": "e5902aee7318032894de3e78f174502c10a0023dc2a2580964f5886ea7749b1a",
+      "patterns_sha256": "9fd548e228151138dbde814fa5869f70190c556fb637e914906f36588101d462",
+      "pattern_constant_count": 1,
+      "compiler_warnings": [
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['TAIL']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'JSON_PATTERNS['STRING']'"
+      ],
+      "coverage_claim": "authored_and_compiled_only; no_generation_or_semantic_coverage_inferred",
+      "diagnostics": {
+        "python_warnings": [
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          }
+        ],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      }
+    },
+    "xgrammar": {
+      "status": "NATIVE_COMPILABLE",
+      "probes": [
+        {
+          "label": "valid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": true,
+          "original_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "backend_input_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"changelog\":[{\"comments\":[],\"contributors\":[],\"version\":\"0\"}],\"cluster\":{\"mibig_accession\":\"x\",\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"organism_name\":\"x\",\"ncbi_tax_id\":\"x\",\"minimal\":false,\"status\":\"pending\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 59,
+              "token_ids": [
+                4913,
+                331,
+                61873,
+                66582,
+                14727,
+                8899,
+                28503,
+                84355,
+                8899,
+                28503,
+                4366,
+                3252,
+                15,
+                9207,
+                28503,
+                18855,
+                22317,
+                76,
+                579,
+                343,
+                12759,
+                290,
+                3252,
+                87,
+                2198,
+                69628,
+                1872,
+                4790,
+                36799,
+                2101,
+                35541,
+                588,
+                68882,
+                5689,
+                3095,
+                8899,
+                6257,
+                28503,
+                8462,
+                2142,
+                1269,
+                3252,
+                87,
+                2198,
+                1016,
+                8221,
+                24579,
+                842,
+                3252,
+                87,
+                2198,
+                92607,
+                788,
+                3849,
+                1335,
+                2829,
+                3252,
+                28210,
+                30975
+              ],
+              "recognition": {
+                "accepted": true,
+                "prefix_accepted": true,
+                "completed_before_eos": true,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"changelog\":[{\"comments\":[],\"contributors\":[],\"version\":\"0\"}],\"cluster\":{\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"mibig_accession\":\"x\",\"minimal\":false,\"ncbi_tax_id\":\"x\",\"organism_name\":\"x\",\"status\":\"pending\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 59,
+              "token_ids": [
+                4913,
+                331,
+                61873,
+                66582,
+                14727,
+                8899,
+                28503,
+                84355,
+                8899,
+                28503,
+                4366,
+                3252,
+                15,
+                9207,
+                28503,
+                18855,
+                22317,
+                69628,
+                1872,
+                4790,
+                36799,
+                2101,
+                35541,
+                588,
+                68882,
+                5689,
+                3095,
+                8899,
+                6257,
+                28503,
+                76,
+                579,
+                343,
+                12759,
+                290,
+                3252,
+                87,
+                2198,
+                92607,
+                788,
+                3849,
+                1335,
+                1016,
+                8221,
+                24579,
+                842,
+                3252,
+                87,
+                2198,
+                8462,
+                2142,
+                1269,
+                3252,
+                87,
+                2198,
+                2829,
+                3252,
+                28210,
+                30975
+              ],
+              "recognition": {
+                "accepted": true,
+                "prefix_accepted": true,
+                "completed_before_eos": true,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": true,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "changelog"
+                ],
+                "schema_path": [
+                  "properties",
+                  "changelog",
+                  "type"
+                ],
+                "message": "None is not of type 'array'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "changelog"
+                ],
+                "schema_path": [
+                  "properties",
+                  "changelog",
+                  "type"
+                ],
+                "message": "None is not of type 'array'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"changelog\":null,\"cluster\":{\"mibig_accession\":\"x\",\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"organism_name\":\"x\",\"ncbi_tax_id\":\"x\",\"minimal\":false,\"status\":\"pending\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 50,
+              "token_ids": [
+                4913,
+                331,
+                61873,
+                788,
+                2921,
+                1335,
+                18855,
+                22317,
+                76,
+                579,
+                343,
+                12759,
+                290,
+                3252,
+                87,
+                2198,
+                69628,
+                1872,
+                4790,
+                36799,
+                2101,
+                35541,
+                588,
+                68882,
+                5689,
+                3095,
+                8899,
+                6257,
+                28503,
+                8462,
+                2142,
+                1269,
+                3252,
+                87,
+                2198,
+                1016,
+                8221,
+                24579,
+                842,
+                3252,
+                87,
+                2198,
+                92607,
+                788,
+                3849,
+                1335,
+                2829,
+                3252,
+                28210,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"changelog\":null,\"cluster\":{\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"mibig_accession\":\"x\",\"minimal\":false,\"ncbi_tax_id\":\"x\",\"organism_name\":\"x\",\"status\":\"pending\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 50,
+              "token_ids": [
+                4913,
+                331,
+                61873,
+                788,
+                2921,
+                1335,
+                18855,
+                22317,
+                69628,
+                1872,
+                4790,
+                36799,
+                2101,
+                35541,
+                588,
+                68882,
+                5689,
+                3095,
+                8899,
+                6257,
+                28503,
+                76,
+                579,
+                343,
+                12759,
+                290,
+                3252,
+                87,
+                2198,
+                92607,
+                788,
+                3849,
+                1335,
+                1016,
+                8221,
+                24579,
+                842,
+                3252,
+                87,
+                2198,
+                8462,
+                2142,
+                1269,
+                3252,
+                87,
+                2198,
+                2829,
+                3252,
+                28210,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "minItems",
+                "path": [
+                  "changelog"
+                ],
+                "schema_path": [
+                  "properties",
+                  "changelog",
+                  "minItems"
+                ],
+                "message": "[] should be non-empty"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "minItems",
+                "path": [
+                  "changelog"
+                ],
+                "schema_path": [
+                  "properties",
+                  "changelog",
+                  "minItems"
+                ],
+                "message": "[] should be non-empty"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"changelog\":[],\"cluster\":{\"mibig_accession\":\"x\",\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"organism_name\":\"x\",\"ncbi_tax_id\":\"x\",\"minimal\":false,\"status\":\"pending\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 49,
+              "token_ids": [
+                4913,
+                331,
+                61873,
+                8899,
+                28503,
+                18855,
+                22317,
+                76,
+                579,
+                343,
+                12759,
+                290,
+                3252,
+                87,
+                2198,
+                69628,
+                1872,
+                4790,
+                36799,
+                2101,
+                35541,
+                588,
+                68882,
+                5689,
+                3095,
+                8899,
+                6257,
+                28503,
+                8462,
+                2142,
+                1269,
+                3252,
+                87,
+                2198,
+                1016,
+                8221,
+                24579,
+                842,
+                3252,
+                87,
+                2198,
+                92607,
+                788,
+                3849,
+                1335,
+                2829,
+                3252,
+                28210,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"changelog\":[],\"cluster\":{\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"mibig_accession\":\"x\",\"minimal\":false,\"ncbi_tax_id\":\"x\",\"organism_name\":\"x\",\"status\":\"pending\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 49,
+              "token_ids": [
+                4913,
+                331,
+                61873,
+                8899,
+                28503,
+                18855,
+                22317,
+                69628,
+                1872,
+                4790,
+                36799,
+                2101,
+                35541,
+                588,
+                68882,
+                5689,
+                3095,
+                8899,
+                6257,
+                28503,
+                76,
+                579,
+                343,
+                12759,
+                290,
+                3252,
+                87,
+                2198,
+                92607,
+                788,
+                3849,
+                1335,
+                1016,
+                8221,
+                24579,
+                842,
+                3252,
+                87,
+                2198,
+                8462,
+                2142,
+                1269,
+                3252,
+                87,
+                2198,
+                2829,
+                3252,
+                28210,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'changelog' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'changelog' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"cluster\":{\"mibig_accession\":\"x\",\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"organism_name\":\"x\",\"ncbi_tax_id\":\"x\",\"minimal\":false,\"status\":\"pending\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 45,
+              "token_ids": [
+                4913,
+                18855,
+                22317,
+                76,
+                579,
+                343,
+                12759,
+                290,
+                3252,
+                87,
+                2198,
+                69628,
+                1872,
+                4790,
+                36799,
+                2101,
+                35541,
+                588,
+                68882,
+                5689,
+                3095,
+                8899,
+                6257,
+                28503,
+                8462,
+                2142,
+                1269,
+                3252,
+                87,
+                2198,
+                1016,
+                8221,
+                24579,
+                842,
+                3252,
+                87,
+                2198,
+                92607,
+                788,
+                3849,
+                1335,
+                2829,
+                3252,
+                28210,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"cluster\":{\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"mibig_accession\":\"x\",\"minimal\":false,\"ncbi_tax_id\":\"x\",\"organism_name\":\"x\",\"status\":\"pending\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 45,
+              "token_ids": [
+                4913,
+                18855,
+                22317,
+                69628,
+                1872,
+                4790,
+                36799,
+                2101,
+                35541,
+                588,
+                68882,
+                5689,
+                3095,
+                8899,
+                6257,
+                28503,
+                76,
+                579,
+                343,
+                12759,
+                290,
+                3252,
+                87,
+                2198,
+                92607,
+                788,
+                3849,
+                1335,
+                1016,
+                8221,
+                24579,
+                842,
+                3252,
+                87,
+                2198,
+                8462,
+                2142,
+                1269,
+                3252,
+                87,
+                2198,
+                2829,
+                3252,
+                28210,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "pattern",
+                "path": [
+                  "changelog",
+                  0,
+                  "version"
+                ],
+                "schema_path": [
+                  "properties",
+                  "changelog",
+                  "items",
+                  "properties",
+                  "version",
+                  "pattern"
+                ],
+                "message": "'' does not match '^(\\\\d+(\\\\.\\\\d+)*|next)$'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "pattern",
+                "path": [
+                  "changelog",
+                  0,
+                  "version"
+                ],
+                "schema_path": [
+                  "properties",
+                  "changelog",
+                  "items",
+                  "properties",
+                  "version",
+                  "pattern"
+                ],
+                "message": "'' does not match '^(\\\\d+(\\\\.\\\\d+)*|next)$'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"changelog\":[{\"comments\":[],\"contributors\":[],\"version\":\"\"}],\"cluster\":{\"mibig_accession\":\"x\",\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"organism_name\":\"x\",\"ncbi_tax_id\":\"x\",\"minimal\":false,\"status\":\"pending\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 58,
+              "token_ids": [
+                4913,
+                331,
+                61873,
+                66582,
+                14727,
+                8899,
+                28503,
+                84355,
+                8899,
+                28503,
+                4366,
+                62366,
+                92,
+                28503,
+                18855,
+                22317,
+                76,
+                579,
+                343,
+                12759,
+                290,
+                3252,
+                87,
+                2198,
+                69628,
+                1872,
+                4790,
+                36799,
+                2101,
+                35541,
+                588,
+                68882,
+                5689,
+                3095,
+                8899,
+                6257,
+                28503,
+                8462,
+                2142,
+                1269,
+                3252,
+                87,
+                2198,
+                1016,
+                8221,
+                24579,
+                842,
+                3252,
+                87,
+                2198,
+                92607,
+                788,
+                3849,
+                1335,
+                2829,
+                3252,
+                28210,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"changelog\":[{\"comments\":[],\"contributors\":[],\"version\":\"\"}],\"cluster\":{\"biosyn_class\":[\"Alkaloid\"],\"compounds\":[{}],\"mibig_accession\":\"x\",\"minimal\":false,\"ncbi_tax_id\":\"x\",\"organism_name\":\"x\",\"status\":\"pending\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 58,
+              "token_ids": [
+                4913,
+                331,
+                61873,
+                66582,
+                14727,
+                8899,
+                28503,
+                84355,
+                8899,
+                28503,
+                4366,
+                62366,
+                92,
+                28503,
+                18855,
+                22317,
+                69628,
+                1872,
+                4790,
+                36799,
+                2101,
+                35541,
+                588,
+                68882,
+                5689,
+                3095,
+                8899,
+                6257,
+                28503,
+                76,
+                579,
+                343,
+                12759,
+                290,
+                3252,
+                87,
+                2198,
+                92607,
+                788,
+                3849,
+                1335,
+                1016,
+                8221,
+                24579,
+                842,
+                3252,
+                87,
+                2198,
+                8462,
+                2142,
+                1269,
+                3252,
+                87,
+                2198,
+                2829,
+                3252,
+                28210,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 2,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'changelog' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'cluster' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 2,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'changelog' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'cluster' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                6257
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "[]",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                1294
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "null",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                2921
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "\"\"",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3014
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-4",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "0",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                15
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-5",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "false",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3849
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        }
+      ],
+      "compile_seconds": 0.03380633401684463,
+      "diagnostics": {
+        "python_warnings": [],
+        "native_stdout_stderr": "[22:48:33] /Users/runner/work/xgrammar/xgrammar/cpp/json_schema_converter.cc:3510: Warning: Support for allOf with multiple options is still ongoing\n",
+        "python_stdout_stderr": ""
+      },
+      "library_warnings": null,
+      "ignored_assertion_warning_lines": [],
+      "grammar_file": "experiments/results/20261110T044100Z__structured_generation_manual_preflight_release/benchmark-stress-39__xgrammar.grammar.txt",
+      "grammar_sha256": "a393c1dd25a36710795a7d190d416a86cb41553765995bc1ce9386a5e12be15d",
+      "false_positives": [],
+      "false_negatives_on_tested_spellings": [],
+      "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+      "seconds": 0.034243709058500826
+    },
+    "llguidance_strict": {
+      "status": "COMPILE_REJECTED",
+      "probes": [],
+      "error": "ValueError: Unimplemented keys: [\"if\", \"then\"]",
+      "diagnostics": {
+        "python_warnings": [],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      },
+      "seconds": 0.0011195410043001175
+    }
+  },
+  "validator_agreement": {
+    "total": 11,
+    "frozen_core": 11,
+    "supplemental": 0,
+    "disagreements": 0
+  },
+  "seconds": 0.10192379099316895
+}
