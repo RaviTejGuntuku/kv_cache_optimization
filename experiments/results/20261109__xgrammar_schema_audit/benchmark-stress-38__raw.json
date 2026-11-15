@@ -1,0 +1,11 @@
+{
+  "task_id": "benchmark-stress-38",
+  "variant": "raw",
+  "source_sha256": "702651cbe40ef1fa75f23ba84b8157f8e002a362293f8d1b856c6ce5f934c690",
+  "edits": [],
+  "strict_mode": false,
+  "any_order": false,
+  "format_asserted": false,
+  "compiled": false,
+  "error": "[13:51:46] /Users/runner/work/xgrammar/xgrammar/cpp/regex_converter.cc:83: Regex parsing error at position 34: Backreference is not supported yet.\n"
+}

@@ -1,0 +1,160 @@
+{
+  "valid": [
+    {
+      "batchProcessingStatus": "Error",
+      "batchReleaseStatus": "Released",
+      "deletions": [
+        {
+          "identifiers": {
+            "clinvarAccession": ""
+          },
+          "processingStatus": "Error"
+        }
+      ],
+      "submissionDate": "",
+      "submissionName": "",
+      "totalCount": 0,
+      "totalErrors": 0,
+      "totalPublic": 0,
+      "totalSuccess": 0
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('batchProcessingStatus',) with None",
+      "instance": {
+        "batchProcessingStatus": null,
+        "batchReleaseStatus": "Released",
+        "deletions": [
+          {
+            "identifiers": {
+              "clinvarAccession": ""
+            },
+            "processingStatus": "Error"
+          }
+        ],
+        "submissionDate": "",
+        "submissionName": "",
+        "totalCount": 0,
+        "totalErrors": 0,
+        "totalPublic": 0,
+        "totalSuccess": 0
+      },
+      "validator": "type",
+      "path": [
+        "batchProcessingStatus"
+      ],
+      "schema_path": [
+        "properties",
+        "batchProcessingStatus",
+        "type"
+      ],
+      "message": "None is not of type 'string'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('batchProcessingStatus',) with ''",
+      "instance": {
+        "batchProcessingStatus": "",
+        "batchReleaseStatus": "Released",
+        "deletions": [
+          {
+            "identifiers": {
+              "clinvarAccession": ""
+            },
+            "processingStatus": "Error"
+          }
+        ],
+        "submissionDate": "",
+        "submissionName": "",
+        "totalCount": 0,
+        "totalErrors": 0,
+        "totalPublic": 0,
+        "totalSuccess": 0
+      },
+      "validator": "enum",
+      "path": [
+        "batchProcessingStatus"
+      ],
+      "schema_path": [
+        "properties",
+        "batchProcessingStatus",
+        "enum"
+      ],
+      "message": "'' is not one of ['In processing', 'Success', 'Error', 'Partial success']",
+      "classification": "schema_error"
+    },
+    {
+      "name": "delete ('batchProcessingStatus',)",
+      "instance": {
+        "batchReleaseStatus": "Released",
+        "deletions": [
+          {
+            "identifiers": {
+              "clinvarAccession": ""
+            },
+            "processingStatus": "Error"
+          }
+        ],
+        "submissionDate": "",
+        "submissionName": "",
+        "totalCount": 0,
+        "totalErrors": 0,
+        "totalPublic": 0,
+        "totalSuccess": 0
+      },
+      "validator": "required",
+      "path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'batchProcessingStatus' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('deletions',) with []",
+      "instance": {
+        "batchProcessingStatus": "Error",
+        "batchReleaseStatus": "Released",
+        "deletions": [],
+        "submissionDate": "",
+        "submissionName": "",
+        "totalCount": 0,
+        "totalErrors": 0,
+        "totalPublic": 0,
+        "totalSuccess": 0
+      },
+      "validator": "minItems",
+      "path": [
+        "deletions"
+      ],
+      "schema_path": [
+        "properties",
+        "deletions",
+        "minItems"
+      ],
+      "message": "[] should be non-empty",
+      "classification": "schema_error"
+    },
+    {
+      "name": "delete ('deletions',)",
+      "instance": {
+        "batchProcessingStatus": "Error",
+        "batchReleaseStatus": "Released",
+        "submissionDate": "",
+        "submissionName": "",
+        "totalCount": 0,
+        "totalErrors": 0,
+        "totalPublic": 0,
+        "totalSuccess": 0
+      },
+      "validator": "anyOf",
+      "path": [],
+      "schema_path": [
+        "anyOf"
+      ],
+      "message": "{'batchProcessingStatus': 'Error', 'batchReleaseStatus': 'Released', 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas",
+      "classification": "schema_error"
+    }
+  ]
+}

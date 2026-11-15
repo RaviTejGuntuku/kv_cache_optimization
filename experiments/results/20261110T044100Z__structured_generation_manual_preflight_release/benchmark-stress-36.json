@@ -1,0 +1,1762 @@
+{
+  "task_id": "benchmark-stress-36",
+  "edit_ledger": [
+    {
+      "rule": "handwritten_case_rewrite",
+      "path": "/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/experiments/specs/structured_generation_headroom/manual/shared/benchmark-stress-36.schema.json",
+      "sha256": "49fb68c89ab815204e6ee5def02193c7b3cba8767b2ea28748220fac7e32db44",
+      "reason": "Erase nonasserting format annotations for backend inputs.",
+      "equivalence_argument": "The original independent validator uses no FormatChecker. Format annotations impose no assertion at any schema position, including inside oneOf; removing them preserves every accepted JSON value.",
+      "nonasserting_format_paths": [
+        [
+          "definitions",
+          "suggestions",
+          "actions",
+          "calendarAction",
+          "properties",
+          "calendarAction",
+          "oneOf",
+          0,
+          "properties",
+          "createCalendarEvent",
+          "properties",
+          "fallbackUrl",
+          "format"
+        ],
+        [
+          "definitions",
+          "suggestions",
+          "actions",
+          "calendarAction",
+          "properties",
+          "calendarAction",
+          "oneOf",
+          0,
+          "properties",
+          "createCalendarEvent",
+          "properties",
+          "endTime",
+          "format"
+        ],
+        [
+          "definitions",
+          "suggestions",
+          "actions",
+          "calendarAction",
+          "properties",
+          "calendarAction",
+          "oneOf",
+          0,
+          "properties",
+          "createCalendarEvent",
+          "properties",
+          "startTime",
+          "format"
+        ],
+        [
+          "definitions",
+          "suggestions",
+          "actions",
+          "mapAction",
+          "properties",
+          "mapAction",
+          "oneOf",
+          0,
+          "properties",
+          "showLocation",
+          "properties",
+          "fallbackUrl",
+          "format"
+        ],
+        [
+          "definitions",
+          "suggestions",
+          "actions",
+          "dialerAction",
+          "properties",
+          "dialerAction",
+          "oneOf",
+          2,
+          "properties",
+          "dialVideoCall",
+          "properties",
+          "fallbackUrl",
+          "format"
+        ],
+        [
+          "definitions",
+          "suggestions",
+          "actions",
+          "dialerAction",
+          "properties",
+          "dialerAction",
+          "oneOf",
+          1,
+          "properties",
+          "dialEnrichedCall",
+          "properties",
+          "fallbackUrl",
+          "format"
+        ],
+        [
+          "definitions",
+          "suggestions",
+          "actions",
+          "dialerAction",
+          "properties",
+          "dialerAction",
+          "oneOf",
+          0,
+          "properties",
+          "dialPhoneNumber",
+          "properties",
+          "fallbackUrl",
+          "format"
+        ],
+        [
+          "definitions",
+          "suggestions",
+          "actions",
+          "urlAction",
+          "properties",
+          "urlAction",
+          "oneOf",
+          0,
+          "properties",
+          "openUrl",
+          "oneOf",
+          1,
+          "properties",
+          "url",
+          "format"
+        ],
+        [
+          "definitions",
+          "suggestions",
+          "actions",
+          "urlAction",
+          "properties",
+          "urlAction",
+          "oneOf",
+          0,
+          "properties",
+          "openUrl",
+          "oneOf",
+          0,
+          "properties",
+          "url",
+          "format"
+        ]
+      ],
+      "format_policy": "Nonasserting in original oracle; backend inputs must not strengthen them."
+    }
+  ],
+  "original_schema_sha256": "8df36d3ca59d10d971d373086d603fe12f86eadfd79f9306bc90c8147d229b13",
+  "backend_schema_canonical_sha256": "aaeb742a2034e7de0d236e180152f3b369200ee665175c398258683ff9129b91",
+  "semantic_probes": [
+    {
+      "label": "valid-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": true,
+      "original_oracle": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "backend_input_oracle": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"menu\":{\"entries\":[{\"action\":{\"calendarAction\":{\"createCalendarEvent\":{\"endTime\":\"2000-01-01T00:00:00Z\",\"startTime\":\"2000-01-01T00:00:00Z\",\"title\":\"0\"}},\"displayText\":\"0\"}}]}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 71,
+          "token_ids": [
+            4913,
+            6064,
+            22317,
+            12940,
+            66582,
+            1311,
+            22317,
+            26258,
+            2512,
+            22317,
+            3182,
+            19882,
+            1556,
+            22317,
+            49688,
+            3252,
+            17,
+            15,
+            15,
+            15,
+            12,
+            15,
+            16,
+            12,
+            15,
+            16,
+            51,
+            15,
+            15,
+            25,
+            15,
+            15,
+            25,
+            15,
+            15,
+            57,
+            2198,
+            40906,
+            3252,
+            17,
+            15,
+            15,
+            15,
+            12,
+            15,
+            16,
+            12,
+            15,
+            16,
+            51,
+            15,
+            15,
+            25,
+            15,
+            15,
+            25,
+            15,
+            15,
+            57,
+            2198,
+            2102,
+            3252,
+            15,
+            30975,
+            1335,
+            81733,
+            3252,
+            15,
+            30975,
+            60,
+            3417
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"menu\":{\"entries\":[{\"action\":{\"displayText\":\"0\",\"calendarAction\":{\"createCalendarEvent\":{\"startTime\":\"2000-01-01T00:00:00Z\",\"endTime\":\"2000-01-01T00:00:00Z\",\"title\":\"0\"}}}}]}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 71,
+          "token_ids": [
+            4913,
+            6064,
+            22317,
+            12940,
+            66582,
+            1311,
+            22317,
+            81733,
+            3252,
+            15,
+            2198,
+            26258,
+            2512,
+            22317,
+            3182,
+            19882,
+            1556,
+            22317,
+            40906,
+            3252,
+            17,
+            15,
+            15,
+            15,
+            12,
+            15,
+            16,
+            12,
+            15,
+            16,
+            51,
+            15,
+            15,
+            25,
+            15,
+            15,
+            25,
+            15,
+            15,
+            57,
+            2198,
+            49688,
+            3252,
+            17,
+            15,
+            15,
+            15,
+            12,
+            15,
+            16,
+            12,
+            15,
+            16,
+            51,
+            15,
+            15,
+            25,
+            15,
+            15,
+            25,
+            15,
+            15,
+            57,
+            2198,
+            2102,
+            3252,
+            15,
+            30975,
+            3417,
+            60,
+            3417
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [
+              "menu"
+            ],
+            "schema_path": [
+              "properties",
+              "menu",
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [
+              "menu"
+            ],
+            "schema_path": [
+              "properties",
+              "menu",
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"menu\":null}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 5,
+          "token_ids": [
+            4913,
+            6064,
+            788,
+            2921,
+            92
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-1",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [
+              "menu"
+            ],
+            "schema_path": [
+              "properties",
+              "menu",
+              "required"
+            ],
+            "message": "'entries' is a required property"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [
+              "menu"
+            ],
+            "schema_path": [
+              "properties",
+              "menu",
+              "required"
+            ],
+            "message": "'entries' is a required property"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"menu\":{}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 5,
+          "token_ids": [
+            4913,
+            6064,
+            788,
+            90,
+            3417
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-2",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "minItems",
+            "path": [
+              "menu",
+              "entries"
+            ],
+            "schema_path": [
+              "properties",
+              "menu",
+              "properties",
+              "entries",
+              "minItems"
+            ],
+            "message": "[] should be non-empty"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "minItems",
+            "path": [
+              "menu",
+              "entries"
+            ],
+            "schema_path": [
+              "properties",
+              "menu",
+              "properties",
+              "entries",
+              "minItems"
+            ],
+            "message": "[] should be non-empty"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"menu\":{\"entries\":[]}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 7,
+          "token_ids": [
+            4913,
+            6064,
+            22317,
+            12940,
+            788,
+            1294,
+            3417
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-3",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "oneOf",
+            "path": [
+              "menu",
+              "entries",
+              0
+            ],
+            "schema_path": [
+              "properties",
+              "menu",
+              "properties",
+              "entries",
+              "items",
+              "oneOf"
+            ],
+            "message": "None is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "oneOf",
+            "path": [
+              "menu",
+              "entries",
+              0
+            ],
+            "schema_path": [
+              "properties",
+              "menu",
+              "properties",
+              "entries",
+              "items",
+              "oneOf"
+            ],
+            "message": "None is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"menu\":{\"entries\":[null]}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 8,
+          "token_ids": [
+            4913,
+            6064,
+            22317,
+            12940,
+            8899,
+            2921,
+            60,
+            3417
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'menu' is a required property"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'menu' is a required property"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            6257
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-1",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "[] is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "[] is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "[]",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            1294
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-2",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "null",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            2921
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-3",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "'' is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "'' is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "\"\"",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            3014
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-4",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "0 is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "0 is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "0",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            15
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-5",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "False is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "False is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "false",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            3849
+          ]
+        }
+      ],
+      "validator_agreement": true
+    }
+  ],
+  "engines": {
+    "lmql": {
+      "status": "NATIVE_COMPILABLE",
+      "program_sha256": "53efc69dfe2ef792711fcb5c814364e4a314b27eec0fe739afd11da9d3a4888b",
+      "patterns_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "pattern_constant_count": 0,
+      "compiler_warnings": [],
+      "coverage_claim": "authored_and_compiled_only; no_generation_or_semantic_coverage_inferred",
+      "diagnostics": {
+        "python_warnings": [
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          }
+        ],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      }
+    },
+    "xgrammar": {
+      "status": "NATIVE_COMPILABLE",
+      "probes": [
+        {
+          "label": "valid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": true,
+          "original_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "backend_input_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"menu\":{\"entries\":[{\"action\":{\"calendarAction\":{\"createCalendarEvent\":{\"endTime\":\"2000-01-01T00:00:00Z\",\"startTime\":\"2000-01-01T00:00:00Z\",\"title\":\"0\"}},\"displayText\":\"0\"}}]}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 71,
+              "token_ids": [
+                4913,
+                6064,
+                22317,
+                12940,
+                66582,
+                1311,
+                22317,
+                26258,
+                2512,
+                22317,
+                3182,
+                19882,
+                1556,
+                22317,
+                49688,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                40906,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                2102,
+                3252,
+                15,
+                30975,
+                1335,
+                81733,
+                3252,
+                15,
+                30975,
+                60,
+                3417
+              ],
+              "recognition": {
+                "accepted": true,
+                "prefix_accepted": true,
+                "completed_before_eos": true,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"menu\":{\"entries\":[{\"action\":{\"displayText\":\"0\",\"calendarAction\":{\"createCalendarEvent\":{\"startTime\":\"2000-01-01T00:00:00Z\",\"endTime\":\"2000-01-01T00:00:00Z\",\"title\":\"0\"}}}}]}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 71,
+              "token_ids": [
+                4913,
+                6064,
+                22317,
+                12940,
+                66582,
+                1311,
+                22317,
+                81733,
+                3252,
+                15,
+                2198,
+                26258,
+                2512,
+                22317,
+                3182,
+                19882,
+                1556,
+                22317,
+                40906,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                49688,
+                3252,
+                17,
+                15,
+                15,
+                15,
+                12,
+                15,
+                16,
+                12,
+                15,
+                16,
+                51,
+                15,
+                15,
+                25,
+                15,
+                15,
+                25,
+                15,
+                15,
+                57,
+                2198,
+                2102,
+                3252,
+                15,
+                30975,
+                3417,
+                60,
+                3417
+              ],
+              "recognition": {
+                "accepted": true,
+                "prefix_accepted": true,
+                "completed_before_eos": true,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": true,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "menu"
+                ],
+                "schema_path": [
+                  "properties",
+                  "menu",
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "menu"
+                ],
+                "schema_path": [
+                  "properties",
+                  "menu",
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"menu\":null}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 5,
+              "token_ids": [
+                4913,
+                6064,
+                788,
+                2921,
+                92
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [
+                  "menu"
+                ],
+                "schema_path": [
+                  "properties",
+                  "menu",
+                  "required"
+                ],
+                "message": "'entries' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [
+                  "menu"
+                ],
+                "schema_path": [
+                  "properties",
+                  "menu",
+                  "required"
+                ],
+                "message": "'entries' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"menu\":{}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 5,
+              "token_ids": [
+                4913,
+                6064,
+                788,
+                90,
+                3417
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "minItems",
+                "path": [
+                  "menu",
+                  "entries"
+                ],
+                "schema_path": [
+                  "properties",
+                  "menu",
+                  "properties",
+                  "entries",
+                  "minItems"
+                ],
+                "message": "[] should be non-empty"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "minItems",
+                "path": [
+                  "menu",
+                  "entries"
+                ],
+                "schema_path": [
+                  "properties",
+                  "menu",
+                  "properties",
+                  "entries",
+                  "minItems"
+                ],
+                "message": "[] should be non-empty"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"menu\":{\"entries\":[]}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 7,
+              "token_ids": [
+                4913,
+                6064,
+                22317,
+                12940,
+                788,
+                1294,
+                3417
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "oneOf",
+                "path": [
+                  "menu",
+                  "entries",
+                  0
+                ],
+                "schema_path": [
+                  "properties",
+                  "menu",
+                  "properties",
+                  "entries",
+                  "items",
+                  "oneOf"
+                ],
+                "message": "None is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "oneOf",
+                "path": [
+                  "menu",
+                  "entries",
+                  0
+                ],
+                "schema_path": [
+                  "properties",
+                  "menu",
+                  "properties",
+                  "entries",
+                  "items",
+                  "oneOf"
+                ],
+                "message": "None is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"menu\":{\"entries\":[null]}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 8,
+              "token_ids": [
+                4913,
+                6064,
+                22317,
+                12940,
+                8899,
+                2921,
+                60,
+                3417
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'menu' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'menu' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                6257
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "[]",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                1294
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "null",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                2921
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "\"\"",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3014
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-4",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "0",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                15
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-5",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "false",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3849
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        }
+      ],
+      "compile_seconds": 5.9661447500111535,
+      "diagnostics": {
+        "python_warnings": [],
+        "native_stdout_stderr": "[22:47:40] /Users/runner/work/xgrammar/xgrammar/cpp/json_schema_converter.cc:832: Warning: oneOf with overlapping or non-provably-disjoint branches cannot be represented exactly; falling back to anyOf semantics\n[22:47:40] /Users/runner/work/xgrammar/xgrammar/cpp/json_schema_converter.cc:832: Warning: oneOf with overlapping or non-provably-disjoint branches cannot be represented exactly; falling back to anyOf semantics\n[22:47:40] /Users/runner/work/xgrammar/xgrammar/cpp/json_schema_converter.cc:3510: Warning: Support for allOf with multiple options is still ongoing\n[22:47:40] /Users/runner/work/xgrammar/xgrammar/cpp/json_schema_converter.cc:832: Warning: oneOf with overlapping or non-provably-disjoint branches cannot be represented exactly; falling back to anyOf semantics\n[22:47:40] /Users/runner/work/xgrammar/xgrammar/cpp/json_schema_converter.cc:832: Warning: oneOf with overlapping or non-provably-disjoint branches cannot be represented exactly; falling back to anyOf semantics\n",
+        "python_stdout_stderr": ""
+      },
+      "library_warnings": null,
+      "ignored_assertion_warning_lines": [],
+      "grammar_file": "experiments/results/20261110T044100Z__structured_generation_manual_preflight_release/benchmark-stress-36__xgrammar.grammar.txt",
+      "grammar_sha256": "be9c8c88e13aa55786be4cca8874dd59ffce6c8e6d32661e4422961e31bc97aa",
+      "false_positives": [],
+      "false_negatives_on_tested_spellings": [],
+      "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+      "seconds": 5.967617082991637
+    },
+    "llguidance_strict": {
+      "status": "COMPILE_REJECTED",
+      "probes": [],
+      "error": "ValueError: oneOf constraints are not supported. Enable 'coerce_one_of' option to approximate oneOf with anyOf\n  while processing http://www.gsma.com/rcs/chatbot_menu_schema.json#/definitions/menus/menuL0",
+      "diagnostics": {
+        "python_warnings": [],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      },
+      "seconds": 0.0016126250848174095
+    }
+  },
+  "validator_agreement": {
+    "total": 11,
+    "frozen_core": 11,
+    "supplemental": 0,
+    "disagreements": 0
+  },
+  "seconds": 6.039030708023347
+}

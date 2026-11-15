@@ -1,0 +1,279 @@
+{
+  "valid": [
+    {
+      "minTotalCredits": "0",
+      "sequenceInfo": {
+        "entryType": "0",
+        "option": "0",
+        "program": "0"
+      },
+      "sourceUrl": "http://",
+      "yearList": [
+        {
+          "fall": {
+            "courseList": [],
+            "isWorkTerm": "true"
+          },
+          "summer": {
+            "courseList": [],
+            "isWorkTerm": "true"
+          },
+          "winter": {
+            "courseList": [],
+            "isWorkTerm": "true"
+          }
+        },
+        {
+          "fall": {
+            "courseList": [],
+            "isWorkTerm": "true"
+          },
+          "summer": {
+            "courseList": [],
+            "isWorkTerm": "true"
+          },
+          "winter": {
+            "courseList": [],
+            "isWorkTerm": "true"
+          }
+        },
+        {
+          "fall": {
+            "courseList": [],
+            "isWorkTerm": "true"
+          },
+          "summer": {
+            "courseList": [],
+            "isWorkTerm": "true"
+          },
+          "winter": {
+            "courseList": [],
+            "isWorkTerm": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('minTotalCredits',) with None",
+      "instance": {
+        "minTotalCredits": null,
+        "sequenceInfo": {
+          "entryType": "0",
+          "option": "0",
+          "program": "0"
+        },
+        "sourceUrl": "http://",
+        "yearList": [
+          {
+            "fall": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "summer": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "winter": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            }
+          },
+          {
+            "fall": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "summer": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "winter": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            }
+          },
+          {
+            "fall": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "summer": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "winter": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            }
+          }
+        ]
+      },
+      "validator": "type",
+      "path": [
+        "minTotalCredits"
+      ],
+      "schema_path": [
+        "properties",
+        "minTotalCredits",
+        "type"
+      ],
+      "message": "None is not of type 'string'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('minTotalCredits',) with ''",
+      "instance": {
+        "minTotalCredits": "",
+        "sequenceInfo": {
+          "entryType": "0",
+          "option": "0",
+          "program": "0"
+        },
+        "sourceUrl": "http://",
+        "yearList": [
+          {
+            "fall": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "summer": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "winter": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            }
+          },
+          {
+            "fall": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "summer": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "winter": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            }
+          },
+          {
+            "fall": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "summer": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "winter": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            }
+          }
+        ]
+      },
+      "validator": "pattern",
+      "path": [
+        "minTotalCredits"
+      ],
+      "schema_path": [
+        "properties",
+        "minTotalCredits",
+        "pattern"
+      ],
+      "message": "'' does not match '^\\\\d+$'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "delete ('minTotalCredits',)",
+      "instance": {
+        "sequenceInfo": {
+          "entryType": "0",
+          "option": "0",
+          "program": "0"
+        },
+        "sourceUrl": "http://",
+        "yearList": [
+          {
+            "fall": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "summer": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "winter": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            }
+          },
+          {
+            "fall": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "summer": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "winter": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            }
+          },
+          {
+            "fall": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "summer": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            },
+            "winter": {
+              "courseList": [],
+              "isWorkTerm": "true"
+            }
+          }
+        ]
+      },
+      "validator": "required",
+      "path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'minTotalCredits' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('yearList',) with []",
+      "instance": {
+        "minTotalCredits": "0",
+        "sequenceInfo": {
+          "entryType": "0",
+          "option": "0",
+          "program": "0"
+        },
+        "sourceUrl": "http://",
+        "yearList": []
+      },
+      "validator": "minItems",
+      "path": [
+        "yearList"
+      ],
+      "schema_path": [
+        "properties",
+        "yearList",
+        "minItems"
+      ],
+      "message": "[] is too short",
+      "classification": "schema_error"
+    }
+  ]
+}

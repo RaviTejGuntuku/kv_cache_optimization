@@ -1,0 +1,21 @@
+{
+  "valid": [
+    {
+      "name": "",
+      "podSelector": "",
+      "targetPort": 0.0
+    }
+  ],
+  "invalid": [
+    {
+      "instance": {
+        "podSelector": "",
+        "targetPort": 0.0
+      },
+      "validator": "required",
+      "schema_path": [
+        "required"
+      ]
+    }
+  ]
+}

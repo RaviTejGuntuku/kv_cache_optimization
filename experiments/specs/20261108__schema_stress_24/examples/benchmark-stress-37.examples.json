@@ -1,0 +1,80 @@
+{
+  "valid": [
+    {
+      "fields": [
+        {
+          "name": "",
+          "type": "integer"
+        }
+      ]
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('fields',) with None",
+      "instance": {
+        "fields": null
+      },
+      "validator": "type",
+      "path": [
+        "fields"
+      ],
+      "schema_path": [
+        "properties",
+        "fields",
+        "type"
+      ],
+      "message": "None is not of type 'array'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('fields',) with []",
+      "instance": {
+        "fields": []
+      },
+      "validator": "minItems",
+      "path": [
+        "fields"
+      ],
+      "schema_path": [
+        "properties",
+        "fields",
+        "minItems"
+      ],
+      "message": "[] should be non-empty",
+      "classification": "schema_error"
+    },
+    {
+      "name": "delete ('fields',)",
+      "instance": {},
+      "validator": "required",
+      "path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'fields' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('fields', 0) with {}",
+      "instance": {
+        "fields": [
+          {}
+        ]
+      },
+      "validator": "anyOf",
+      "path": [
+        "fields",
+        0
+      ],
+      "schema_path": [
+        "properties",
+        "fields",
+        "items",
+        "anyOf"
+      ],
+      "message": "{} is not valid under any of the given schemas",
+      "classification": "schema_error"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "valid": [
+    {
+      "class_code": "",
+      "interval": "INTERVAL_TICK",
+      "sec_code": ""
+    }
+  ],
+  "invalid": [
+    {
+      "instance": {
+        "interval": "INTERVAL_TICK",
+        "sec_code": ""
+      },
+      "validator": "required",
+      "schema_path": [
+        "required"
+      ]
+    }
+  ]
+}

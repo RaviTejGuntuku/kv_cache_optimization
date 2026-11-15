@@ -1,2 +1,0 @@
-"""Empirical headroom benchmarking utilities."""
-

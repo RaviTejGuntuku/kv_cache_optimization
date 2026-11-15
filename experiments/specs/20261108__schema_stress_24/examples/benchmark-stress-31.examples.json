@@ -1,0 +1,483 @@
+{
+  "valid": [
+    {
+      "axes": {
+        "x": {
+          "label": "",
+          "scale": ""
+        },
+        "y": {
+          "label": "",
+          "scale": ""
+        }
+      },
+      "canvas": {
+        "height": null,
+        "padding": {
+          "bottom": null,
+          "left": null,
+          "right": null,
+          "top": null
+        },
+        "width": null
+      },
+      "data": [
+        {
+          "colnames": [],
+          "name": "",
+          "rownames": [],
+          "values": [
+            []
+          ]
+        }
+      ],
+      "legend": {
+        "fill": {
+          "label": ""
+        },
+        "fillOpacity": {
+          "label": ""
+        }
+      },
+      "marks": [
+        {
+          "data": {
+            "name": ""
+          },
+          "properties": {
+            "fill": {
+              "field": null,
+              "scale": "color"
+            },
+            "fillOpacity": {
+              "field": null,
+              "scale": "z"
+            }
+          },
+          "type": "rect"
+        }
+      ],
+      "meta": {},
+      "name": "",
+      "scales": {
+        "color": {
+          "domain": [],
+          "range": [],
+          "type": "ordinal"
+        },
+        "x": {
+          "domain": [],
+          "range": "width",
+          "type": "ordinal"
+        },
+        "y": {
+          "domain": [],
+          "range": "height",
+          "type": "ordinal"
+        },
+        "z": {
+          "domain": {
+            "max": null,
+            "min": null
+          },
+          "range": {
+            "max": 0.0,
+            "min": 0.0
+          },
+          "type": "linear"
+        }
+      },
+      "type": "matrix-diagram"
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('axes',) with None",
+      "instance": {
+        "axes": null,
+        "canvas": {
+          "height": null,
+          "padding": {
+            "bottom": null,
+            "left": null,
+            "right": null,
+            "top": null
+          },
+          "width": null
+        },
+        "data": [
+          {
+            "colnames": [],
+            "name": "",
+            "rownames": [],
+            "values": [
+              []
+            ]
+          }
+        ],
+        "legend": {
+          "fill": {
+            "label": ""
+          },
+          "fillOpacity": {
+            "label": ""
+          }
+        },
+        "marks": [
+          {
+            "data": {
+              "name": ""
+            },
+            "properties": {
+              "fill": {
+                "field": null,
+                "scale": "color"
+              },
+              "fillOpacity": {
+                "field": null,
+                "scale": "z"
+              }
+            },
+            "type": "rect"
+          }
+        ],
+        "meta": {},
+        "name": "",
+        "scales": {
+          "color": {
+            "domain": [],
+            "range": [],
+            "type": "ordinal"
+          },
+          "x": {
+            "domain": [],
+            "range": "width",
+            "type": "ordinal"
+          },
+          "y": {
+            "domain": [],
+            "range": "height",
+            "type": "ordinal"
+          },
+          "z": {
+            "domain": {
+              "max": null,
+              "min": null
+            },
+            "range": {
+              "max": 0.0,
+              "min": 0.0
+            },
+            "type": "linear"
+          }
+        },
+        "type": "matrix-diagram"
+      },
+      "validator": "type",
+      "path": [
+        "axes"
+      ],
+      "schema_path": [
+        "properties",
+        "axes",
+        "type"
+      ],
+      "message": "None is not of type 'object'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('axes',) with {}",
+      "instance": {
+        "axes": {},
+        "canvas": {
+          "height": null,
+          "padding": {
+            "bottom": null,
+            "left": null,
+            "right": null,
+            "top": null
+          },
+          "width": null
+        },
+        "data": [
+          {
+            "colnames": [],
+            "name": "",
+            "rownames": [],
+            "values": [
+              []
+            ]
+          }
+        ],
+        "legend": {
+          "fill": {
+            "label": ""
+          },
+          "fillOpacity": {
+            "label": ""
+          }
+        },
+        "marks": [
+          {
+            "data": {
+              "name": ""
+            },
+            "properties": {
+              "fill": {
+                "field": null,
+                "scale": "color"
+              },
+              "fillOpacity": {
+                "field": null,
+                "scale": "z"
+              }
+            },
+            "type": "rect"
+          }
+        ],
+        "meta": {},
+        "name": "",
+        "scales": {
+          "color": {
+            "domain": [],
+            "range": [],
+            "type": "ordinal"
+          },
+          "x": {
+            "domain": [],
+            "range": "width",
+            "type": "ordinal"
+          },
+          "y": {
+            "domain": [],
+            "range": "height",
+            "type": "ordinal"
+          },
+          "z": {
+            "domain": {
+              "max": null,
+              "min": null
+            },
+            "range": {
+              "max": 0.0,
+              "min": 0.0
+            },
+            "type": "linear"
+          }
+        },
+        "type": "matrix-diagram"
+      },
+      "validator": "required",
+      "path": [
+        "axes"
+      ],
+      "schema_path": [
+        "properties",
+        "axes",
+        "required"
+      ],
+      "message": "'x' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('canvas', 'height') with {}",
+      "instance": {
+        "axes": {
+          "x": {
+            "label": "",
+            "scale": ""
+          },
+          "y": {
+            "label": "",
+            "scale": ""
+          }
+        },
+        "canvas": {
+          "height": {},
+          "padding": {
+            "bottom": null,
+            "left": null,
+            "right": null,
+            "top": null
+          },
+          "width": null
+        },
+        "data": [
+          {
+            "colnames": [],
+            "name": "",
+            "rownames": [],
+            "values": [
+              []
+            ]
+          }
+        ],
+        "legend": {
+          "fill": {
+            "label": ""
+          },
+          "fillOpacity": {
+            "label": ""
+          }
+        },
+        "marks": [
+          {
+            "data": {
+              "name": ""
+            },
+            "properties": {
+              "fill": {
+                "field": null,
+                "scale": "color"
+              },
+              "fillOpacity": {
+                "field": null,
+                "scale": "z"
+              }
+            },
+            "type": "rect"
+          }
+        ],
+        "meta": {},
+        "name": "",
+        "scales": {
+          "color": {
+            "domain": [],
+            "range": [],
+            "type": "ordinal"
+          },
+          "x": {
+            "domain": [],
+            "range": "width",
+            "type": "ordinal"
+          },
+          "y": {
+            "domain": [],
+            "range": "height",
+            "type": "ordinal"
+          },
+          "z": {
+            "domain": {
+              "max": null,
+              "min": null
+            },
+            "range": {
+              "max": 0.0,
+              "min": 0.0
+            },
+            "type": "linear"
+          }
+        },
+        "type": "matrix-diagram"
+      },
+      "validator": "oneOf",
+      "path": [
+        "canvas",
+        "height"
+      ],
+      "schema_path": [
+        "properties",
+        "canvas",
+        "properties",
+        "height",
+        "oneOf"
+      ],
+      "message": "{} is not valid under any of the given schemas",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('data',) with []",
+      "instance": {
+        "axes": {
+          "x": {
+            "label": "",
+            "scale": ""
+          },
+          "y": {
+            "label": "",
+            "scale": ""
+          }
+        },
+        "canvas": {
+          "height": null,
+          "padding": {
+            "bottom": null,
+            "left": null,
+            "right": null,
+            "top": null
+          },
+          "width": null
+        },
+        "data": [],
+        "legend": {
+          "fill": {
+            "label": ""
+          },
+          "fillOpacity": {
+            "label": ""
+          }
+        },
+        "marks": [
+          {
+            "data": {
+              "name": ""
+            },
+            "properties": {
+              "fill": {
+                "field": null,
+                "scale": "color"
+              },
+              "fillOpacity": {
+                "field": null,
+                "scale": "z"
+              }
+            },
+            "type": "rect"
+          }
+        ],
+        "meta": {},
+        "name": "",
+        "scales": {
+          "color": {
+            "domain": [],
+            "range": [],
+            "type": "ordinal"
+          },
+          "x": {
+            "domain": [],
+            "range": "width",
+            "type": "ordinal"
+          },
+          "y": {
+            "domain": [],
+            "range": "height",
+            "type": "ordinal"
+          },
+          "z": {
+            "domain": {
+              "max": null,
+              "min": null
+            },
+            "range": {
+              "max": 0.0,
+              "min": 0.0
+            },
+            "type": "linear"
+          }
+        },
+        "type": "matrix-diagram"
+      },
+      "validator": "minItems",
+      "path": [
+        "data"
+      ],
+      "schema_path": [
+        "properties",
+        "data",
+        "minItems"
+      ],
+      "message": "[] should be non-empty",
+      "classification": "schema_error"
+    }
+  ]
+}

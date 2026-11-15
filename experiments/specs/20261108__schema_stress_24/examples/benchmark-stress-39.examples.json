@@ -1,0 +1,154 @@
+{
+  "valid": [
+    {
+      "changelog": [
+        {
+          "comments": [],
+          "contributors": [],
+          "version": "0"
+        }
+      ],
+      "cluster": {
+        "mibig_accession": "x",
+        "biosyn_class": [
+          "Alkaloid"
+        ],
+        "compounds": [
+          {}
+        ],
+        "organism_name": "x",
+        "ncbi_tax_id": "x",
+        "minimal": false,
+        "status": "pending"
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('changelog',) with None",
+      "instance": {
+        "changelog": null,
+        "cluster": {
+          "mibig_accession": "x",
+          "biosyn_class": [
+            "Alkaloid"
+          ],
+          "compounds": [
+            {}
+          ],
+          "organism_name": "x",
+          "ncbi_tax_id": "x",
+          "minimal": false,
+          "status": "pending"
+        }
+      },
+      "validator": "type",
+      "path": [
+        "changelog"
+      ],
+      "schema_path": [
+        "properties",
+        "changelog",
+        "type"
+      ],
+      "message": "None is not of type 'array'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('changelog',) with []",
+      "instance": {
+        "changelog": [],
+        "cluster": {
+          "mibig_accession": "x",
+          "biosyn_class": [
+            "Alkaloid"
+          ],
+          "compounds": [
+            {}
+          ],
+          "organism_name": "x",
+          "ncbi_tax_id": "x",
+          "minimal": false,
+          "status": "pending"
+        }
+      },
+      "validator": "minItems",
+      "path": [
+        "changelog"
+      ],
+      "schema_path": [
+        "properties",
+        "changelog",
+        "minItems"
+      ],
+      "message": "[] should be non-empty",
+      "classification": "schema_error"
+    },
+    {
+      "name": "delete ('changelog',)",
+      "instance": {
+        "cluster": {
+          "mibig_accession": "x",
+          "biosyn_class": [
+            "Alkaloid"
+          ],
+          "compounds": [
+            {}
+          ],
+          "organism_name": "x",
+          "ncbi_tax_id": "x",
+          "minimal": false,
+          "status": "pending"
+        }
+      },
+      "validator": "required",
+      "path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'changelog' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('changelog', 0, 'version') with ''",
+      "instance": {
+        "changelog": [
+          {
+            "comments": [],
+            "contributors": [],
+            "version": ""
+          }
+        ],
+        "cluster": {
+          "mibig_accession": "x",
+          "biosyn_class": [
+            "Alkaloid"
+          ],
+          "compounds": [
+            {}
+          ],
+          "organism_name": "x",
+          "ncbi_tax_id": "x",
+          "minimal": false,
+          "status": "pending"
+        }
+      },
+      "validator": "pattern",
+      "path": [
+        "changelog",
+        0,
+        "version"
+      ],
+      "schema_path": [
+        "properties",
+        "changelog",
+        "items",
+        "properties",
+        "version",
+        "pattern"
+      ],
+      "message": "'' does not match '^(\\\\d+(\\\\.\\\\d+)*|next)$'",
+      "classification": "schema_error"
+    }
+  ]
+}

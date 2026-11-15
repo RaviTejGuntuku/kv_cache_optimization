@@ -1,0 +1,114 @@
+{
+  "valid": [
+    {
+      "items": [
+        {
+          "data": {
+            "title": "(\udbc8\ude77\t\ud815\udfe1\u00ccU\u00f6`\u00a0\u0090\u00f0\u001eb\u0013\u00da\u001a]w\ud8d8\udda0\u00cd"
+          },
+          "external_id": "\ud8c1\udd46\udb13\udf90\u00b1L\u001d",
+          "type": "MOVIE"
+        }
+      ],
+      "name": "\u0007\ud95d\udde1k#\u00cc\u00a4\udbba\udd2c",
+      "document_created": "4891-11-20T23:14:06.592748+07:36",
+      "v": 102
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('items',) with None",
+      "instance": {
+        "items": null,
+        "name": "\u0007\ud95d\udde1k#\u00cc\u00a4\udbba\udd2c",
+        "document_created": "4891-11-20T23:14:06.592748+07:36",
+        "v": 102
+      },
+      "validator": "type",
+      "path": [
+        "items"
+      ],
+      "schema_path": [
+        "properties",
+        "items",
+        "type"
+      ],
+      "message": "None is not of type 'array'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('items',) with []",
+      "instance": {
+        "items": [],
+        "name": "\u0007\ud95d\udde1k#\u00cc\u00a4\udbba\udd2c",
+        "document_created": "4891-11-20T23:14:06.592748+07:36",
+        "v": 102
+      },
+      "validator": "minItems",
+      "path": [
+        "items"
+      ],
+      "schema_path": [
+        "properties",
+        "items",
+        "minItems"
+      ],
+      "message": "[] should be non-empty",
+      "classification": "schema_error"
+    },
+    {
+      "name": "delete ('items',)",
+      "instance": {
+        "name": "\u0007\ud95d\udde1k#\u00cc\u00a4\udbba\udd2c",
+        "document_created": "4891-11-20T23:14:06.592748+07:36",
+        "v": 102
+      },
+      "validator": "required",
+      "path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'items' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('items', 0, 'data', 'title') with ''",
+      "instance": {
+        "items": [
+          {
+            "data": {
+              "title": ""
+            },
+            "external_id": "\ud8c1\udd46\udb13\udf90\u00b1L\u001d",
+            "type": "MOVIE"
+          }
+        ],
+        "name": "\u0007\ud95d\udde1k#\u00cc\u00a4\udbba\udd2c",
+        "document_created": "4891-11-20T23:14:06.592748+07:36",
+        "v": 102
+      },
+      "validator": "minLength",
+      "path": [
+        "items",
+        0,
+        "data",
+        "title"
+      ],
+      "schema_path": [
+        "properties",
+        "items",
+        "items",
+        "allOf",
+        0,
+        "then",
+        "properties",
+        "data",
+        "properties",
+        "title",
+        "minLength"
+      ],
+      "message": "'' should be non-empty",
+      "classification": "schema_error"
+    }
+  ]
+}

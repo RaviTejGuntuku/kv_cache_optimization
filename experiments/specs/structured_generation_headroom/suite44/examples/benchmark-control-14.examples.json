@@ -1,0 +1,16 @@
+{
+  "valid": [
+    {
+      "msg": ""
+    }
+  ],
+  "invalid": [
+    {
+      "instance": {},
+      "validator": "required",
+      "schema_path": [
+        "required"
+      ]
+    }
+  ]
+}

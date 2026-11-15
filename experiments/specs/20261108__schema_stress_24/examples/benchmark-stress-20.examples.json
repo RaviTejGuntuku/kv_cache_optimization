@@ -1,0 +1,1028 @@
+{
+  "valid": [
+    {
+      "Metadata": {
+        "Version": 2
+      },
+      "PatternList": [
+        {
+          "AbsoluteTime": 8002,
+          "Pattern": [
+            {
+              "Parameters": {
+                "Frequency": -16,
+                "Intensity": 98,
+                "Curve": [
+                  {
+                    "Frequency": -82,
+                    "Intensity": 48,
+                    "Time": 122,
+                    "Qe\u00f1": [
+                      null
+                    ],
+                    "\u0015\u009b\uda38\udd0b\udbc6\uddd5\ud898\udf51\u00fd\u00be\u00cb": [],
+                    "\ud8ae\uddee\u00a9\uda91\udfb6\u0011\udb9e\ude70": [],
+                    "\u00e3": [
+                      -86,
+                      -55715749
+                    ],
+                    "\u0090\uda99\udfa6\u00e6\u009a\u00eb\udb9c\udcf0": {
+                      "\u009a\u00aeu\ud83e\udce3a\u00b0\u00a1\t": {
+                        "5\u00e1W\u00ae": -23350,
+                        "U\udba6\udee5\u00b0\u0088\u00c9": 5183,
+                        "": null
+                      },
+                      "E\te\udb9f\udf41b\ud9c3\udd1b%\u00b6\u00f6\u00e6~4\uda6c\udd77q_\u008c\u000b?": []
+                    },
+                    "\u0083": {
+                      "\u00ce\u00cd": [
+                        7157
+                      ],
+                      "(": {
+                        "\udb50\uddbd": null
+                      }
+                    },
+                    "LQ\u0088": {}
+                  },
+                  {
+                    "Frequency": -66,
+                    "Intensity": 91,
+                    "Time": 18555,
+                    "J\u00d4\ud845\udea4\u00d3!\u1b6f:\u00ec\u009d\udbe4\udf7d\u00d2\ud980\udff2\r": [
+                      -30207
+                    ],
+                    "\t\uda1b\udf91\u00bc\udb33\udc57\u0080\u00dc\ud8c7\uddca\u0088\uda4f\udf53\u007f\ud923\udfb1\uc040\u009b\u00df": [
+                      false,
+                      false,
+                      true
+                    ],
+                    "\u001cq\u009c\u00c3": {},
+                    "$\"\u00a1": [
+                      -859,
+                      null,
+                      -1.7976931348623157e+308
+                    ],
+                    "A\u0001\u00ca\ud8e8\udf65": {},
+                    "\ud870\udd48g\u000b": {
+                      "I#)\u0099Y+\u00e8N\u00be\u0006\u0006": null
+                    },
+                    "\uda44\udfcd5\ud843\udf11\u0084": {
+                      "\u00dac": null,
+                      "@\u0091R\u007f%\ud89f\udd52": null,
+                      ")": {}
+                    },
+                    "\u008c&\u0004": []
+                  },
+                  {
+                    "Frequency": 2,
+                    "Intensity": 19,
+                    "Time": 1826875735,
+                    "\u00b2T*": [
+                      [
+                        [
+                          [],
+                          [],
+                          [
+                            null,
+                            -3.1471771300211064e+16,
+                            2.220446049250313e-16
+                          ]
+                        ],
+                        {
+                          "\u00a5v": {
+                            "\u00e3S!\b\u00ebE\u00fe\u00fd\u00b2\u00e0\u00d2\ud8b5\uddc2\u00c9\u0083\ud82d\udf0f\u00d0=(<i\u009a\udaa8\uddd8": null,
+                            "}\u008b": "hO-\ud9ec\udd3f\u008c\udae7\udd5dH!\udb1c\udd31\u00cf{\u00f0\ud898\udf73\u00e6\u0002:\udb3b\udf50M",
+                            "\u00a1\u0093\u00ef\u0081": null
+                          },
+                          "\ud982\ude13/": {},
+                          "\ud86f\udc38R\u00d0\u00fdn\ud8a4\udfdf\u0082": [
+                            null,
+                            -2.220446049250313e-16,
+                            -26660
+                          ]
+                        },
+                        [
+                          [],
+                          {
+                            "\u00be\u00a5\u00db'}>\u00b6\u0005\u0093\ud991\udde9r\u0018\udafc\udcb3{$\u00c7\u00e6\u00a3u\udb9d\ude9bB\u0016": "\t",
+                            "\u00b4\u0004:\u00f8\u00bbv\u0016\u001c\ud869\udfd1\u00df!Ow": "\b\u00ce\u00fd\u00cd5\u00c1\u00f8\u000f\udb51\udc9a6",
+                            "\udbda\udef5B ": null
+                          },
+                          ""
+                        ]
+                      ]
+                    ],
+                    "\ud9c2\udc66#\u00a9\u00e9:(\u00182\u009b1|?": {
+                      "": 2.9452044213850108e+16,
+                      "\u0096\udb39\uddb7\ud8a4\udc17W\u00f0": 35,
+                      "\ud872\ude33\u00e7&T\u0018\fV\ud897\udff9\u00b5]\u0005sF\u009a\ud9e3\ude29\u00bb": 28
+                    },
+                    "\u00b8\u00fbLs\u0092T8qf\ud811\udc40\u00a9\u009e\u00fc": {},
+                    "\u0089N\u0092\uda0f\udcf4/\u00d0\u00e0\u00d4Uu\ud8ee\ude41\udb8a\udd5f\u00ef\u00d7o": {},
+                    "O\u0099": [
+                      {}
+                    ]
+                  },
+                  {
+                    "Frequency": 11,
+                    "Intensity": 19,
+                    "Time": 10232
+                  }
+                ],
+                "\u00b2\u00f2": {},
+                "\u00cfx\u00f8y\u00c8\b": {
+                  "\u00a4": [],
+                  "\u00f0\u00e6\u0099\u00dd\u0000,\ud93c\udc2b\u00ee\ud9e4\udd8b!\u00cf\u00a2\u0004": [],
+                  "h\u00ce\t": []
+                }
+              },
+              "RelativeTime": 6552,
+              "Type": "transient",
+              "Duration": 48,
+              "": []
+            }
+          ],
+          "[Yg\u0085\u00fc\udb2a\udf63\u00f6\t": {
+            "\udb30\udd09\u00f40\t\udac2\uded0nf\u009e\u00a2?\u00a2\u000bh}\ud8f9\udc3eH": false,
+            "": [
+              "\u0085\udbea\udd75\ud9c9\udc1fj\u00fd\u00b4",
+              -1.7976931348623157e+308,
+              -1.2106110654274003e-204
+            ]
+          },
+          "\u00f0": false,
+          "F\u00c4\u0019\uda5b\udec7B": {
+            "\u00c6I": -1.7976931348623157e+308,
+            "\u108b9\u008a\udab6\udfdc": [
+              {},
+              [
+                false,
+                null
+              ]
+            ],
+            "9": [
+              {
+                "\u0080S\u001f": 4.360787207696194e+16
+              }
+            ]
+          },
+          "\u00ab\u009b\u00ff\u00cf\u00ba\u009ep\udbec\udf6dy\u00ea": {},
+          "": [
+            false,
+            [
+              [
+                [
+                  -1.9
+                ],
+                {},
+                {}
+              ],
+              [
+                -1.1125369292536007e-308
+              ],
+              []
+            ],
+            {}
+          ],
+          "\u00a37\udb7f\udf261P4J\uda88\ude18w\u00c2\ud9ba\udfda\u00a9E": [
+            {
+              "$": false
+            },
+            [
+              -6246365006566007585,
+              false,
+              null
+            ],
+            [
+              {
+                "P7\u00c0J\u00bb\u00e1J": "\u00f1"
+              },
+              [],
+              [
+                "s",
+                -1e-05,
+                "\u00a2"
+              ]
+            ]
+          ],
+          "F\u0097Z\ud813\udf14\u0002": {
+            "\udb5a\udc34)": {
+              "\u0083\u00c3\udb4f\udda3\u001cO\u001b$": {
+                "Vf|P\u00f6\u0080O\ud82c\udc76": "\u00e8\ud862\udf7a\u000fZ",
+                "": false,
+                "\u0002K\ud8da\udc22\\&\u009e": -16515
+              },
+              "\u00e6\udb8c\udf6f\u0002": [
+                -2.220446049250313e-16,
+                true,
+                -2.225073858507203e-309
+              ]
+            }
+          },
+          "\u00c3@\u009f#\u001e\u00ed\"\u00e0(": {
+            "}\"L\udbcb\udcffR\u0095\udb83\udd658n\u00ccK": [
+              [
+                true
+              ]
+            ],
+            ";\u00b0\u00d6A": {
+              "": "b",
+              "V\u00ba\udbe2\udc47": null,
+              "%\ud99b\udfc1": -11636
+            },
+            "": {
+              "\udb46\udf96\u0003\udb8a\uddaa\udba1\udc53\u000e": -103
+            }
+          },
+          "\u009a": {}
+        }
+      ],
+      "\u00e8e\u001e\udac6\uddfbl${\u00a8\u00b2\u001f\u0018I\uda03\udfbe": {}
+    }
+  ],
+  "invalid": [
+    {
+      "instance": {
+        "PatternList": [
+          {
+            "AbsoluteTime": 8002,
+            "Pattern": [
+              {
+                "Parameters": {
+                  "Frequency": -16,
+                  "Intensity": 98,
+                  "Curve": [
+                    {
+                      "Frequency": -82,
+                      "Intensity": 48,
+                      "Time": 122,
+                      "Qe\u00f1": [
+                        null
+                      ],
+                      "\u0015\u009b\uda38\udd0b\udbc6\uddd5\ud898\udf51\u00fd\u00be\u00cb": [],
+                      "\ud8ae\uddee\u00a9\uda91\udfb6\u0011\udb9e\ude70": [],
+                      "\u00e3": [
+                        -86,
+                        -55715749
+                      ],
+                      "\u0090\uda99\udfa6\u00e6\u009a\u00eb\udb9c\udcf0": {
+                        "\u009a\u00aeu\ud83e\udce3a\u00b0\u00a1\t": {
+                          "5\u00e1W\u00ae": -23350,
+                          "U\udba6\udee5\u00b0\u0088\u00c9": 5183,
+                          "": null
+                        },
+                        "E\te\udb9f\udf41b\ud9c3\udd1b%\u00b6\u00f6\u00e6~4\uda6c\udd77q_\u008c\u000b?": []
+                      },
+                      "\u0083": {
+                        "\u00ce\u00cd": [
+                          7157
+                        ],
+                        "(": {
+                          "\udb50\uddbd": null
+                        }
+                      },
+                      "LQ\u0088": {}
+                    },
+                    {
+                      "Frequency": -66,
+                      "Intensity": 91,
+                      "Time": 18555,
+                      "J\u00d4\ud845\udea4\u00d3!\u1b6f:\u00ec\u009d\udbe4\udf7d\u00d2\ud980\udff2\r": [
+                        -30207
+                      ],
+                      "\t\uda1b\udf91\u00bc\udb33\udc57\u0080\u00dc\ud8c7\uddca\u0088\uda4f\udf53\u007f\ud923\udfb1\uc040\u009b\u00df": [
+                        false,
+                        false,
+                        true
+                      ],
+                      "\u001cq\u009c\u00c3": {},
+                      "$\"\u00a1": [
+                        -859,
+                        null,
+                        -1.7976931348623157e+308
+                      ],
+                      "A\u0001\u00ca\ud8e8\udf65": {},
+                      "\ud870\udd48g\u000b": {
+                        "I#)\u0099Y+\u00e8N\u00be\u0006\u0006": null
+                      },
+                      "\uda44\udfcd5\ud843\udf11\u0084": {
+                        "\u00dac": null,
+                        "@\u0091R\u007f%\ud89f\udd52": null,
+                        ")": {}
+                      },
+                      "\u008c&\u0004": []
+                    },
+                    {
+                      "Frequency": 2,
+                      "Intensity": 19,
+                      "Time": 1826875735,
+                      "\u00b2T*": [
+                        [
+                          [
+                            [],
+                            [],
+                            [
+                              null,
+                              -3.1471771300211064e+16,
+                              2.220446049250313e-16
+                            ]
+                          ],
+                          {
+                            "\u00a5v": {
+                              "\u00e3S!\b\u00ebE\u00fe\u00fd\u00b2\u00e0\u00d2\ud8b5\uddc2\u00c9\u0083\ud82d\udf0f\u00d0=(<i\u009a\udaa8\uddd8": null,
+                              "}\u008b": "hO-\ud9ec\udd3f\u008c\udae7\udd5dH!\udb1c\udd31\u00cf{\u00f0\ud898\udf73\u00e6\u0002:\udb3b\udf50M",
+                              "\u00a1\u0093\u00ef\u0081": null
+                            },
+                            "\ud982\ude13/": {},
+                            "\ud86f\udc38R\u00d0\u00fdn\ud8a4\udfdf\u0082": [
+                              null,
+                              -2.220446049250313e-16,
+                              -26660
+                            ]
+                          },
+                          [
+                            [],
+                            {
+                              "\u00be\u00a5\u00db'}>\u00b6\u0005\u0093\ud991\udde9r\u0018\udafc\udcb3{$\u00c7\u00e6\u00a3u\udb9d\ude9bB\u0016": "\t",
+                              "\u00b4\u0004:\u00f8\u00bbv\u0016\u001c\ud869\udfd1\u00df!Ow": "\b\u00ce\u00fd\u00cd5\u00c1\u00f8\u000f\udb51\udc9a6",
+                              "\udbda\udef5B ": null
+                            },
+                            ""
+                          ]
+                        ]
+                      ],
+                      "\ud9c2\udc66#\u00a9\u00e9:(\u00182\u009b1|?": {
+                        "": 2.9452044213850108e+16,
+                        "\u0096\udb39\uddb7\ud8a4\udc17W\u00f0": 35,
+                        "\ud872\ude33\u00e7&T\u0018\fV\ud897\udff9\u00b5]\u0005sF\u009a\ud9e3\ude29\u00bb": 28
+                      },
+                      "\u00b8\u00fbLs\u0092T8qf\ud811\udc40\u00a9\u009e\u00fc": {},
+                      "\u0089N\u0092\uda0f\udcf4/\u00d0\u00e0\u00d4Uu\ud8ee\ude41\udb8a\udd5f\u00ef\u00d7o": {},
+                      "O\u0099": [
+                        {}
+                      ]
+                    },
+                    {
+                      "Frequency": 11,
+                      "Intensity": 19,
+                      "Time": 10232
+                    }
+                  ],
+                  "\u00b2\u00f2": {},
+                  "\u00cfx\u00f8y\u00c8\b": {
+                    "\u00a4": [],
+                    "\u00f0\u00e6\u0099\u00dd\u0000,\ud93c\udc2b\u00ee\ud9e4\udd8b!\u00cf\u00a2\u0004": [],
+                    "h\u00ce\t": []
+                  }
+                },
+                "RelativeTime": 6552,
+                "Type": "transient",
+                "Duration": 48,
+                "": []
+              }
+            ],
+            "[Yg\u0085\u00fc\udb2a\udf63\u00f6\t": {
+              "\udb30\udd09\u00f40\t\udac2\uded0nf\u009e\u00a2?\u00a2\u000bh}\ud8f9\udc3eH": false,
+              "": [
+                "\u0085\udbea\udd75\ud9c9\udc1fj\u00fd\u00b4",
+                -1.7976931348623157e+308,
+                -1.2106110654274003e-204
+              ]
+            },
+            "\u00f0": false,
+            "F\u00c4\u0019\uda5b\udec7B": {
+              "\u00c6I": -1.7976931348623157e+308,
+              "\u108b9\u008a\udab6\udfdc": [
+                {},
+                [
+                  false,
+                  null
+                ]
+              ],
+              "9": [
+                {
+                  "\u0080S\u001f": 4.360787207696194e+16
+                }
+              ]
+            },
+            "\u00ab\u009b\u00ff\u00cf\u00ba\u009ep\udbec\udf6dy\u00ea": {},
+            "": [
+              false,
+              [
+                [
+                  [
+                    -1.9
+                  ],
+                  {},
+                  {}
+                ],
+                [
+                  -1.1125369292536007e-308
+                ],
+                []
+              ],
+              {}
+            ],
+            "\u00a37\udb7f\udf261P4J\uda88\ude18w\u00c2\ud9ba\udfda\u00a9E": [
+              {
+                "$": false
+              },
+              [
+                -6246365006566007585,
+                false,
+                null
+              ],
+              [
+                {
+                  "P7\u00c0J\u00bb\u00e1J": "\u00f1"
+                },
+                [],
+                [
+                  "s",
+                  -1e-05,
+                  "\u00a2"
+                ]
+              ]
+            ],
+            "F\u0097Z\ud813\udf14\u0002": {
+              "\udb5a\udc34)": {
+                "\u0083\u00c3\udb4f\udda3\u001cO\u001b$": {
+                  "Vf|P\u00f6\u0080O\ud82c\udc76": "\u00e8\ud862\udf7a\u000fZ",
+                  "": false,
+                  "\u0002K\ud8da\udc22\\&\u009e": -16515
+                },
+                "\u00e6\udb8c\udf6f\u0002": [
+                  -2.220446049250313e-16,
+                  true,
+                  -2.225073858507203e-309
+                ]
+              }
+            },
+            "\u00c3@\u009f#\u001e\u00ed\"\u00e0(": {
+              "}\"L\udbcb\udcffR\u0095\udb83\udd658n\u00ccK": [
+                [
+                  true
+                ]
+              ],
+              ";\u00b0\u00d6A": {
+                "": "b",
+                "V\u00ba\udbe2\udc47": null,
+                "%\ud99b\udfc1": -11636
+              },
+              "": {
+                "\udb46\udf96\u0003\udb8a\uddaa\udba1\udc53\u000e": -103
+              }
+            },
+            "\u009a": {}
+          }
+        ],
+        "\u00e8e\u001e\udac6\uddfbl${\u00a8\u00b2\u001f\u0018I\uda03\udfbe": {}
+      },
+      "mutation": "delete_property",
+      "edited_path": [
+        "Metadata"
+      ],
+      "validator": "required",
+      "error_path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'Metadata' is a required property"
+    },
+    {
+      "instance": {
+        "Metadata": null,
+        "PatternList": [
+          {
+            "AbsoluteTime": 8002,
+            "Pattern": [
+              {
+                "Parameters": {
+                  "Frequency": -16,
+                  "Intensity": 98,
+                  "Curve": [
+                    {
+                      "Frequency": -82,
+                      "Intensity": 48,
+                      "Time": 122,
+                      "Qe\u00f1": [
+                        null
+                      ],
+                      "\u0015\u009b\uda38\udd0b\udbc6\uddd5\ud898\udf51\u00fd\u00be\u00cb": [],
+                      "\ud8ae\uddee\u00a9\uda91\udfb6\u0011\udb9e\ude70": [],
+                      "\u00e3": [
+                        -86,
+                        -55715749
+                      ],
+                      "\u0090\uda99\udfa6\u00e6\u009a\u00eb\udb9c\udcf0": {
+                        "\u009a\u00aeu\ud83e\udce3a\u00b0\u00a1\t": {
+                          "5\u00e1W\u00ae": -23350,
+                          "U\udba6\udee5\u00b0\u0088\u00c9": 5183,
+                          "": null
+                        },
+                        "E\te\udb9f\udf41b\ud9c3\udd1b%\u00b6\u00f6\u00e6~4\uda6c\udd77q_\u008c\u000b?": []
+                      },
+                      "\u0083": {
+                        "\u00ce\u00cd": [
+                          7157
+                        ],
+                        "(": {
+                          "\udb50\uddbd": null
+                        }
+                      },
+                      "LQ\u0088": {}
+                    },
+                    {
+                      "Frequency": -66,
+                      "Intensity": 91,
+                      "Time": 18555,
+                      "J\u00d4\ud845\udea4\u00d3!\u1b6f:\u00ec\u009d\udbe4\udf7d\u00d2\ud980\udff2\r": [
+                        -30207
+                      ],
+                      "\t\uda1b\udf91\u00bc\udb33\udc57\u0080\u00dc\ud8c7\uddca\u0088\uda4f\udf53\u007f\ud923\udfb1\uc040\u009b\u00df": [
+                        false,
+                        false,
+                        true
+                      ],
+                      "\u001cq\u009c\u00c3": {},
+                      "$\"\u00a1": [
+                        -859,
+                        null,
+                        -1.7976931348623157e+308
+                      ],
+                      "A\u0001\u00ca\ud8e8\udf65": {},
+                      "\ud870\udd48g\u000b": {
+                        "I#)\u0099Y+\u00e8N\u00be\u0006\u0006": null
+                      },
+                      "\uda44\udfcd5\ud843\udf11\u0084": {
+                        "\u00dac": null,
+                        "@\u0091R\u007f%\ud89f\udd52": null,
+                        ")": {}
+                      },
+                      "\u008c&\u0004": []
+                    },
+                    {
+                      "Frequency": 2,
+                      "Intensity": 19,
+                      "Time": 1826875735,
+                      "\u00b2T*": [
+                        [
+                          [
+                            [],
+                            [],
+                            [
+                              null,
+                              -3.1471771300211064e+16,
+                              2.220446049250313e-16
+                            ]
+                          ],
+                          {
+                            "\u00a5v": {
+                              "\u00e3S!\b\u00ebE\u00fe\u00fd\u00b2\u00e0\u00d2\ud8b5\uddc2\u00c9\u0083\ud82d\udf0f\u00d0=(<i\u009a\udaa8\uddd8": null,
+                              "}\u008b": "hO-\ud9ec\udd3f\u008c\udae7\udd5dH!\udb1c\udd31\u00cf{\u00f0\ud898\udf73\u00e6\u0002:\udb3b\udf50M",
+                              "\u00a1\u0093\u00ef\u0081": null
+                            },
+                            "\ud982\ude13/": {},
+                            "\ud86f\udc38R\u00d0\u00fdn\ud8a4\udfdf\u0082": [
+                              null,
+                              -2.220446049250313e-16,
+                              -26660
+                            ]
+                          },
+                          [
+                            [],
+                            {
+                              "\u00be\u00a5\u00db'}>\u00b6\u0005\u0093\ud991\udde9r\u0018\udafc\udcb3{$\u00c7\u00e6\u00a3u\udb9d\ude9bB\u0016": "\t",
+                              "\u00b4\u0004:\u00f8\u00bbv\u0016\u001c\ud869\udfd1\u00df!Ow": "\b\u00ce\u00fd\u00cd5\u00c1\u00f8\u000f\udb51\udc9a6",
+                              "\udbda\udef5B ": null
+                            },
+                            ""
+                          ]
+                        ]
+                      ],
+                      "\ud9c2\udc66#\u00a9\u00e9:(\u00182\u009b1|?": {
+                        "": 2.9452044213850108e+16,
+                        "\u0096\udb39\uddb7\ud8a4\udc17W\u00f0": 35,
+                        "\ud872\ude33\u00e7&T\u0018\fV\ud897\udff9\u00b5]\u0005sF\u009a\ud9e3\ude29\u00bb": 28
+                      },
+                      "\u00b8\u00fbLs\u0092T8qf\ud811\udc40\u00a9\u009e\u00fc": {},
+                      "\u0089N\u0092\uda0f\udcf4/\u00d0\u00e0\u00d4Uu\ud8ee\ude41\udb8a\udd5f\u00ef\u00d7o": {},
+                      "O\u0099": [
+                        {}
+                      ]
+                    },
+                    {
+                      "Frequency": 11,
+                      "Intensity": 19,
+                      "Time": 10232
+                    }
+                  ],
+                  "\u00b2\u00f2": {},
+                  "\u00cfx\u00f8y\u00c8\b": {
+                    "\u00a4": [],
+                    "\u00f0\u00e6\u0099\u00dd\u0000,\ud93c\udc2b\u00ee\ud9e4\udd8b!\u00cf\u00a2\u0004": [],
+                    "h\u00ce\t": []
+                  }
+                },
+                "RelativeTime": 6552,
+                "Type": "transient",
+                "Duration": 48,
+                "": []
+              }
+            ],
+            "[Yg\u0085\u00fc\udb2a\udf63\u00f6\t": {
+              "\udb30\udd09\u00f40\t\udac2\uded0nf\u009e\u00a2?\u00a2\u000bh}\ud8f9\udc3eH": false,
+              "": [
+                "\u0085\udbea\udd75\ud9c9\udc1fj\u00fd\u00b4",
+                -1.7976931348623157e+308,
+                -1.2106110654274003e-204
+              ]
+            },
+            "\u00f0": false,
+            "F\u00c4\u0019\uda5b\udec7B": {
+              "\u00c6I": -1.7976931348623157e+308,
+              "\u108b9\u008a\udab6\udfdc": [
+                {},
+                [
+                  false,
+                  null
+                ]
+              ],
+              "9": [
+                {
+                  "\u0080S\u001f": 4.360787207696194e+16
+                }
+              ]
+            },
+            "\u00ab\u009b\u00ff\u00cf\u00ba\u009ep\udbec\udf6dy\u00ea": {},
+            "": [
+              false,
+              [
+                [
+                  [
+                    -1.9
+                  ],
+                  {},
+                  {}
+                ],
+                [
+                  -1.1125369292536007e-308
+                ],
+                []
+              ],
+              {}
+            ],
+            "\u00a37\udb7f\udf261P4J\uda88\ude18w\u00c2\ud9ba\udfda\u00a9E": [
+              {
+                "$": false
+              },
+              [
+                -6246365006566007585,
+                false,
+                null
+              ],
+              [
+                {
+                  "P7\u00c0J\u00bb\u00e1J": "\u00f1"
+                },
+                [],
+                [
+                  "s",
+                  -1e-05,
+                  "\u00a2"
+                ]
+              ]
+            ],
+            "F\u0097Z\ud813\udf14\u0002": {
+              "\udb5a\udc34)": {
+                "\u0083\u00c3\udb4f\udda3\u001cO\u001b$": {
+                  "Vf|P\u00f6\u0080O\ud82c\udc76": "\u00e8\ud862\udf7a\u000fZ",
+                  "": false,
+                  "\u0002K\ud8da\udc22\\&\u009e": -16515
+                },
+                "\u00e6\udb8c\udf6f\u0002": [
+                  -2.220446049250313e-16,
+                  true,
+                  -2.225073858507203e-309
+                ]
+              }
+            },
+            "\u00c3@\u009f#\u001e\u00ed\"\u00e0(": {
+              "}\"L\udbcb\udcffR\u0095\udb83\udd658n\u00ccK": [
+                [
+                  true
+                ]
+              ],
+              ";\u00b0\u00d6A": {
+                "": "b",
+                "V\u00ba\udbe2\udc47": null,
+                "%\ud99b\udfc1": -11636
+              },
+              "": {
+                "\udb46\udf96\u0003\udb8a\uddaa\udba1\udc53\u000e": -103
+              }
+            },
+            "\u009a": {}
+          }
+        ],
+        "\u00e8e\u001e\udac6\uddfbl${\u00a8\u00b2\u001f\u0018I\uda03\udfbe": {}
+      },
+      "mutation": "replace_value",
+      "edited_path": [
+        "Metadata"
+      ],
+      "validator": "type",
+      "error_path": [
+        "Metadata"
+      ],
+      "schema_path": [
+        "properties",
+        "Metadata",
+        "type"
+      ],
+      "message": "None is not of type 'object'"
+    },
+    {
+      "instance": {
+        "Metadata": {
+          "Version": -1
+        },
+        "PatternList": [
+          {
+            "AbsoluteTime": 8002,
+            "Pattern": [
+              {
+                "Parameters": {
+                  "Frequency": -16,
+                  "Intensity": 98,
+                  "Curve": [
+                    {
+                      "Frequency": -82,
+                      "Intensity": 48,
+                      "Time": 122,
+                      "Qe\u00f1": [
+                        null
+                      ],
+                      "\u0015\u009b\uda38\udd0b\udbc6\uddd5\ud898\udf51\u00fd\u00be\u00cb": [],
+                      "\ud8ae\uddee\u00a9\uda91\udfb6\u0011\udb9e\ude70": [],
+                      "\u00e3": [
+                        -86,
+                        -55715749
+                      ],
+                      "\u0090\uda99\udfa6\u00e6\u009a\u00eb\udb9c\udcf0": {
+                        "\u009a\u00aeu\ud83e\udce3a\u00b0\u00a1\t": {
+                          "5\u00e1W\u00ae": -23350,
+                          "U\udba6\udee5\u00b0\u0088\u00c9": 5183,
+                          "": null
+                        },
+                        "E\te\udb9f\udf41b\ud9c3\udd1b%\u00b6\u00f6\u00e6~4\uda6c\udd77q_\u008c\u000b?": []
+                      },
+                      "\u0083": {
+                        "\u00ce\u00cd": [
+                          7157
+                        ],
+                        "(": {
+                          "\udb50\uddbd": null
+                        }
+                      },
+                      "LQ\u0088": {}
+                    },
+                    {
+                      "Frequency": -66,
+                      "Intensity": 91,
+                      "Time": 18555,
+                      "J\u00d4\ud845\udea4\u00d3!\u1b6f:\u00ec\u009d\udbe4\udf7d\u00d2\ud980\udff2\r": [
+                        -30207
+                      ],
+                      "\t\uda1b\udf91\u00bc\udb33\udc57\u0080\u00dc\ud8c7\uddca\u0088\uda4f\udf53\u007f\ud923\udfb1\uc040\u009b\u00df": [
+                        false,
+                        false,
+                        true
+                      ],
+                      "\u001cq\u009c\u00c3": {},
+                      "$\"\u00a1": [
+                        -859,
+                        null,
+                        -1.7976931348623157e+308
+                      ],
+                      "A\u0001\u00ca\ud8e8\udf65": {},
+                      "\ud870\udd48g\u000b": {
+                        "I#)\u0099Y+\u00e8N\u00be\u0006\u0006": null
+                      },
+                      "\uda44\udfcd5\ud843\udf11\u0084": {
+                        "\u00dac": null,
+                        "@\u0091R\u007f%\ud89f\udd52": null,
+                        ")": {}
+                      },
+                      "\u008c&\u0004": []
+                    },
+                    {
+                      "Frequency": 2,
+                      "Intensity": 19,
+                      "Time": 1826875735,
+                      "\u00b2T*": [
+                        [
+                          [
+                            [],
+                            [],
+                            [
+                              null,
+                              -3.1471771300211064e+16,
+                              2.220446049250313e-16
+                            ]
+                          ],
+                          {
+                            "\u00a5v": {
+                              "\u00e3S!\b\u00ebE\u00fe\u00fd\u00b2\u00e0\u00d2\ud8b5\uddc2\u00c9\u0083\ud82d\udf0f\u00d0=(<i\u009a\udaa8\uddd8": null,
+                              "}\u008b": "hO-\ud9ec\udd3f\u008c\udae7\udd5dH!\udb1c\udd31\u00cf{\u00f0\ud898\udf73\u00e6\u0002:\udb3b\udf50M",
+                              "\u00a1\u0093\u00ef\u0081": null
+                            },
+                            "\ud982\ude13/": {},
+                            "\ud86f\udc38R\u00d0\u00fdn\ud8a4\udfdf\u0082": [
+                              null,
+                              -2.220446049250313e-16,
+                              -26660
+                            ]
+                          },
+                          [
+                            [],
+                            {
+                              "\u00be\u00a5\u00db'}>\u00b6\u0005\u0093\ud991\udde9r\u0018\udafc\udcb3{$\u00c7\u00e6\u00a3u\udb9d\ude9bB\u0016": "\t",
+                              "\u00b4\u0004:\u00f8\u00bbv\u0016\u001c\ud869\udfd1\u00df!Ow": "\b\u00ce\u00fd\u00cd5\u00c1\u00f8\u000f\udb51\udc9a6",
+                              "\udbda\udef5B ": null
+                            },
+                            ""
+                          ]
+                        ]
+                      ],
+                      "\ud9c2\udc66#\u00a9\u00e9:(\u00182\u009b1|?": {
+                        "": 2.9452044213850108e+16,
+                        "\u0096\udb39\uddb7\ud8a4\udc17W\u00f0": 35,
+                        "\ud872\ude33\u00e7&T\u0018\fV\ud897\udff9\u00b5]\u0005sF\u009a\ud9e3\ude29\u00bb": 28
+                      },
+                      "\u00b8\u00fbLs\u0092T8qf\ud811\udc40\u00a9\u009e\u00fc": {},
+                      "\u0089N\u0092\uda0f\udcf4/\u00d0\u00e0\u00d4Uu\ud8ee\ude41\udb8a\udd5f\u00ef\u00d7o": {},
+                      "O\u0099": [
+                        {}
+                      ]
+                    },
+                    {
+                      "Frequency": 11,
+                      "Intensity": 19,
+                      "Time": 10232
+                    }
+                  ],
+                  "\u00b2\u00f2": {},
+                  "\u00cfx\u00f8y\u00c8\b": {
+                    "\u00a4": [],
+                    "\u00f0\u00e6\u0099\u00dd\u0000,\ud93c\udc2b\u00ee\ud9e4\udd8b!\u00cf\u00a2\u0004": [],
+                    "h\u00ce\t": []
+                  }
+                },
+                "RelativeTime": 6552,
+                "Type": "transient",
+                "Duration": 48,
+                "": []
+              }
+            ],
+            "[Yg\u0085\u00fc\udb2a\udf63\u00f6\t": {
+              "\udb30\udd09\u00f40\t\udac2\uded0nf\u009e\u00a2?\u00a2\u000bh}\ud8f9\udc3eH": false,
+              "": [
+                "\u0085\udbea\udd75\ud9c9\udc1fj\u00fd\u00b4",
+                -1.7976931348623157e+308,
+                -1.2106110654274003e-204
+              ]
+            },
+            "\u00f0": false,
+            "F\u00c4\u0019\uda5b\udec7B": {
+              "\u00c6I": -1.7976931348623157e+308,
+              "\u108b9\u008a\udab6\udfdc": [
+                {},
+                [
+                  false,
+                  null
+                ]
+              ],
+              "9": [
+                {
+                  "\u0080S\u001f": 4.360787207696194e+16
+                }
+              ]
+            },
+            "\u00ab\u009b\u00ff\u00cf\u00ba\u009ep\udbec\udf6dy\u00ea": {},
+            "": [
+              false,
+              [
+                [
+                  [
+                    -1.9
+                  ],
+                  {},
+                  {}
+                ],
+                [
+                  -1.1125369292536007e-308
+                ],
+                []
+              ],
+              {}
+            ],
+            "\u00a37\udb7f\udf261P4J\uda88\ude18w\u00c2\ud9ba\udfda\u00a9E": [
+              {
+                "$": false
+              },
+              [
+                -6246365006566007585,
+                false,
+                null
+              ],
+              [
+                {
+                  "P7\u00c0J\u00bb\u00e1J": "\u00f1"
+                },
+                [],
+                [
+                  "s",
+                  -1e-05,
+                  "\u00a2"
+                ]
+              ]
+            ],
+            "F\u0097Z\ud813\udf14\u0002": {
+              "\udb5a\udc34)": {
+                "\u0083\u00c3\udb4f\udda3\u001cO\u001b$": {
+                  "Vf|P\u00f6\u0080O\ud82c\udc76": "\u00e8\ud862\udf7a\u000fZ",
+                  "": false,
+                  "\u0002K\ud8da\udc22\\&\u009e": -16515
+                },
+                "\u00e6\udb8c\udf6f\u0002": [
+                  -2.220446049250313e-16,
+                  true,
+                  -2.225073858507203e-309
+                ]
+              }
+            },
+            "\u00c3@\u009f#\u001e\u00ed\"\u00e0(": {
+              "}\"L\udbcb\udcffR\u0095\udb83\udd658n\u00ccK": [
+                [
+                  true
+                ]
+              ],
+              ";\u00b0\u00d6A": {
+                "": "b",
+                "V\u00ba\udbe2\udc47": null,
+                "%\ud99b\udfc1": -11636
+              },
+              "": {
+                "\udb46\udf96\u0003\udb8a\uddaa\udba1\udc53\u000e": -103
+              }
+            },
+            "\u009a": {}
+          }
+        ],
+        "\u00e8e\u001e\udac6\uddfbl${\u00a8\u00b2\u001f\u0018I\uda03\udfbe": {}
+      },
+      "mutation": "replace_value",
+      "edited_path": [
+        "Metadata",
+        "Version"
+      ],
+      "validator": "enum",
+      "error_path": [
+        "Metadata",
+        "Version"
+      ],
+      "schema_path": [
+        "properties",
+        "Metadata",
+        "properties",
+        "Version",
+        "enum"
+      ],
+      "message": "-1 is not one of [2]"
+    },
+    {
+      "instance": {
+        "Metadata": {
+          "Version": 2
+        },
+        "PatternList": [],
+        "\u00e8e\u001e\udac6\uddfbl${\u00a8\u00b2\u001f\u0018I\uda03\udfbe": {}
+      },
+      "mutation": "empty_array",
+      "edited_path": [
+        "PatternList"
+      ],
+      "validator": "minItems",
+      "error_path": [
+        "PatternList"
+      ],
+      "schema_path": [
+        "properties",
+        "PatternList",
+        "minItems"
+      ],
+      "message": "[] should be non-empty"
+    }
+  ]
+}

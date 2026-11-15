@@ -1,0 +1,29 @@
+{
+  "valid": [
+    {
+      "categories": [
+        "1"
+      ],
+      "identity": {
+        "internalName": "0"
+      },
+      "overview": "0",
+      "publisher": "0"
+    }
+  ],
+  "invalid": [
+    {
+      "instance": {
+        "identity": {
+          "internalName": "0"
+        },
+        "overview": "0",
+        "publisher": "0"
+      },
+      "validator": "required",
+      "schema_path": [
+        "required"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4577 @@
+{
+  "task_id": "benchmark-stress-38",
+  "edit_ledger": [
+    {
+      "rule": "handwritten_case_rewrite",
+      "path": "/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/experiments/specs/structured_generation_headroom/manual/shared/benchmark-stress-38.schema.json",
+      "sha256": "67a22109479296f113046303dc39f353357a692ddb2a9c706119c0dee8980e38",
+      "reason": "Expand three finite literal backreferences; use anyOf for two active string/array language-map alternatives.",
+      "equivalence_argument": "The referenced capture can be only s,i,l,pp,tp,f,ctrl,ctx,tr (or only ctrl). Each explicit alternative repeats the same chosen literal. Dot, anchors and all other constraints are unchanged. String and array branches are disjoint. Nonstandard languages annotation containers are left unchanged."
+    }
+  ],
+  "original_schema_sha256": "702651cbe40ef1fa75f23ba84b8157f8e002a362293f8d1b856c6ce5f934c690",
+  "backend_schema_canonical_sha256": "5c7333388240c4eec63e13f70fcd3475e5bb0e9c91e99fbb4c69723133a92618",
+  "semantic_probes": [
+    {
+      "label": "valid-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": true,
+      "original_oracle": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "backend_input_oracle": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"basePath\":\"x\",\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":0,\"defaultWidth\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 86,
+          "token_ids": [
+            4913,
+            79163,
+            3252,
+            87,
+            2198,
+            12445,
+            3636,
+            3252,
+            4064,
+            2198,
+            80665,
+            851,
+            3252,
+            87,
+            2198,
+            10413,
+            39,
+            8155,
+            5475,
+            788,
+            6257,
+            1335,
+            872,
+            14551,
+            8899,
+            28503,
+            1796,
+            8899,
+            28503,
+            5072,
+            8899,
+            28503,
+            872,
+            25207,
+            8899,
+            28503,
+            67426,
+            22317,
+            10481,
+            788,
+            90,
+            3417,
+            1335,
+            18468,
+            8899,
+            28503,
+            1311,
+            51195,
+            8899,
+            28503,
+            42824,
+            788,
+            6257,
+            1335,
+            32398,
+            6086,
+            22317,
+            18272,
+            22317,
+            2258,
+            3640,
+            788,
+            15,
+            1335,
+            2258,
+            3327,
+            788,
+            15,
+            3417,
+            1335,
+            31036,
+            22317,
+            18785,
+            1454,
+            3252,
+            12497,
+            58640,
+            8948,
+            11598,
+            8602,
+            22317,
+            19979,
+            675,
+            3252,
+            87,
+            30975
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"basePath\":\"x\",\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":0,\"defaultHeight\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 86,
+          "token_ids": [
+            4913,
+            79163,
+            3252,
+            87,
+            2198,
+            12445,
+            3636,
+            3252,
+            4064,
+            2198,
+            80665,
+            851,
+            3252,
+            87,
+            2198,
+            10413,
+            39,
+            8155,
+            5475,
+            788,
+            6257,
+            1335,
+            872,
+            14551,
+            8899,
+            28503,
+            1796,
+            8899,
+            28503,
+            5072,
+            8899,
+            28503,
+            872,
+            25207,
+            8899,
+            28503,
+            67426,
+            22317,
+            10481,
+            788,
+            90,
+            3417,
+            1335,
+            18468,
+            8899,
+            28503,
+            1311,
+            51195,
+            8899,
+            28503,
+            42824,
+            788,
+            6257,
+            1335,
+            32398,
+            6086,
+            22317,
+            18272,
+            22317,
+            2258,
+            3327,
+            788,
+            15,
+            1335,
+            2258,
+            3640,
+            788,
+            15,
+            3417,
+            1335,
+            31036,
+            22317,
+            18785,
+            1454,
+            3252,
+            12497,
+            58640,
+            8948,
+            11598,
+            8602,
+            22317,
+            19979,
+            675,
+            3252,
+            87,
+            30975
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [
+              "basePath"
+            ],
+            "schema_path": [
+              "properties",
+              "basePath",
+              "type"
+            ],
+            "message": "None is not of type 'string'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [
+              "basePath"
+            ],
+            "schema_path": [
+              "properties",
+              "basePath",
+              "type"
+            ],
+            "message": "None is not of type 'string'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"basePath\":null,\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":0,\"defaultWidth\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 86,
+          "token_ids": [
+            4913,
+            79163,
+            788,
+            2921,
+            1335,
+            12445,
+            3636,
+            3252,
+            4064,
+            2198,
+            80665,
+            851,
+            3252,
+            87,
+            2198,
+            10413,
+            39,
+            8155,
+            5475,
+            788,
+            6257,
+            1335,
+            872,
+            14551,
+            8899,
+            28503,
+            1796,
+            8899,
+            28503,
+            5072,
+            8899,
+            28503,
+            872,
+            25207,
+            8899,
+            28503,
+            67426,
+            22317,
+            10481,
+            788,
+            90,
+            3417,
+            1335,
+            18468,
+            8899,
+            28503,
+            1311,
+            51195,
+            8899,
+            28503,
+            42824,
+            788,
+            6257,
+            1335,
+            32398,
+            6086,
+            22317,
+            18272,
+            22317,
+            2258,
+            3640,
+            788,
+            15,
+            1335,
+            2258,
+            3327,
+            788,
+            15,
+            3417,
+            1335,
+            31036,
+            22317,
+            18785,
+            1454,
+            3252,
+            12497,
+            58640,
+            8948,
+            11598,
+            8602,
+            22317,
+            19979,
+            675,
+            3252,
+            87,
+            30975
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"basePath\":null,\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":0,\"defaultHeight\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 86,
+          "token_ids": [
+            4913,
+            79163,
+            788,
+            2921,
+            1335,
+            12445,
+            3636,
+            3252,
+            4064,
+            2198,
+            80665,
+            851,
+            3252,
+            87,
+            2198,
+            10413,
+            39,
+            8155,
+            5475,
+            788,
+            6257,
+            1335,
+            872,
+            14551,
+            8899,
+            28503,
+            1796,
+            8899,
+            28503,
+            5072,
+            8899,
+            28503,
+            872,
+            25207,
+            8899,
+            28503,
+            67426,
+            22317,
+            10481,
+            788,
+            90,
+            3417,
+            1335,
+            18468,
+            8899,
+            28503,
+            1311,
+            51195,
+            8899,
+            28503,
+            42824,
+            788,
+            6257,
+            1335,
+            32398,
+            6086,
+            22317,
+            18272,
+            22317,
+            2258,
+            3327,
+            788,
+            15,
+            1335,
+            2258,
+            3640,
+            788,
+            15,
+            3417,
+            1335,
+            31036,
+            22317,
+            18785,
+            1454,
+            3252,
+            12497,
+            58640,
+            8948,
+            11598,
+            8602,
+            22317,
+            19979,
+            675,
+            3252,
+            87,
+            30975
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-1",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'basePath' is a required property"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'basePath' is a required property"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":0,\"defaultWidth\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 82,
+          "token_ids": [
+            4913,
+            12445,
+            3636,
+            3252,
+            4064,
+            2198,
+            80665,
+            851,
+            3252,
+            87,
+            2198,
+            10413,
+            39,
+            8155,
+            5475,
+            788,
+            6257,
+            1335,
+            872,
+            14551,
+            8899,
+            28503,
+            1796,
+            8899,
+            28503,
+            5072,
+            8899,
+            28503,
+            872,
+            25207,
+            8899,
+            28503,
+            67426,
+            22317,
+            10481,
+            788,
+            90,
+            3417,
+            1335,
+            18468,
+            8899,
+            28503,
+            1311,
+            51195,
+            8899,
+            28503,
+            42824,
+            788,
+            6257,
+            1335,
+            32398,
+            6086,
+            22317,
+            18272,
+            22317,
+            2258,
+            3640,
+            788,
+            15,
+            1335,
+            2258,
+            3327,
+            788,
+            15,
+            3417,
+            1335,
+            31036,
+            22317,
+            18785,
+            1454,
+            3252,
+            12497,
+            58640,
+            8948,
+            11598,
+            8602,
+            22317,
+            19979,
+            675,
+            3252,
+            87,
+            30975
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":0,\"defaultHeight\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 82,
+          "token_ids": [
+            4913,
+            12445,
+            3636,
+            3252,
+            4064,
+            2198,
+            80665,
+            851,
+            3252,
+            87,
+            2198,
+            10413,
+            39,
+            8155,
+            5475,
+            788,
+            6257,
+            1335,
+            872,
+            14551,
+            8899,
+            28503,
+            1796,
+            8899,
+            28503,
+            5072,
+            8899,
+            28503,
+            872,
+            25207,
+            8899,
+            28503,
+            67426,
+            22317,
+            10481,
+            788,
+            90,
+            3417,
+            1335,
+            18468,
+            8899,
+            28503,
+            1311,
+            51195,
+            8899,
+            28503,
+            42824,
+            788,
+            6257,
+            1335,
+            32398,
+            6086,
+            22317,
+            18272,
+            22317,
+            2258,
+            3327,
+            788,
+            15,
+            1335,
+            2258,
+            3640,
+            788,
+            15,
+            3417,
+            1335,
+            31036,
+            22317,
+            18785,
+            1454,
+            3252,
+            12497,
+            58640,
+            8948,
+            11598,
+            8602,
+            22317,
+            19979,
+            675,
+            3252,
+            87,
+            30975
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-2",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "enum",
+            "path": [
+              "scaleMode"
+            ],
+            "schema_path": [
+              "properties",
+              "scaleMode",
+              "enum"
+            ],
+            "message": "'' is not one of ['None', 'ScaleToFill', 'ScaleToFit', 'ScaleToFitWidth', 'ScaleToFitHeight']"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "enum",
+            "path": [
+              "scaleMode"
+            ],
+            "schema_path": [
+              "properties",
+              "scaleMode",
+              "enum"
+            ],
+            "message": "'' is not one of ['None', 'ScaleToFill', 'ScaleToFit', 'ScaleToFitWidth', 'ScaleToFitHeight']"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"basePath\":\"x\",\"scaleMode\":\"\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":0,\"defaultWidth\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 84,
+          "token_ids": [
+            4913,
+            79163,
+            3252,
+            87,
+            2198,
+            12445,
+            3636,
+            60767,
+            80665,
+            851,
+            3252,
+            87,
+            2198,
+            10413,
+            39,
+            8155,
+            5475,
+            788,
+            6257,
+            1335,
+            872,
+            14551,
+            8899,
+            28503,
+            1796,
+            8899,
+            28503,
+            5072,
+            8899,
+            28503,
+            872,
+            25207,
+            8899,
+            28503,
+            67426,
+            22317,
+            10481,
+            788,
+            90,
+            3417,
+            1335,
+            18468,
+            8899,
+            28503,
+            1311,
+            51195,
+            8899,
+            28503,
+            42824,
+            788,
+            6257,
+            1335,
+            32398,
+            6086,
+            22317,
+            18272,
+            22317,
+            2258,
+            3640,
+            788,
+            15,
+            1335,
+            2258,
+            3327,
+            788,
+            15,
+            3417,
+            1335,
+            31036,
+            22317,
+            18785,
+            1454,
+            3252,
+            12497,
+            58640,
+            8948,
+            11598,
+            8602,
+            22317,
+            19979,
+            675,
+            3252,
+            87,
+            30975
+          ]
+        },
+        {
+          "ordering": "backend_property_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"basePath\":\"x\",\"scaleMode\":\"\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":0,\"defaultHeight\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 84,
+          "token_ids": [
+            4913,
+            79163,
+            3252,
+            87,
+            2198,
+            12445,
+            3636,
+            60767,
+            80665,
+            851,
+            3252,
+            87,
+            2198,
+            10413,
+            39,
+            8155,
+            5475,
+            788,
+            6257,
+            1335,
+            872,
+            14551,
+            8899,
+            28503,
+            1796,
+            8899,
+            28503,
+            5072,
+            8899,
+            28503,
+            872,
+            25207,
+            8899,
+            28503,
+            67426,
+            22317,
+            10481,
+            788,
+            90,
+            3417,
+            1335,
+            18468,
+            8899,
+            28503,
+            1311,
+            51195,
+            8899,
+            28503,
+            42824,
+            788,
+            6257,
+            1335,
+            32398,
+            6086,
+            22317,
+            18272,
+            22317,
+            2258,
+            3327,
+            788,
+            15,
+            1335,
+            2258,
+            3640,
+            788,
+            15,
+            3417,
+            1335,
+            31036,
+            22317,
+            18785,
+            1454,
+            3252,
+            12497,
+            58640,
+            8948,
+            11598,
+            8602,
+            22317,
+            19979,
+            675,
+            3252,
+            87,
+            30975
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 15,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'basePath' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'scaleMode' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'startupView' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'tcHmiServer' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'userControls' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'content' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'views' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'userFunctions' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'symbols' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'trigger' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'actionTemplates' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'languages' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'creatorSettings' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'binding' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'systemPopups' is a required property"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 15,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'basePath' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'scaleMode' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'startupView' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'tcHmiServer' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'userControls' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'content' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'views' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'userFunctions' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'symbols' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'trigger' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'actionTemplates' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'languages' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'creatorSettings' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'binding' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'systemPopups' is a required property"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            6257
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-1",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "[] is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "[] is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "[]",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            1294
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-2",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "null",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            2921
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-3",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "'' is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "'' is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "\"\"",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            3014
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-4",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "0 is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "0 is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "0",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            15
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-5",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "False is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "False is not of type 'object'"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "false",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            3849
+          ]
+        }
+      ],
+      "validator_agreement": true
+    }
+  ],
+  "engines": {
+    "lmql": {
+      "status": "NATIVE_COMPILABLE",
+      "program_sha256": "6bae84e641df79084ea92a8480a502484e77ac7b5bd6a35442b03465e2ca19d4",
+      "patterns_sha256": "05dc018a48bd78dd98e05e6f2dbfd293e6535150eb876b102dee8d42aeb20929",
+      "pattern_constant_count": 6,
+      "compiler_warnings": [
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['SCALE']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['SYMBOL_ERROR']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['BOOLEAN']'"
+      ],
+      "coverage_claim": "authored_and_compiled_only; no_generation_or_semantic_coverage_inferred",
+      "diagnostics": {
+        "python_warnings": [
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          }
+        ],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      }
+    },
+    "xgrammar": {
+      "status": "NATIVE_COMPILABLE",
+      "probes": [
+        {
+          "label": "valid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": true,
+          "original_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "backend_input_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"basePath\":\"x\",\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":0,\"defaultWidth\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 86,
+              "token_ids": [
+                4913,
+                79163,
+                3252,
+                87,
+                2198,
+                12445,
+                3636,
+                3252,
+                4064,
+                2198,
+                80665,
+                851,
+                3252,
+                87,
+                2198,
+                10413,
+                39,
+                8155,
+                5475,
+                788,
+                6257,
+                1335,
+                872,
+                14551,
+                8899,
+                28503,
+                1796,
+                8899,
+                28503,
+                5072,
+                8899,
+                28503,
+                872,
+                25207,
+                8899,
+                28503,
+                67426,
+                22317,
+                10481,
+                788,
+                90,
+                3417,
+                1335,
+                18468,
+                8899,
+                28503,
+                1311,
+                51195,
+                8899,
+                28503,
+                42824,
+                788,
+                6257,
+                1335,
+                32398,
+                6086,
+                22317,
+                18272,
+                22317,
+                2258,
+                3640,
+                788,
+                15,
+                1335,
+                2258,
+                3327,
+                788,
+                15,
+                3417,
+                1335,
+                31036,
+                22317,
+                18785,
+                1454,
+                3252,
+                12497,
+                58640,
+                8948,
+                11598,
+                8602,
+                22317,
+                19979,
+                675,
+                3252,
+                87,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"basePath\":\"x\",\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":0,\"defaultHeight\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 86,
+              "token_ids": [
+                4913,
+                79163,
+                3252,
+                87,
+                2198,
+                12445,
+                3636,
+                3252,
+                4064,
+                2198,
+                80665,
+                851,
+                3252,
+                87,
+                2198,
+                10413,
+                39,
+                8155,
+                5475,
+                788,
+                6257,
+                1335,
+                872,
+                14551,
+                8899,
+                28503,
+                1796,
+                8899,
+                28503,
+                5072,
+                8899,
+                28503,
+                872,
+                25207,
+                8899,
+                28503,
+                67426,
+                22317,
+                10481,
+                788,
+                90,
+                3417,
+                1335,
+                18468,
+                8899,
+                28503,
+                1311,
+                51195,
+                8899,
+                28503,
+                42824,
+                788,
+                6257,
+                1335,
+                32398,
+                6086,
+                22317,
+                18272,
+                22317,
+                2258,
+                3327,
+                788,
+                15,
+                1335,
+                2258,
+                3640,
+                788,
+                15,
+                3417,
+                1335,
+                31036,
+                22317,
+                18785,
+                1454,
+                3252,
+                12497,
+                58640,
+                8948,
+                11598,
+                8602,
+                22317,
+                19979,
+                675,
+                3252,
+                87,
+                30975
+              ],
+              "recognition": {
+                "accepted": true,
+                "prefix_accepted": true,
+                "completed_before_eos": true,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": true,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "basePath"
+                ],
+                "schema_path": [
+                  "properties",
+                  "basePath",
+                  "type"
+                ],
+                "message": "None is not of type 'string'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "basePath"
+                ],
+                "schema_path": [
+                  "properties",
+                  "basePath",
+                  "type"
+                ],
+                "message": "None is not of type 'string'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"basePath\":null,\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":0,\"defaultWidth\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 86,
+              "token_ids": [
+                4913,
+                79163,
+                788,
+                2921,
+                1335,
+                12445,
+                3636,
+                3252,
+                4064,
+                2198,
+                80665,
+                851,
+                3252,
+                87,
+                2198,
+                10413,
+                39,
+                8155,
+                5475,
+                788,
+                6257,
+                1335,
+                872,
+                14551,
+                8899,
+                28503,
+                1796,
+                8899,
+                28503,
+                5072,
+                8899,
+                28503,
+                872,
+                25207,
+                8899,
+                28503,
+                67426,
+                22317,
+                10481,
+                788,
+                90,
+                3417,
+                1335,
+                18468,
+                8899,
+                28503,
+                1311,
+                51195,
+                8899,
+                28503,
+                42824,
+                788,
+                6257,
+                1335,
+                32398,
+                6086,
+                22317,
+                18272,
+                22317,
+                2258,
+                3640,
+                788,
+                15,
+                1335,
+                2258,
+                3327,
+                788,
+                15,
+                3417,
+                1335,
+                31036,
+                22317,
+                18785,
+                1454,
+                3252,
+                12497,
+                58640,
+                8948,
+                11598,
+                8602,
+                22317,
+                19979,
+                675,
+                3252,
+                87,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"basePath\":null,\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":0,\"defaultHeight\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 86,
+              "token_ids": [
+                4913,
+                79163,
+                788,
+                2921,
+                1335,
+                12445,
+                3636,
+                3252,
+                4064,
+                2198,
+                80665,
+                851,
+                3252,
+                87,
+                2198,
+                10413,
+                39,
+                8155,
+                5475,
+                788,
+                6257,
+                1335,
+                872,
+                14551,
+                8899,
+                28503,
+                1796,
+                8899,
+                28503,
+                5072,
+                8899,
+                28503,
+                872,
+                25207,
+                8899,
+                28503,
+                67426,
+                22317,
+                10481,
+                788,
+                90,
+                3417,
+                1335,
+                18468,
+                8899,
+                28503,
+                1311,
+                51195,
+                8899,
+                28503,
+                42824,
+                788,
+                6257,
+                1335,
+                32398,
+                6086,
+                22317,
+                18272,
+                22317,
+                2258,
+                3327,
+                788,
+                15,
+                1335,
+                2258,
+                3640,
+                788,
+                15,
+                3417,
+                1335,
+                31036,
+                22317,
+                18785,
+                1454,
+                3252,
+                12497,
+                58640,
+                8948,
+                11598,
+                8602,
+                22317,
+                19979,
+                675,
+                3252,
+                87,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'basePath' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'basePath' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":0,\"defaultWidth\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 82,
+              "token_ids": [
+                4913,
+                12445,
+                3636,
+                3252,
+                4064,
+                2198,
+                80665,
+                851,
+                3252,
+                87,
+                2198,
+                10413,
+                39,
+                8155,
+                5475,
+                788,
+                6257,
+                1335,
+                872,
+                14551,
+                8899,
+                28503,
+                1796,
+                8899,
+                28503,
+                5072,
+                8899,
+                28503,
+                872,
+                25207,
+                8899,
+                28503,
+                67426,
+                22317,
+                10481,
+                788,
+                90,
+                3417,
+                1335,
+                18468,
+                8899,
+                28503,
+                1311,
+                51195,
+                8899,
+                28503,
+                42824,
+                788,
+                6257,
+                1335,
+                32398,
+                6086,
+                22317,
+                18272,
+                22317,
+                2258,
+                3640,
+                788,
+                15,
+                1335,
+                2258,
+                3327,
+                788,
+                15,
+                3417,
+                1335,
+                31036,
+                22317,
+                18785,
+                1454,
+                3252,
+                12497,
+                58640,
+                8948,
+                11598,
+                8602,
+                22317,
+                19979,
+                675,
+                3252,
+                87,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":0,\"defaultHeight\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 82,
+              "token_ids": [
+                4913,
+                12445,
+                3636,
+                3252,
+                4064,
+                2198,
+                80665,
+                851,
+                3252,
+                87,
+                2198,
+                10413,
+                39,
+                8155,
+                5475,
+                788,
+                6257,
+                1335,
+                872,
+                14551,
+                8899,
+                28503,
+                1796,
+                8899,
+                28503,
+                5072,
+                8899,
+                28503,
+                872,
+                25207,
+                8899,
+                28503,
+                67426,
+                22317,
+                10481,
+                788,
+                90,
+                3417,
+                1335,
+                18468,
+                8899,
+                28503,
+                1311,
+                51195,
+                8899,
+                28503,
+                42824,
+                788,
+                6257,
+                1335,
+                32398,
+                6086,
+                22317,
+                18272,
+                22317,
+                2258,
+                3327,
+                788,
+                15,
+                1335,
+                2258,
+                3640,
+                788,
+                15,
+                3417,
+                1335,
+                31036,
+                22317,
+                18785,
+                1454,
+                3252,
+                12497,
+                58640,
+                8948,
+                11598,
+                8602,
+                22317,
+                19979,
+                675,
+                3252,
+                87,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "scaleMode"
+                ],
+                "schema_path": [
+                  "properties",
+                  "scaleMode",
+                  "enum"
+                ],
+                "message": "'' is not one of ['None', 'ScaleToFill', 'ScaleToFit', 'ScaleToFitWidth', 'ScaleToFitHeight']"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "scaleMode"
+                ],
+                "schema_path": [
+                  "properties",
+                  "scaleMode",
+                  "enum"
+                ],
+                "message": "'' is not one of ['None', 'ScaleToFill', 'ScaleToFit', 'ScaleToFitWidth', 'ScaleToFitHeight']"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"basePath\":\"x\",\"scaleMode\":\"\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":0,\"defaultWidth\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 84,
+              "token_ids": [
+                4913,
+                79163,
+                3252,
+                87,
+                2198,
+                12445,
+                3636,
+                60767,
+                80665,
+                851,
+                3252,
+                87,
+                2198,
+                10413,
+                39,
+                8155,
+                5475,
+                788,
+                6257,
+                1335,
+                872,
+                14551,
+                8899,
+                28503,
+                1796,
+                8899,
+                28503,
+                5072,
+                8899,
+                28503,
+                872,
+                25207,
+                8899,
+                28503,
+                67426,
+                22317,
+                10481,
+                788,
+                90,
+                3417,
+                1335,
+                18468,
+                8899,
+                28503,
+                1311,
+                51195,
+                8899,
+                28503,
+                42824,
+                788,
+                6257,
+                1335,
+                32398,
+                6086,
+                22317,
+                18272,
+                22317,
+                2258,
+                3640,
+                788,
+                15,
+                1335,
+                2258,
+                3327,
+                788,
+                15,
+                3417,
+                1335,
+                31036,
+                22317,
+                18785,
+                1454,
+                3252,
+                12497,
+                58640,
+                8948,
+                11598,
+                8602,
+                22317,
+                19979,
+                675,
+                3252,
+                87,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"basePath\":\"x\",\"scaleMode\":\"\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":0,\"defaultHeight\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 84,
+              "token_ids": [
+                4913,
+                79163,
+                3252,
+                87,
+                2198,
+                12445,
+                3636,
+                60767,
+                80665,
+                851,
+                3252,
+                87,
+                2198,
+                10413,
+                39,
+                8155,
+                5475,
+                788,
+                6257,
+                1335,
+                872,
+                14551,
+                8899,
+                28503,
+                1796,
+                8899,
+                28503,
+                5072,
+                8899,
+                28503,
+                872,
+                25207,
+                8899,
+                28503,
+                67426,
+                22317,
+                10481,
+                788,
+                90,
+                3417,
+                1335,
+                18468,
+                8899,
+                28503,
+                1311,
+                51195,
+                8899,
+                28503,
+                42824,
+                788,
+                6257,
+                1335,
+                32398,
+                6086,
+                22317,
+                18272,
+                22317,
+                2258,
+                3327,
+                788,
+                15,
+                1335,
+                2258,
+                3640,
+                788,
+                15,
+                3417,
+                1335,
+                31036,
+                22317,
+                18785,
+                1454,
+                3252,
+                12497,
+                58640,
+                8948,
+                11598,
+                8602,
+                22317,
+                19979,
+                675,
+                3252,
+                87,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 15,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'basePath' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'scaleMode' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'startupView' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'tcHmiServer' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'userControls' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'content' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'views' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'userFunctions' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'symbols' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'trigger' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'actionTemplates' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'languages' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'creatorSettings' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'binding' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'systemPopups' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 15,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'basePath' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'scaleMode' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'startupView' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'tcHmiServer' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'userControls' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'content' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'views' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'userFunctions' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'symbols' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'trigger' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'actionTemplates' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'languages' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'creatorSettings' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'binding' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'systemPopups' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                6257
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "[]",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                1294
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "null",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                2921
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "\"\"",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3014
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-4",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "0",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                15
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-5",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "false",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3849
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        }
+      ],
+      "compile_seconds": 22.350351374945603,
+      "diagnostics": {
+        "python_warnings": [],
+        "native_stdout_stderr": "[22:48:10] /Users/runner/work/xgrammar/xgrammar/cpp/json_schema_converter.cc:1161: Warning: pattern combined with minLength/maxLength is not supported; ignoring minLength/maxLength\n",
+        "python_stdout_stderr": ""
+      },
+      "library_warnings": null,
+      "ignored_assertion_warning_lines": [
+        "[22:48:10] /Users/runner/work/xgrammar/xgrammar/cpp/json_schema_converter.cc:1161: Warning: pattern combined with minLength/maxLength is not supported; ignoring minLength/maxLength"
+      ],
+      "grammar_file": "experiments/results/20261110T044100Z__structured_generation_manual_preflight_release/benchmark-stress-38__xgrammar.grammar.txt",
+      "grammar_sha256": "72399b301377eac1eec4e70952a271e60a6b0f9df309c66b08ce556429d29783",
+      "false_positives": [],
+      "false_negatives_on_tested_spellings": [],
+      "enforcement_status": "IGNORED_ASSERTIONS_WARNING",
+      "seconds": 22.360828540986404
+    },
+    "llguidance_strict": {
+      "status": "NATIVE_COMPILABLE",
+      "probes": [
+        {
+          "label": "valid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": true,
+          "original_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "backend_input_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"basePath\":\"x\",\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":0,\"defaultWidth\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 86,
+              "token_ids": [
+                4913,
+                79163,
+                3252,
+                87,
+                2198,
+                12445,
+                3636,
+                3252,
+                4064,
+                2198,
+                80665,
+                851,
+                3252,
+                87,
+                2198,
+                10413,
+                39,
+                8155,
+                5475,
+                788,
+                6257,
+                1335,
+                872,
+                14551,
+                8899,
+                28503,
+                1796,
+                8899,
+                28503,
+                5072,
+                8899,
+                28503,
+                872,
+                25207,
+                8899,
+                28503,
+                67426,
+                22317,
+                10481,
+                788,
+                90,
+                3417,
+                1335,
+                18468,
+                8899,
+                28503,
+                1311,
+                51195,
+                8899,
+                28503,
+                42824,
+                788,
+                6257,
+                1335,
+                32398,
+                6086,
+                22317,
+                18272,
+                22317,
+                2258,
+                3640,
+                788,
+                15,
+                1335,
+                2258,
+                3327,
+                788,
+                15,
+                3417,
+                1335,
+                31036,
+                22317,
+                18785,
+                1454,
+                3252,
+                12497,
+                58640,
+                8948,
+                11598,
+                8602,
+                22317,
+                19979,
+                675,
+                3252,
+                87,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"Height\" doesn't satisfy the grammar; byte 'H' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"basePath\":\"x\",\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":0,\"defaultHeight\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 86,
+              "token_ids": [
+                4913,
+                79163,
+                3252,
+                87,
+                2198,
+                12445,
+                3636,
+                3252,
+                4064,
+                2198,
+                80665,
+                851,
+                3252,
+                87,
+                2198,
+                10413,
+                39,
+                8155,
+                5475,
+                788,
+                6257,
+                1335,
+                872,
+                14551,
+                8899,
+                28503,
+                1796,
+                8899,
+                28503,
+                5072,
+                8899,
+                28503,
+                872,
+                25207,
+                8899,
+                28503,
+                67426,
+                22317,
+                10481,
+                788,
+                90,
+                3417,
+                1335,
+                18468,
+                8899,
+                28503,
+                1311,
+                51195,
+                8899,
+                28503,
+                42824,
+                788,
+                6257,
+                1335,
+                32398,
+                6086,
+                22317,
+                18272,
+                22317,
+                2258,
+                3327,
+                788,
+                15,
+                1335,
+                2258,
+                3640,
+                788,
+                15,
+                3417,
+                1335,
+                31036,
+                22317,
+                18785,
+                1454,
+                3252,
+                12497,
+                58640,
+                8948,
+                11598,
+                8602,
+                22317,
+                19979,
+                675,
+                3252,
+                87,
+                30975
+              ],
+              "recognition": {
+                "accepted": true,
+                "consumed_without_error": true,
+                "stopped": true,
+                "accepting": true,
+                "stop_reason": "EndOfSentence",
+                "rejection": null,
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": true,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "basePath"
+                ],
+                "schema_path": [
+                  "properties",
+                  "basePath",
+                  "type"
+                ],
+                "message": "None is not of type 'string'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "basePath"
+                ],
+                "schema_path": [
+                  "properties",
+                  "basePath",
+                  "type"
+                ],
+                "message": "None is not of type 'string'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"basePath\":null,\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":0,\"defaultWidth\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 86,
+              "token_ids": [
+                4913,
+                79163,
+                788,
+                2921,
+                1335,
+                12445,
+                3636,
+                3252,
+                4064,
+                2198,
+                80665,
+                851,
+                3252,
+                87,
+                2198,
+                10413,
+                39,
+                8155,
+                5475,
+                788,
+                6257,
+                1335,
+                872,
+                14551,
+                8899,
+                28503,
+                1796,
+                8899,
+                28503,
+                5072,
+                8899,
+                28503,
+                872,
+                25207,
+                8899,
+                28503,
+                67426,
+                22317,
+                10481,
+                788,
+                90,
+                3417,
+                1335,
+                18468,
+                8899,
+                28503,
+                1311,
+                51195,
+                8899,
+                28503,
+                42824,
+                788,
+                6257,
+                1335,
+                32398,
+                6086,
+                22317,
+                18272,
+                22317,
+                2258,
+                3640,
+                788,
+                15,
+                1335,
+                2258,
+                3327,
+                788,
+                15,
+                3417,
+                1335,
+                31036,
+                22317,
+                18785,
+                1454,
+                3252,
+                12497,
+                58640,
+                8948,
+                11598,
+                8602,
+                22317,
+                19979,
+                675,
+                3252,
+                87,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"null\" doesn't satisfy the grammar; byte 'n' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"basePath\":null,\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":0,\"defaultHeight\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 86,
+              "token_ids": [
+                4913,
+                79163,
+                788,
+                2921,
+                1335,
+                12445,
+                3636,
+                3252,
+                4064,
+                2198,
+                80665,
+                851,
+                3252,
+                87,
+                2198,
+                10413,
+                39,
+                8155,
+                5475,
+                788,
+                6257,
+                1335,
+                872,
+                14551,
+                8899,
+                28503,
+                1796,
+                8899,
+                28503,
+                5072,
+                8899,
+                28503,
+                872,
+                25207,
+                8899,
+                28503,
+                67426,
+                22317,
+                10481,
+                788,
+                90,
+                3417,
+                1335,
+                18468,
+                8899,
+                28503,
+                1311,
+                51195,
+                8899,
+                28503,
+                42824,
+                788,
+                6257,
+                1335,
+                32398,
+                6086,
+                22317,
+                18272,
+                22317,
+                2258,
+                3327,
+                788,
+                15,
+                1335,
+                2258,
+                3640,
+                788,
+                15,
+                3417,
+                1335,
+                31036,
+                22317,
+                18785,
+                1454,
+                3252,
+                12497,
+                58640,
+                8948,
+                11598,
+                8602,
+                22317,
+                19979,
+                675,
+                3252,
+                87,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"null\" doesn't satisfy the grammar; byte 'n' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'basePath' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'basePath' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":0,\"defaultWidth\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 82,
+              "token_ids": [
+                4913,
+                12445,
+                3636,
+                3252,
+                4064,
+                2198,
+                80665,
+                851,
+                3252,
+                87,
+                2198,
+                10413,
+                39,
+                8155,
+                5475,
+                788,
+                6257,
+                1335,
+                872,
+                14551,
+                8899,
+                28503,
+                1796,
+                8899,
+                28503,
+                5072,
+                8899,
+                28503,
+                872,
+                25207,
+                8899,
+                28503,
+                67426,
+                22317,
+                10481,
+                788,
+                90,
+                3417,
+                1335,
+                18468,
+                8899,
+                28503,
+                1311,
+                51195,
+                8899,
+                28503,
+                42824,
+                788,
+                6257,
+                1335,
+                32398,
+                6086,
+                22317,
+                18272,
+                22317,
+                2258,
+                3640,
+                788,
+                15,
+                1335,
+                2258,
+                3327,
+                788,
+                15,
+                3417,
+                1335,
+                31036,
+                22317,
+                18785,
+                1454,
+                3252,
+                12497,
+                58640,
+                8948,
+                11598,
+                8602,
+                22317,
+                19979,
+                675,
+                3252,
+                87,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"scale\" doesn't satisfy the grammar; byte 's' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":0,\"defaultHeight\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 82,
+              "token_ids": [
+                4913,
+                12445,
+                3636,
+                3252,
+                4064,
+                2198,
+                80665,
+                851,
+                3252,
+                87,
+                2198,
+                10413,
+                39,
+                8155,
+                5475,
+                788,
+                6257,
+                1335,
+                872,
+                14551,
+                8899,
+                28503,
+                1796,
+                8899,
+                28503,
+                5072,
+                8899,
+                28503,
+                872,
+                25207,
+                8899,
+                28503,
+                67426,
+                22317,
+                10481,
+                788,
+                90,
+                3417,
+                1335,
+                18468,
+                8899,
+                28503,
+                1311,
+                51195,
+                8899,
+                28503,
+                42824,
+                788,
+                6257,
+                1335,
+                32398,
+                6086,
+                22317,
+                18272,
+                22317,
+                2258,
+                3327,
+                788,
+                15,
+                1335,
+                2258,
+                3640,
+                788,
+                15,
+                3417,
+                1335,
+                31036,
+                22317,
+                18785,
+                1454,
+                3252,
+                12497,
+                58640,
+                8948,
+                11598,
+                8602,
+                22317,
+                19979,
+                675,
+                3252,
+                87,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"scale\" doesn't satisfy the grammar; byte 's' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "scaleMode"
+                ],
+                "schema_path": [
+                  "properties",
+                  "scaleMode",
+                  "enum"
+                ],
+                "message": "'' is not one of ['None', 'ScaleToFill', 'ScaleToFit', 'ScaleToFitWidth', 'ScaleToFitHeight']"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "scaleMode"
+                ],
+                "schema_path": [
+                  "properties",
+                  "scaleMode",
+                  "enum"
+                ],
+                "message": "'' is not one of ['None', 'ScaleToFill', 'ScaleToFit', 'ScaleToFitWidth', 'ScaleToFitHeight']"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"basePath\":\"x\",\"scaleMode\":\"\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":0,\"defaultWidth\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 84,
+              "token_ids": [
+                4913,
+                79163,
+                3252,
+                87,
+                2198,
+                12445,
+                3636,
+                60767,
+                80665,
+                851,
+                3252,
+                87,
+                2198,
+                10413,
+                39,
+                8155,
+                5475,
+                788,
+                6257,
+                1335,
+                872,
+                14551,
+                8899,
+                28503,
+                1796,
+                8899,
+                28503,
+                5072,
+                8899,
+                28503,
+                872,
+                25207,
+                8899,
+                28503,
+                67426,
+                22317,
+                10481,
+                788,
+                90,
+                3417,
+                1335,
+                18468,
+                8899,
+                28503,
+                1311,
+                51195,
+                8899,
+                28503,
+                42824,
+                788,
+                6257,
+                1335,
+                32398,
+                6086,
+                22317,
+                18272,
+                22317,
+                2258,
+                3640,
+                788,
+                15,
+                1335,
+                2258,
+                3327,
+                788,
+                15,
+                3417,
+                1335,
+                31036,
+                22317,
+                18785,
+                1454,
+                3252,
+                12497,
+                58640,
+                8948,
+                11598,
+                8602,
+                22317,
+                19979,
+                675,
+                3252,
+                87,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"\\\":\\\"\\\",\\\"\" doesn't satisfy the grammar; byte '\"' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            },
+            {
+              "ordering": "backend_property_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"basePath\":\"x\",\"scaleMode\":\"\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":0,\"defaultHeight\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 84,
+              "token_ids": [
+                4913,
+                79163,
+                3252,
+                87,
+                2198,
+                12445,
+                3636,
+                60767,
+                80665,
+                851,
+                3252,
+                87,
+                2198,
+                10413,
+                39,
+                8155,
+                5475,
+                788,
+                6257,
+                1335,
+                872,
+                14551,
+                8899,
+                28503,
+                1796,
+                8899,
+                28503,
+                5072,
+                8899,
+                28503,
+                872,
+                25207,
+                8899,
+                28503,
+                67426,
+                22317,
+                10481,
+                788,
+                90,
+                3417,
+                1335,
+                18468,
+                8899,
+                28503,
+                1311,
+                51195,
+                8899,
+                28503,
+                42824,
+                788,
+                6257,
+                1335,
+                32398,
+                6086,
+                22317,
+                18272,
+                22317,
+                2258,
+                3327,
+                788,
+                15,
+                1335,
+                2258,
+                3640,
+                788,
+                15,
+                3417,
+                1335,
+                31036,
+                22317,
+                18785,
+                1454,
+                3252,
+                12497,
+                58640,
+                8948,
+                11598,
+                8602,
+                22317,
+                19979,
+                675,
+                3252,
+                87,
+                30975
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"\\\":\\\"\\\",\\\"\" doesn't satisfy the grammar; byte '\"' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 15,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'basePath' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'scaleMode' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'startupView' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'tcHmiServer' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'userControls' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'content' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'views' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'userFunctions' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'symbols' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'trigger' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'actionTemplates' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'languages' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'creatorSettings' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'binding' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'systemPopups' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 15,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'basePath' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'scaleMode' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'startupView' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'tcHmiServer' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'userControls' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'content' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'views' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'userFunctions' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'symbols' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'trigger' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'actionTemplates' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'languages' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'creatorSettings' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'binding' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'systemPopups' is a required property"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                6257
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"{}\" doesn't satisfy the grammar; byte '}' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "[]",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                1294
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"[]\" doesn't satisfy the grammar; byte '[' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "null",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                2921
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"null\" doesn't satisfy the grammar; byte 'n' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "\"\"",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3014
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"\\\"\\\"\" doesn't satisfy the grammar; byte '\"' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-4",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "0",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                15
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"0\" doesn't satisfy the grammar; byte '0' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-5",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "false",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3849
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"false\" doesn't satisfy the grammar; byte 'f' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        }
+      ],
+      "compile_seconds": 0.016334666986949742,
+      "diagnostics": {
+        "python_warnings": [],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      },
+      "library_warnings": [],
+      "ignored_assertion_warning_lines": [],
+      "grammar_file": "experiments/results/20261110T044100Z__structured_generation_manual_preflight_release/benchmark-stress-38__llguidance_strict.grammar.txt",
+      "grammar_sha256": "94df4a0531a69301bf32202edc0dac7e7395db3c62c3115d652a4138bef80d32",
+      "false_positives": [],
+      "false_negatives_on_tested_spellings": [],
+      "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+      "seconds": 0.10375420795753598
+    }
+  },
+  "validator_agreement": {
+    "total": 10,
+    "frozen_core": 10,
+    "supplemental": 0,
+    "disagreements": 0
+  },
+  "seconds": 22.78567812498659
+}

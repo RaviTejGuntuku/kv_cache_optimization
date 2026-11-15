@@ -1,0 +1,19 @@
+{
+  "valid": [
+    {
+      "noisetype": "white noise",
+      "widget identifier": "noise"
+    }
+  ],
+  "invalid": [
+    {
+      "instance": {
+        "widget identifier": "noise"
+      },
+      "validator": "required",
+      "schema_path": [
+        "required"
+      ]
+    }
+  ]
+}

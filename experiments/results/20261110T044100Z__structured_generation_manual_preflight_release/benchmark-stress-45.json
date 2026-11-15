@@ -1,0 +1,3148 @@
+{
+  "task_id": "benchmark-stress-45",
+  "edit_ledger": [
+    {
+      "rule": "handwritten_case_rewrite",
+      "path": "/Users/tejguntuku/TEJ/CS_Independent_Research/kv_cache_research/experiments/specs/structured_generation_headroom/manual/shared/benchmark-stress-45.schema.json",
+      "sha256": "fa12c01927a3fb38b9035eee481392b3fb79aa348c82a3a48a6c242452ab6d44",
+      "reason": "Distribute all root assertions into the two anyOf alternatives, preserving their conjunction.",
+      "equivalence_argument": "C AND (required submissions OR required deletions) is (C AND required submissions) OR (C AND required deletions). Each branch copies the complete original type/properties/open-extra policy and all8 required root fields. Both branches may match when both arrays exist, exactly as original anyOf. No property/value/branch is pruned."
+    }
+  ],
+  "original_schema_sha256": "52e2097a22f0d37cc1b433b3a646d4f606c20a8df71ca7eceb456d8a3b13cb87",
+  "backend_schema_canonical_sha256": "32dcd2126350eccc1a9d63106634bfa01cc51d76c7efe4c912fc24f563dd8eab",
+  "semantic_probes": [
+    {
+      "label": "valid-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": true,
+      "original_oracle": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "backend_input_oracle": {
+        "valid": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"batchProcessingStatus\":\"Error\",\"batchReleaseStatus\":\"Released\",\"deletions\":[{\"identifiers\":{\"clinvarAccession\":\"\"},\"processingStatus\":\"Error\"}],\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 57,
+          "token_ids": [
+            4913,
+            14049,
+            28892,
+            2522,
+            3252,
+            1454,
+            2198,
+            14049,
+            16077,
+            2522,
+            3252,
+            40038,
+            2198,
+            450,
+            1149,
+            908,
+            66582,
+            1713,
+            11836,
+            22317,
+            46581,
+            947,
+            6054,
+            290,
+            62366,
+            51193,
+            20660,
+            2522,
+            3252,
+            1454,
+            9207,
+            28503,
+            57108,
+            1916,
+            60767,
+            57108,
+            675,
+            60767,
+            97036,
+            788,
+            15,
+            1335,
+            5035,
+            13877,
+            788,
+            15,
+            1335,
+            5035,
+            12676,
+            788,
+            15,
+            1335,
+            5035,
+            7188,
+            788,
+            15,
+            92
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 2,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [
+              "batchProcessingStatus"
+            ],
+            "schema_path": [
+              "properties",
+              "batchProcessingStatus",
+              "type"
+            ],
+            "message": "None is not of type 'string'"
+          },
+          {
+            "keyword": "enum",
+            "path": [
+              "batchProcessingStatus"
+            ],
+            "schema_path": [
+              "properties",
+              "batchProcessingStatus",
+              "enum"
+            ],
+            "message": "None is not one of ['In processing', 'Success', 'Error', 'Partial success']"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "anyOf",
+            "path": [],
+            "schema_path": [
+              "anyOf"
+            ],
+            "message": "{'batchProcessingStatus': None, 'batchReleaseStatus': 'Released', 'deletions': [{'identifiers': {'clinvarAccession': ''}, 'processingStatus': 'Error'}], 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"batchProcessingStatus\":null,\"batchReleaseStatus\":\"Released\",\"deletions\":[{\"identifiers\":{\"clinvarAccession\":\"\"},\"processingStatus\":\"Error\"}],\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 57,
+          "token_ids": [
+            4913,
+            14049,
+            28892,
+            2522,
+            788,
+            2921,
+            1335,
+            14049,
+            16077,
+            2522,
+            3252,
+            40038,
+            2198,
+            450,
+            1149,
+            908,
+            66582,
+            1713,
+            11836,
+            22317,
+            46581,
+            947,
+            6054,
+            290,
+            62366,
+            51193,
+            20660,
+            2522,
+            3252,
+            1454,
+            9207,
+            28503,
+            57108,
+            1916,
+            60767,
+            57108,
+            675,
+            60767,
+            97036,
+            788,
+            15,
+            1335,
+            5035,
+            13877,
+            788,
+            15,
+            1335,
+            5035,
+            12676,
+            788,
+            15,
+            1335,
+            5035,
+            7188,
+            788,
+            15,
+            92
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-1",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "enum",
+            "path": [
+              "batchProcessingStatus"
+            ],
+            "schema_path": [
+              "properties",
+              "batchProcessingStatus",
+              "enum"
+            ],
+            "message": "'' is not one of ['In processing', 'Success', 'Error', 'Partial success']"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "anyOf",
+            "path": [],
+            "schema_path": [
+              "anyOf"
+            ],
+            "message": "{'batchProcessingStatus': '', 'batchReleaseStatus': 'Released', 'deletions': [{'identifiers': {'clinvarAccession': ''}, 'processingStatus': 'Error'}], 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"batchProcessingStatus\":\"\",\"batchReleaseStatus\":\"Released\",\"deletions\":[{\"identifiers\":{\"clinvarAccession\":\"\"},\"processingStatus\":\"Error\"}],\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 55,
+          "token_ids": [
+            4913,
+            14049,
+            28892,
+            2522,
+            60767,
+            14049,
+            16077,
+            2522,
+            3252,
+            40038,
+            2198,
+            450,
+            1149,
+            908,
+            66582,
+            1713,
+            11836,
+            22317,
+            46581,
+            947,
+            6054,
+            290,
+            62366,
+            51193,
+            20660,
+            2522,
+            3252,
+            1454,
+            9207,
+            28503,
+            57108,
+            1916,
+            60767,
+            57108,
+            675,
+            60767,
+            97036,
+            788,
+            15,
+            1335,
+            5035,
+            13877,
+            788,
+            15,
+            1335,
+            5035,
+            12676,
+            788,
+            15,
+            1335,
+            5035,
+            7188,
+            788,
+            15,
+            92
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-2",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'batchProcessingStatus' is a required property"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "anyOf",
+            "path": [],
+            "schema_path": [
+              "anyOf"
+            ],
+            "message": "{'batchReleaseStatus': 'Released', 'deletions': [{'identifiers': {'clinvarAccession': ''}, 'processingStatus': 'Error'}], 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"batchReleaseStatus\":\"Released\",\"deletions\":[{\"identifiers\":{\"clinvarAccession\":\"\"},\"processingStatus\":\"Error\"}],\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 51,
+          "token_ids": [
+            4913,
+            14049,
+            16077,
+            2522,
+            3252,
+            40038,
+            2198,
+            450,
+            1149,
+            908,
+            66582,
+            1713,
+            11836,
+            22317,
+            46581,
+            947,
+            6054,
+            290,
+            62366,
+            51193,
+            20660,
+            2522,
+            3252,
+            1454,
+            9207,
+            28503,
+            57108,
+            1916,
+            60767,
+            57108,
+            675,
+            60767,
+            97036,
+            788,
+            15,
+            1335,
+            5035,
+            13877,
+            788,
+            15,
+            1335,
+            5035,
+            12676,
+            788,
+            15,
+            1335,
+            5035,
+            7188,
+            788,
+            15,
+            92
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-3",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "minItems",
+            "path": [
+              "deletions"
+            ],
+            "schema_path": [
+              "properties",
+              "deletions",
+              "minItems"
+            ],
+            "message": "[] should be non-empty"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "anyOf",
+            "path": [],
+            "schema_path": [
+              "anyOf"
+            ],
+            "message": "{'batchProcessingStatus': 'Error', 'batchReleaseStatus': 'Released', 'deletions': [], 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"batchProcessingStatus\":\"Error\",\"batchReleaseStatus\":\"Released\",\"deletions\":[],\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 43,
+          "token_ids": [
+            4913,
+            14049,
+            28892,
+            2522,
+            3252,
+            1454,
+            2198,
+            14049,
+            16077,
+            2522,
+            3252,
+            40038,
+            2198,
+            450,
+            1149,
+            908,
+            8899,
+            28503,
+            57108,
+            1916,
+            60767,
+            57108,
+            675,
+            60767,
+            97036,
+            788,
+            15,
+            1335,
+            5035,
+            13877,
+            788,
+            15,
+            1335,
+            5035,
+            12676,
+            788,
+            15,
+            1335,
+            5035,
+            7188,
+            788,
+            15,
+            92
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "invalid-4",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "anyOf",
+            "path": [],
+            "schema_path": [
+              "anyOf"
+            ],
+            "message": "{'batchProcessingStatus': 'Error', 'batchReleaseStatus': 'Released', 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "anyOf",
+            "path": [],
+            "schema_path": [
+              "anyOf"
+            ],
+            "message": "{'batchProcessingStatus': 'Error', 'batchReleaseStatus': 'Released', 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{\"batchProcessingStatus\":\"Error\",\"batchReleaseStatus\":\"Released\",\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 38,
+          "token_ids": [
+            4913,
+            14049,
+            28892,
+            2522,
+            3252,
+            1454,
+            2198,
+            14049,
+            16077,
+            2522,
+            3252,
+            40038,
+            2198,
+            57108,
+            1916,
+            60767,
+            57108,
+            675,
+            60767,
+            97036,
+            788,
+            15,
+            1335,
+            5035,
+            13877,
+            788,
+            15,
+            1335,
+            5035,
+            12676,
+            788,
+            15,
+            1335,
+            5035,
+            7188,
+            788,
+            15,
+            92
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-0",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 9,
+        "errors": [
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'submissionName' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'submissionDate' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'batchProcessingStatus' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'batchReleaseStatus' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'totalCount' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'totalErrors' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'totalSuccess' is a required property"
+          },
+          {
+            "keyword": "required",
+            "path": [],
+            "schema_path": [
+              "required"
+            ],
+            "message": "'totalPublic' is a required property"
+          },
+          {
+            "keyword": "anyOf",
+            "path": [],
+            "schema_path": [
+              "anyOf"
+            ],
+            "message": "{} is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "anyOf",
+            "path": [],
+            "schema_path": [
+              "anyOf"
+            ],
+            "message": "{} is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "{}",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            6257
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-1",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "[] is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "anyOf",
+            "path": [],
+            "schema_path": [
+              "anyOf"
+            ],
+            "message": "[] is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "[]",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            1294
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-2",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "None is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "anyOf",
+            "path": [],
+            "schema_path": [
+              "anyOf"
+            ],
+            "message": "None is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "null",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            2921
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-3",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "'' is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "anyOf",
+            "path": [],
+            "schema_path": [
+              "anyOf"
+            ],
+            "message": "'' is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "\"\"",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            3014
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-4",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "0 is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "anyOf",
+            "path": [],
+            "schema_path": [
+              "anyOf"
+            ],
+            "message": "0 is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "0",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            15
+          ]
+        }
+      ],
+      "validator_agreement": true
+    },
+    {
+      "label": "trivial-5",
+      "probe_group": "frozen_core",
+      "dataset_expected_valid": false,
+      "original_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "type",
+            "path": [],
+            "schema_path": [
+              "type"
+            ],
+            "message": "False is not of type 'object'"
+          }
+        ]
+      },
+      "backend_input_oracle": {
+        "valid": false,
+        "error_count": 1,
+        "errors": [
+          {
+            "keyword": "anyOf",
+            "path": [],
+            "schema_path": [
+              "anyOf"
+            ],
+            "message": "False is not valid under any of the given schemas"
+          }
+        ]
+      },
+      "serializations": [
+        {
+          "ordering": "source_order",
+          "spelling": "ascii_escapes",
+          "text": "false",
+          "decoded_value_preserved": true,
+          "tokenizer_roundtrip_ok": true,
+          "token_count": 1,
+          "token_ids": [
+            3849
+          ]
+        }
+      ],
+      "validator_agreement": true
+    }
+  ],
+  "engines": {
+    "lmql": {
+      "status": "NATIVE_COMPILABLE",
+      "program_sha256": "dad21d2d283d360bcd2fe531444715850a6775549914aad825699ea12539421b",
+      "patterns_sha256": "9230108260a3c0bb2c11bb731ea89739585db3a3582eb5dff9b594f9fbb1146f",
+      "pattern_constant_count": 5,
+      "compiler_warnings": [
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['PROCESSING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['RELEASE']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['INTEGER']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['INTEGER']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['INTEGER']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['INTEGER']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'PATTERNS['BRANCH']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P[data]'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['ARRAY_FIRST']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['ARRAY_NEXT']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['OBJECT_NEXT']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['STRING']'",
+        "compiler warning: expressions of type <class 'ast.Subscript'> are not explicitly supported: 'P['OBJECT_FIRST']'"
+      ],
+      "coverage_claim": "authored_and_compiled_only; no_generation_or_semantic_coverage_inferred",
+      "diagnostics": {
+        "python_warnings": [
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead"
+          },
+          {
+            "category": "DeprecationWarning",
+            "message": "Attribute s is deprecated and will be removed in Python 3.14; use value instead"
+          }
+        ],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      }
+    },
+    "xgrammar": {
+      "status": "NATIVE_COMPILABLE",
+      "probes": [
+        {
+          "label": "valid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": true,
+          "original_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "backend_input_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"batchProcessingStatus\":\"Error\",\"batchReleaseStatus\":\"Released\",\"deletions\":[{\"identifiers\":{\"clinvarAccession\":\"\"},\"processingStatus\":\"Error\"}],\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 57,
+              "token_ids": [
+                4913,
+                14049,
+                28892,
+                2522,
+                3252,
+                1454,
+                2198,
+                14049,
+                16077,
+                2522,
+                3252,
+                40038,
+                2198,
+                450,
+                1149,
+                908,
+                66582,
+                1713,
+                11836,
+                22317,
+                46581,
+                947,
+                6054,
+                290,
+                62366,
+                51193,
+                20660,
+                2522,
+                3252,
+                1454,
+                9207,
+                28503,
+                57108,
+                1916,
+                60767,
+                57108,
+                675,
+                60767,
+                97036,
+                788,
+                15,
+                1335,
+                5035,
+                13877,
+                788,
+                15,
+                1335,
+                5035,
+                12676,
+                788,
+                15,
+                1335,
+                5035,
+                7188,
+                788,
+                15,
+                92
+              ],
+              "recognition": {
+                "accepted": true,
+                "prefix_accepted": true,
+                "completed_before_eos": true,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": true,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 2,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "batchProcessingStatus"
+                ],
+                "schema_path": [
+                  "properties",
+                  "batchProcessingStatus",
+                  "type"
+                ],
+                "message": "None is not of type 'string'"
+              },
+              {
+                "keyword": "enum",
+                "path": [
+                  "batchProcessingStatus"
+                ],
+                "schema_path": [
+                  "properties",
+                  "batchProcessingStatus",
+                  "enum"
+                ],
+                "message": "None is not one of ['In processing', 'Success', 'Error', 'Partial success']"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "{'batchProcessingStatus': None, 'batchReleaseStatus': 'Released', 'deletions': [{'identifiers': {'clinvarAccession': ''}, 'processingStatus': 'Error'}], 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"batchProcessingStatus\":null,\"batchReleaseStatus\":\"Released\",\"deletions\":[{\"identifiers\":{\"clinvarAccession\":\"\"},\"processingStatus\":\"Error\"}],\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 57,
+              "token_ids": [
+                4913,
+                14049,
+                28892,
+                2522,
+                788,
+                2921,
+                1335,
+                14049,
+                16077,
+                2522,
+                3252,
+                40038,
+                2198,
+                450,
+                1149,
+                908,
+                66582,
+                1713,
+                11836,
+                22317,
+                46581,
+                947,
+                6054,
+                290,
+                62366,
+                51193,
+                20660,
+                2522,
+                3252,
+                1454,
+                9207,
+                28503,
+                57108,
+                1916,
+                60767,
+                57108,
+                675,
+                60767,
+                97036,
+                788,
+                15,
+                1335,
+                5035,
+                13877,
+                788,
+                15,
+                1335,
+                5035,
+                12676,
+                788,
+                15,
+                1335,
+                5035,
+                7188,
+                788,
+                15,
+                92
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "batchProcessingStatus"
+                ],
+                "schema_path": [
+                  "properties",
+                  "batchProcessingStatus",
+                  "enum"
+                ],
+                "message": "'' is not one of ['In processing', 'Success', 'Error', 'Partial success']"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "{'batchProcessingStatus': '', 'batchReleaseStatus': 'Released', 'deletions': [{'identifiers': {'clinvarAccession': ''}, 'processingStatus': 'Error'}], 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"batchProcessingStatus\":\"\",\"batchReleaseStatus\":\"Released\",\"deletions\":[{\"identifiers\":{\"clinvarAccession\":\"\"},\"processingStatus\":\"Error\"}],\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 55,
+              "token_ids": [
+                4913,
+                14049,
+                28892,
+                2522,
+                60767,
+                14049,
+                16077,
+                2522,
+                3252,
+                40038,
+                2198,
+                450,
+                1149,
+                908,
+                66582,
+                1713,
+                11836,
+                22317,
+                46581,
+                947,
+                6054,
+                290,
+                62366,
+                51193,
+                20660,
+                2522,
+                3252,
+                1454,
+                9207,
+                28503,
+                57108,
+                1916,
+                60767,
+                57108,
+                675,
+                60767,
+                97036,
+                788,
+                15,
+                1335,
+                5035,
+                13877,
+                788,
+                15,
+                1335,
+                5035,
+                12676,
+                788,
+                15,
+                1335,
+                5035,
+                7188,
+                788,
+                15,
+                92
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'batchProcessingStatus' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "{'batchReleaseStatus': 'Released', 'deletions': [{'identifiers': {'clinvarAccession': ''}, 'processingStatus': 'Error'}], 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"batchReleaseStatus\":\"Released\",\"deletions\":[{\"identifiers\":{\"clinvarAccession\":\"\"},\"processingStatus\":\"Error\"}],\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 51,
+              "token_ids": [
+                4913,
+                14049,
+                16077,
+                2522,
+                3252,
+                40038,
+                2198,
+                450,
+                1149,
+                908,
+                66582,
+                1713,
+                11836,
+                22317,
+                46581,
+                947,
+                6054,
+                290,
+                62366,
+                51193,
+                20660,
+                2522,
+                3252,
+                1454,
+                9207,
+                28503,
+                57108,
+                1916,
+                60767,
+                57108,
+                675,
+                60767,
+                97036,
+                788,
+                15,
+                1335,
+                5035,
+                13877,
+                788,
+                15,
+                1335,
+                5035,
+                12676,
+                788,
+                15,
+                1335,
+                5035,
+                7188,
+                788,
+                15,
+                92
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "minItems",
+                "path": [
+                  "deletions"
+                ],
+                "schema_path": [
+                  "properties",
+                  "deletions",
+                  "minItems"
+                ],
+                "message": "[] should be non-empty"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "{'batchProcessingStatus': 'Error', 'batchReleaseStatus': 'Released', 'deletions': [], 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"batchProcessingStatus\":\"Error\",\"batchReleaseStatus\":\"Released\",\"deletions\":[],\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 43,
+              "token_ids": [
+                4913,
+                14049,
+                28892,
+                2522,
+                3252,
+                1454,
+                2198,
+                14049,
+                16077,
+                2522,
+                3252,
+                40038,
+                2198,
+                450,
+                1149,
+                908,
+                8899,
+                28503,
+                57108,
+                1916,
+                60767,
+                57108,
+                675,
+                60767,
+                97036,
+                788,
+                15,
+                1335,
+                5035,
+                13877,
+                788,
+                15,
+                1335,
+                5035,
+                12676,
+                788,
+                15,
+                1335,
+                5035,
+                7188,
+                788,
+                15,
+                92
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-4",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "{'batchProcessingStatus': 'Error', 'batchReleaseStatus': 'Released', 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "{'batchProcessingStatus': 'Error', 'batchReleaseStatus': 'Released', 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"batchProcessingStatus\":\"Error\",\"batchReleaseStatus\":\"Released\",\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 38,
+              "token_ids": [
+                4913,
+                14049,
+                28892,
+                2522,
+                3252,
+                1454,
+                2198,
+                14049,
+                16077,
+                2522,
+                3252,
+                40038,
+                2198,
+                57108,
+                1916,
+                60767,
+                57108,
+                675,
+                60767,
+                97036,
+                788,
+                15,
+                1335,
+                5035,
+                13877,
+                788,
+                15,
+                1335,
+                5035,
+                12676,
+                788,
+                15,
+                1335,
+                5035,
+                7188,
+                788,
+                15,
+                92
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 9,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'submissionName' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'submissionDate' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'batchProcessingStatus' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'batchReleaseStatus' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'totalCount' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'totalErrors' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'totalSuccess' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'totalPublic' is a required property"
+              },
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "{} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "{} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                6257
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "[] is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "[]",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                1294
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "None is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "null",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                2921
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "'' is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "\"\"",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3014
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-4",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "0 is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "0",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                15
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-5",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "False is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "false",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3849
+              ],
+              "recognition": {
+                "accepted": false,
+                "prefix_accepted": false,
+                "completed_before_eos": false,
+                "method": "native_accept_string_plus_completion_and_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        }
+      ],
+      "compile_seconds": 12.74447162495926,
+      "diagnostics": {
+        "python_warnings": [],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      },
+      "library_warnings": null,
+      "ignored_assertion_warning_lines": [],
+      "grammar_file": "experiments/results/20261110T044100Z__structured_generation_manual_preflight_release/benchmark-stress-45__xgrammar.grammar.txt",
+      "grammar_sha256": "8b0d0d276acb0ca032de2efc62056e9179866854a0844c485b89ca890d3dbc83",
+      "false_positives": [],
+      "false_negatives_on_tested_spellings": [],
+      "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+      "seconds": 12.754490041988902
+    },
+    "llguidance_strict": {
+      "status": "NATIVE_COMPILABLE",
+      "probes": [
+        {
+          "label": "valid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": true,
+          "original_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "backend_input_oracle": {
+            "valid": true,
+            "error_count": 0,
+            "errors": []
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"batchProcessingStatus\":\"Error\",\"batchReleaseStatus\":\"Released\",\"deletions\":[{\"identifiers\":{\"clinvarAccession\":\"\"},\"processingStatus\":\"Error\"}],\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 57,
+              "token_ids": [
+                4913,
+                14049,
+                28892,
+                2522,
+                3252,
+                1454,
+                2198,
+                14049,
+                16077,
+                2522,
+                3252,
+                40038,
+                2198,
+                450,
+                1149,
+                908,
+                66582,
+                1713,
+                11836,
+                22317,
+                46581,
+                947,
+                6054,
+                290,
+                62366,
+                51193,
+                20660,
+                2522,
+                3252,
+                1454,
+                9207,
+                28503,
+                57108,
+                1916,
+                60767,
+                57108,
+                675,
+                60767,
+                97036,
+                788,
+                15,
+                1335,
+                5035,
+                13877,
+                788,
+                15,
+                1335,
+                5035,
+                12676,
+                788,
+                15,
+                1335,
+                5035,
+                7188,
+                788,
+                15,
+                92
+              ],
+              "recognition": {
+                "accepted": true,
+                "consumed_without_error": true,
+                "stopped": true,
+                "accepting": true,
+                "stop_reason": "EndOfSentence",
+                "rejection": null,
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": true,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 2,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [
+                  "batchProcessingStatus"
+                ],
+                "schema_path": [
+                  "properties",
+                  "batchProcessingStatus",
+                  "type"
+                ],
+                "message": "None is not of type 'string'"
+              },
+              {
+                "keyword": "enum",
+                "path": [
+                  "batchProcessingStatus"
+                ],
+                "schema_path": [
+                  "properties",
+                  "batchProcessingStatus",
+                  "enum"
+                ],
+                "message": "None is not one of ['In processing', 'Success', 'Error', 'Partial success']"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "{'batchProcessingStatus': None, 'batchReleaseStatus': 'Released', 'deletions': [{'identifiers': {'clinvarAccession': ''}, 'processingStatus': 'Error'}], 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"batchProcessingStatus\":null,\"batchReleaseStatus\":\"Released\",\"deletions\":[{\"identifiers\":{\"clinvarAccession\":\"\"},\"processingStatus\":\"Error\"}],\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 57,
+              "token_ids": [
+                4913,
+                14049,
+                28892,
+                2522,
+                788,
+                2921,
+                1335,
+                14049,
+                16077,
+                2522,
+                3252,
+                40038,
+                2198,
+                450,
+                1149,
+                908,
+                66582,
+                1713,
+                11836,
+                22317,
+                46581,
+                947,
+                6054,
+                290,
+                62366,
+                51193,
+                20660,
+                2522,
+                3252,
+                1454,
+                9207,
+                28503,
+                57108,
+                1916,
+                60767,
+                57108,
+                675,
+                60767,
+                97036,
+                788,
+                15,
+                1335,
+                5035,
+                13877,
+                788,
+                15,
+                1335,
+                5035,
+                12676,
+                788,
+                15,
+                1335,
+                5035,
+                7188,
+                788,
+                15,
+                92
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"null\" doesn't satisfy the grammar; byte 'n' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "enum",
+                "path": [
+                  "batchProcessingStatus"
+                ],
+                "schema_path": [
+                  "properties",
+                  "batchProcessingStatus",
+                  "enum"
+                ],
+                "message": "'' is not one of ['In processing', 'Success', 'Error', 'Partial success']"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "{'batchProcessingStatus': '', 'batchReleaseStatus': 'Released', 'deletions': [{'identifiers': {'clinvarAccession': ''}, 'processingStatus': 'Error'}], 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"batchProcessingStatus\":\"\",\"batchReleaseStatus\":\"Released\",\"deletions\":[{\"identifiers\":{\"clinvarAccession\":\"\"},\"processingStatus\":\"Error\"}],\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 55,
+              "token_ids": [
+                4913,
+                14049,
+                28892,
+                2522,
+                60767,
+                14049,
+                16077,
+                2522,
+                3252,
+                40038,
+                2198,
+                450,
+                1149,
+                908,
+                66582,
+                1713,
+                11836,
+                22317,
+                46581,
+                947,
+                6054,
+                290,
+                62366,
+                51193,
+                20660,
+                2522,
+                3252,
+                1454,
+                9207,
+                28503,
+                57108,
+                1916,
+                60767,
+                57108,
+                675,
+                60767,
+                97036,
+                788,
+                15,
+                1335,
+                5035,
+                13877,
+                788,
+                15,
+                1335,
+                5035,
+                12676,
+                788,
+                15,
+                1335,
+                5035,
+                7188,
+                788,
+                15,
+                92
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"\\\":\\\"\\\",\\\"\" doesn't satisfy the grammar; byte '\"' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'batchProcessingStatus' is a required property"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "{'batchReleaseStatus': 'Released', 'deletions': [{'identifiers': {'clinvarAccession': ''}, 'processingStatus': 'Error'}], 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"batchReleaseStatus\":\"Released\",\"deletions\":[{\"identifiers\":{\"clinvarAccession\":\"\"},\"processingStatus\":\"Error\"}],\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 51,
+              "token_ids": [
+                4913,
+                14049,
+                16077,
+                2522,
+                3252,
+                40038,
+                2198,
+                450,
+                1149,
+                908,
+                66582,
+                1713,
+                11836,
+                22317,
+                46581,
+                947,
+                6054,
+                290,
+                62366,
+                51193,
+                20660,
+                2522,
+                3252,
+                1454,
+                9207,
+                28503,
+                57108,
+                1916,
+                60767,
+                57108,
+                675,
+                60767,
+                97036,
+                788,
+                15,
+                1335,
+                5035,
+                13877,
+                788,
+                15,
+                1335,
+                5035,
+                12676,
+                788,
+                15,
+                1335,
+                5035,
+                7188,
+                788,
+                15,
+                92
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"Release\" doesn't satisfy the grammar; byte 'R' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "minItems",
+                "path": [
+                  "deletions"
+                ],
+                "schema_path": [
+                  "properties",
+                  "deletions",
+                  "minItems"
+                ],
+                "message": "[] should be non-empty"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "{'batchProcessingStatus': 'Error', 'batchReleaseStatus': 'Released', 'deletions': [], 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"batchProcessingStatus\":\"Error\",\"batchReleaseStatus\":\"Released\",\"deletions\":[],\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 43,
+              "token_ids": [
+                4913,
+                14049,
+                28892,
+                2522,
+                3252,
+                1454,
+                2198,
+                14049,
+                16077,
+                2522,
+                3252,
+                40038,
+                2198,
+                450,
+                1149,
+                908,
+                8899,
+                28503,
+                57108,
+                1916,
+                60767,
+                57108,
+                675,
+                60767,
+                97036,
+                788,
+                15,
+                1335,
+                5035,
+                13877,
+                788,
+                15,
+                1335,
+                5035,
+                12676,
+                788,
+                15,
+                1335,
+                5035,
+                7188,
+                788,
+                15,
+                92
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"],\\\"\" doesn't satisfy the grammar; byte ']' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "invalid-4",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "{'batchProcessingStatus': 'Error', 'batchReleaseStatus': 'Released', 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "{'batchProcessingStatus': 'Error', 'batchReleaseStatus': 'Released', 'submissionDate': '', 'submissionName': '', 'totalCount': 0, 'totalErrors': 0, 'totalPublic': 0, 'totalSuccess': 0} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{\"batchProcessingStatus\":\"Error\",\"batchReleaseStatus\":\"Released\",\"submissionDate\":\"\",\"submissionName\":\"\",\"totalCount\":0,\"totalErrors\":0,\"totalPublic\":0,\"totalSuccess\":0}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 38,
+              "token_ids": [
+                4913,
+                14049,
+                28892,
+                2522,
+                3252,
+                1454,
+                2198,
+                14049,
+                16077,
+                2522,
+                3252,
+                40038,
+                2198,
+                57108,
+                1916,
+                60767,
+                57108,
+                675,
+                60767,
+                97036,
+                788,
+                15,
+                1335,
+                5035,
+                13877,
+                788,
+                15,
+                1335,
+                5035,
+                12676,
+                788,
+                15,
+                1335,
+                5035,
+                7188,
+                788,
+                15,
+                92
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"totalCount\" doesn't satisfy the grammar; byte 't' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-0",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 9,
+            "errors": [
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'submissionName' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'submissionDate' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'batchProcessingStatus' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'batchReleaseStatus' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'totalCount' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'totalErrors' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'totalSuccess' is a required property"
+              },
+              {
+                "keyword": "required",
+                "path": [],
+                "schema_path": [
+                  "required"
+                ],
+                "message": "'totalPublic' is a required property"
+              },
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "{} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "{} is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "{}",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                6257
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"{}\" doesn't satisfy the grammar; byte '}' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-1",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "[] is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "[] is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "[]",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                1294
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"[]\" doesn't satisfy the grammar; byte '[' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-2",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "None is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "None is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "null",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                2921
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"null\" doesn't satisfy the grammar; byte 'n' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-3",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "'' is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "'' is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "\"\"",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3014
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"\\\"\\\"\" doesn't satisfy the grammar; byte '\"' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-4",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "0 is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "0 is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "0",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                15
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"0\" doesn't satisfy the grammar; byte '0' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        },
+        {
+          "label": "trivial-5",
+          "probe_group": "frozen_core",
+          "dataset_expected_valid": false,
+          "original_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "type",
+                "path": [],
+                "schema_path": [
+                  "type"
+                ],
+                "message": "False is not of type 'object'"
+              }
+            ]
+          },
+          "backend_input_oracle": {
+            "valid": false,
+            "error_count": 1,
+            "errors": [
+              {
+                "keyword": "anyOf",
+                "path": [],
+                "schema_path": [
+                  "anyOf"
+                ],
+                "message": "False is not valid under any of the given schemas"
+              }
+            ]
+          },
+          "validator_agreement": true,
+          "serializations": [
+            {
+              "ordering": "source_order",
+              "spelling": "ascii_escapes",
+              "text": "false",
+              "decoded_value_preserved": true,
+              "tokenizer_roundtrip_ok": true,
+              "token_count": 1,
+              "token_ids": [
+                3849
+              ],
+              "recognition": {
+                "accepted": false,
+                "consumed_without_error": false,
+                "stopped": true,
+                "accepting": false,
+                "stop_reason": "InternalError",
+                "rejection": "Parser Error: token \"false\" doesn't satisfy the grammar; byte 'f' fails parse",
+                "method": "native_bulk_qwen_token_consume_through_eos; not_token_mask_replay"
+              }
+            }
+          ],
+          "accepted": false,
+          "false_positive": false,
+          "false_negative_on_tested_spellings": false
+        }
+      ],
+      "compile_seconds": 0.01366008399054408,
+      "diagnostics": {
+        "python_warnings": [],
+        "native_stdout_stderr": "",
+        "python_stdout_stderr": ""
+      },
+      "library_warnings": [],
+      "ignored_assertion_warning_lines": [],
+      "grammar_file": "experiments/results/20261110T044100Z__structured_generation_manual_preflight_release/benchmark-stress-45__llguidance_strict.grammar.txt",
+      "grammar_sha256": "6545aeb33b317a50a373fe42fca0bec83c7b56364ba86656a2996edb53c5abf0",
+      "false_positives": [],
+      "false_negatives_on_tested_spellings": [],
+      "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+      "seconds": 0.04009162506554276
+    }
+  },
+  "validator_agreement": {
+    "total": 12,
+    "frozen_core": 12,
+    "supplemental": 0,
+    "disagreements": 0
+  },
+  "seconds": 12.909336999990046
+}

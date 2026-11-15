@@ -1,0 +1,730 @@
+{
+  "tasks": [
+    {
+      "task_id": "benchmark-stress-10",
+      "validator_agreement": {
+        "total": 10,
+        "frozen_core": 10,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-25",
+      "validator_agreement": {
+        "total": 15,
+        "frozen_core": 11,
+        "supplemental": 4,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "EXPOSED_FALSE_POSITIVE",
+          "false_positives": [
+            "targeted-name_length_intersection",
+            "targeted-keyword_uniqueness"
+          ],
+          "false_negatives_on_tested_spellings": [
+            "targeted-unicode_word_pattern"
+          ]
+        },
+        "llguidance_strict": {
+          "status": "COMPILE_REJECTED",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-26",
+      "validator_agreement": {
+        "total": 11,
+        "frozen_core": 11,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-27",
+      "validator_agreement": {
+        "total": 9,
+        "frozen_core": 9,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-28",
+      "validator_agreement": {
+        "total": 11,
+        "frozen_core": 11,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-29",
+      "validator_agreement": {
+        "total": 11,
+        "frozen_core": 11,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-30",
+      "validator_agreement": {
+        "total": 12,
+        "frozen_core": 11,
+        "supplemental": 1,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "EXPOSED_FALSE_POSITIVE",
+          "false_positives": [
+            "targeted-nonasserting_format_oneof_is_unsatisfiable"
+          ],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "COMPILE_REJECTED",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-31",
+      "validator_agreement": {
+        "total": 11,
+        "frozen_core": 11,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "COMPILE_REJECTED",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-32",
+      "validator_agreement": {
+        "total": 14,
+        "frozen_core": 11,
+        "supplemental": 3,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "EXPOSED_REJECTION_OF_VALID_PROBE",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": [
+            "targeted-unicode_decimal_digit_pattern",
+            "targeted-unicode_word_pattern"
+          ]
+        },
+        "llguidance_strict": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "EXPOSED_REJECTION_OF_VALID_PROBE",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": [
+            "targeted-unicode_decimal_digit_pattern",
+            "targeted-unicode_word_pattern"
+          ]
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-33",
+      "validator_agreement": {
+        "total": 11,
+        "frozen_core": 11,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-34",
+      "validator_agreement": {
+        "total": 11,
+        "frozen_core": 11,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-35",
+      "validator_agreement": {
+        "total": 14,
+        "frozen_core": 10,
+        "supplemental": 4,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "EXPOSED_REJECTION_OF_VALID_PROBE",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": [
+            "targeted-pattern_final_lf_unicode_del"
+          ]
+        },
+        "llguidance_strict": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "EXPOSED_REJECTION_OF_VALID_PROBE",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": [
+            "targeted-pattern_final_lf_unicode_del"
+          ]
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-12",
+      "validator_agreement": {
+        "total": 12,
+        "frozen_core": 11,
+        "supplemental": 1,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "EXPOSED_FALSE_POSITIVE",
+          "false_positives": [
+            "targeted-orgnumber_length_intersection"
+          ],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-20",
+      "validator_agreement": {
+        "total": 17,
+        "frozen_core": 11,
+        "supplemental": 6,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-36",
+      "validator_agreement": {
+        "total": 11,
+        "frozen_core": 11,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "COMPILE_REJECTED",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-37",
+      "validator_agreement": {
+        "total": 12,
+        "frozen_core": 11,
+        "supplemental": 1,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "EXPOSED_FALSE_POSITIVE",
+          "false_positives": [
+            "targeted-structured_schema_unique_items"
+          ],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "COMPILE_REJECTED",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-38",
+      "validator_agreement": {
+        "total": 10,
+        "frozen_core": 10,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "IGNORED_ASSERTIONS_WARNING",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-39",
+      "validator_agreement": {
+        "total": 11,
+        "frozen_core": 11,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "COMPILE_REJECTED",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-40",
+      "validator_agreement": {
+        "total": 10,
+        "frozen_core": 10,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "COMPILE_REJECTED",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-41",
+      "validator_agreement": {
+        "total": 11,
+        "frozen_core": 11,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-42",
+      "validator_agreement": {
+        "total": 11,
+        "frozen_core": 11,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "IGNORED_ASSERTIONS_WARNING",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": [
+            "valid-0"
+          ]
+        },
+        "llguidance_strict": {
+          "status": "COMPILE_REJECTED",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-43",
+      "validator_agreement": {
+        "total": 11,
+        "frozen_core": 11,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-44",
+      "validator_agreement": {
+        "total": 9,
+        "frozen_core": 9,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "COMPILE_REJECTED",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        }
+      }
+    },
+    {
+      "task_id": "benchmark-stress-45",
+      "validator_agreement": {
+        "total": 12,
+        "frozen_core": 12,
+        "supplemental": 0,
+        "disagreements": 0
+      },
+      "engines": {
+        "lmql": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": null,
+          "false_positives": null,
+          "false_negatives_on_tested_spellings": null
+        },
+        "xgrammar": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        },
+        "llguidance_strict": {
+          "status": "NATIVE_COMPILABLE",
+          "enforcement_status": "NO_MISMATCH_IN_FINITE_PROBES",
+          "false_positives": [],
+          "false_negatives_on_tested_spellings": []
+        }
+      }
+    }
+  ],
+  "probe_count": 257,
+  "supplemental_probe_count": 20,
+  "validator_disagreements": 0,
+  "gpu_used": false,
+  "changed_sources_during_audit": [],
+  "input_snapshot_stable": true,
+  "status": "COMPLETED_CPU_AUDIT"
+}

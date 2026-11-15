@@ -1,0 +1,168 @@
+{
+  "valid": [
+    {
+      "@context": [],
+      "credentialSubject": [],
+      "issuanceDate": "2000-01-01T00:00:00Z",
+      "issuer": {
+        "id": "https://A.com",
+        "name": ""
+      },
+      "openAttestationMetadata": {
+        "identityProof": {
+          "identifier": "",
+          "type": "DID"
+        },
+        "proof": {
+          "method": "DID",
+          "type": "OpenAttestationProofMethod",
+          "value": ""
+        }
+      },
+      "type": []
+    }
+  ],
+  "invalid": [
+    {
+      "name": "replace ('@context',) with None",
+      "instance": {
+        "@context": null,
+        "credentialSubject": [],
+        "issuanceDate": "2000-01-01T00:00:00Z",
+        "issuer": {
+          "id": "https://A.com",
+          "name": ""
+        },
+        "openAttestationMetadata": {
+          "identityProof": {
+            "identifier": "",
+            "type": "DID"
+          },
+          "proof": {
+            "method": "DID",
+            "type": "OpenAttestationProofMethod",
+            "value": ""
+          }
+        },
+        "type": []
+      },
+      "validator": "type",
+      "path": [
+        "@context"
+      ],
+      "schema_path": [
+        "properties",
+        "@context",
+        "type"
+      ],
+      "message": "None is not of type 'array'",
+      "classification": "schema_error"
+    },
+    {
+      "name": "delete ('@context',)",
+      "instance": {
+        "credentialSubject": [],
+        "issuanceDate": "2000-01-01T00:00:00Z",
+        "issuer": {
+          "id": "https://A.com",
+          "name": ""
+        },
+        "openAttestationMetadata": {
+          "identityProof": {
+            "identifier": "",
+            "type": "DID"
+          },
+          "proof": {
+            "method": "DID",
+            "type": "OpenAttestationProofMethod",
+            "value": ""
+          }
+        },
+        "type": []
+      },
+      "validator": "required",
+      "path": [],
+      "schema_path": [
+        "required"
+      ],
+      "message": "'@context' is a required property",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('credentialSubject',) with None",
+      "instance": {
+        "@context": [],
+        "credentialSubject": null,
+        "issuanceDate": "2000-01-01T00:00:00Z",
+        "issuer": {
+          "id": "https://A.com",
+          "name": ""
+        },
+        "openAttestationMetadata": {
+          "identityProof": {
+            "identifier": "",
+            "type": "DID"
+          },
+          "proof": {
+            "method": "DID",
+            "type": "OpenAttestationProofMethod",
+            "value": ""
+          }
+        },
+        "type": []
+      },
+      "validator": "oneOf",
+      "path": [
+        "credentialSubject"
+      ],
+      "schema_path": [
+        "properties",
+        "credentialSubject",
+        "oneOf"
+      ],
+      "message": "None is not valid under any of the given schemas",
+      "classification": "schema_error"
+    },
+    {
+      "name": "replace ('openAttestationMetadata', 'identityProof', 'type') with ''",
+      "instance": {
+        "@context": [],
+        "credentialSubject": [],
+        "issuanceDate": "2000-01-01T00:00:00Z",
+        "issuer": {
+          "id": "https://A.com",
+          "name": ""
+        },
+        "openAttestationMetadata": {
+          "identityProof": {
+            "identifier": "",
+            "type": ""
+          },
+          "proof": {
+            "method": "DID",
+            "type": "OpenAttestationProofMethod",
+            "value": ""
+          }
+        },
+        "type": []
+      },
+      "validator": "enum",
+      "path": [
+        "openAttestationMetadata",
+        "identityProof",
+        "type"
+      ],
+      "schema_path": [
+        "properties",
+        "openAttestationMetadata",
+        "properties",
+        "identityProof",
+        "properties",
+        "type",
+        "enum"
+      ],
+      "message": "'' is not one of ['DNS-TXT', 'DNS-DID', 'DID']",
+      "classification": "schema_error"
+    }
+  ]
+}

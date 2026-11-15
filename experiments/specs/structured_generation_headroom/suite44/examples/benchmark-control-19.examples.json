@@ -1,0 +1,25 @@
+{
+  "valid": [
+    {
+      "date": "2000-01-01",
+      "file_requests": [],
+      "power": "executive",
+      "scraped_at": "2000-01-01T00:00:00Z",
+      "territory_id": ""
+    }
+  ],
+  "invalid": [
+    {
+      "instance": {
+        "file_requests": [],
+        "power": "executive",
+        "scraped_at": "2000-01-01T00:00:00Z",
+        "territory_id": ""
+      },
+      "validator": "required",
+      "schema_path": [
+        "required"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "task_id": "benchmark-stress-38",
+  "variant": "finite-backreference",
+  "source_sha256": "702651cbe40ef1fa75f23ba84b8157f8e002a362293f8d1b856c6ce5f934c690",
+  "edits": [
+    {
+      "path": [
+        "definitions",
+        "Trigger",
+        "definitions",
+        "symbolExpression",
+        "pattern"
+      ],
+      "before": "^%(s|i|l|pp|tp|f|ctrl|ctx|tr)%.+%\\1%$",
+      "after": "^(%s%.+%s%|%i%.+%i%|%l%.+%l%|%pp%.+%pp%|%tp%.+%tp%|%f%.+%f%|%ctrl%.+%ctrl%|%ctx%.+%ctx%|%tr%.+%tr%)$"
+    },
+    {
+      "path": [
+        "definitions",
+        "Trigger",
+        "definitions",
+        "controlSymbolExpression",
+        "pattern"
+      ],
+      "before": "^%(ctrl)%.+%\\1%$",
+      "after": "^(%ctrl%.+%ctrl%)$"
+    },
+    {
+      "path": [
+        "definitions",
+        "Trigger",
+        "definitions",
+        "controlAttributeSymbolExpression",
+        "pattern"
+      ],
+      "before": "^%(ctrl)%.+%\\1%$",
+      "after": "^(%ctrl%.+%ctrl%)$"
+    }
+  ],
+  "strict_mode": false,
+  "any_order": false,
+  "format_asserted": false,
+  "compiled": true,
+  "compile_seconds": 1.6260275000240654,
+  "probes": [
+    {
+      "label": "valid-example-0",
+      "oracle_valid": true,
+      "oracle_keywords": [],
+      "text": "{\"basePath\":\"x\",\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":0,\"defaultWidth\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+      "prefix_accepted": false,
+      "complete": false,
+      "eos_accepted": false,
+      "schema_order": {
+        "text": "{\"basePath\":\"x\",\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":0,\"defaultHeight\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+        "prefix_accepted": true,
+        "complete": true,
+        "eos_accepted": true
+      }
+    },
+    {
+      "label": "invalid-example-0",
+      "oracle_valid": false,
+      "oracle_keywords": [
+        "type"
+      ],
+      "text": "{\"basePath\":null,\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":0,\"defaultWidth\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+      "prefix_accepted": false,
+      "complete": false,
+      "eos_accepted": false,
+      "schema_order": {
+        "text": "{\"basePath\":null,\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":0,\"defaultHeight\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+        "prefix_accepted": false,
+        "complete": false,
+        "eos_accepted": false
+      }
+    },
+    {
+      "label": "invalid-example-1",
+      "oracle_valid": false,
+      "oracle_keywords": [
+        "required"
+      ],
+      "text": "{\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":0,\"defaultWidth\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+      "prefix_accepted": false,
+      "complete": false,
+      "eos_accepted": false,
+      "schema_order": {
+        "text": "{\"scaleMode\":\"None\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":0,\"defaultHeight\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+        "prefix_accepted": false,
+        "complete": false,
+        "eos_accepted": false
+      }
+    },
+    {
+      "label": "invalid-example-2",
+      "oracle_valid": false,
+      "oracle_keywords": [
+        "enum"
+      ],
+      "text": "{\"basePath\":\"x\",\"scaleMode\":\"\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":0,\"defaultWidth\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+      "prefix_accepted": false,
+      "complete": false,
+      "eos_accepted": false,
+      "schema_order": {
+        "text": "{\"basePath\":\"x\",\"scaleMode\":\"\",\"startupView\":\"x\",\"tcHmiServer\":{},\"userControls\":[],\"content\":[],\"views\":[],\"userFunctions\":[],\"symbols\":{\"internal\":{}},\"trigger\":[],\"actionTemplates\":[],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":0,\"defaultHeight\":0}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"x\"}}",
+        "prefix_accepted": false,
+        "complete": false,
+        "eos_accepted": false
+      }
+    },
+    {
+      "label": "ecb94b897c3e8e7645286d6f",
+      "oracle_valid": true,
+      "oracle_keywords": [],
+      "text": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"basePath\":\"./Framework\",\"dependencyFiles\":[{\"name\":\"Stylesheet/main.css\",\"type\":\"Stylesheet\",\"description\":\"Main stylesheet for the application\"},{\"name\":\"JavaScript/utils.js\",\"type\":\"JavaScript\",\"description\":\"Utility functions for the application\"}],\"activeTheme\":\"DefaultTheme\",\"themes\":{\"DefaultTheme\":{\"resources\":[{\"name\":\"Stylesheet/theme.css\",\"type\":\"Stylesheet\",\"description\":\"Theme-specific styles\"}],\"replacesThemeForControls\":[\"Control1\",\"Control2\"],\"replacesThemeForPackageComponents\":[\"Beckhoff.TwinCAT.HMI.Controls/ContentTabs\"]}},\"scaleMode\":\"ScaleToFit\",\"startupView\":\"MainView\",\"tcHmiServer\":{\"websocketIntervalTime\":5000,\"websocketTimeout\":10000,\"websocketSystemTimeout\":30000,\"websocketSubscriptionMode\":\"Poll\"},\"packages\":[{\"name\":\"Beckhoff.TwinCAT.HMI.Controls\",\"basePath\":\"./Packages/Controls\"}],\"userControls\":[{\"url\":\"./UserControls/CustomControl.js\"}],\"content\":[{\"url\":\"./Content/WelcomePage.html\",\"preload\":true,\"keepAlive\":false}],\"views\":[{\"url\":\"./Views/MainView.html\",\"preload\":true}],\"userFunctions\":[{\"url\":\"./UserFunctions/CustomFunction.js\"}],\"symbols\":{\"internal\":{\"Temperature\":{\"value\":25,\"persist\":false,\"readonly\":false,\"type\":\"tchmi:Integer\"}}},\"trigger\":[{\"event\":\"ButtonClicked\",\"preventDefault\":false,\"actions\":[{\"objectType\":\"Function\",\"fn\":\"handleButtonClick\",\"fnParams\":[]}]}],\"actionTemplates\":[{\"name\":\"ShowMessage\",\"category\":\"UI\",\"actions\":[{\"objectType\":\"JavaScript\",\"sourceLines\":[\"alert('Message');\"]}]}],\"languages\":{\"en\":\"./Localization/en.json\"},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":1024,\"defaultHeight\":768}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"\"}}",
+      "prefix_accepted": false,
+      "complete": false,
+      "eos_accepted": false,
+      "model": "Qwen/Qwen3-8B",
+      "setting": "d0-s0"
+    },
+    {
+      "label": "6474fded9c1e206a83831f8f",
+      "oracle_valid": true,
+      "oracle_keywords": [],
+      "text": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"basePath\":\"/Framework\",\"dependencyFiles\":[{\"name\":\"styles/main.css\",\"type\":\"Stylesheet\",\"description\":\"Main application stylesheet\"},{\"name\":\"scripts/app.js\",\"type\":\"JavaScript\",\"description\":\"Core application logic\"}],\"activeTheme\":\"DefaultTheme\",\"themes\":{\"DefaultTheme\":{\"resources\":[{\"name\":\"themes/default/styles.css\",\"type\":\"Stylesheet\",\"description\":\"Default theme stylesheet\"},{\"name\":\"themes/default/values.json\",\"type\":\"ThemedValues\",\"description\":\"Theme-specific values\"}],\"replacesThemeForControls\":[\"CustomControl\"],\"replacesThemeForPackageComponents\":[\"Beckhoff.TwinCAT.HMI.Controls/ContentTabs\"]}},\"scaleMode\":\"ScaleToFill\",\"startupView\":\"MainView\",\"tcHmiServer\":{\"websocketIntervalTime\":1000,\"websocketTimeout\":5000,\"websocketSystemTimeout\":30000,\"websocketSubscriptionMode\":\"Change\"},\"userControls\":[{\"url\":\"/UserControls/MyControl.js\"}],\"content\":[{\"url\":\"/Content/HomePage.js\",\"preload\":true,\"keepAlive\":true}],\"views\":[{\"url\":\"/Views/MainView.js\",\"preload\":true}],\"userFunctions\":[{\"url\":\"/UserFunctions/MyFunction.js\"}],\"symbols\":{\"internal\":{\"mySymbol\":{\"value\":\"123\",\"persist\":true,\"readonly\":false,\"type\":\"tchmi:Integer\"}},\"themedResources\":{\"themeColor\":{\"type\":\"tchmi:Color\",\"description\":\"Primary theme color\",\"values\":{\"DefaultTheme\":\"#0078D7\"}}}},\"trigger\":[{\"event\":\"Load\",\"preventDefault\":false,\"displayName\":\"Application Load\",\"actions\":[{\"objectType\":\"JavaScript\",\"sourceLines\":[\"console.log('Application loaded');\"],\"injectContextObject\":true,\"waitMode\":\"Synchronous\"}]}],\"actionTemplates\":[{\"name\":\"LogMessage\",\"category\":\"Debug\",\"actions\":[{\"objectType\":\"JavaScript\",\"sourceLines\":[\"console.log('Action executed');\"]}],\"parameters\":[{\"name\":\"message\",\"type\":\"string\",\"description\":\"Message to log\"}]}],\"languages\":{\"en\":\"/Localization/en.json\"},\"languageFallback\":\"en\",\"creatorSettings\":{\"viewport\":{\"defaultWidth\":800,\"defaultHeight\":600}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"DefaultPopupProvider\"},\"keyboardLayouts\":[{\"url\":\"/KeyboardLayouts/US-layout.json\"}],\"disableLoadingOptimization\":false,\"tcspeech\":{\"domain\":\"MySpeechDomain\",\"enableSpeaker\":true,\"enableMicrophone\":true,\"defaultVolume\":0.8,\"confidenceThreshold\":0.5},\"packages\":[{\"name\":\"Beckhoff.TwinCAT.HMI.Controls\",\"basePath\":\"/Packages/Beckhoff.TwinCAT.HMI.Controls\"}]}",
+      "prefix_accepted": false,
+      "complete": false,
+      "eos_accepted": false,
+      "schema_order": {
+        "text": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"basePath\":\"/Framework\",\"dependencyFiles\":[{\"name\":\"styles/main.css\",\"type\":\"Stylesheet\",\"description\":\"Main application stylesheet\"},{\"name\":\"scripts/app.js\",\"type\":\"JavaScript\",\"description\":\"Core application logic\"}],\"activeTheme\":\"DefaultTheme\",\"themes\":{\"DefaultTheme\":{\"resources\":[{\"name\":\"themes/default/styles.css\",\"type\":\"Stylesheet\",\"description\":\"Default theme stylesheet\"},{\"name\":\"themes/default/values.json\",\"type\":\"ThemedValues\",\"description\":\"Theme-specific values\"}],\"replacesThemeForControls\":[\"CustomControl\"],\"replacesThemeForPackageComponents\":[\"Beckhoff.TwinCAT.HMI.Controls/ContentTabs\"]}},\"scaleMode\":\"ScaleToFill\",\"startupView\":\"MainView\",\"tcHmiServer\":{\"websocketIntervalTime\":1000,\"websocketTimeout\":5000,\"websocketSystemTimeout\":30000,\"websocketSubscriptionMode\":\"Change\"},\"packages\":[{\"name\":\"Beckhoff.TwinCAT.HMI.Controls\",\"basePath\":\"/Packages/Beckhoff.TwinCAT.HMI.Controls\"}],\"userControls\":[{\"url\":\"/UserControls/MyControl.js\"}],\"content\":[{\"url\":\"/Content/HomePage.js\",\"preload\":true,\"keepAlive\":true}],\"views\":[{\"url\":\"/Views/MainView.js\",\"preload\":true}],\"userFunctions\":[{\"url\":\"/UserFunctions/MyFunction.js\"}],\"symbols\":{\"internal\":{\"mySymbol\":{\"value\":\"123\",\"persist\":true,\"readonly\":false,\"type\":\"tchmi:Integer\"}},\"themedResources\":{\"themeColor\":{\"type\":\"tchmi:Color\",\"description\":\"Primary theme color\",\"values\":{\"DefaultTheme\":\"#0078D7\"}}}},\"trigger\":[{\"event\":\"Load\",\"preventDefault\":false,\"displayName\":\"Application Load\",\"actions\":[{\"objectType\":\"JavaScript\",\"sourceLines\":[\"console.log('Application loaded');\"],\"injectContextObject\":true,\"waitMode\":\"Synchronous\"}]}],\"actionTemplates\":[{\"name\":\"LogMessage\",\"category\":\"Debug\",\"actions\":[{\"objectType\":\"JavaScript\",\"sourceLines\":[\"console.log('Action executed');\"]}],\"parameters\":[{\"name\":\"message\",\"type\":\"string\",\"description\":\"Message to log\"}]}],\"languages\":{\"en\":\"/Localization/en.json\"},\"languageFallback\":\"en\",\"keyboardLayouts\":[{\"url\":\"/KeyboardLayouts/US-layout.json\"}],\"disableLoadingOptimization\":false,\"tcspeech\":{\"domain\":\"MySpeechDomain\",\"enableSpeaker\":true,\"enableMicrophone\":true,\"defaultVolume\":0.8,\"confidenceThreshold\":0.5},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":800,\"defaultHeight\":600}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemPopups\":{\"providerName\":\"DefaultPopupProvider\"}}",
+        "prefix_accepted": false,
+        "complete": false,
+        "eos_accepted": false
+      },
+      "model": "Qwen/Qwen3-14B",
+      "setting": "d0-s0"
+    },
+    {
+      "label": "dda5943fade6012f660ade60",
+      "oracle_valid": true,
+      "oracle_keywords": [],
+      "text": "{\"basePath\":\"/Framework\",\"scaleMode\":\"ScaleToFill\",\"startupView\":\"MainView\",\"tcHmiServer\":{},\"userControls\":[{\"url\":\"/UserControls/MyControl.js\"}],\"content\":[{\"url\":\"ContentFile.js\",\"preload\":true},{\"url\":\"ContentFile.js\",\"preload\":true},{\"url\":\"ContentFile.js\",\"preload\":true}],\"views\":[{\"url\":\"Views/DefaultView.js\",\"preload\":true},{\"url\":\"Views/SecondView.js\",\"preload\":true},{\"url\":\"Views/ThirdView.js\",\"preload\":true}],\"userFunctions\":[{},{},{}],\"symbols\":{\"internal\":{}},\"trigger\":[{\"event\":\"Load\",\"actions\":[{\"objectType\":\"Condition\",\"true\":null,\"false\":false},{\"objectType\":\"Condition\",\"true\":null,\"false\":false},{\"objectType\":\"Condition\",\"true\":true,\"false\":null}]},{\"event\":\"Load\",\"actions\":[{\"objectType\":\"Condition\",\"true\":true,\"false\":false},{\"objectType\":\"Condition\",\"true\":true,\"false\":false},{\"objectType\":\"Condition\",\"true\":true,\"false\":false}]},{\"event\":\"Load\",\"actions\":[{\"objectType\":\"Condition\",\"true\":true,\"false\":false},{\"objectType\":\"Condition\",\"true\":true,\"false\":false},{\"objectType\":\"Condition\",\"true\":true,\"false\":null}]}],\"actionTemplates\":[{},{},{}],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":600,\"defaultWidth\":800}},\"binding\":{\"symbolError\":\"Reset\"},\"systemPopups\":{\"providerName\":\"DefaultPopupProvider\"}}",
+      "prefix_accepted": false,
+      "complete": false,
+      "eos_accepted": false,
+      "schema_order": {
+        "text": "{\"basePath\":\"/Framework\",\"scaleMode\":\"ScaleToFill\",\"startupView\":\"MainView\",\"tcHmiServer\":{},\"userControls\":[{\"url\":\"/UserControls/MyControl.js\"}],\"content\":[{\"url\":\"ContentFile.js\",\"preload\":true},{\"url\":\"ContentFile.js\",\"preload\":true},{\"url\":\"ContentFile.js\",\"preload\":true}],\"views\":[{\"url\":\"Views/DefaultView.js\",\"preload\":true},{\"url\":\"Views/SecondView.js\",\"preload\":true},{\"url\":\"Views/ThirdView.js\",\"preload\":true}],\"userFunctions\":[{},{},{}],\"symbols\":{\"internal\":{}},\"trigger\":[{\"event\":\"Load\",\"actions\":[{\"objectType\":\"Condition\",\"true\":null,\"false\":false},{\"objectType\":\"Condition\",\"true\":null,\"false\":false},{\"objectType\":\"Condition\",\"true\":true,\"false\":null}]},{\"event\":\"Load\",\"actions\":[{\"objectType\":\"Condition\",\"true\":true,\"false\":false},{\"objectType\":\"Condition\",\"true\":true,\"false\":false},{\"objectType\":\"Condition\",\"true\":true,\"false\":false}]},{\"event\":\"Load\",\"actions\":[{\"objectType\":\"Condition\",\"true\":true,\"false\":false},{\"objectType\":\"Condition\",\"true\":true,\"false\":false},{\"objectType\":\"Condition\",\"true\":true,\"false\":null}]}],\"actionTemplates\":[{},{},{}],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":800,\"defaultHeight\":600}},\"binding\":{\"symbolError\":\"Reset\"},\"systemPopups\":{\"providerName\":\"DefaultPopupProvider\"}}",
+        "prefix_accepted": true,
+        "complete": true,
+        "eos_accepted": true
+      },
+      "model": "Qwen/Qwen3-14B",
+      "setting": "d1-s1"
+    },
+    {
+      "label": "3a233783041355956ad3c62d",
+      "oracle_valid": false,
+      "oracle_keywords": [
+        "anyOf"
+      ],
+      "text": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"basePath\":\"/path/to/framework\",\"dependencyFiles\":[{\"name\":\"styles.css\",\"type\":\"Stylesheet\",\"description\":\"Main stylesheet for the application.\"},{\"name\":\"main.js\",\"type\":\"JavaScript\",\"description\":\"Main JavaScript file for the application.\"}],\"activeTheme\":\"DarkTheme\",\"themes\":{\"DarkTheme\":{\"resources\":[{\"name\":\"dark-theme.css\",\"type\":\"Stylesheet\",\"description\":\"Dark theme stylesheet.\"},{\"name\":\"dark-theme-values.json\",\"type\":\"ThemedValues\",\"description\":\"Dark theme values.\"}],\"replacesThemeForControls\":[\"Control1\",\"Control2\"],\"replacesThemeForPackageComponents\":[\"Package1/Component1\",\"Package2/Component2\"]}},\"locale\":\"\",\"scaleMode\":\"ScaleToFit\",\"startupView\":\"MainView\",\"loginPage\":\"/path/to/login.html\",\"tcHmiServer\":{\"websocketIntervalTime\":1000,\"websocketTimeout\":5000,\"websocketSystemTimeout\":3000,\"websocketSubscriptionMode\":\"Change\"},\"packages\":[{\"name\":\"Package1\",\"basePath\":\"/path/to/package1\"},{\"name\":\"Package2\",\"basePath\":\"/path/to/package2\"}],\"userControls\":[{\"url\":\"/path/to/usercontrol1.js\"},{\"url\":\"/path/to/usercontrol2.js\"}],\"content\":[{\"url\":\"/path/to/content1.html\",\"preload\":true,\"keepAlive\":false,\"loadSync\":false,\"preloadBindings\":false},{\"url\":\"/path/to/content2.html\",\"preload\":true,\"keepAlive\":true,\"loadSync\":true,\"preloadBindings\":true}],\"views\":[{\"url\":\"/path/to/view1.html\",\"preload\":true,\"keepAlive\":false,\"preloadBindings\":false},{\"url\":\"/path/to/view2.html\",\"preload\":true,\"keepAlive\":true,\"preloadBindings\":true}],\"userFunctions\":[{\"url\":\"/path/to/userfunction1.js\"},{\"url\":\"/path/to/userfunction2.js\"}],\"symbols\":{\"internal\":{\"Symbol1\":{\"value\":42,\"persist\":true,\"readonly\":false,\"type\":\"tchmi:Int32\"},\"Symbol2\":{\"value\":\"Hello, World!\",\"persist\":false,\"readonly\":true,\"type\":\"tchmi:String\"}},\"themedResources\":{\"Resource1\":{\"type\":\"tchmi:Color\",\"description\":\"Primary color for the theme.\",\"values\":{\"DarkTheme\":\"#000000\",\"LightTheme\":\"#FFFFFF\"}}}},\"trigger\":[{\"event\":\"ButtonClick\",\"preventDefault\":true,\"displayName\":\"Button Click Trigger\",\"actions\":[{\"objectType\":\"WriteToSymbol\",\"symbolExpression\":\"%sSymbol1%\",\"value\":{\"objectType\":\"StaticValue\",\"value\":100,\"valueType\":\"Number\"},\"success\":[],\"error\":[],\"active\":true,\"collapsed\":false,\"asyncWait\":false}]}],\"actionTemplates\":[{\"name\":\"Template1\",\"category\":\"Category1\",\"actions\":[],\"parameters\":[{\"name\":\"Param1\",\"type\":\"String\",\"description\":\"First parameter\",\"structDataType\":\"\"}]}],\"languages\":{\"en\":\"/path/to/english.json\",\"de\":[\"/path/to/german1.json\",\"/path/to/german2.json\"]},\"languageFallback\":\"en\",\"languagesForFramework\":{\"en\":\"/path/to/framework/english.json\",\"de\":[\"/path/to/framework/german1.json\",\"/path/to/framework/german2.json\"]},\"languagesForControls\":{\"Control1\":{\"languages\":{\"en\":\"/path/to/control1/english.json\",\"de\":\"/path/to/control1/german.json\"}}},\"languagesForFunctions\":{\"Function1\":{\"languages\":{\"en\":\"/path/to/function1/english.json\",\"de\":\"/path/to/function1/german.json\"}}},\"keyboardLayouts\":[{\"url\":\"/path/to/keyboard1.json\"},{\"url\":\"/path/to/keyboard2.json\"}],\"disableLoadingOptimization\":false,\"tcspeech\":{\"domain\":\"TcSpeechDomain\",\"enableSpeaker\":true,\"enableMicrophone\":true,\"defaultVolume\":0.8,\"confidenceThreshold\":0.5},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":1920,\"defaultHeight\":1080}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemKeyboard\":{\"providerName\":\"Beckhoff.TcHmiKeyboard\",\"projectKeyboardMapping\":{\"en\":{\"text\":\"/path/to/keyboard/text.json\",\"decimal\":\"/path/to/keyboard/decimal.json\",\"numeric\":\"/path/to/keyboard/numeric.json\"},\"de\":{\"text\":\"/path/to/keyboard/text_de.json\",\"decimal\":\"/path/to/keyboard/decimal_de.json\",\"numeric\":\"/path/to/keyboard/numeric_de.json\"}},\"layout\":{\"height\":300}},\"systemPopups\":{\"providerName\":\"PopupProvider\"}}",
+      "prefix_accepted": false,
+      "complete": false,
+      "eos_accepted": false,
+      "schema_order": {
+        "text": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"basePath\":\"/path/to/framework\",\"dependencyFiles\":[{\"name\":\"styles.css\",\"type\":\"Stylesheet\",\"description\":\"Main stylesheet for the application.\"},{\"name\":\"main.js\",\"type\":\"JavaScript\",\"description\":\"Main JavaScript file for the application.\"}],\"activeTheme\":\"DarkTheme\",\"themes\":{\"DarkTheme\":{\"resources\":[{\"name\":\"dark-theme.css\",\"type\":\"Stylesheet\",\"description\":\"Dark theme stylesheet.\"},{\"name\":\"dark-theme-values.json\",\"type\":\"ThemedValues\",\"description\":\"Dark theme values.\"}],\"replacesThemeForControls\":[\"Control1\",\"Control2\"],\"replacesThemeForPackageComponents\":[\"Package1/Component1\",\"Package2/Component2\"]}},\"locale\":\"\",\"scaleMode\":\"ScaleToFit\",\"startupView\":\"MainView\",\"loginPage\":\"/path/to/login.html\",\"tcHmiServer\":{\"websocketIntervalTime\":1000,\"websocketTimeout\":5000,\"websocketSystemTimeout\":3000,\"websocketSubscriptionMode\":\"Change\"},\"packages\":[{\"name\":\"Package1\",\"basePath\":\"/path/to/package1\"},{\"name\":\"Package2\",\"basePath\":\"/path/to/package2\"}],\"userControls\":[{\"url\":\"/path/to/usercontrol1.js\"},{\"url\":\"/path/to/usercontrol2.js\"}],\"content\":[{\"url\":\"/path/to/content1.html\",\"preload\":true,\"keepAlive\":false,\"loadSync\":false,\"preloadBindings\":false},{\"url\":\"/path/to/content2.html\",\"preload\":true,\"keepAlive\":true,\"loadSync\":true,\"preloadBindings\":true}],\"views\":[{\"url\":\"/path/to/view1.html\",\"preload\":true,\"keepAlive\":false,\"preloadBindings\":false},{\"url\":\"/path/to/view2.html\",\"preload\":true,\"keepAlive\":true,\"preloadBindings\":true}],\"userFunctions\":[{\"url\":\"/path/to/userfunction1.js\"},{\"url\":\"/path/to/userfunction2.js\"}],\"symbols\":{\"internal\":{\"Symbol1\":{\"value\":42,\"persist\":true,\"readonly\":false,\"type\":\"tchmi:Int32\"},\"Symbol2\":{\"value\":\"Hello, World!\",\"persist\":false,\"readonly\":true,\"type\":\"tchmi:String\"}},\"themedResources\":{\"Resource1\":{\"type\":\"tchmi:Color\",\"description\":\"Primary color for the theme.\",\"values\":{\"DarkTheme\":\"#000000\",\"LightTheme\":\"#FFFFFF\"}}}},\"trigger\":[{\"event\":\"ButtonClick\",\"preventDefault\":true,\"displayName\":\"Button Click Trigger\",\"actions\":[{\"objectType\":\"WriteToSymbol\",\"success\":[],\"error\":[],\"active\":true,\"collapsed\":false,\"asyncWait\":false,\"symbolExpression\":\"%sSymbol1%\",\"value\":{\"objectType\":\"StaticValue\",\"value\":100,\"valueType\":\"Number\"}}]}],\"actionTemplates\":[{\"name\":\"Template1\",\"category\":\"Category1\",\"actions\":[],\"parameters\":[{\"name\":\"Param1\",\"type\":\"String\",\"description\":\"First parameter\",\"structDataType\":\"\"}]}],\"languages\":{\"en\":\"/path/to/english.json\",\"de\":[\"/path/to/german1.json\",\"/path/to/german2.json\"]},\"languageFallback\":\"en\",\"languagesForFramework\":{\"en\":\"/path/to/framework/english.json\",\"de\":[\"/path/to/framework/german1.json\",\"/path/to/framework/german2.json\"]},\"languagesForControls\":{\"Control1\":{\"languages\":{\"en\":\"/path/to/control1/english.json\",\"de\":\"/path/to/control1/german.json\"}}},\"languagesForFunctions\":{\"Function1\":{\"languages\":{\"en\":\"/path/to/function1/english.json\",\"de\":\"/path/to/function1/german.json\"}}},\"keyboardLayouts\":[{\"url\":\"/path/to/keyboard1.json\"},{\"url\":\"/path/to/keyboard2.json\"}],\"disableLoadingOptimization\":false,\"tcspeech\":{\"domain\":\"TcSpeechDomain\",\"enableSpeaker\":true,\"enableMicrophone\":true,\"defaultVolume\":0.8,\"confidenceThreshold\":0.5},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":1920,\"defaultHeight\":1080}},\"binding\":{\"symbolError\":\"Ignore\"},\"systemKeyboard\":{\"providerName\":\"Beckhoff.TcHmiKeyboard\",\"projectKeyboardMapping\":{\"en\":{\"text\":\"/path/to/keyboard/text.json\",\"decimal\":\"/path/to/keyboard/decimal.json\",\"numeric\":\"/path/to/keyboard/numeric.json\"},\"de\":{\"text\":\"/path/to/keyboard/text_de.json\",\"decimal\":\"/path/to/keyboard/decimal_de.json\",\"numeric\":\"/path/to/keyboard/numeric_de.json\"}},\"layout\":{\"height\":300}},\"systemPopups\":{\"providerName\":\"PopupProvider\"}}",
+        "prefix_accepted": false,
+        "complete": false,
+        "eos_accepted": false
+      },
+      "model": "mistralai/Mistral-Small-24B-Instruct-2501",
+      "setting": "d0-s0"
+    },
+    {
+      "label": "bda1c2ff2f7f116eb6cb146f",
+      "oracle_valid": true,
+      "oracle_keywords": [],
+      "text": "{\"basePath\":\"/path/to/framework\",\"scaleMode\":\"ScaleToFit\",\"startupView\":\"MainView\",\"tcHmiServer\":{},\"userControls\":[{\"url\":\"/path/to/usercontrol/mainfile.js\"}],\"content\":[{\"url\":\"/path/to/content/file.js\",\"preload\":true}],\"views\":[{\"url\":\"/path/to/view/file.js\",\"preload\":true}],\"userFunctions\":[{}],\"symbols\":{\"internal\":{}},\"trigger\":[{\"event\":\"click\",\"actions\":[{\"objectType\":\"Condition\",\"true\":true,\"false\":false}]}],\"actionTemplates\":[{}],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":1080,\"defaultWidth\":1920}},\"binding\":{\"symbolError\":\"Reset\"},\"systemPopups\":{\"providerName\":\"Beckhoff.TcHmiPopup\"}}",
+      "prefix_accepted": false,
+      "complete": false,
+      "eos_accepted": false,
+      "schema_order": {
+        "text": "{\"basePath\":\"/path/to/framework\",\"scaleMode\":\"ScaleToFit\",\"startupView\":\"MainView\",\"tcHmiServer\":{},\"userControls\":[{\"url\":\"/path/to/usercontrol/mainfile.js\"}],\"content\":[{\"url\":\"/path/to/content/file.js\",\"preload\":true}],\"views\":[{\"url\":\"/path/to/view/file.js\",\"preload\":true}],\"userFunctions\":[{}],\"symbols\":{\"internal\":{}},\"trigger\":[{\"event\":\"click\",\"actions\":[{\"objectType\":\"Condition\",\"true\":true,\"false\":false}]}],\"actionTemplates\":[{}],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":1920,\"defaultHeight\":1080}},\"binding\":{\"symbolError\":\"Reset\"},\"systemPopups\":{\"providerName\":\"Beckhoff.TcHmiPopup\"}}",
+        "prefix_accepted": true,
+        "complete": true,
+        "eos_accepted": true
+      },
+      "model": "mistralai/Mistral-Small-24B-Instruct-2501",
+      "setting": "d0-s1"
+    },
+    {
+      "label": "abb275d5f5fd9e0b3bdc6e5a",
+      "oracle_valid": true,
+      "oracle_keywords": [],
+      "text": "{\"basePath\":\"/path/to/framework\",\"scaleMode\":\"ScaleToFit\",\"startupView\":\"MainView\",\"tcHmiServer\":{},\"userControls\":[{\"url\":\"/path/to/usercontrol/mainfile.js\"}],\"content\":[{\"url\":\"/path/to/content/file.js\",\"preload\":true}],\"views\":[{\"url\":\"/path/to/view/file.js\",\"preload\":true}],\"userFunctions\":[{}],\"symbols\":{\"internal\":{}},\"trigger\":[{\"event\":\"click\",\"actions\":[{\"objectType\":\"Condition\",\"true\":true,\"false\":false}]}],\"actionTemplates\":[{}],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultHeight\":1080,\"defaultWidth\":1920}},\"binding\":{\"symbolError\":\"Reset\"},\"systemPopups\":{\"providerName\":\"Beckhoff.TcHmiPopup\"}}",
+      "prefix_accepted": false,
+      "complete": false,
+      "eos_accepted": false,
+      "schema_order": {
+        "text": "{\"basePath\":\"/path/to/framework\",\"scaleMode\":\"ScaleToFit\",\"startupView\":\"MainView\",\"tcHmiServer\":{},\"userControls\":[{\"url\":\"/path/to/usercontrol/mainfile.js\"}],\"content\":[{\"url\":\"/path/to/content/file.js\",\"preload\":true}],\"views\":[{\"url\":\"/path/to/view/file.js\",\"preload\":true}],\"userFunctions\":[{}],\"symbols\":{\"internal\":{}},\"trigger\":[{\"event\":\"click\",\"actions\":[{\"objectType\":\"Condition\",\"true\":true,\"false\":false}]}],\"actionTemplates\":[{}],\"languages\":{},\"creatorSettings\":{\"viewport\":{\"defaultWidth\":1920,\"defaultHeight\":1080}},\"binding\":{\"symbolError\":\"Reset\"},\"systemPopups\":{\"providerName\":\"Beckhoff.TcHmiPopup\"}}",
+        "prefix_accepted": true,
+        "complete": true,
+        "eos_accepted": true
+      },
+      "model": "mistralai/Mistral-Small-24B-Instruct-2501",
+      "setting": "d1-s1"
+    }
+  ]
+}

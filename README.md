@@ -1,216 +1,54 @@
-# KV Cache Belady Benchmark
+# JSON Schema Conformance Research
 
-This repository is now organized around one supported workflow:
+A hybrid model–parser architecture for generating structured application data conforming to a precisely defined subset of **JSON Schema Draft 2020-12**.
 
-- run `SGLang` with `LRU`
-- collect a deterministic radix-cache trace
-- compile an offline `Belady` plan from that trace
-- rerun the same request stream with oracle-guided `Belady`
-- compare `LRU` vs `Belady`
+**Status:** research proposal and baseline coverage audit. The proposed compiler, runtime, formal guarantees, and performance improvements are not yet implemented or established. The system name is undecided (`<NAME>`). Historical cache-management code and experiments have been removed from this revision; earlier revisions remain in Git history.
 
-The abandoned predictive / ML eviction path has been removed from the benchmark code and from the preserved experiment artifacts.
+## Abstract
 
-## Repository Layout
+The following is the proposed abstract. Its guarantee describes the intended design contract, not a completed verification result. Baseline observations concern the audited versions and workloads, not every current decoder or schema.
 
-```text
-README.md
-docs/
-benchmarking/
-  analysis_scripts/
-  datasets/
-  launchers/
-  runners/
-  setup/
-  workload_generators/
-datasets/
-  raw/
-  processed/
-  synthetic/
-data/                 # compatibility alias
-studies/
-  specs/
-  results/
-  runs/
-runs/                 # compatibility alias -> studies/runs
-sglang/
+Agentic AI workloads often require transforming natural-language intent and reasoning into actions and state (e.g., API calls, inter-agent requests, database records) that must conform to a formal schema (generally in JSON format). However, LLM models struggle to conform to JSON schema specifications, creating issues for these workflows. XGrammar and llguidance use token masks to enforce schema compatibility, but these approaches only support restricted subsets of JSON schemas, sometimes produce schema-violating output, and often do not ensure completion in a finite token budget.
+
+We propose &lt;NAME&gt;, a hybrid model-parser architecture for generating output that conforms to a subset of JSON Schema Draft 2020-12, including conditional field rules, field dependencies and exclusions, scoped uniqueness, bounded matching-item requirements, and compatible overlapping key constraints. A schema compiler produces executable generation plans that separate deterministic structure from semantic choices. The parser executes these deterministic plan to create a schema-satisfying outline, and the learned generator resolves semantic choices and fills in the holes left in the schema-satisfying outline. This design guarantees schema conformance by construction, with unsupported combinations rejected during schema compilation. Evaluation will measure coverage, schema conformance, semantic quality, and serving efficiency against constrained decoding.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    S[JSON Schema Draft 2020-12] --> C[Profile check and schema compiler]
+    B[Explicit generation limits] --> C
+    C -->|Unsupported combination| E[Compilation error]
+    C -->|Accepted| P[Executable generation plan]
+    P --> R[Parser-guided symbolic runtime]
+    R --> D[Deterministic structure]
+    R --> G[Learned generator]
+    G -->|Semantic choices and constrained values| R
+    D --> O[Completed JSON instance]
+    R --> O
 ```
 
-What each area is for:
+The plan is the interface between schema semantics, learned generation, and serving. It exposes fixed structure, permitted choices, value holes, and scoped state. The learned component may be an existing autoregressive model or an architecture designed for structured infilling. A partial outline must retain a valid completion; it is not itself necessarily a complete schema-valid JSON value.
 
-- `docs/`: project PDFs and planning docs.
-- `benchmarking/analysis_scripts/`: scripts that analyze traces, compare runs, estimate memory pressure, and generate plots.
-- `benchmarking/datasets/`: dataset preparation and subset-selection scripts.
-- `benchmarking/launchers/`: shell entrypoints that start servers and run the serving benchmark.
-- `benchmarking/runners/`: top-level experiment drivers.
-- `benchmarking/setup/`: environment setup.
-- `benchmarking/workload_generators/`: generator code for synthetic workloads.
-- `datasets/`: canonical workload data root.
-- `studies/specs/`: experiment definitions and procedures.
-- `studies/results/`: curated, human-facing experiment bundles.
-- `studies/runs/`: heavyweight run trees, logs, sweeps, and scratch execution outputs.
-- `data/` and `runs/` remain only as compatibility aliases.
+## Read the proposal
 
-## Supported Experiment
+- [Architecture and proof obligations](docs/architecture.md): compiler, runtime, learned interface, serving, and completion guarantees.
+- [Proposed generation profile](docs/generation-profile.md): feature scope and excluded combinations.
+- [Baseline coverage](docs/coverage.md): XGrammar, llguidance, and JSONformer with pinned source references.
+- [Illustrative schemas and instances](docs/examples.md): 29 numbered examples with valid and invalid instances.
+- [Evaluation and evidence](docs/evaluation.md): retained studies, limitations, metrics, and baselines.
+- [Original coverage document](docs/JSON_out_of_scope.docx): the earlier five-page report; its website links require the local study viewer. Use the Markdown examples above for GitHub browsing.
 
-The supported benchmark is a deterministic two-pass experiment.
+## Research contribution
 
-Run 1:
-- serve with `LRU`
-- collect the traced lookup stream
-- benchmark throughput and latency
+The proposed contribution is a compiler–runtime contract joining richer structural coverage, provable conformance, and efficient execution. Fixed-token insertion, constrained generation, parsing theory, and batching are established techniques; their use alone is not a novelty claim. The design must establish a concrete advantage over [JSONformer](https://github.com/1rgs/jsonformer), [Guidance](https://github.com/guidance-ai/guidance), [SGLang](https://arxiv.org/abs/2312.07104), and [SchemaFill](https://arxiv.org/abs/2610.07086), as well as the audited decoder baselines.
 
-Run 2:
-- compile an offline `Belady` plan from the Run 1 lookup stream
-- rerun the same external request stream
-- make oracle-guided leaf-eviction decisions during runtime
-- benchmark throughput and latency again
+## Repository contents
 
-The timing axis used by the oracle and trace analysis is logical lookup progress, not wall-clock time. Wall-clock metrics such as throughput, `TTFT`, and `ITL` are still collected as outputs of the serving benchmark.
+| Path | Contents |
+|---|---|
+| `docs/` | Proposal, architecture diagrams, profile, coverage, and examples |
+| `experiments/specs/` | Frozen baseline schemas, instances, and suite selection metadata |
+| `experiments/results/` | Selected saved compiler/probe records and completion analysis |
 
-## Quick Start
-
-### 1. Set up the environment
-
-```bash
-cd ~/kv_cache_research
-bash benchmarking/setup/setup_sglang_env.sh
-source .venv-sglang/bin/activate
-```
-
-### 2. Prepare a ShareGPT subset
-
-Raw ShareGPT should live at:
-
-```text
-datasets/raw/sharegpt_raw.json
-```
-
-Build the runnable subset:
-
-```bash
-python benchmarking/datasets/select_benchmark_subset.py \
-  --dataset-type sharegpt \
-  --input datasets/raw/sharegpt_raw.json \
-  --output datasets/processed/sharegpt_subset.jsonl \
-  --target-size 1500 \
-  --tokenizer Qwen/Qwen2.5-7B-Instruct
-```
-
-### 3. Estimate memory pressure
-
-```bash
-python benchmarking/analysis_scripts/estimate_memory_pressure.py \
-  --dataset datasets/processed/sharegpt_subset.jsonl \
-  --page-size 16 \
-  --gpu-kv-capacity-blocks 16000 \
-  --concurrency 64 96 128 160 192 224 256
-```
-
-Use this to pick concurrency levels that actually push the KV working set over capacity. If pressure is below 1.0, eviction policy usually will not matter much.
-
-### 4. Run a single two-pass benchmark
-
-```bash
-python benchmarking/runners/run_two_pass_benchmark.py \
-  --model-path Qwen/Qwen2.5-7B-Instruct \
-  --dataset-path datasets/processed/sharegpt_subset.jsonl \
-  --output-root studies/runs/debug/sharegpt__smoke \
-  --page-size 16 \
-  --num-prompts 64 \
-  --request-rate 16 \
-  --max-concurrency 64 \
-  --schedule-policy fcfs \
-  --bench-seed 1 \
-  --gpu-kv-capacity-blocks 16000
-```
-
-This creates one run directory with:
-
-- `traces/`
-- `plans/`
-- `benchmarks/`
-- `analysis/` for per-policy trace summaries
-- `reports/`
-- `run_metadata.json`
-
-### 5. Run a sweep
-
-```bash
-python benchmarking/runners/run_benchmark_sweep.py \
-  --model-path Qwen/Qwen2.5-7B-Instruct \
-  --dataset-path datasets/processed/sharegpt_subset.jsonl \
-  --output-root studies/runs/sweeps/sharegpt__fcfs-sweep \
-  --request-rates 16 \
-  --max-concurrencies 64 96 128 192 256 \
-  --page-size 16 \
-  --num-prompts 1024 \
-  --schedule-policy fcfs \
-  --bench-seed 1 \
-  --gpu-kv-capacity-blocks 16000 \
-  --auto-version
-```
-
-### 6. Plot a completed sweep
-
-```bash
-python benchmarking/analysis_scripts/plot_benchmark_results.py \
-  --sweep-manifest studies/runs/sweeps/sharegpt__fcfs-sweep__<timestamp>/sweep_manifest.json \
-  --output-dir studies/results/sharegpt__fcfs-sweep__plots \
-  --x-axis max_concurrency
-```
-
-## Synthetic Workloads
-
-Synthetic data now lives under `datasets/synthetic/`.
-
-Shared-prefix workloads:
-
-- `datasets/synthetic/shared_prefix/`
-
-Recency-trap workloads:
-
-- `datasets/synthetic/recency_trap/`
-
-To generate a recency-trap workload:
-
-```bash
-python benchmarking/workload_generators/generate_recency_trap_workloads.py \
-  --family hotset-one-shot \
-  --output datasets/synthetic/recency_trap/hotset_one_shot_demo.jsonl \
-  --hot-set-size 3 \
-  --rounds 4 \
-  --interference-per-round 10 \
-  --prefix-tokens 512 \
-  --suffix-tokens 96 \
-  --output-len 64
-```
-
-The current recency-trap families are:
-
-- `grouped-baseline`
-- `bursty-return`
-- `hotset-one-shot`
-- `zipf-bursty`
-- `adversarial-recency-trap`
-
-## Reading Run Artifacts
-
-Every completed run is self-contained under `studies/runs/<category>/<run_name>/`.
-
-The main files to inspect are:
-
-- `reports/comparison.json`: top-level `LRU` vs `Belady` summary
-- `reports/memory_pressure.json`: estimated KV pressure for that run
-- `analysis/lru/summary.json`: LRU trace summary
-- `analysis/belady/summary.json`: Belady trace summary
-- `benchmarks/lru.jsonl`: raw serving results for the LRU pass
-- `benchmarks/belady.jsonl`: raw serving results for the Belady pass
-
-## Notes
-
-- `FCFS` remains the default scheduling policy for the benchmark.
-- `prefix-coverage` can still be used by passing `--schedule-policy prefix-coverage` to the runners.
-- The canonical run tree is `studies/runs/`.
-- The canonical curated-results tree is `studies/results/`.
-- Old paths under `runs/` are compatibility aliases.
-- Old predictive / three-policy outputs were removed so the repository only reflects the active Belady-vs-LRU study and the three active headroom experiments.
+The retained directory names are provenance identifiers from the original studies. This publication contains selected evidence, not a complete runnable experiment environment or all raw generation traces.
