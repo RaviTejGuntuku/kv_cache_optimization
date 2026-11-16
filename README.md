@@ -37,7 +37,7 @@ The plan is the interface between schema semantics, learned generation, and serv
 - [Baseline coverage](docs/coverage.md): XGrammar, llguidance, and JSONformer with pinned source references.
 - [Illustrative schemas and instances](docs/examples.md): 29 numbered examples with valid and invalid instances.
 - [Evaluation and evidence](docs/evaluation.md): retained studies, limitations, metrics, and baselines.
-- [Original coverage document](docs/JSON_out_of_scope.docx): the earlier five-page report; its website links require the local study viewer. Use the Markdown examples above for GitHub browsing.
+- [Feature-support document](docs/JSON_features_to_support.docx): the original five pages plus eleven appended pages covering classification, compile-time/runtime complexity, and separating examples. Website links require the local study viewer; [portable feature examples](docs/feature-examples.md) are also available.
 
 ## Research contribution
 
