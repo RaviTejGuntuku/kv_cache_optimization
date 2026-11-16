@@ -1,0 +1,714 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JSON features to support</title><style>body{font:16px/1.5 system-ui;max-width:1120px;margin:35px auto;padding:0 20px;color:#172333}section{border:1px solid #ccd6df;border-radius:8px;margin:25px 0;padding:22px;scroll-margin-top:15px}section:target{border:3px solid #ad8500}mark{background:#fff279}pre{font:14px/1.45 monospace;background:#f3f6f9;white-space:pre-wrap;overflow-wrap:anywhere;padding:16px;border-radius:5px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}a{color:#205e87}nav{columns:2}li{margin:5px 0}@media(max-width:700px){.pair{display:block}nav{columns:1}}</style><a href="/">Study viewer</a><h1>JSON features to support</h1><p>Companion to the appended feature inventory. Yellow marks the relevant schema keywords. XGrammar 0.2.8 and llguidance 1.9.1 are the audited releases; proposed support is not implemented. Each valid/invalid pair isolates a rule, but only cases S1–S8 claim a shared original-schema enforcement gap. Rewrites may be available.</p><nav><ul><li><a href="#feature-1">F1: Declared required keys</a></li><li><a href="#feature-2">F2: Optional field omission</a></li><li><a href="#feature-3">F3: Required but undeclared key</a></li><li><a href="#feature-4">F4: Typed extra keys</a></li><li><a href="#feature-5">F5: All key names constrained</a></li><li><a href="#feature-6">F6: Pattern keys plus extra keys</a></li><li><a href="#feature-7">F7: Overlapping key patterns</a></li><li><a href="#feature-8">F8: Named key also matches pattern</a></li><li><a href="#feature-9">F9: Property count with optional fields</a></li><li><a href="#feature-10">F10: Presence dependencies</a></li><li><a href="#feature-11">F11: Close an extended object</a></li><li><a href="#feature-12">F12: Any key order with required identity</a></li><li><a href="#feature-13">F13: Unique dynamic key names</a></li><li><a href="#feature-14">F14: Conditional required fields</a></li><li><a href="#feature-15">F15: Tagged alternative layouts</a></li><li><a href="#feature-16">F16: Combine object requirements</a></li><li><a href="#feature-17">F17: Mutually exclusive credentials</a></li><li><a href="#feature-18">F18: Pattern plus string length</a></li><li><a href="#feature-19">F19: Finite matching markers</a></li><li><a href="#feature-20">F20: Regular lookahead constraint</a></li><li><a href="#feature-21">F21: Enums constants and nullable values</a></li><li><a href="#feature-23">F23: Array length including empty</a></li><li><a href="#feature-24">F24: Heterogeneous tuples</a></li><li><a href="#feature-25">F25: Unique array values</a></li><li><a href="#feature-26">F26: Matching array item counts</a></li><li><a href="#feature-27">F27: Close a reused tuple</a></li><li><a href="#feature-28">F28: Local recursive references</a></li><li><a href="#feature-29">F29: Bundled URI references</a></li><li><a href="#feature-30">F30: Dynamic recursive references</a></li><li><a href="#feature-31">F31: Integer type without arithmetic</a></li><li><a href="#feature-32">F32: Boolean type</a></li><li><a href="#feature-33">F33: Fixed scalar constant</a></li><li><a href="#feature-34">F34: Simple anyOf union</a></li><li><a href="#feature-35">F35: Regular string pattern alone</a></li><li><a href="#feature-36">F36: String length alone</a></li><li><a href="#feature-37">F37: Homogeneous array item types</a></li><li><a href="#feature-38">F38: Presence-only dependentSchemas</a></li><li><a href="#feature-39">F39: Selected format assertions</a></li><li><a href="#feature-40">F40: Numeric assertions inventory</a></li><li><a href="#S1">S1: Active scientific record</a></li><li><a href="#S2">S2: Profile requires source</a></li><li><a href="#S3">S3: One credential method</a></li><li><a href="#S4">S4: Distinct role values</a></li><li><a href="#S5">S5: At least one administrator</a></li><li><a href="#S6">S6: At most one administrator</a></li><li><a href="#S7">S7: Key matches two value rules</a></li><li><a href="#S8">S8: Dependency expressed as a subschema</a></li></ul></nav><section id="feature-1"><h2>F1 · Declared required keys</h2><p>Category: O · Proposed scope: Core</p><p><b>XGrammar:</b> ✓ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✓</p><p><b>Compile time:</b> Easy: index declared keys and required set; O(S) for this flat object.</p><p><b>Generator runtime:</b> Emit known keys; track k presence bits. Stack cost O(h).</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  <mark>&quot;properties&quot;</mark>: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    }
+  },
+  <mark>&quot;required&quot;</mark>: [
+    &quot;id&quot;
+  ],
+  <mark>&quot;additionalProperties&quot;</mark>: false
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;id&quot;: &quot;a&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{}</pre></div></div></section><section id="feature-2"><h2>F2 · Optional field omission</h2><p>Category: O · Proposed scope: Core</p><p><b>XGrammar:</b> ✓ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy: compile optional-field decisions and dependency closure.</p><p><b>Generator runtime:</b> Decide omission once; ensure required fields remain reachable.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;id&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;note&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    }
+  },
+  <mark>&quot;required&quot;</mark>: [
+    &quot;id&quot;
+  ],
+  &quot;additionalProperties&quot;: false
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;id&quot;: &quot;a&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;note&quot;: &quot;n&quot;
+}</pre></div></div></section><section id="feature-3"><h2>F3 · Required but undeclared key</h2><p>Category: O · Proposed scope: Core</p><p><b>XGrammar:</b> ✗ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy: materialize required names from the extra-key schema; detect forbidden names.</p><p><b>Generator runtime:</b> Supply id even when absent from properties; known-key lookup.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {},
+  <mark>&quot;required&quot;</mark>: [
+    &quot;id&quot;
+  ],
+  <mark>&quot;additionalProperties&quot;</mark>: {
+    &quot;type&quot;: &quot;string&quot;
+  }
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;id&quot;: &quot;a&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{}</pre></div></div></section><section id="feature-4"><h2>F4 · Typed extra keys</h2><p>Category: O+V · Proposed scope: Core</p><p><b>XGrammar:</b> ✓ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy: compile one additional-value schema; close known-key exceptions.</p><p><b>Generator runtime:</b> Generate a key and typed value; exact key uniqueness needs a scope set.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  <mark>&quot;additionalProperties&quot;</mark>: {
+    &quot;type&quot;: &quot;string&quot;
+  }
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;color&quot;: &quot;red&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;color&quot;: 1
+}</pre></div></div></section><section id="feature-5"><h2>F5 · All key names constrained</h2><p>Category: V(key) · Proposed scope: Core</p><p><b>XGrammar:</b> Map names checked; named keys can bypass. · <b>llguidance:</b> ✗ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Moderate: compile regular key predicate; precheck every declared name. DFA may expand.</p><p><b>Generator runtime:</b> Scan every decoded name in O(length), including declared names.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  <mark>&quot;propertyNames&quot;</mark>: {
+    &quot;pattern&quot;: &quot;^[A-Za-z_][A-Za-z0-9_]*$&quot;
+  },
+  &quot;additionalProperties&quot;: {
+    &quot;type&quot;: &quot;number&quot;
+  }
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;valid_key&quot;: 1
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;bad-key&quot;: 1
+}</pre></div></div></section><section id="feature-6"><h2>F6 · Pattern keys plus extra keys</h2><p>Category: O+V · Proposed scope: Core</p><p><b>XGrammar:</b> Generic extra branch can bypass matching rule. · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Moderate: partition matching keys from extras; preserve named-key intersections.</p><p><b>Generator runtime:</b> Classify keys, then enforce all applicable value rules.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;label&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    }
+  },
+  <mark>&quot;patternProperties&quot;</mark>: {
+    &quot;^x_&quot;: {
+      &quot;type&quot;: &quot;number&quot;
+    }
+  },
+  <mark>&quot;additionalProperties&quot;</mark>: {
+    &quot;type&quot;: &quot;string&quot;
+  }
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;x_count&quot;: 1,
+  &quot;note&quot;: &quot;ok&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;x_count&quot;: &quot;bad&quot;
+}</pre></div></div></section><section id="feature-7"><h2>F7 · Overlapping key patterns</h2><p>Category: V(key)+C · Proposed scope: Add</p><p><b>XGrammar:</b> ✗ · <b>llguidance:</b> ✗ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Moderate: intersect compatible regular value rules. Product size at most product(p_i).</p><p><b>Generator runtime:</b> Classify key then run intersected monitor. Do not OR overlapping rules.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  <mark>&quot;patternProperties&quot;</mark>: {
+    &quot;^x&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 2
+    },
+    &quot;x$&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;pattern&quot;: &quot;^[A-Z]+$&quot;
+    }
+  },
+  &quot;additionalProperties&quot;: false
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;x&quot;: &quot;AB&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;x&quot;: &quot;ab&quot;
+}</pre></div></div></section><section id="feature-8"><h2>F8 · Named key also matches pattern</h2><p>Category: V(key)+C · Proposed scope: Add</p><p><b>XGrammar:</b> ✗ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Moderate: pre-intersect each named field with every matching pattern.</p><p><b>Generator runtime:</b> Use one compiled local monitor for code. No general solving per token.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  <mark>&quot;properties&quot;</mark>: {
+    &quot;code&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 2
+    }
+  },
+  <mark>&quot;patternProperties&quot;</mark>: {
+    &quot;^code$&quot;: {
+      &quot;pattern&quot;: &quot;^[A-Z]+$&quot;
+    }
+  },
+  &quot;additionalProperties&quot;: false
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;code&quot;: &quot;AB&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;code&quot;: &quot;ab&quot;
+}</pre></div></div></section><section id="feature-9"><h2>F9 · Property count with optional fields</h2><p>Category: O · Proposed scope: Core</p><p><b>XGrammar:</b> ✓ · <b>llguidance:</b> Restricted; general optional-field case rejected. · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy for known fields: check feasible min/max and required/optional counts.</p><p><b>Generator runtime:</b> Counter O(log(M+1)) bits; remaining slots constrain field choices.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;a&quot;: {
+      &quot;type&quot;: &quot;number&quot;
+    },
+    &quot;b&quot;: {
+      &quot;type&quot;: &quot;number&quot;
+    },
+    &quot;c&quot;: {
+      &quot;type&quot;: &quot;number&quot;
+    }
+  },
+  &quot;additionalProperties&quot;: false,
+  <mark>&quot;minProperties&quot;</mark>: 2,
+  <mark>&quot;maxProperties&quot;</mark>: 2
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;a&quot;: 1,
+  &quot;b&quot;: 2
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;a&quot;: 1
+}</pre></div></div></section><section id="feature-10"><h2>F10 · Presence dependencies</h2><p>Category: C→O · Proposed scope: Add</p><p><b>XGrammar:</b> ✗ · <b>llguidance:</b> ✗ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy for positive presence edges: O(k+e) closure; precompute required sets.</p><p><b>Generator runtime:</b> Activate companion fields; update seen/required bitsets.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  <mark>&quot;dependentRequired&quot;</mark>: {
+    &quot;profile&quot;: [
+      &quot;source&quot;
+    ]
+  }
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;profile&quot;: &quot;hd&quot;,
+  &quot;source&quot;: &quot;movie.mp4&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;profile&quot;: &quot;hd&quot;
+}</pre></div></div></section><section id="feature-11"><h2>F11 · Close an extended object</h2><p>Category: M→O · Proposed scope: Restricted</p><p><b>XGrammar:</b> Partial keyword handling; not this composed closure. · <b>llguidance:</b> ✗ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Moderate only for statically flattenable closure. General annotation elimination can expand exponentially [A].</p><p><b>Generator runtime:</b> Emit only proven evaluated keys. General branch-dependent tracking is deferred.</p><h3>Schema</h3><pre>{
+  &quot;$defs&quot;: {
+    &quot;base&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;id&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;id&quot;
+      ]
+    }
+  },
+  <mark>&quot;$ref&quot;</mark>: &quot;#/$defs/base&quot;,
+  &quot;properties&quot;: {
+    &quot;label&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    }
+  },
+  <mark>&quot;unevaluatedProperties&quot;</mark>: false
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;id&quot;: &quot;a&quot;,
+  &quot;label&quot;: &quot;A&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;id&quot;: &quot;a&quot;,
+  &quot;extra&quot;: 1
+}</pre></div></div></section><section id="feature-12"><h2>F12 · Any key order with required identity</h2><p>Category: Srl · Proposed scope: Canonical</p><p><b>XGrammar:</b> Ordered by default; any_order loses identity checks. · <b>llguidance:</b> ✗ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy for fixed order. Explicit arbitrary-order DFA can require 2^k states.</p><p><b>Generator runtime:</b> Fixed-order output. Optional any-order mode needs k-bit identity tracking, not just a count.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;id&quot;: true,
+    &quot;name&quot;: true
+  },
+  <mark>&quot;required&quot;</mark>: [
+    &quot;id&quot;,
+    &quot;name&quot;
+  ],
+  &quot;additionalProperties&quot;: false
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;name&quot;: &quot;N&quot;,
+  &quot;id&quot;: &quot;a&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;name&quot;: &quot;N&quot;
+}</pre></div></div></section><section id="feature-13"><h2>F13 · Unique dynamic key names</h2><p>Category: Srl+C · Proposed scope: Core</p><p><b>XGrammar:</b> ✗ · <b>llguidance:</b> ✗ · <b>JSONformer:</b> Fixed names unique; dynamic maps absent.</p><p><b>Compile time:</b> Easy: allocate name-set scope; select decoded-name equality policy.</p><p><b>Generator runtime:</b> Expected O(B) hashing plus exact collision checks; O(B) retained names. Prefix exclusion additional.</p><p>Duplicate names violate our serialization policy; this is not a JSON Schema assertion.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  <mark>&quot;additionalProperties&quot;</mark>: {
+    &quot;type&quot;: &quot;string&quot;
+  }
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;a&quot;: &quot;1&quot;,
+  &quot;b&quot;: &quot;2&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{&quot;a&quot;:&quot;1&quot;,&quot;a&quot;:&quot;2&quot;}</pre></div></div></section><section id="feature-14"><h2>F14 · Conditional required fields</h2><p>Category: C→O · Proposed scope: Add</p><p><b>XGrammar:</b> ✗ · <b>llguidance:</b> ✗ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy for a finite tag tested before dependent fields. Interacting condition combinations can expand.</p><p><b>Generator runtime:</b> Resolve tag once, activate its fields, reserve space for their completion.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  <mark>&quot;if&quot;</mark>: {
+    &quot;properties&quot;: {
+      &quot;status&quot;: {
+        &quot;const&quot;: &quot;active&quot;
+      }
+    },
+    &quot;required&quot;: [
+      &quot;status&quot;
+    ]
+  },
+  <mark>&quot;then&quot;</mark>: {
+    &quot;required&quot;: [
+      &quot;publications&quot;
+    ],
+    &quot;properties&quot;: {
+      &quot;publications&quot;: {
+        &quot;type&quot;: &quot;array&quot;,
+        &quot;minItems&quot;: 1
+      }
+    }
+  }
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;status&quot;: &quot;active&quot;,
+  &quot;publications&quot;: [
+    &quot;patent:x&quot;
+  ]
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;status&quot;: &quot;active&quot;
+}</pre></div></div></section><section id="feature-15"><h2>F15 · Tagged alternative layouts</h2><p>Category: M→O · Proposed scope: Core</p><p><b>XGrammar:</b> ✓ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy for explicit disjoint tags: compile branches in O(total branch size).</p><p><b>Generator runtime:</b> Choose tag, execute one layout. General overlapping oneOf excluded.</p><h3>Schema</h3><pre>{
+  <mark>&quot;oneOf&quot;</mark>: [
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;kind&quot;: {
+          <mark>&quot;const&quot;</mark>: &quot;circle&quot;
+        },
+        &quot;radius&quot;: {
+          &quot;type&quot;: &quot;number&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;kind&quot;,
+        &quot;radius&quot;
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;kind&quot;: {
+          <mark>&quot;const&quot;</mark>: &quot;label&quot;
+        },
+        &quot;text&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;kind&quot;,
+        &quot;text&quot;
+      ]
+    }
+  ]
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;kind&quot;: &quot;circle&quot;,
+  &quot;radius&quot;: 2
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;kind&quot;: &quot;circle&quot;,
+  &quot;text&quot;: &quot;hi&quot;
+}</pre></div></div></section><section id="feature-16"><h2>F16 · Combine object requirements</h2><p>Category: M · Proposed scope: Restricted</p><p><b>XGrammar:</b> ✗ · <b>llguidance:</b> Compatible intersections supported; general limits. · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Moderate: merge compatible known fields; preserve each branch closure. General satisfiability is hard [B].</p><p><b>Generator runtime:</b> Execute merged plan. Reject combinations needing general online intersection.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  <mark>&quot;allOf&quot;</mark>: [
+    {
+      &quot;properties&quot;: {
+        &quot;name&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;name&quot;
+      ]
+    },
+    {
+      &quot;properties&quot;: {
+        &quot;age&quot;: {
+          &quot;type&quot;: &quot;number&quot;,
+          &quot;minimum&quot;: 0
+        }
+      },
+      &quot;required&quot;: [
+        &quot;age&quot;
+      ]
+    }
+  ]
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;name&quot;: &quot;Alice&quot;,
+  &quot;age&quot;: 30
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;name&quot;: &quot;Alice&quot;
+}</pre></div></div></section><section id="feature-17"><h2>F17 · Mutually exclusive credentials</h2><p>Category: C→O · Proposed scope: Add</p><p><b>XGrammar:</b> ✗ · <b>llguidance:</b> ✗ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy for pairwise presence exclusion; compile conflict sets. Arbitrary not excluded.</p><p><b>Generator runtime:</b> After password, disable token; after token, disable password.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;password&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;token&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    }
+  },
+  <mark>&quot;not&quot;</mark>: {
+    <mark>&quot;required&quot;</mark>: [
+      &quot;password&quot;,
+      &quot;token&quot;
+    ]
+  }
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;token&quot;: &quot;abc&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;password&quot;: &quot;pw&quot;,
+  &quot;token&quot;: &quot;abc&quot;
+}</pre></div></div></section><section id="feature-18"><h2>F18 · Pattern plus string length</h2><p>Category: V · Proposed scope: Core</p><p><b>XGrammar:</b> ✗ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Moderate: combine regular pattern with length monitor; at most p(M+2) DFA product states.</p><p><b>Generator runtime:</b> O(1) transition per decoded character in a precompiled DFA; count Unicode characters.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;string&quot;,
+  <mark>&quot;pattern&quot;</mark>: &quot;^[0-9]+$&quot;,
+  <mark>&quot;minLength&quot;</mark>: 9,
+  <mark>&quot;maxLength&quot;</mark>: 9
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>&quot;123456789&quot;</pre></div><div><h3>Invalid instance</h3><pre>&quot;1234567890&quot;</pre></div></div></section><section id="feature-19"><h2>F19 · Finite matching markers</h2><p>Category: V · Proposed scope: Restricted</p><p><b>XGrammar:</b> Original rejected; finite expansion compiled. · <b>llguidance:</b> ✗ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy for finite captures only: expand r fixed markers. Arbitrary backreferences excluded.</p><p><b>Generator runtime:</b> Remember finite marker ID or run expanded automaton.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;string&quot;,
+  <mark>&quot;pattern&quot;</mark>: &quot;^%(s|i)%.+%\\1%$&quot;
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>&quot;%s%temperature%s%&quot;</pre></div><div><h3>Invalid instance</h3><pre>&quot;%s%temperature%i%&quot;</pre></div></div></section><section id="feature-20"><h2>F20 · Regular lookahead constraint</h2><p>Category: V · Proposed scope: Restricted</p><p><b>XGrammar:</b> ✗ · <b>llguidance:</b> ✗ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Moderate for regular lookahead reducible to intersection/complement; possible DFA blow-up.</p><p><b>Generator runtime:</b> Precompiled regular monitor; no general regex backtracking during generation.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;string&quot;,
+  <mark>&quot;pattern&quot;</mark>: &quot;^(?=.*[A-Z])[A-Za-z]+$&quot;
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>&quot;Alice&quot;</pre></div><div><h3>Invalid instance</h3><pre>&quot;alice&quot;</pre></div></div></section><section id="feature-21"><h2>F21 · Enums constants and nullable values</h2><p>Category: V · Proposed scope: Core</p><p><b>XGrammar:</b> ✓ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy for compatible scalar enum/const/null: build literal trie in O(total literal length).</p><p><b>Generator runtime:</b> Follow literal trie or select a permitted scalar; decoded-value semantics matter.</p><h3>Schema</h3><pre>{
+  <mark>&quot;type&quot;</mark>: [
+    &quot;string&quot;,
+    &quot;null&quot;
+  ],
+  <mark>&quot;enum&quot;</mark>: [
+    &quot;pending&quot;,
+    &quot;ready&quot;,
+    null
+  ]
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>null</pre></div><div><h3>Invalid instance</h3><pre>&quot;other&quot;</pre></div></div></section><section id="feature-23"><h2>F23 · Array length including empty</h2><p>Category: O · Proposed scope: Core</p><p><b>XGrammar:</b> ✓ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy: check bounds and compile items, including the empty branch.</p><p><b>Generator runtime:</b> Counter O(log(M+1)) bits; reserve required items and closing syntax.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;array&quot;,
+  &quot;items&quot;: {
+    &quot;type&quot;: &quot;string&quot;
+  },
+  <mark>&quot;minItems&quot;</mark>: 0,
+  <mark>&quot;maxItems&quot;</mark>: 2
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>[]</pre></div><div><h3>Invalid instance</h3><pre>[
+  &quot;a&quot;,
+  &quot;b&quot;,
+  &quot;c&quot;
+]</pre></div></div></section><section id="feature-24"><h2>F24 · Heterogeneous tuples</h2><p>Category: O+V · Proposed scope: Core</p><p><b>XGrammar:</b> ✓ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy: compile each prefix position and the allowed tail.</p><p><b>Generator runtime:</b> Position dispatch plus stack; disallow tail when items=false.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;array&quot;,
+  <mark>&quot;prefixItems&quot;</mark>: [
+    {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    {
+      &quot;type&quot;: &quot;number&quot;
+    }
+  ],
+  <mark>&quot;items&quot;</mark>: false,
+  &quot;minItems&quot;: 2
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>[
+  &quot;score&quot;,
+  1
+]</pre></div><div><h3>Invalid instance</h3><pre>[
+  &quot;score&quot;,
+  &quot;one&quot;
+]</pre></div></div></section><section id="feature-25"><h2>F25 · Unique array values</h2><p>Category: C · Proposed scope: Add</p><p><b>XGrammar:</b> ✗ · <b>llguidance:</b> ✗ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Moderate: restrict to strings/finite enums; prove enough remaining values under other bounds.</p><p><b>Generator runtime:</b> Expected O(B) hashing with exact equality; O(B) state. Prefix-safe exclusion is a separate cost.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;array&quot;,
+  &quot;items&quot;: {
+    &quot;type&quot;: &quot;string&quot;
+  },
+  <mark>&quot;uniqueItems&quot;</mark>: true
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>[
+  &quot;red&quot;,
+  &quot;blue&quot;
+]</pre></div><div><h3>Invalid instance</h3><pre>[
+  &quot;red&quot;,
+  &quot;red&quot;
+]</pre></div></div></section><section id="feature-26"><h2>F26 · Matching array item counts</h2><p>Category: C+O · Proposed scope: Add</p><p><b>XGrammar:</b> ✗ · <b>llguidance:</b> ✗ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Moderate: compile simple item predicate and count feasibility. Overlapping complex predicates deferred.</p><p><b>Generator runtime:</b> Classifier plus saturated counter; reserve enough matching future slots.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;array&quot;,
+  &quot;items&quot;: {
+    &quot;type&quot;: &quot;string&quot;
+  },
+  <mark>&quot;contains&quot;</mark>: {
+    &quot;const&quot;: &quot;admin&quot;
+  },
+  <mark>&quot;minContains&quot;</mark>: 1,
+  <mark>&quot;maxContains&quot;</mark>: 2
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>[
+  &quot;reader&quot;,
+  &quot;admin&quot;
+]</pre></div><div><h3>Invalid instance</h3><pre>[
+  &quot;reader&quot;,
+  &quot;editor&quot;
+]</pre></div></div></section><section id="feature-27"><h2>F27 · Close a reused tuple</h2><p>Category: M→O · Proposed scope: Restricted</p><p><b>XGrammar:</b> Partial local handling; not this ref closure. · <b>llguidance:</b> ✗ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Moderate for a statically resolved tuple: calculate evaluated positions. General annotation elimination costly [A].</p><p><b>Generator runtime:</b> Dispatch allowed positions and forbid the tail; no general evaluation history.</p><h3>Schema</h3><pre>{
+  &quot;$defs&quot;: {
+    &quot;pair&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;prefixItems&quot;: [
+        {
+          &quot;type&quot;: &quot;string&quot;
+        },
+        {
+          &quot;type&quot;: &quot;number&quot;
+        }
+      ],
+      &quot;minItems&quot;: 2
+    }
+  },
+  <mark>&quot;$ref&quot;</mark>: &quot;#/$defs/pair&quot;,
+  <mark>&quot;unevaluatedItems&quot;</mark>: false
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>[
+  &quot;score&quot;,
+  1
+]</pre></div><div><h3>Invalid instance</h3><pre>[
+  &quot;score&quot;,
+  1,
+  2
+]</pre></div></div></section><section id="feature-28"><h2>F28 · Local recursive references</h2><p>Category: M→O · Proposed scope: Core bounded</p><p><b>XGrammar:</b> ✓ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Moderate: build static ref graph O(S+E), enforce depth and existence of a finite base case.</p><p><b>Generator runtime:</b> Stack O(h) plus per-scope constraint state; depth limit must retain a completion.</p><h3>Schema</h3><pre>{
+  &quot;$defs&quot;: {
+    &quot;node&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;value&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;children&quot;: {
+          &quot;type&quot;: &quot;array&quot;,
+          &quot;items&quot;: {
+            <mark>&quot;$ref&quot;</mark>: &quot;#/$defs/node&quot;
+          }
+        }
+      },
+      &quot;required&quot;: [
+        &quot;value&quot;
+      ]
+    }
+  },
+  <mark>&quot;$ref&quot;</mark>: &quot;#/$defs/node&quot;
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;value&quot;: &quot;root&quot;,
+  &quot;children&quot;: [
+    {
+      &quot;value&quot;: &quot;leaf&quot;
+    }
+  ]
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;value&quot;: &quot;root&quot;,
+  &quot;children&quot;: [
+    1
+  ]
+}</pre></div></div></section><section id="feature-29"><h2>F29 · Bundled URI references</h2><p>Category: M · Proposed scope: Core bundled</p><p><b>XGrammar:</b> ✗ · <b>llguidance:</b> Referencing build supports registry / retriever; no default fetch. · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Moderate: resolve URI IDs from supplied resources before serving; graph work O(S+E).</p><p><b>Generator runtime:</b> No network lookup; jump to a resolved plan node.</p><h3>Schema</h3><pre>{
+  &quot;$defs&quot;: {
+    &quot;Address&quot;: {
+      <mark>&quot;$id&quot;</mark>: &quot;https://example.org/Address&quot;,
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;city&quot;: {
+          &quot;type&quot;: &quot;string&quot;
+        }
+      },
+      &quot;required&quot;: [
+        &quot;city&quot;
+      ]
+    }
+  },
+  <mark>&quot;$ref&quot;</mark>: &quot;https://example.org/Address&quot;
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;city&quot;: &quot;Boston&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;city&quot;: 1
+}</pre></div></div></section><section id="feature-30"><h2>F30 · Dynamic recursive references</h2><p>Category: M · Proposed scope: Defer</p><p><b>XGrammar:</b> ✗ · <b>llguidance:</b> ✗ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Hard unrestricted: dynamic-reference validation is PSPACE-complete in schema/combined complexity [T].</p><p><b>Generator runtime:</b> No cheap general runtime promised; fixed-schema validation PTIME does not settle prefix generation.</p><h3>Schema</h3><pre>{
+  <mark>&quot;$dynamicAnchor&quot;</mark>: &quot;node&quot;,
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;children&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        <mark>&quot;$dynamicRef&quot;</mark>: &quot;#node&quot;
+      }
+    }
+  },
+  &quot;additionalProperties&quot;: false
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;children&quot;: []
+}</pre></div><div><h3>Invalid instance</h3><pre>{
+  &quot;children&quot;: [
+    1
+  ]
+}</pre></div></div></section><section id="feature-31"><h2>F31 · Integer type without arithmetic</h2><p>Category: V · Proposed scope: Core</p><p><b>XGrammar:</b> ✓ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy: compile integer lexical grammar; preserve JSON number semantics.</p><p><b>Generator runtime:</b> Scan numeric spelling. Type support is distinct from bounds or divisibility.</p><h3>Schema</h3><pre>{
+  <mark>&quot;type&quot;</mark>: &quot;integer&quot;
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>7</pre></div><div><h3>Invalid instance</h3><pre>7.5</pre></div></div></section><section id="feature-32"><h2>F32 · Boolean type</h2><p>Category: V · Proposed scope: Core</p><p><b>XGrammar:</b> ✓ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✓</p><p><b>Compile time:</b> Easy: two literal alternatives.</p><p><b>Generator runtime:</b> Select true/false; constant-size monitor.</p><h3>Schema</h3><pre>{
+  <mark>&quot;type&quot;</mark>: &quot;boolean&quot;
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>true</pre></div><div><h3>Invalid instance</h3><pre>&quot;true&quot;</pre></div></div></section><section id="feature-33"><h2>F33 · Fixed scalar constant</h2><p>Category: V · Proposed scope: Core</p><p><b>XGrammar:</b> ✓ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy: check compatible type and encode literal, O(literal length).</p><p><b>Generator runtime:</b> Emit constant; it still contributes to model context where required.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;string&quot;,
+  <mark>&quot;const&quot;</mark>: &quot;ok&quot;
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>&quot;ok&quot;</pre></div><div><h3>Invalid instance</h3><pre>&quot;error&quot;</pre></div></div></section><section id="feature-34"><h2>F34 · Simple anyOf union</h2><p>Category: M+V · Proposed scope: Core restricted</p><p><b>XGrammar:</b> ✓ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy for disjoint type branches; O(sum of branch sizes). General siblings/intersections need separate checking.</p><p><b>Generator runtime:</b> Select type and run its branch; preserve allowed model choices if branches overlap.</p><h3>Schema</h3><pre>{
+  <mark>&quot;anyOf&quot;</mark>: [
+    {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    {
+      &quot;type&quot;: &quot;boolean&quot;
+    }
+  ]
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>&quot;ok&quot;</pre></div><div><h3>Invalid instance</h3><pre>1</pre></div></div></section><section id="feature-35"><h2>F35 · Regular string pattern alone</h2><p>Category: V · Proposed scope: Core</p><p><b>XGrammar:</b> ✓ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Compile regex to NFA, then optional DFA. s-state NFA may require 2^s DFA states.</p><p><b>Generator runtime:</b> DFA transition O(1) per decoded character; NFA execution has a different cost.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;string&quot;,
+  <mark>&quot;pattern&quot;</mark>: &quot;^[A-Z]+$&quot;
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>&quot;AB&quot;</pre></div><div><h3>Invalid instance</h3><pre>&quot;ab&quot;</pre></div></div></section><section id="feature-36"><h2>F36 · String length alone</h2><p>Category: V · Proposed scope: Core</p><p><b>XGrammar:</b> ✓ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy: validate bounds; compile character counter or length-aware grammar.</p><p><b>Generator runtime:</b> O(log(M+1)) counter bits; count decoded Unicode characters, not bytes or tokens.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;string&quot;,
+  <mark>&quot;minLength&quot;</mark>: 2,
+  <mark>&quot;maxLength&quot;</mark>: 4
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>&quot;ab&quot;</pre></div><div><h3>Invalid instance</h3><pre>&quot;a&quot;</pre></div></div></section><section id="feature-37"><h2>F37 · Homogeneous array item types</h2><p>Category: O+V · Proposed scope: Core bounded</p><p><b>XGrammar:</b> ✓ · <b>llguidance:</b> ✓ · <b>JSONformer:</b> ✓</p><p><b>Compile time:</b> Easy: compile item schema once, with explicit external generation length bound.</p><p><b>Generator runtime:</b> Reuse item plan per position; stack O(h), plus collection counters.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;array&quot;,
+  <mark>&quot;items&quot;</mark>: {
+    &quot;type&quot;: &quot;string&quot;
+  }
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>[
+  &quot;a&quot;,
+  &quot;b&quot;
+]</pre></div><div><h3>Invalid instance</h3><pre>[&quot;a&quot;,1]</pre></div></div></section><section id="feature-38"><h2>F38 · Presence-only dependentSchemas</h2><p>Category: C→O · Proposed scope: Add restricted</p><p><b>XGrammar:</b> ✗ · <b>llguidance:</b> ✗ · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Easy: normalize this presence-only form to dependency edges. Arbitrary subschemas excluded.</p><p><b>Generator runtime:</b> Same bitset/closure mechanism as row 10; no value-dependent schema solver.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  <mark>&quot;dependentSchemas&quot;</mark>: {
+    &quot;profile&quot;: {
+      &quot;required&quot;: [
+        &quot;source&quot;
+      ]
+    }
+  }
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;profile&quot;: &quot;hd&quot;,
+  &quot;source&quot;: &quot;f&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{&quot;profile&quot;:&quot;hd&quot;}</pre></div></div></section><section id="feature-39"><h2>F39 · Selected format assertions</h2><p>Category: V / policy · Proposed scope: Defer assertions</p><p><b>XGrammar:</b> Finite format subset; lexical checks. · <b>llguidance:</b> Finite format subset; lexical checks. · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Default format is annotation-only. Full semantic format checking differs from a lexical regex.</p><p><b>Generator runtime:</b> No full-format guarantee. Example invalidity assumes opt-in FormatChecker, not default vocabulary.</p><p>Format note: the negative witness is invalid only with format assertion enabled; under default annotation semantics it is valid.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;string&quot;,
+  <mark>&quot;format&quot;</mark>: &quot;date-time&quot;
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>&quot;2026-11-15T12:00:00Z&quot;</pre></div><div><h3>Invalid instance with format assertion</h3><pre>&quot;not-a-date&quot;</pre></div></div></section><section id="feature-40"><h2>F40 · Numeric assertions inventory</h2><p>Category: V · Proposed scope: Exclude</p><p><b>XGrammar:</b> Bounds; number multipleOf ignored. · <b>llguidance:</b> ✓ for this bounded example · <b>JSONformer:</b> ✗</p><p><b>Compile time:</b> Supported union includes ordinary numeric assertions, but arithmetic is outside our requested initial profile.</p><p><b>Generator runtime:</b> No arithmetic enforcement proposed. This row records baseline coverage only.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;number&quot;,
+  <mark>&quot;minimum&quot;</mark>: 0,
+  <mark>&quot;maximum&quot;</mark>: 100,
+  <mark>&quot;multipleOf&quot;</mark>: 0.5
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>1.5</pre></div><div><h3>Invalid instance</h3><pre>1.2</pre></div></div></section><section id="S1"><h2>S1 · Active scientific record</h2><p>X ignores if/then; strict L rejects. Finite tagged rewrite may work in both.</p><p>Proposed parser behavior: generate the valid witness while excluding the invalid witness. This is a source-grounded illustration, not a new decoder run or an implemented-parser result.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;status&quot;: {
+      &quot;enum&quot;: [
+        &quot;active&quot;,
+        &quot;draft&quot;
+      ]
+    },
+    &quot;publications&quot;: {
+      &quot;type&quot;: &quot;array&quot;,
+      &quot;items&quot;: {
+        &quot;type&quot;: &quot;string&quot;
+      },
+      &quot;minItems&quot;: 1,
+      &quot;maxItems&quot;: 2
+    }
+  },
+  &quot;required&quot;: [
+    &quot;status&quot;
+  ],
+  &quot;additionalProperties&quot;: false,
+  <mark>&quot;if&quot;</mark>: {
+    &quot;properties&quot;: {
+      &quot;status&quot;: {
+        &quot;const&quot;: &quot;active&quot;
+      }
+    },
+    &quot;required&quot;: [
+      &quot;status&quot;
+    ]
+  },
+  <mark>&quot;then&quot;</mark>: {
+    &quot;required&quot;: [
+      &quot;publications&quot;
+    ]
+  }
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;status&quot;: &quot;active&quot;,
+  &quot;publications&quot;: [
+    &quot;p1&quot;
+  ]
+}</pre></div><div><h3>Invalid instance</h3><pre>{&quot;status&quot;:&quot;active&quot;}</pre></div></div></section><section id="S2"><h2>S2 · Profile requires source</h2><p>X ignores dependency; strict L rejects. Compile presence closure.</p><p>Proposed parser behavior: generate the valid witness while excluding the invalid witness. This is a source-grounded illustration, not a new decoder run or an implemented-parser result.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;profile&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;source&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    }
+  },
+  &quot;additionalProperties&quot;: false,
+  <mark>&quot;dependentRequired&quot;</mark>: {
+    &quot;profile&quot;: [
+      &quot;source&quot;
+    ]
+  }
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;profile&quot;: &quot;hd&quot;,
+  &quot;source&quot;: &quot;f&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{&quot;profile&quot;:&quot;hd&quot;}</pre></div></div></section><section id="S3"><h2>S3 · One credential method</h2><p>X ignores not; strict L rejects. Disjoint explicit layouts provide a rewrite.</p><p>Proposed parser behavior: generate the valid witness while excluding the invalid witness. This is a source-grounded illustration, not a new decoder run or an implemented-parser result.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;password&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;token&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    }
+  },
+  &quot;minProperties&quot;: 1,
+  &quot;additionalProperties&quot;: false,
+  <mark>&quot;not&quot;</mark>: {
+    <mark>&quot;required&quot;</mark>: [
+      &quot;password&quot;,
+      &quot;token&quot;
+    ]
+  }
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;token&quot;: &quot;t&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{&quot;password&quot;:&quot;p&quot;,&quot;token&quot;:&quot;t&quot;}</pre></div></div></section><section id="S4"><h2>S4 · Distinct role values</h2><p>X ignores uniqueness; strict L rejects. Finite domain makes exhaustion decidable at compile time.</p><p>Proposed parser behavior: generate the valid witness while excluding the invalid witness. This is a source-grounded illustration, not a new decoder run or an implemented-parser result.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;array&quot;,
+  &quot;items&quot;: {
+    &quot;enum&quot;: [
+      &quot;admin&quot;,
+      &quot;reader&quot;,
+      &quot;editor&quot;
+    ]
+  },
+  &quot;minItems&quot;: 1,
+  &quot;maxItems&quot;: 3,
+  <mark>&quot;uniqueItems&quot;</mark>: true
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>[
+  &quot;admin&quot;,
+  &quot;reader&quot;
+]</pre></div><div><h3>Invalid instance</h3><pre>[&quot;reader&quot;,&quot;reader&quot;]</pre></div></div></section><section id="S5"><h2>S5 · At least one administrator</h2><p>X does not count matches; strict L rejects. Reserve one matching slot.</p><p>Proposed parser behavior: generate the valid witness while excluding the invalid witness. This is a source-grounded illustration, not a new decoder run or an implemented-parser result.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;array&quot;,
+  &quot;items&quot;: {
+    &quot;enum&quot;: [
+      &quot;admin&quot;,
+      &quot;reader&quot;
+    ]
+  },
+  &quot;minItems&quot;: 1,
+  &quot;maxItems&quot;: 3,
+  <mark>&quot;contains&quot;</mark>: {
+    &quot;const&quot;: &quot;admin&quot;
+  },
+  <mark>&quot;minContains&quot;</mark>: 1
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>[
+  &quot;reader&quot;,
+  &quot;admin&quot;
+]</pre></div><div><h3>Invalid instance</h3><pre>[&quot;reader&quot;]</pre></div></div></section><section id="S6"><h2>S6 · At most one administrator</h2><p>X ignores matching-count cap; strict L rejects. Saturated counter plus remaining slots.</p><p>Proposed parser behavior: generate the valid witness while excluding the invalid witness. This is a source-grounded illustration, not a new decoder run or an implemented-parser result.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;array&quot;,
+  &quot;items&quot;: {
+    &quot;enum&quot;: [
+      &quot;admin&quot;,
+      &quot;reader&quot;
+    ]
+  },
+  &quot;minItems&quot;: 1,
+  &quot;maxItems&quot;: 3,
+  <mark>&quot;contains&quot;</mark>: {
+    &quot;const&quot;: &quot;admin&quot;
+  },
+  <mark>&quot;minContains&quot;</mark>: 1,
+  <mark>&quot;maxContains&quot;</mark>: 1
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>[
+  &quot;admin&quot;,
+  &quot;reader&quot;
+]</pre></div><div><h3>Invalid instance</h3><pre>[&quot;admin&quot;,&quot;admin&quot;]</pre></div></div></section><section id="S7"><h2>S7 · Key matches two value rules</h2><p>X alternatives do not enforce intersection; L rejects overlapping key patterns.</p><p>Proposed parser behavior: generate the valid witness while excluding the invalid witness. This is a source-grounded illustration, not a new decoder run or an implemented-parser result.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  <mark>&quot;patternProperties&quot;</mark>: {
+    &quot;^x&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;minLength&quot;: 2
+    },
+    &quot;x$&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;pattern&quot;: &quot;^[A-Z]+$&quot;
+    }
+  },
+  &quot;additionalProperties&quot;: false
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;x&quot;: &quot;AB&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{&quot;x&quot;:&quot;ab&quot;}</pre></div></div></section><section id="S8"><h2>S8 · Dependency expressed as a subschema</h2><p>X ignores dependentSchemas; strict L rejects. Normalize this restricted form to S2.</p><p>Proposed parser behavior: generate the valid witness while excluding the invalid witness. This is a source-grounded illustration, not a new decoder run or an implemented-parser result.</p><h3>Schema</h3><pre>{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;properties&quot;: {
+    &quot;profile&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    },
+    &quot;source&quot;: {
+      &quot;type&quot;: &quot;string&quot;
+    }
+  },
+  &quot;additionalProperties&quot;: false,
+  <mark>&quot;dependentSchemas&quot;</mark>: {
+    &quot;profile&quot;: {
+      &quot;required&quot;: [
+        &quot;source&quot;
+      ]
+    }
+  }
+}</pre><div class="pair"><div><h3>Valid instance</h3><pre>{
+  &quot;profile&quot;: &quot;hd&quot;,
+  &quot;source&quot;: &quot;f&quot;
+}</pre></div><div><h3>Invalid instance</h3><pre>{&quot;profile&quot;:&quot;hd&quot;}</pre></div></div></section><script>function jump(){const e=document.getElementById(location.hash.slice(1));if(e)e.scrollIntoView({block:'start'});}addEventListener('load',jump);addEventListener('hashchange',jump);</script></html>
